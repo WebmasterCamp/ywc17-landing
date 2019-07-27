@@ -1,0 +1,54 @@
+body {
+  background-color: #1D1A1A;
+  margin: 3em 0 0 0;
+  padding: 0;
+  color: #DBD7D7;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  /* padding: 0 15px; */
+}
+
+#cover-image {
+  position: relative;
+  transform: translateX(8%);
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  color: #ACACAC;
+  font-size: 12px;
+  font-weight: lighter;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.main-content {
+  padding-top: 30px;
+  line-height: 25px;
+}
+
+.follow-container {
+  padding: 20px;
+  font-size: 20px;
+}
+
+
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.row {
+  width: 100%;
+  text-align: center;
+}
+
+#cover-image {
+  max-width: 50%;
+}
