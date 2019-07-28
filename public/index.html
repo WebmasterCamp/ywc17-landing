@@ -11,9 +11,15 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" href="style.css">
 
-    <meta property="og:description" content="Young Webmaster Camp 17 is coming..." />
-    <meta property="og:image" content="https://ywc17.ywc.in.th/assets/og.jpg" />
+    <meta property="og:url" content="https://ywc17.ywc.in.th">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="17th Young Webmaster Camp">
+    <meta property="og:description" content="17th Young Webmaster Camp is coming..." />
+    <meta property="og:image" content="https://ywc17.ywc.in.th/assets/og.png" />
     <meta property="article:author" content="https://www.facebook.com/ywcth" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image:src" content="https://ywc17.ywc.in.th/assets/og.png" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-42284958-1"></script>
@@ -51,7 +57,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
