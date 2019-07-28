@@ -1,3 +1,27 @@
+@media(max-height: 560px) {
+  #cover-image {
+    max-height: 250px;
+  }
+}
+
+@media(max-height: 700px) and (min-height: 561px) {
+  #cover-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  #cover-image {
+    max-width: 75%;
+  }
+}
+
+@media (min-width: 451px) {
+  #cover-image {
+    max-width: 50%;
+  }
+}
+
 body {
   background-color: #1D1A1A;
   margin: 3em 0 0 0;
@@ -14,13 +38,11 @@ body {
 }
 
 footer {
-  position: absolute;
   width: 100%;
-  bottom: 10px;
   color: #ACACAC;
   font-size: 12px;
   font-weight: lighter;
-  padding: 0 15px;
+  padding: 20px 10px;
   box-sizing: border-box;
 }
 
@@ -34,8 +56,6 @@ footer {
   font-size: 20px;
 }
 
-
-
 .text-uppercase {
   text-transform: uppercase;
 }
@@ -47,8 +67,4 @@ footer {
 .row {
   width: 100%;
   text-align: center;
-}
-
-#cover-image {
-  max-width: 50%;
 }
