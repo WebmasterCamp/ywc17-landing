@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>17th Young Webmaster Camp</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -35,16 +35,18 @@
 
 <body>
     <main>
-        <div class="row">
-            <img src="assets/cover.svg" id="cover-image" alt="Cover Image YWC17 is coming">
-        </div>
-        <div class="text-center text-uppercase main-content">
-            For all webmasters<br />
-            Young Webmaster Camp is on its way
-            <div class="follow-container">
-                <a href="https://www.facebook.com/ywcth/" target="_blank">
-                    <img src="assets/btn-follow.png">
-                </a>
+        <div class="container">
+            <div class="row">
+                <img src="assets/cover.svg" id="cover-image" alt="Cover Image YWC17 is coming">
+            </div>
+            <div class="text-center text-uppercase main-content">
+                For all webmasters<br />
+                Young Webmaster Camp is on its way
+                <div class="follow-container">
+                    <a href="https://ywc16.ywc.in.th/" target="_blank">
+                        <img src="assets/btn-what.png">
+                    </a>
+                </div>
             </div>
         </div>
     </main>
@@ -71,6 +73,20 @@
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=852229261558709&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
+
+    <script>
+        // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+        let vh = window.innerHeight * 0.01;
+        // Then we set the value in the --vh custom property to the root of the document
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+        // We listen to the resize event
+        document.addEventListener('resize', () => {
+            // We execute the same script as before
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        });
+    </script>
 </body>
 
 </html>

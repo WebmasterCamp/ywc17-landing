@@ -24,17 +24,26 @@
 
 body {
   background-color: #1D1A1A;
-  margin: 3em 0 0 0;
+  margin: 0;
   padding: 0;
   color: #DBD7D7;
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
-  /* padding: 0 15px; */
+  background-image: url(assets/background.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #cover-image {
   position: relative;
-  transform: translateX(8%);
+}
+
+main {
+  display: grid;
+  height: calc(var(--vh, 1vh) * 100);
+  align-content: center;
+  align-items: center;
 }
 
 footer {
