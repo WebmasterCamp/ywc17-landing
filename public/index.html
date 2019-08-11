@@ -10,16 +10,17 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
 
     <meta property="og:url" content="https://ywc17.ywc.in.th">
     <meta property="og:type" content="website">
     <meta property="og:title" content="17th Young Webmaster Camp">
     <meta property="og:description" content="17th Young Webmaster Camp is coming..." />
-    <meta property="og:image" content="https://ywc17.ywc.in.th/assets/og.png" />
+    <meta property="og:image" content="https://ywc17.ywc.in.th/assets/og01082019.png" />
     <meta property="article:author" content="https://www.facebook.com/ywcth" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image:src" content="https://ywc17.ywc.in.th/assets/og.png" />
+    <meta name="twitter:image:src" content="https://ywc17.ywc.in.th/assets/og01082019.png" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-42284958-1"></script>
@@ -34,22 +35,31 @@
 </head>
 
 <body>
-    <main>
-        <div class="container">
-            <div class="row">
-                <img src="assets/cover.svg" id="cover-image" alt="Cover Image YWC17 is coming">
-            </div>
-            <div class="text-center text-uppercase main-content">
-                For all webmasters<br />
-                Young Webmaster Camp is on its way
-                <div class="follow-container">
-                    <a href="https://ywc16.ywc.in.th/" target="_blank">
-                        <img src="assets/btn-what.png">
-                    </a>
-                </div>
+    <div class="container">
+        <div class="row">
+            <img src="assets/cover.svg" id="cover-image" alt="Cover Image YWC17 is coming">
+        </div>
+        <div class="text-center text-uppercase main-content">
+            For all webmasters<br />
+            Young Webmaster Camp is on its way
+            <div class="follow-container">
+                <a href="https://ywc16.ywc.in.th/" target="_blank">
+                    <img src="assets/btn-what.svg">
+                </a>
             </div>
         </div>
-    </main>
+        <div class="text-center">
+            <a href="https://facebook.com/ywcth/" class="social-icon">
+                <i class="fab fa-facebook fa-3x"></i>
+            </a>
+            <a href="https://twitter.com/ywcth/" class="social-icon">
+                <i class="fab fa-twitter fa-3x"></i>
+            </a>
+            <!-- <a href="https://www.instagram.com/ywcth/" class="social-icon">
+                <i class="fab fa-instagram fa-3x"></i>
+            </a> -->
+        </div>
+    </div>
     <!-- <footer class="text-center">
         Copyright 2003 - 2019. Young Webmaster Camp, in associate with Thai Webmaster Association. All right reserved.
     </footer> -->
@@ -73,20 +83,6 @@
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=852229261558709&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
-
-    <script>
-        // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-        let vh = window.innerHeight * 0.01;
-        // Then we set the value in the --vh custom property to the root of the document
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-        // We listen to the resize event
-        document.addEventListener('resize', () => {
-            // We execute the same script as before
-            let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        });
-    </script>
 </body>
 
 </html>

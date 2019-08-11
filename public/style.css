@@ -35,15 +35,12 @@ body {
   background-attachment: fixed;
 }
 
-#cover-image {
-  position: relative;
+.container {
+  margin-top: 5em;
 }
 
-main {
-  display: grid;
-  height: calc(var(--vh, 1vh) * 100);
-  align-content: center;
-  align-items: center;
+#cover-image {
+  position: relative;
 }
 
 footer {
@@ -53,6 +50,12 @@ footer {
   font-weight: lighter;
   padding: 20px 10px;
   box-sizing: border-box;
+}
+
+.social-icon {
+  margin: 2em 1em 0 1em;
+  color: #fff;
+  text-decoration: none;
 }
 
 .main-content {
