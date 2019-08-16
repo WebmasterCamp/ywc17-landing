@@ -52,6 +52,11 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    /*
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-42284958-1'
+    }]
+    */
   ],
   /*
   ** Axios module configuration
