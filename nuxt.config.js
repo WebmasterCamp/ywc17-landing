@@ -5,13 +5,24 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: '17th Young Webmaster Camp',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: '' },
+
+      { name: 'og:url', content: 'https://ywc17.ywc.in.th' },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:title', content: '17th Young Webmaster Camp'},
+      { name: 'og:description', content: ''},
+      { name: 'og:image', content: ''},
+      { name: 'article:author', content: 'https://www.facebook.com/ywcth'},
+
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:image:src', content: '' }
     ],
     link: [
+      { rel: 'icon', type: 'image/png', href: '/favicon.png' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
