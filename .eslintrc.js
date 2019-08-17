@@ -20,6 +20,7 @@ module.exports = {
     "no-console": "off",
     "no-trailing-spaces": "off",
     "vue/max-attributes-per-line": "off",
-    "vue/html-self-closing": "off"
+    "vue/html-self-closing": "off",
+    "vue/singleline-html-element-content-newline": off
   }
 }
