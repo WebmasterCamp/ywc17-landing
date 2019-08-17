@@ -35,6 +35,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/css/webfont.css'
   ],
   /*
   ** Plugins to load before mounting the App
