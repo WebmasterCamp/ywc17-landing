@@ -1,5 +1,5 @@
 <template>
-  <Container v-if="show" :color="color">
+  <Container v-if="show" :color="color" :exiting="exiting">
     <Header>
       <Title>{{ title }}</Title>
       <Count :color="color">
@@ -27,14 +27,29 @@
 
 <script>
 import Vue from 'vue'
-import styled, { css } from 'vue-styled-components'
+import styled, { css, keyframes } from 'vue-styled-components'
 import color from '~/utils/color'
 
 const withColorProps = {
   color: String
 }
 
-const Container = styled('div', withColorProps)`
+const containerProps = {
+  color: String,
+  exiting: Boolean
+}
+
+const fadein = keyframes`
+  from { top: 100%; }
+  to { top: 0; }
+`
+
+const fadeout = keyframes`
+  from { top: 0; }
+  to { top: 100%; }
+`
+
+const Container = styled('div', containerProps)`
   position: fixed;
   top: 0;
   left: 0;
@@ -44,6 +59,12 @@ const Container = styled('div', withColorProps)`
   background: ${props => color.background[props.color]};
   padding: 32px 24px 0;
   text-align: left;
+  transition: all 0.3s;
+  animation: ${fadein} 0.5s;
+
+  ${props => props.exiting && `
+    animation: ${fadeout} 0.5s;
+  `};
 
   .content {
     height: calc(90% - 130px);
@@ -55,6 +76,7 @@ const Container = styled('div', withColorProps)`
   .content ol {
     padding-left: 24px;
   }
+
 `
 
 const Header = styled.div`
@@ -161,7 +183,8 @@ export default Vue.extend({
   data () {
     return {
       title: '',
-      color: ''
+      color: '',
+      exiting: false
     }
   },
   mounted () {
@@ -170,7 +193,14 @@ export default Vue.extend({
   },
   methods: {
     dismiss () {
-      this.$parent.dismissOverlay()
+      this.showExitingAnimation()
+    },
+    showExitingAnimation () {
+      this.exiting = true
+      setTimeout(() => {
+        this.$parent.dismissOverlay()
+        this.exiting = false
+      }, 500)
     }
   }
 })
