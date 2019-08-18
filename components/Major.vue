@@ -24,7 +24,7 @@ import color from '~/utils/color'
 const TitleProps = { color: String }
 
 const Title = styled('div', TitleProps)`
-  color: ${props => color.major[props.color]};
+  color: ${props => color[props.color].normal};
   font-weight: bold;
   margin: 20px 0 40px;
 `

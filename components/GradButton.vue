@@ -23,8 +23,8 @@ const StyledBorder = styled('button', BtnProps)`
 
   cursor: pointer;
 
-  background: ${props => color[props.color]};
-  background: linear-gradient(${props => color.gradient[props.color]});
+  background: ${props => color[props.color].darker};
+  background: ${props => color[props.color].gradient};
 `
 const StyledBtn = styled('div', BtnProps)`
   background: black;
@@ -34,7 +34,7 @@ const StyledBtn = styled('div', BtnProps)`
   user-select: none;
 
   &:hover {
-    background: linear-gradient(${props => color.gradient[props.color]});
+    background: ${props => color[props.color].gradient};
   }
   &:hover > span {
     color: black;
@@ -47,8 +47,8 @@ const StyledText = styled('span', BtnProps)`
   font-family: 'Maledpan';
   font-size: 18px;
   font-weight: bold;
-  color: ${props => color[props.color]};
-  background: -webkit-linear-gradient(${props => color.gradient[props.color]});
+  color: ${props => color[props.color].darker};
+  background: ${props => color[props.color].gradient};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `

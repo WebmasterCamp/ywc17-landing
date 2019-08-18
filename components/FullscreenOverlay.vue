@@ -56,7 +56,7 @@ const Container = styled('div', containerProps)`
   right: 0;
   bottom: 0;
   z-index: 1;
-  background: ${props => color.background[props.color]};
+  background: ${props => color[props.color].gradientDarker};
   padding: 32px 24px 0;
   text-align: left;
   transition: all 0.3s;
@@ -100,7 +100,7 @@ const Count = styled('div', withColorProps)`
     font-size: 32px;
     margin: 0.5em 0;
     font-weight: bold;
-    color: ${props => color.major[props.color]};
+    color: ${props => color[props.color].normal};
   }
 `
 
@@ -131,7 +131,7 @@ const defaultButton = css`
 
 const BackButton = styled('button', withColorProps)`
   ${defaultButton};
-  color: ${props => color.button[props.color]};
+  color: ${props => color[props.color].darker};
   background-color: transparent;
 
 
@@ -144,7 +144,7 @@ const BackButton = styled('button', withColorProps)`
     border-left: 2px solid white;
     border-top: 2px solid white;
     transform: rotate(-45deg);
-    border-color: ${props => color.button[props.color]};
+    border-color: ${props => color[props.color].darker};
   }
 `
 
@@ -156,7 +156,7 @@ const RegisterButton = styled('a', withColorProps)`
   text-decoration: none;
   border-radius: 1000px;
   height: 48px;
-  background: ${props => color.button[props.color]};
+  background: ${props => color[props.color].gradient};
   color: white;
 `
 
