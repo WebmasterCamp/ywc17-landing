@@ -24,8 +24,6 @@ import SponsorBadge from '~/components/SponsorBadge.vue'
 
 export default Vue.extend({
   components: {
-    // Picture: () => import('~/components/Picture'),
-    // SponsorBadge: () => import('~/components/SponsorBadge')
     Picture,
     SponsorBadge
   }  

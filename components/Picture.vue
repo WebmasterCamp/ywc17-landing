@@ -43,6 +43,12 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+  picture {
+    max-width: 100%;
 
+    img {
+      max-width: 100%;
+    }
+  }
 </style>

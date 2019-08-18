@@ -1,5 +1,5 @@
 <template>
-  <StyledBorder :color="`${theme}`">
+  <StyledBorder :color="`${theme}`" @click="$emit('click')">
     <StyledBtn :color="`${theme}`">
       <StyledText :color="`${theme}`">
         <slot />
@@ -12,12 +12,14 @@
 import styled from 'vue-styled-components'
 import color from '~/utils/color'
 const BtnProps = { color: String }
-const StyledBorder = styled('div', BtnProps)`
+const StyledBorder = styled('button', BtnProps)`
   display: inline-block;
   max-width: 160px;
   padding: 2px;
   position: relative;
   border-radius: 1000px;
+  border: none;
+  outline: none;
 
   cursor: pointer;
 

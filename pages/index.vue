@@ -10,16 +10,16 @@
 </template>
 
 <script>
-import WhatIsYWC from '~/components/sections/WhatIsYWC.vue'
-import Majors from '~/components/sections/Majors.vue'
+import WhatIsYWC from '~/components/sections/WhatIsYWC'
+import Hero from '~/components/sections/Hero'
 import Timeline from '~/components/sections/Timeline.vue'
 
 export default {
   components: {
-    Hero: () => import('~/components/sections/Hero'),
+    Hero,
     WhatIsYWC,
-    Majors,
     Timeline,
+    Majors: () => import('~/components/sections/Majors'),
     QA: () => import('~/components/sections/QA'),
     FollowUs: () => import('~/components/sections/FollowUs')
   }
