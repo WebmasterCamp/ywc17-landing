@@ -8,7 +8,7 @@
         {{ qa.a }}
       </ABox>
       <ToggleBtn @click="toggleAns">
-        <img :src="showAns ? require('~/assets/images/top.png') : require('~/assets/images/down.png')" alt="เปิด/ปิด" />
+        <img :src="require(`~/assets/images/${showAns ? 'top':'down'}.png`)" alt="เปิด/ปิด" />
       </ToggleBtn>
     </FloatBox>
   </Container>
