@@ -6,5 +6,9 @@ export default {
     yellow: '10.84deg, #FEE141 13.7%, #FCB46F 58.75%, #FA7398 89.48%',
     blue: '11.01deg, #07CACE 12.9%, #4D9ED5 48.66%, #9470DC 85.22%'
   },
-  main: '#E1426F'
+  main: '#E1426F',
+  green: '#00BE7A',
+  pink: '#FA5C87',
+  yellow: '#FCBE4F',
+  blue: '#4D9ED5'
 }
