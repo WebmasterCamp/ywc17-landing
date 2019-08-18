@@ -1,0 +1,20 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  font-family: 'Sarabun', serif, Tahoma;
+  color: white;
+  font-size: 18px;
+}
+
+section {
+  margin-bottom: 50px;
+  padding-left: 80px;
+  padding-right: 80px;
+}

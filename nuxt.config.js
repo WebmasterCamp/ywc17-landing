@@ -35,6 +35,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/css/global.css',
     '@/assets/css/webfont.css'
   ],
   /*
