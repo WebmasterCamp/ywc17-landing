@@ -4,6 +4,7 @@
     <WhatIsYWC />
     <Majors />
     <Timeline />
+    <QA />
   </div>
 </template>
 
@@ -17,7 +18,8 @@ export default {
     Hero: () => import('~/components/sections/Hero'),
     WhatIsYWC,
     Majors,
-    Timeline
+    Timeline,
+    QA: () => import('~/components/sections/QA')
   }
 }
 </script>
