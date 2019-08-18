@@ -12,7 +12,7 @@ div {
   margin: 0 auto;
   margin-bottom: 20px;
   background-color: #E1426F;
-  background: url(~assets/img/sectionHead.png) no-repeat center;
+  background: url(~assets/images/sectionHead.png) no-repeat center;
   background-size: 100% 100%;
 
   font-family: Montserrat, Arial, Helvetica, sans-serif;
