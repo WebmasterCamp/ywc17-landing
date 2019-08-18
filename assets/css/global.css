@@ -11,10 +11,13 @@ body {
   font-family: 'Sarabun', serif, Tahoma;
   color: white;
   font-size: 18px;
+  line-height: 1.5em;
 }
 
 section {
   margin-bottom: 50px;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 15px;
+  padding-right: 15px;
+  /* padding-left: 80px;
+  padding-right: 80px; */
 }

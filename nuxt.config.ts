@@ -1,5 +1,6 @@
+import NuxtConfiguration from '@nuxt/config'
 
-export default {
+const config = {
   mode: 'spa',
   /*
   ** Headers of the page
@@ -36,7 +37,8 @@ export default {
   */
   css: [
     '@/assets/css/global.css',
-    '@/assets/css/webfont.css'
+    '@/assets/css/webfont.css',
+    '@/assets/css/global.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -73,7 +75,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend (config: NuxtConfiguration, ctx: any) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
@@ -86,3 +88,5 @@ export default {
     }
   }
 }
+
+export default config
