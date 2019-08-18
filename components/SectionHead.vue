@@ -1,18 +1,19 @@
 <template>
-  <div>
+  <Container>
     {{ title }}
-  </div>
+  </Container>
 </template>
 
-<style scoped>
-div {
+<script>
+import styled from 'vue-styled-components'
+const Container = styled.div`
   width: 335px;
   height: 112px;
   max-width: 100%;
   margin: 0 auto;
   margin-bottom: 20px;
   background-color: #E1426F;
-  background: url(~assets/images/sectionHead.png) no-repeat center;
+  background: url(${require('~/assets/images/sectionHead.png')}) no-repeat center;
   background-size: 100% 100%;
 
   font-family: Montserrat, Arial, Helvetica, sans-serif;
@@ -29,11 +30,19 @@ div {
   color: #FFFFFF;
 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-</style>
 
-<script>
+  @media(max-width:768px) {
+    & {
+      width: 287px;
+      height: 96px;
+      font-size: 24px;
+    }
+  }
+`
 export default {
+  components: {
+    Container
+  },
   props: {
     title: { type: String, default: 'Heading' }
   }
