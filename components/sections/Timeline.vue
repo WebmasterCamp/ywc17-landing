@@ -26,6 +26,10 @@ const TimelineList = styled.div`
   display: grid;
   grid-column-gap: 25px; 
   grid-template-columns: auto auto auto auto auto;
+  @media(max-width:768px) {
+    grid-template-columns: auto;
+    grid-row-gap: 45px;
+  }
 `
 const TimelineItem = styled.div`
   display: inline-grid;
