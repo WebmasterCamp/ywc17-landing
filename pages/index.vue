@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <Hero />
     <WhatIsYWC />
     <Majors />
   </div>
@@ -11,6 +12,7 @@ import Majors from '~/components/sections/Majors.vue'
 
 export default {
   components: {
+    Hero: () => import('~/components/sections/Hero'),
     WhatIsYWC,
     Majors
   }
