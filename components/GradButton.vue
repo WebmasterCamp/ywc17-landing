@@ -35,8 +35,9 @@ const StyledBtn = styled('div', BtnProps)`
   }
   &:hover > span {
     color: black;
-    background: black;
-    -webkit-background-clip: text;
+    background: transparent;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
   }
 `
 const StyledText = styled('span', BtnProps)`
