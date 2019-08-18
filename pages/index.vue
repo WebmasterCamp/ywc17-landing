@@ -1,15 +1,18 @@
 <template>
   <div class="container">
     <WhatIsYWC />
+    <Majors />
   </div>
 </template>
 
 <script>
 import WhatIsYWC from '~/components/sections/WhatIsYWC.vue'
+import Majors from '~/components/sections/Majors.vue'
 
 export default {
   components: {
-    WhatIsYWC
+    WhatIsYWC,
+    Majors
   }
 }
 </script>
