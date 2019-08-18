@@ -37,7 +37,8 @@ const config = {
   */
   css: [
     '@/assets/css/global.css',
-    '@/assets/css/webfont.css'
+    '@/assets/css/webfont.css',
+    '@/assets/css/global.scss'
   ],
   /*
   ** Plugins to load before mounting the App
