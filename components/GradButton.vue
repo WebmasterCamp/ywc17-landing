@@ -21,6 +21,7 @@ const StyledBorder = styled('div', BtnProps)`
 
   cursor: pointer;
 
+  background: ${props => color[props.color]};
   background: linear-gradient(${props => color.gradient[props.color]});
 `
 const StyledBtn = styled('div', BtnProps)`
@@ -44,7 +45,7 @@ const StyledText = styled('span', BtnProps)`
   font-family: 'Maledpan';
   font-size: 18px;
   font-weight: bold;
-  color: white;
+  color: ${props => color[props.color]};
   background: -webkit-linear-gradient(${props => color.gradient[props.color]});
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
