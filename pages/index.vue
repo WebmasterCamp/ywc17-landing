@@ -5,6 +5,7 @@
     <Majors />
     <Timeline />
     <QA />
+    <FollowUs />
   </div>
 </template>
 
@@ -19,7 +20,8 @@ export default {
     WhatIsYWC,
     Majors,
     Timeline,
-    QA: () => import('~/components/sections/QA')
+    QA: () => import('~/components/sections/QA'),
+    FollowUs: () => import('~/components/sections/FollowUs')
   }
 }
 </script>
