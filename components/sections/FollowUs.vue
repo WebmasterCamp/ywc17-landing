@@ -3,26 +3,24 @@
     <SectionHead title="Follow Us" />
     <Grid>
       <GridCol>
-        <a href="https://www.facebook.com/ywcth" target="_blank" title="Facebook">
-          <SocialBtn>
-            <SocialIcon fileName="facebook" alt="Facebook" />
-          </SocialBtn>
-        </a>
+        <SocialBtn href="https://www.facebook.com/ywcth" target="_blank" title="Facebook">
+          <SocialIcon fileName="facebook" alt="Facebook" />
+        </SocialBtn>
       </GridCol>
       <GridCol>
-        <a href="https://twitter.com/ywcth" target="_blank" title="Twitter">
-          <SocialBtn><SocialIcon fileName="twitter" alt="Twitter" /></SocialBtn>
-        </a>
+        <SocialBtn href="https://twitter.com/ywcth" target="_blank" title="Twitter">
+          <SocialIcon fileName="twitter" alt="Twitter" />
+        </SocialBtn>
       </GridCol>
       <GridCol>
-        <a href="https://m.me/ywcth" target="_blank" title="Messenger">
-          <SocialBtn><SocialIcon fileName="messenger" alt="Messenger" /></SocialBtn>
-        </a>
+        <SocialBtn href="https://m.me/ywcth" target="_blank" title="Messenger">
+          <SocialIcon fileName="messenger" alt="Messenger" />
+        </SocialBtn>
       </GridCol>
       <GridCol>
-        <a href="https://instagram.com/ywcth" target="_blank" title="Instagram">
-          <SocialBtn><SocialIcon fileName="instagram" alt="Instagram" /></SocialBtn>
-        </a>
+        <SocialBtn href="https://instagram.com/ywcth" target="_blank" title="Instagram">
+          <SocialIcon fileName="instagram" alt="Instagram" />
+        </SocialBtn>
       </GridCol>
     </Grid>
   </section>
@@ -48,7 +46,7 @@ const Grid = styled.div`
 const GridCol = styled.div`
   display: inline-grid;
 `
-const SocialBtn = styled.div`
+const SocialBtn = styled.a`
   display: inline-block;
   color: ${color.main};
   background: black;
