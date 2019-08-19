@@ -4,6 +4,7 @@
     <WhatIsYWC />
     <Majors />
     <Timeline />
+    <Gallery />
     <QA />
     <FollowUs />
   </div>
@@ -20,6 +21,7 @@ export default {
     WhatIsYWC,
     Majors,
     Timeline,
+    Gallery: () => import('~/components/sections/Gallery'),
     QA: () => import('~/components/sections/QA'),
     FollowUs: () => import('~/components/sections/FollowUs')
   }
