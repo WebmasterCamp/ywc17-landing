@@ -4,7 +4,7 @@
     <TimelineList>
       <TimelineItem v-for="(item, code) in items" :key="code">
         <TimelineIcon :active="isActive(code)">
-          <img :src="require(`~/assets/images/timeline-${code}.png`)" />
+          <Icon :fileName="`timeline-${code}`" :alt="item.name" />
         </TimelineIcon>
         <TimelineName>{{ item.name }}</TimelineName>
         {{ item.endDate ? rangeDate(item.startDate, item.endDate) : humanDate(item.startDate) }}
@@ -18,7 +18,9 @@ import styled from 'vue-styled-components'
 import dayjs from 'dayjs'
 import 'dayjs/locale/th'
 import color from '~/utils/color'
+
 import SectionHead from '~/components/SectionHead.vue'
+import Picture from '~/components/Picture.vue'
 
 dayjs.locale('th')
 
@@ -48,13 +50,21 @@ const TimelineName = styled.h3`
   color: ${color.main};
   margin-bottom: 0;
 `
+const Icon = styled(Picture)`
+  & img {
+    vertical-align: middle;
+    user-select: none;
+    user-drag: none;
+  }
+`
 export default {
   components: {
     SectionHead,
     TimelineList,
     TimelineItem,
     TimelineIcon,
-    TimelineName
+    TimelineName,
+    Icon
   },
   data () {
     return {
@@ -97,8 +107,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-img {
-  vertical-align: middle;
-}
-</style>
