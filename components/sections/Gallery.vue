@@ -111,13 +111,13 @@ export default {
   background: none
 
   @media (max-width:768px)
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 8px
+    padding-bottom: 8px
 
-    background-size: 70px;
-    background-image: url(~assets/images/frame-upleft.png), url(~assets/images/frame-downright.png);
-    background-position: calc(51% - 113px) 0%, calc(50% + 108px) 100%;
-    background-repeat: no-repeat, no-repeat;
+    background-size: 70px
+    background-image: url(~assets/images/frame-upleft.png), url(~assets/images/frame-downright.png)
+    background-position: calc(51% - 113px) 0%, calc(50% + 108px) 100%
+    background-repeat: no-repeat, no-repeat
 </style>
 <style lang="sass">
 .agile
