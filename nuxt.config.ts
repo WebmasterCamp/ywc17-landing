@@ -73,6 +73,11 @@ const config = {
   ** Build configuration
   */
   build: {
+    // Fix ES6 for IE11
+    transpile: [
+      /(.+)(vue\-agile\/src\/)(.+)(\.js)$/, // Transpile Unix paths
+      /(.+)(vue\-agile\\src\\)(.+)(\.js)$/ // Transpile Windows paths
+    ],
     /*
     ** You can extend webpack config here
     */
