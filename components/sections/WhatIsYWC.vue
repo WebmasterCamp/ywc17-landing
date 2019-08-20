@@ -6,6 +6,13 @@
     </p>
   </section>
 </template>
+<style scoped>
+@media (max-width:768px) {
+  p {
+    font-size: 16px;
+  }
+}
+</style>
 <script>
 import SectionHead from '~/components/SectionHead.vue'
 export default {
