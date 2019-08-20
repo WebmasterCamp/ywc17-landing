@@ -4,12 +4,12 @@
     <no-ssr placeholder="Loading...">
       <agile ref="main" class="main" :options="options1" :as-nav-for="asNavFor1">
         <div v-for="(slide, index) in slides" :key="index" class="slide" :class="`slide--${index}`">
-          <img :src="slide" />
+          <img v-lazy="slide" />
         </div>
       </agile>
       <agile ref="thumbnails" class="thumbnails" :options="options2" :as-nav-for="asNavFor2">
         <div v-for="(slide, index) in slides" :key="index" class="slide slide--thumbnail" :class="`slide--${index}`" @click="$refs.thumbnails.goTo(index)">
-          <img :src="slide" />
+          <img v-lazy="slide" />
         </div>
         <template slot="prevButton">
           <Picture fileName="arrow-left" />
@@ -79,7 +79,21 @@ export default {
         'https://ywc16.ywc.in.th/images/gallery/ywc15_new/4.jpg',
         'https://ywc16.ywc.in.th/images/gallery/ywc15_new/5.jpg',
         'https://ywc16.ywc.in.th/images/gallery/ywc15_new/6.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/7.jpg'
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/7.jpg',
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/8.jpg',
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/9.jpg',
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/10.jpg',
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/11.jpg',
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/12.jpg',
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/13.jpg',
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/14.jpg',
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/15.jpg',
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/16.jpg',
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/17.jpg',
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/18.jpg',
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/19.jpg',
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/20.jpg',
+        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/21.jpg'
       ]
     }
   },
@@ -93,6 +107,10 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+img
+  background: url(~assets/images/loading.svg) no-repeat
+  background-size: 64px
+  background-position: center
 .main 
   max-width: 720px
   margin: 0 auto
