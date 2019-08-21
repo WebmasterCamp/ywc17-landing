@@ -56,6 +56,7 @@ const Container = styled('div', containerProps)`
   right: 0;
   bottom: 0;
   z-index: 1;
+  background: black;
   background: ${props => color[props.color].gradientDarker};
   padding: 32px 24px 0;
   text-align: left;
@@ -139,6 +140,7 @@ const defaultButton = css`
   border: none;
   outline: none;
   cursor: pointer;
+  user-select: none;
 `
 
 const BackButton = styled('button', withColorProps)`
@@ -168,6 +170,7 @@ const RegisterButton = styled('a', withColorProps)`
   text-decoration: none;
   border-radius: 1000px;
   height: 48px;
+  background: ${props => color[props.color].darker};
   background: ${props => color[props.color].gradient};
   color: ${props => props.color === 'yellow' ? 'black' : 'white'};
 `
