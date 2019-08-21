@@ -80,6 +80,9 @@ const Container = styled('div', containerProps)`
   .content h3 {
     font-family: 'Maledpan';
   }
+  .content p {
+    margin-bottom: 50px;
+  }
 
 `
 
