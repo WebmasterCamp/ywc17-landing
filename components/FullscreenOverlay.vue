@@ -3,7 +3,7 @@
     <Header>
       <Title>{{ title }}</Title>
       <Count :color="color">
-        <span>ยอดสมัคร</span>
+        <span>ยอดผู้สมัคร</span>
         <p>{{ count }} คน</p>
       </Count>
     </Header>
@@ -68,7 +68,8 @@ const Container = styled('div', containerProps)`
 
   .content {
     height: calc(90% - 130px);
-    overflow-y: scroll;
+    overflow: hidden;
+    overflow-y: auto;
   }
   .content p, .content li{
     font-weight: 300;
@@ -76,12 +77,17 @@ const Container = styled('div', containerProps)`
   .content ol {
     padding-left: 24px;
   }
+  .content h3 {
+    font-family: 'Maledpan';
+  }
 
 `
 
 const Header = styled.div`
   display: grid;
   grid-template-columns: auto 100px;
+
+  font-family: 'Maledpan';
 `
 
 const Title = styled.h1`
@@ -112,6 +118,8 @@ const BottomMenu = styled.div`
   right: 0;
   height: 72px;
   padding: 16px 24px;
+  
+  font-family: 'Maledpan';
 
   display: grid;
   grid-template-columns: 108px auto;
@@ -122,6 +130,7 @@ const BottomMenu = styled.div`
 const defaultButton = css`
   width: 100%;
   height: 100%;
+  font-family: 'Maledpan';
   font-weight: bold;
   font-size: 18px;
   border: none;
@@ -157,7 +166,7 @@ const RegisterButton = styled('a', withColorProps)`
   border-radius: 1000px;
   height: 48px;
   background: ${props => color[props.color].gradient};
-  color: white;
+  color: ${props => props.color === 'yellow' ? 'black' : 'white'};
 `
 
 export default Vue.extend({
