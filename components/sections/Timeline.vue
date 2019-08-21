@@ -47,7 +47,7 @@ const TimelineIcon = styled('div', { code: String, active: Boolean })`
 const TimelineName = styled.h3`
   font-family: 'Maledpan';
   font-size: 20px;
-  color: ${color.main};
+  color: ${color.primary};
   margin-bottom: 0;
 `
 const Icon = styled(Picture)`

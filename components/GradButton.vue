@@ -1,5 +1,5 @@
 <template>
-  <StyledBorder :color="`${theme}`">
+  <StyledBorder :color="`${theme}`" @click="$emit('click')">
     <StyledBtn :color="`${theme}`">
       <StyledText :color="`${theme}`">
         <slot />
@@ -12,17 +12,19 @@
 import styled from 'vue-styled-components'
 import color from '~/utils/color'
 const BtnProps = { color: String }
-const StyledBorder = styled('div', BtnProps)`
+const StyledBorder = styled('button', BtnProps)`
   display: inline-block;
   max-width: 160px;
   padding: 2px;
   position: relative;
   border-radius: 1000px;
+  border: none;
+  outline: none;
 
   cursor: pointer;
 
-  background: ${props => color[props.color]};
-  background: linear-gradient(${props => color.gradient[props.color]});
+  background: ${props => color[props.color].darker};
+  background: ${props => color[props.color].gradient};
 `
 const StyledBtn = styled('div', BtnProps)`
   background: black;
@@ -32,7 +34,7 @@ const StyledBtn = styled('div', BtnProps)`
   user-select: none;
 
   &:hover {
-    background: linear-gradient(${props => color.gradient[props.color]});
+    background: ${props => color[props.color].gradient};
   }
   &:hover > span {
     color: black;
@@ -45,8 +47,8 @@ const StyledText = styled('span', BtnProps)`
   font-family: 'Maledpan';
   font-size: 18px;
   font-weight: bold;
-  color: ${props => color[props.color]};
-  background: -webkit-linear-gradient(${props => color.gradient[props.color]});
+  color: ${props => color[props.color].darker};
+  background: ${props => color[props.color].gradient};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `
