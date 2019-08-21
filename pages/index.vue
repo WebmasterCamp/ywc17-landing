@@ -4,6 +4,7 @@
     <WhatIsYWC />
     <Majors />
     <Timeline />
+    <Sponsor />
     <QA />
     <FollowUs />
   </div>
@@ -21,7 +22,8 @@ export default {
     Timeline,
     Majors: () => import('~/components/sections/Majors'),
     QA: () => import('~/components/sections/QA'),
-    FollowUs: () => import('~/components/sections/FollowUs')
+    FollowUs: () => import('~/components/sections/FollowUs'),
+    Sponsor: () => import('~/components/sections/Sponsor')
   }
 }
 </script>

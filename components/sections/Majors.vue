@@ -121,7 +121,7 @@ const MajorsContainer = styled.div`
   grid-template-columns: repeat(2, 50%);
   grid-row-gap: 50px;
 
-  @media screen and (min-width: 376px) {
+  @media screen and (min-width: 768px) {
     grid-template-columns: repeat(4, auto);
   }
 `

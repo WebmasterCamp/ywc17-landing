@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="sponsors">
-      <SponsorBadge />
+      <SponsorBadge fileName="webmaster-association" />
       <SponsorBadge />
       <SponsorBadge />
       <SponsorBadge />
@@ -55,7 +55,7 @@ export default Vue.extend({
     grid-template-columns: repeat(2, 50%);
     justify-items: center;
     grid-row-gap: 20px;
-    @media screen and (min-width: 376px) {   
+    @media screen and (min-width: 576px) {
       grid-template-columns: repeat(4, 25%);
       max-width: 750px;
       margin: auto;
