@@ -58,13 +58,17 @@ export default {
   },
   props: {
     size: {
-      type: String
+      type: String,
+      default: 'md'
     },
     fileName: {
       type: String,
       default: 'webmaster-association'
     },
-    link: String
+    link: {
+      type: String,
+      default: '#'
+    }
   },
   computed: {
     image () {

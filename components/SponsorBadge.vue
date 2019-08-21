@@ -14,7 +14,10 @@ export default Vue.extend({
       type: String,
       default: 'webmaster-association'
     },
-    link: String
+    link: {
+      type: String,
+      default: '#'
+    }
   },
   computed: {
     image () {
