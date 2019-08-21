@@ -5,25 +5,26 @@
     <Majors />
     <Timeline />
     <Gallery />
+    <Sponsor />
     <QA />
     <FollowUs />
   </div>
 </template>
 
 <script>
-import WhatIsYWC from '~/components/sections/WhatIsYWC.vue'
-import Majors from '~/components/sections/Majors.vue'
+import WhatIsYWC from '~/components/sections/WhatIsYWC'
+import Hero from '~/components/sections/Hero'
 import Timeline from '~/components/sections/Timeline.vue'
-
 export default {
   components: {
-    Hero: () => import('~/components/sections/Hero'),
+    Hero,
     WhatIsYWC,
-    Majors,
     Timeline,
-    Gallery: () => import('~/components/sections/Gallery'),
+    Majors: () => import('~/components/sections/Majors'),
     QA: () => import('~/components/sections/QA'),
-    FollowUs: () => import('~/components/sections/FollowUs')
+    FollowUs: () => import('~/components/sections/FollowUs'),
+    Sponsor: () => import('~/components/sections/Sponsor'),
+    Gallery: () => import('~/components/sections/Gallery')
   }
 }
 </script>
