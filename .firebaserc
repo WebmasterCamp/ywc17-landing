@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "ywc17-landing"
+  },
+  "targets": {
+    "ywc17-landing": {
+      "hosting": {
+        "landing": [
+          "ywc17-landing"
+        ],
+        "landing-dev": [
+          "ywc17-landing-dev"
+        ]
+      }
+    }
   }
 }
