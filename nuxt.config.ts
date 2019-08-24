@@ -44,6 +44,8 @@ const config = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/vue-agile', ssr: false },
+    { src: '~/plugins/vue-lazyload', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -72,6 +74,11 @@ const config = {
   ** Build configuration
   */
   build: {
+    // Fix ES6 for IE11
+    transpile: [
+      /(.+)(vue\-agile\/src\/)(.+)(\.js)$/, // Transpile Unix paths
+      /(.+)(vue\-agile\\src\\)(.+)(\.js)$/ // Transpile Windows paths
+    ],
     /*
     ** You can extend webpack config here
     */

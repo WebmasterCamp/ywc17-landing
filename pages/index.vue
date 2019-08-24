@@ -4,6 +4,7 @@
     <WhatIsYWC />
     <Majors />
     <Timeline />
+    <Gallery />
     <Sponsor />
     <QA />
     <FollowUs />
@@ -14,7 +15,6 @@
 import WhatIsYWC from '~/components/sections/WhatIsYWC'
 import Hero from '~/components/sections/Hero'
 import Timeline from '~/components/sections/Timeline.vue'
-
 export default {
   components: {
     Hero,
@@ -23,7 +23,8 @@ export default {
     Majors: () => import('~/components/sections/Majors'),
     QA: () => import('~/components/sections/QA'),
     FollowUs: () => import('~/components/sections/FollowUs'),
-    Sponsor: () => import('~/components/sections/Sponsor')
+    Sponsor: () => import('~/components/sections/Sponsor'),
+    Gallery: () => import('~/components/sections/Gallery')
   }
 }
 </script>
