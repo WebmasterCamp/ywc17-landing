@@ -1,7 +1,7 @@
 <template>
   <div class="circle">
-    <a href="https://ywc.in.th" target="_blank">
-      <img :src="image" :alt="fileName">
+    <a :href="link" target="_blank">
+      <Picture v-if="fileName != ''" :fileName="fileName" :alt="alt" />
     </a>
   </div>
 </template>
@@ -9,14 +9,21 @@
 <script>
 import Vue from 'vue'
 export default Vue.extend({
+  components: {
+    Picture: () => import('~/components/Picture')
+  },
   props: {
     fileName: {
       type: String,
-      default: 'webmaster-association'
+      default: ''
     },
     link: {
       type: String,
       default: '#'
+    },
+    alt: {
+      type: String,
+      default: ''
     }
   },
   computed: {
