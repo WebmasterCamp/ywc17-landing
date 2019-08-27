@@ -81,6 +81,11 @@ const Container = styled('div', containerProps)`
     bottom: 20px;
     opacity: 0.3;
     background-size: 100%;
+
+    @media screen and (min-width: 768px) {
+      background-size: 500px;
+      background-position: bottom right;
+    }
   }
 
   ${props => props.exiting && `
