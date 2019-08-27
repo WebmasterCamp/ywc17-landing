@@ -64,7 +64,7 @@ export default {
           },
           
           {
-            breakpoint: 1000,
+            breakpoint: 1008,
             settings: {
               navButtons: true
             }
@@ -153,10 +153,10 @@ img
       transform: translateY(-50%)
 
       &--prev
-        left: -35px
+        left: -30px
   
       &--next
-        right: -35px
+        right: -30px
 
     &:hover
       color: #888
