@@ -63,6 +63,14 @@ const config = {
       id: 'UA-42284958-1'
     }]
     */
+    ['@nuxtjs/google-gtag', {
+      id: 'UA-42284958-1'
+    }],
+    ['nuxt-facebook-pixel-module', {
+      track: 'PageView',
+      pixelId: '852229261558709',
+      disabled: false
+    }]
   ],
   /*
   ** Axios module configuration
