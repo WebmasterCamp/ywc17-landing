@@ -9,10 +9,10 @@
       </div>
     </div>
     <div class="sponsors">
-      <SponsorBadge fileName="webmaster-association" />
-      <SponsorBadge />
-      <SponsorBadge />
-      <SponsorBadge />
+      <SponsorBadge fileName="sponsors/vip/exxon-mobil" alt="exxon mobil" link="https://www.facebook.com/exxonmobilthailand/" />
+      <SponsorBadge fileName="sponsors/vip/webmaster-association" alt="webmaster association" link="https://www.webmaster.or.th/" />
+      <SponsorBadge fileName="sponsors/vip/it-kmitl" alt="it kmitl" link="https://www.it.kmitl.ac.th/" />
+      <SponsorBadge fileName="" alt="" link="https://facebook.com" />
     </div>
   </section>
 </template>

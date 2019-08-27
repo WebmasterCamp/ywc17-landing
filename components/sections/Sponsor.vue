@@ -2,28 +2,120 @@
   <section>
     <SectionHead title="sponsor" />
     <div class="sponsor-vip-wrapper">
-      <SponsorCircle size="lg" />
-      <SponsorCircle size="lg" />
-      <SponsorCircle size="lg" />
-      <SponsorCircle size="lg" />
+      <SponsorCircle
+        size="lg"
+        fileName="sponsors/vip/exxon-mobil"
+        link="https://www.facebook.com/exxonmobilthailand/"
+        alt="exxon mobil"
+      />
+      <SponsorCircle
+        size="lg"
+        fileName="sponsors/vip/webmaster-association"
+        link="https://www.webmaster.or.th/"
+        alt="webmaster association"
+      />
+      <SponsorCircle
+        size="lg"
+        fileName="sponsors/vip/it-kmitl"
+        link="https://www.it.kmitl.ac.th/"
+        alt="it kmitl"
+      />
+      <SponsorCircle
+        size="lg"
+        fileName=""
+        link="#"
+        alt=""
+      />
     </div>
     <div class="sponsor-gold-wrapper">
-      <SponsorCircle size="md" />
-      <SponsorCircle size="md" />
-      <SponsorCircle size="md" />
-      <SponsorCircle size="md" />
-      <SponsorCircle size="md" />
-      <SponsorCircle size="md" />
+      <SponsorCircle
+        size="md"
+        fileName="sponsors/vip/webmaster-association"
+        link="#"
+        alt="temp"
+      />
+      
+      <SponsorCircle
+        size="md"
+        fileName=""
+        link="#"
+        alt=""
+      />
+      <SponsorCircle
+        size="md"
+        fileName=""
+        link="#"
+        alt=""
+      />
+      <SponsorCircle
+        size="md"
+        fileName=""
+        link="#"
+        alt=""
+      />
+      <SponsorCircle
+        size="md"
+        fileName=""
+        link="#"
+        alt=""
+      />
+      <SponsorCircle
+        size="md"
+        fileName=""
+        link="#"
+        alt=""
+      />
+     
     </div>
     <div class="sponsor-silver-wrapper">
-      <SponsorCircle size="sm" />
-      <SponsorCircle size="sm" />
-      <SponsorCircle size="sm" />
-      <SponsorCircle size="sm" />
-      <SponsorCircle size="sm" />
-      <SponsorCircle size="sm" />
-      <SponsorCircle size="sm" />
-      <SponsorCircle size="sm" />
+      <SponsorCircle
+        size="sm"
+        fileName="sponsors/vip/webmaster-association"
+        link="#"
+        alt="temp"
+      />
+      <SponsorCircle
+        size="sm"
+        fileName=""
+        link="#"
+        alt="temp"
+      />
+      <SponsorCircle
+        size="sm"
+        fileName=""
+        link="#"
+        alt="temp"
+      />
+      <SponsorCircle
+        size="sm"
+        fileName=""
+        link="#"
+        alt="temp"
+      />
+      <SponsorCircle
+        size="sm"
+        fileName=""
+        link="#"
+        alt="temp"
+      />
+      <SponsorCircle
+        size="sm"
+        fileName=""
+        link="#"
+        alt="temp"
+      />
+      <SponsorCircle
+        size="sm"
+        fileName=""
+        link="#"
+        alt="temp"
+      />
+      <SponsorCircle
+        size="sm"
+        fileName=""
+        link="#"
+        alt="temp"
+      />
     </div>
   </section>
 </template>

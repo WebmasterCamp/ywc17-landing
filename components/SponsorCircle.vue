@@ -1,7 +1,7 @@
 <template>
   <SponsorBadge :size="size">
-    <a href="https://www.dek-d.com" target="_blank">
-      <img :src="image" alt="">
+    <a :href="link" target="_blank">
+      <Picture v-if="fileName != ''" :fileName="fileName" :alt="alt" />
     </a>
   </SponsorBadge>
 </template>
@@ -54,7 +54,8 @@ const SponsorBadge = styled('div', circleProps)`
 
 export default {
   components: {
-    SponsorBadge
+    SponsorBadge,
+    Picture: () => import('~/components/Picture')
   },
   props: {
     size: {
@@ -63,11 +64,15 @@ export default {
     },
     fileName: {
       type: String,
-      default: 'webmaster-association'
+      default: ''
     },
     link: {
       type: String,
       default: '#'
+    },
+    alt: {
+      type: String,
+      default: ''
     }
   },
   computed: {
