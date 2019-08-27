@@ -1,14 +1,16 @@
 <template>
   <Container v-if="show" :color="color" :exiting="exiting">
-    <Header>
-      <Title>{{ title }}</Title>
-      <Count :color="color">
-        <span>ยอดผู้สมัคร</span>
-        <p>{{ count }} คน</p>
-      </Count>
-    </Header>
-    <div class="content">
-      <slot name="content" />
+    <div class="overlay-content">
+      <Header>
+        <Title>{{ title }}</Title>
+        <Count :color="color">
+          <span>ยอดผู้สมัคร</span>
+          <p>{{ count }} คน</p>
+        </Count>
+      </Header>
+      <div class="content">
+        <slot name="content" />
+      </div>
     </div>
     <BottomMenu>
       <BackButton
@@ -29,6 +31,13 @@
 import Vue from 'vue'
 import styled, { css, keyframes } from 'vue-styled-components'
 import color from '~/utils/color'
+
+const majorImage = {
+  green: '/images/major/content.svg',
+  yellow: '/images/major/design.svg',
+  pink: '/images/major/marketing.svg',
+  blue: '/images/major/developer.svg'
+}
 
 const withColorProps = {
   color: String
@@ -62,15 +71,36 @@ const Container = styled('div', containerProps)`
   text-align: left;
   transition: all 0.3s;
   animation: ${fadein} 0.5s;
+  &:before {
+    content: '';
+    background: url('${props => majorImage[props.color]}') no-repeat bottom center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    opacity: 0.3;
+    background-size: 100%;
+  }
 
   ${props => props.exiting && `
     animation: ${fadeout} 0.5s;
   `};
 
+  .overlay-content {
+    padding: 32px 24px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
   .content {
-    height: calc(90% - 130px);
+    height: calc(90% - 90px);
     overflow: hidden;
     overflow-y: auto;
+    z-index: 1;
   }
   .content p, .content li{
     font-weight: 300;
@@ -116,11 +146,11 @@ const Count = styled('div', withColorProps)`
 
 const BottomMenu = styled.div`
   background-color: #222;
+  z-index: 1;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 72px;
   padding: 16px 24px;
   
   font-family: 'Maledpan';
@@ -129,6 +159,7 @@ const BottomMenu = styled.div`
   grid-template-columns: 108px auto;
   grid-column-gap: 12px;
   align-items: center;
+  box-sizing: border-box;
 `
 
 const defaultButton = css`
