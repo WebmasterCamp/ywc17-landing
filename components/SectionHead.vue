@@ -7,36 +7,22 @@
 <script>
 import styled from 'vue-styled-components'
 const Container = styled.div`
-  width: 335px;
-  height: 112px;
-  max-width: 100%;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  background-color: #E1426F;
-  background: url(${require('~/assets/images/sectionHead.png')}) no-repeat center;
-  background-size: 100% 100%;
-
+  height: 143px;
+  color: black;
+  -webkit-text-stroke: 1.8px #6C6C6C;
+  text-stroke: 1.8px #6C6C6C;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-weight: bold;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 74px;
+  font-size: 80px;
+  line-height: 143px;
 
   text-align: center;
+  letter-spacing: 0.4em;
   text-transform: uppercase;
 
-  color: #FFFFFF;
-
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  @media(max-width:768px) {
-    & {
-      width: 287px;
-      height: 96px;
-      font-size: 24px;
-    }
+  @media screen and (max-width:768px) {
+    font-size: 50px;
   }
 `
 export default {
