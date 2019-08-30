@@ -9,7 +9,7 @@
 <script>
 import styled from 'vue-styled-components'
 const Footer = styled.div`
-  font-family: Montserrat;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 14px;
   text-align: center;
   p {

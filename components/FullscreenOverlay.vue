@@ -1,30 +1,33 @@
 <template>
-  <Container v-if="show" :color="color" :exiting="exiting">
-    <div class="overlay-content">
-      <Header>
-        <Title>{{ title }}</Title>
-        <Count :color="color">
-          <span>ยอดผู้สมัคร</span>
-          <p>{{ count }} คน</p>
-        </Count>
-      </Header>
-      <div class="content">
-        <slot name="content" />
+  <div>
+    <ModalOverlay v-if="show" @click="dismiss" />
+    <Container v-if="show" :color="color" :exiting="exiting">
+      <div class="overlay-content">
+        <Header>
+          <Title>{{ title }}</Title>
+          <Count :color="color">
+            <span>ยอดผู้สมัคร</span>
+            <p>{{ count }} คน</p>
+          </Count>
+        </Header>
+        <div class="content">
+          <slot name="content" />
+        </div>
       </div>
-    </div>
-    <BottomMenu>
-      <BackButton
-        :color="color"
-        @click="dismiss"
-      >
-        <span class="arrow-icon"></span>
-        ย้อนกลับ
-      </BackButton>
-      <RegisterButton :color="color" href="https://register.ywc.in.th">
-        สมัครสาขานี้
-      </RegisterButton>
-    </BottomMenu>
-  </Container>
+      <BottomMenu>
+        <BackButton
+          :color="color"
+          @click="dismiss"
+        >
+          <span class="arrow-icon"></span>
+          ย้อนกลับ
+        </BackButton>
+        <RegisterButton :color="color" href="https://register.ywc.in.th">
+          สมัครสาขานี้
+        </RegisterButton>
+      </BottomMenu>
+    </Container>
+  </div>
 </template>
 
 <script>
@@ -58,13 +61,37 @@ const fadeout = keyframes`
   to { top: 100%; }
 `
 
-const Container = styled('div', containerProps)`
+const ModalOverlay = styled('div')`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 1;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  transition: all 0.3s;
+  @media screen and (min-width:768px) {
+    display: block;
+  }
+`
+
+const Container = styled('div', containerProps)`
+  @media screen and (min-width:768px) {
+    width: 70%;
+    height: 70vh;
+    min-width: 600px;
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: 12vh;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
   background: black;
   background: ${props => color[props.color].gradientDarker};
   padding: 32px 24px 0;
@@ -102,7 +129,7 @@ const Container = styled('div', containerProps)`
   }
 
   .content {
-    height: calc(90% - 90px);
+    height: calc(90% - 130px);
     overflow: hidden;
     overflow-y: auto;
     z-index: 1;
@@ -114,7 +141,7 @@ const Container = styled('div', containerProps)`
     padding-left: 24px;
   }
   .content h3 {
-    font-family: 'Maledpan';
+    font-family: 'Maledpan', 'Sarabun';
   }
   .content p {
     margin-bottom: 50px;
@@ -126,7 +153,7 @@ const Header = styled.div`
   display: grid;
   grid-template-columns: auto 100px;
 
-  font-family: 'Maledpan';
+  font-family: 'Maledpan', 'Sarabun', Arial, Helvetica, sans-serif;
 `
 
 const Title = styled.h1`
@@ -151,14 +178,14 @@ const Count = styled('div', withColorProps)`
 
 const BottomMenu = styled.div`
   background-color: #222;
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 16px 24px;
   
-  font-family: 'Maledpan';
+  font-family: 'Maledpan', 'Sarabun';
 
   display: grid;
   grid-template-columns: 108px auto;
@@ -170,7 +197,7 @@ const BottomMenu = styled.div`
 const defaultButton = css`
   width: 100%;
   height: 100%;
-  font-family: 'Maledpan';
+  font-family: 'Maledpan', 'Sarabun';
   font-weight: bold;
   font-size: 18px;
   border: none;
@@ -213,6 +240,7 @@ const RegisterButton = styled('a', withColorProps)`
 
 export default Vue.extend({
   components: {
+    ModalOverlay,
     Container,
     Header,
     Title,
@@ -241,6 +269,15 @@ export default Vue.extend({
   mounted () {
     this.title = this.$parent.title
     this.color = this.$parent.color
+    
+    if (process.client) {
+      const vm = this
+      document.addEventListener('keyup', function (e) {
+        if (e.keyCode === 27) {
+          vm.dismiss()
+        }
+      })
+    }
   },
   methods: {
     dismiss () {
