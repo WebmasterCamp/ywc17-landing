@@ -12,14 +12,17 @@ import color from '~/utils/color'
 
 const size = {
   lg: {
+    picSize: 100,
     smallMobile: 120,
     mobile: 160
   },
   md: {
+    picSize: 80,
     smallMobile: 105,
     mobile: 128
   },
   sm: {
+    picSize: 64,
     smallMobile: 90,
     mobile: 102 
   }
@@ -44,6 +47,13 @@ const SponsorBadge = styled('div', circleProps)`
     align-items: center;
     width: 100%;
     height: 100%;
+    
+    picture {
+      width: ${props => size[props.size].picSize}px;
+      img {
+        width: 100%;
+      }
+    }
   }
 
   @media screen and (min-width: 375px) {
