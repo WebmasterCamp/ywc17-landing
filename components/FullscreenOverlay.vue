@@ -141,7 +141,7 @@ const Container = styled('div', containerProps)`
     padding-left: 24px;
   }
   .content h3 {
-    font-family: 'Maledpan';
+    font-family: 'Maledpan', 'Sarabun';
   }
   .content p {
     margin-bottom: 50px;
@@ -153,7 +153,7 @@ const Header = styled.div`
   display: grid;
   grid-template-columns: auto 100px;
 
-  font-family: 'Maledpan';
+  font-family: 'Maledpan', 'Sarabun', Arial, Helvetica, sans-serif;
 `
 
 const Title = styled.h1`
@@ -185,7 +185,7 @@ const BottomMenu = styled.div`
   right: 0;
   padding: 16px 24px;
   
-  font-family: 'Maledpan';
+  font-family: 'Maledpan', 'Sarabun';
 
   display: grid;
   grid-template-columns: 108px auto;
@@ -197,7 +197,7 @@ const BottomMenu = styled.div`
 const defaultButton = css`
   width: 100%;
   height: 100%;
-  font-family: 'Maledpan';
+  font-family: 'Maledpan', 'Sarabun';
   font-weight: bold;
   font-size: 18px;
   border: none;

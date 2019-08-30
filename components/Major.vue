@@ -25,6 +25,7 @@ const TitleProps = { color: String }
 
 const Title = styled('div', TitleProps)`
   color: ${props => color[props.color].normal};
+  font-family: 'Maledpan', Arial, Helvetica, sans-serif;
   font-weight: bold;
   margin: 20px 0 40px;
 `

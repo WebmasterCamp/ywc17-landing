@@ -44,7 +44,7 @@ const StyledBtn = styled('div', BtnProps)`
   }
 `
 const StyledText = styled('span', BtnProps)`
-  font-family: 'Maledpan';
+  font-family: 'Maledpan', 'Sarabun';
   font-size: 18px;
   font-weight: bold;
   color: ${props => color[props.color].darker};

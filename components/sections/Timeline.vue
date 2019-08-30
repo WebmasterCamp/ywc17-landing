@@ -45,7 +45,7 @@ const TimelineIcon = styled('div', { code: String, active: Boolean })`
   background: url(${(props) => { return require('~/assets/images/timeline-item' + (props.active ? '-active' : '') + '.png') }}) no-repeat center;
 `
 const TimelineName = styled.h3`
-  font-family: 'Maledpan';
+  font-family: 'Maledpan', 'Sarabun';
   font-size: 20px;
   color: ${color.primary};
   margin-bottom: 0;

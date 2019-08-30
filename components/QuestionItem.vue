@@ -31,7 +31,7 @@ const QBox = styled.div`
   border-bottom: 1px solid #622738;
   padding: 24px 16px;
 
-  font-family: 'Maledpan';
+  font-family: 'Maledpan', 'Sarabun';
   font-size: 20px;
   line-height: 36px;
   text-align: left;
