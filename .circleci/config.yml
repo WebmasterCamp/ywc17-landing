@@ -28,7 +28,7 @@ jobs:
       - run:
           name: Build
           command: |
-            yarn build
+            yarn generate
       - run:
           name: Deploy
           command: |
