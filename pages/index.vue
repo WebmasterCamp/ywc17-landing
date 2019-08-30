@@ -8,6 +8,7 @@
     <Sponsor />
     <QA />
     <FollowUs />
+    <Footer />
   </div>
 </template>
 
@@ -24,7 +25,8 @@ export default {
     QA: () => import('~/components/sections/QA'),
     FollowUs: () => import('~/components/sections/FollowUs'),
     Sponsor: () => import('~/components/sections/Sponsor'),
-    Gallery: () => import('~/components/sections/Gallery')
+    Gallery: () => import('~/components/sections/Gallery'),
+    Footer: () => import('~/components/sections/Footer')
   }
 }
 </script>
