@@ -1,14 +1,16 @@
 <template>
-  <div class="container">
+  <div>
     <Hero />
-    <WhatIsYWC />
-    <Majors />
-    <Timeline />
-    <Gallery />
-    <Sponsor />
-    <QA />
-    <FollowUs />
-    <Footer />
+    <div class="container">
+      <WhatIsYWC />
+      <Majors />
+      <Timeline />
+      <Gallery />
+      <Sponsor />
+      <QA />
+      <FollowUs />
+      <Footer />
+    </div>
   </div>
 </template>
 
