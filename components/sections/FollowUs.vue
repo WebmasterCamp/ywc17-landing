@@ -87,4 +87,7 @@ export default {
 a {
   text-decoration: none;
 }
+section {
+  margin-top: 70px;
+}
 </style>

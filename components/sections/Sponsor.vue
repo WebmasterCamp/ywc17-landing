@@ -80,7 +80,11 @@ export default {
   }
 }
 </script>
-
+<style scoped>
+section {
+  margin-top: 70px;
+}
+</style>
 <style lang="scss" scoped>
 section {
   padding-bottom: 60px;
