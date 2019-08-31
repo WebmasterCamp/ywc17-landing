@@ -1,6 +1,7 @@
 <template>
   <Container>
     {{ title }}
+    <slot />
   </Container>
 </template>
 
@@ -32,7 +33,7 @@ export default {
     Container
   },
   props: {
-    title: { type: String, default: 'Heading' }
+    title: { type: String, default: '' }
   }
 }
 </script>
