@@ -1,12 +1,10 @@
 <template>
   <div>
-    <div :class="`major ${color}`" :style="imageStyle">
-      <img
-        class="major-image"
-        src="~assets/images/register/web-developer.png"
-        alt=""
-        @click="openDetail"
-      >
+    <div :class="`major ${color}`" :style="imageStyle" @click="openDetail">
+      <div
+        class="major-image" 
+        :style="{backgroundImage: `url(${require(`~/assets/images/register/web-${title.toLowerCase()}.png`)})`}"
+        :alt="`Web ${title}`" />
       <div :class="`title ${color}`">
         <span class="outline-text">Web</span>
         {{ title }}
@@ -63,10 +61,14 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+.blackout {
+  filter: grayscale(100%);
+}
 .major {
+  cursor: pointer;
   position: relative;
   width: 195px;
-  transition: all 0.3s;
+  /* transition: all 0.3s; */
 
   &.blue {
     top: 50px;
@@ -77,9 +79,16 @@ export default Vue.extend({
   &.green {
     top: 280px;
   }
+
+  &:hover .major-image {
+    background-size: 120% 120%;
+  }
 }
 .major-image {
   width: 100%;
+  height: 262px;
+  background-size: 100% 100%;
+  transition: background-size 0.15s ease-in;
 }
 .title {
   width: 100%;
@@ -100,11 +109,11 @@ export default Vue.extend({
     bottom: -68px;
   }
   &.yellow {
-    top: -70px;
-    text-align: right;
+    bottom: -25px;
   }
   &.pink {
-    bottom: -66px;
+    top: -50px;
+    text-align: right;
   }
   &.green {
     top: -50px;
