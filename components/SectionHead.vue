@@ -8,7 +8,6 @@
 import styled from 'vue-styled-components'
 const strokeColor = '#6C6C6C'
 const Container = styled.div`
-  width: 335px;
   height: 112px;
   max-width: 100%;
   margin: 0 auto;
@@ -27,7 +26,7 @@ const Container = styled.div`
 
   color: #000;
   text-shadow: -1px 0 ${strokeColor}, 0 1px ${strokeColor}, 1px 0 ${strokeColor}, 0 -1px ${strokeColor};
-  letter-spacing: 30px;
+  letter-spacing: 24px;
 
   @media(max-width:768px) {
     & {

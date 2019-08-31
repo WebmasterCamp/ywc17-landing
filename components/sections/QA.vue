@@ -1,6 +1,6 @@
 <template>
   <section>
-    <SectionHead title="Q & A" />
+    <SectionHead title="Q&A" />
     <QuestionZone>
       <div v-for="(a, q) in questions" :key="q" style="display:inline-grid;">
         <QuestionItem :qa="{q: q, a: a}" />
