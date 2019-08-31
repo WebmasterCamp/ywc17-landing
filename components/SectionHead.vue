@@ -17,6 +17,11 @@ const sizes = {
     fontSize: 60,
     fontSmallSize: 40,
     height: 144
+  },
+  timeline: {
+    fontSize: 60,
+    fontSmallSize: 40,
+    height: 84
   }
 }
 const strokeColor = '#6C6C6C'
@@ -29,7 +34,7 @@ const Container = styled('div', { align: String, size: String })`
   font-style: normal;
   font-weight: bold;
   font-size: ${props => sizes[props.size].fontSize}px;
-  line-height: 100px;
+  line-height: 60px;
 
   text-align: ${props => props.align};
   letter-spacing: 0.4em;
