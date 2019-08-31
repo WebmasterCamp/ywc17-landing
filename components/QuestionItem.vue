@@ -97,16 +97,13 @@ export default {
     ToggleBtn
   },
   props: {
-    qa: { type: Object, default: () => { return { q: 'Question', a: 'Answer' } } }
-  },
-  data () {
-    return {
-      showAns: false
-    }
+    qa: { type: Object, default: () => { return { q: 'Question', a: 'Answer' } } },
+    showAns: { type: Boolean, default: false },
+    selectQ: { type: Function, default: () => { return function () {} } }
   },
   methods: {
     toggleAns () {
-      this.showAns = !this.showAns
+      this.selectQ(this.qa.q)
     }
   }
 }

@@ -36,16 +36,12 @@ export default Vue.extend({
 
 <style lang="scss">
   @import '~/assets/css/global.scss';
-  $small-size: 130px;
-  $normal-size: 144px;
+  $small-size: 70px;
+  $normal-size: 90px;
 
   .circle {
-    border-radius: 50%;
     width: $small-size;
     height: $small-size;
-    background-color: white;
-    border: 4px solid $primary-color;
-    overflow: hidden;
 
     a {
       display: flex;
@@ -53,9 +49,14 @@ export default Vue.extend({
       align-items: center;
       width: 100%;
       height: 100%;
+      picture {
+        img {
+          width: 100%;
+        }
+      }
     }
 
-    @media screen and (min-width: 375px) {  
+    @media screen and (min-width: 768px) {  
       width: $normal-size;
       height: $normal-size;
     }

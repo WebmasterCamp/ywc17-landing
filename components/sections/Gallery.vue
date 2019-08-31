@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container">
     <SectionHead title="Gallery" />
     <no-ssr placeholder="Loading...">
       <agile ref="main" class="main" :options="options1" :as-nav-for="asNavFor1">
