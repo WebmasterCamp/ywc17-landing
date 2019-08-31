@@ -93,10 +93,17 @@ section {
   justify-items: center;
   grid-row-gap: 20px;
   align-items: center;
-
+  // HANDLE 3 LOGO, CAN BE REMOVED IF ADD MORE LOGO
+  @media screen and (max-width: 768px) {
+    & > div:last-child {
+      grid-column: 1 / span2;
+    }
+  }
+  //////////////////////////////////////////////////
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(3, 33%);
   }
+  
 }
 .sponsor-gold-wrapper {
   width: 80%;
