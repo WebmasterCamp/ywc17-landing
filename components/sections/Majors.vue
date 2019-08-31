@@ -3,22 +3,32 @@
     <SectionHead title="Register" style="position: sticky; top: 0;" />
     <MajorsContainer>
       <Major
-        title="Developer"
-        image="web-developer"
-        color="blue"
-        :image-style="`transform: translate3d(0, ${y1}px, 0);`"
+        title="Content"
+        image="web-content"
+        color="green"
+        :class="{blackout: selectMajor == 'content'}"
+        :image-style="`transform: translate3d(0, ${y2}px, 0);`"
+        @mouseover="hoverMajor('content')"
+        @mouseleave="hoverMajor('')"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
             :show="scope.show"
-            :count="major.developer.count"
+            :count="major.content"
           >
             <template v-slot:content>        
               <p>
+                เขียน conent
                 ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ ไม่ว่าภาษาไหน ๆ จะ html,css,js หรือนอกเหนือจากนี้
               </p>
               <h3>ตัวอย่างคำถาม</h3>
               <ol>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
                 <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
                 <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
                 <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
@@ -27,16 +37,20 @@
           </FullscreenOverlay>
         </template>
       </Major>
+      
       <Major
         title="Designer"
         image="web-designer"
         color="yellow"
+        :class="{blackout: selectMajor == 'designer'}"
         :image-style="`transform: translate3d(0, ${y2}px, 0);`"
+        @mouseover="hoverMajor('designer')"
+        @mouseleave="hoverMajor('')"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
             :show="scope.show"
-            :count="major.design.count"
+            :count="major.design"
           >
             <template v-slot:content>        
               <p>
@@ -57,12 +71,15 @@
         title="Marketing"
         image="web-marketing"
         color="pink"
+        :class="{blackout: selectMajor == 'marketing'}"
         :image-style="`transform: translate3d(0, ${y3}px, 0);`"
+        @mouseover="hoverMajor('marketing')"
+        @mouseleave="hoverMajor('')"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
             :show="scope.show"
-            :count="major.marketing.count"
+            :count="major.marketing"
           >
             <template v-slot:content>        
               <p>
@@ -80,29 +97,25 @@
         </template>
       </Major>
       <Major
-        title="Content"
-        image="web-content"
-        color="green"
-        :image-style="`transform: translate3d(0, ${y4}px, 0);`"
+        title="Developer"
+        image="web-developer"
+        color="blue"
+        :class="{blackout: selectMajor == 'developer'}"
+        :image-style="`transform: translate3d(0, ${y1}px, 0);`"
+        @mouseover="hoverMajor('developer')"
+        @mouseleave="hoverMajor('')"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
             :show="scope.show"
-            :count="major.content.count"
+            :count="major.developer"
           >
             <template v-slot:content>        
               <p>
-                เขียน conent
                 ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ ไม่ว่าภาษาไหน ๆ จะ html,css,js หรือนอกเหนือจากนี้
               </p>
               <h3>ตัวอย่างคำถาม</h3>
               <ol>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
                 <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
                 <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
                 <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
@@ -162,6 +175,7 @@ export default Vue.extend({
   },
   data () {
     return {
+      selectMajor: '',
       major: new CountMajorRegistant(),
       y1: -170,
       y2: -340,
@@ -171,7 +185,8 @@ export default Vue.extend({
     }
   },
   mounted () {
-    this.fetchCountRegistant()
+    this.$axios
+      .get('https://api.ywc.in.th/users/stat')
       .then((response) => {
         this.major = response.data
       })
@@ -189,6 +204,10 @@ export default Vue.extend({
     }
   },
   methods: {
+    hoverMajor (major) {
+      console.log(major)
+      this.selectMajor = major
+    },
     fetchCountRegistant () {
       const dumbMajor = {
         content: { count: 11 },

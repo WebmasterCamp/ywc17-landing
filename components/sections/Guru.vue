@@ -3,7 +3,7 @@
     <SectionHead title="Guru" align="left" style="height: 45px;" />
     <Guru :standalone="true">
       <GuruPic :standalone="true">
-        <Picture :fileName="`guru/${currentGuru+1}`" />
+        <Picture :fileName="`guru/${gurus[currentGuru].img}`" />
       </GuruPic>
       <h3>{{ gurus[currentGuru].name }}</h3>
       <p v-html="gurus[currentGuru].role" />
@@ -11,7 +11,7 @@
     <Gurus>
       <Guru v-for="(g, idx) in gurus" :key="`guru-${idx}`">
         <GuruPic :class="{'active': idx === currentGuru}" @click="selectGuru(idx)">
-          <Picture :fileName="`guru/${idx+1}`" :alt="g.name" />
+          <Picture :fileName="`guru/${g.img}`" :alt="g.name" />
         </GuruPic>
         <h3>{{ g.name }}</h3>
         <p v-html="g.role" />
@@ -40,6 +40,7 @@ const Gurus = styled.div`
 
   @media screen and (max-width:960px) {
     display: block;
+    white-space: nowrap;
     overflow: hidden;
     overflow-x: auto;
     text-align: left;
@@ -65,6 +66,7 @@ const Guru = styled('div', dispProp)`
     display: inline-block;
     margin: 5px;
   }` : `display: none;
+  min-height: 325px;
   @media screen and (max-width:960px) {
     display: block;
     transition: all .3s;
@@ -128,9 +130,13 @@ export default {
     return {
       currentGuru: 0,
       gurus: [
-        { name: 'วโรรส โรจนะ (โน้ต1)', role: `CEO Dek-D Interactive Co., LTD.<br>นายกสมาคมผู้ดูแลเว็บไทย` },
-        { name: 'วโรรส โรจนะ (โน้ต2)', role: `CEO Dek-D Interactive Co., LTD.<br>นายกสมาคมผู้ดูแลเว็บไทย` },
-        { name: 'วโรรส โรจนะ (โน้ต3)', role: `CEO Dek-D Interactive Co., LTD.<br>นายกสมาคมผู้ดูแลเว็บไทย` }
+        { name: 'วโรรส โรจนะ (โน้ต)', role: `CEO Dek-D Interactive Co., LTD.<br>นายกสมาคมผู้ดูแลเว็บไทย`, img: 1 },
+        { name: 'เมธปริยา คำนวนวุฒิ (ว่าน)', role: `Head of Marketing Lnw co., Ltd.`, img: 2 },
+        { name: 'เจริญ ลักษณ์เลิศกุล (เจ)', role: `Associate Director - Strategic planning หน่วยงาน Online Station (True Visions Group Co., Ltd.)`, img: 3 },
+        { name: 'คนที่หนึ่ง แสงหิรัญ (หนึ่ง)', role: `อาจารย์ประจำภาควิชาสาขาการออกแบบนิเทศศิลป์ คณะนิเทศศาสตร์ มหาวิทยาลัยอัสสัมชัญ`, img: 5 },
+        { name: 'ณปสก สันติสุนทรกูล (ปอล)', role: `COO, Dek-D Intertactive Co.,Ltd.`, img: 6 },
+        { name: 'อินทนนท์ ปัญญาโสภา (เบนซ์)', role: `ผู้ก่อตั้งเว็บไซต์ Grappik`, img: 7 },
+        { name: 'ขจร เจียรนัยพานิชย์ (เอ็ม)', role: `Executive Editor - MangoZero.com The Zero Publishing`, img: 8 }
       ]
     }
   },

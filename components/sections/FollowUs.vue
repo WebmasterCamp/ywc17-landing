@@ -56,6 +56,7 @@ const SocialBtn = styled.a`
   border-radius: 50%;
   line-height: 80px;
   user-select: none;
+  transition: all .15s;
 
   &:hover {
     color: black;
