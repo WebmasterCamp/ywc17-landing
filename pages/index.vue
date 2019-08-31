@@ -5,6 +5,7 @@
     <Majors />
     <Location />
     <Timeline />
+    <Guru />
     <Gallery />
     <Sponsor />
     <QA />
@@ -23,6 +24,7 @@ export default {
     WhatIsYWC,
     Location: () => import('~/components/sections/Location'),
     Timeline,
+    Guru: () => import('~/components/sections/Guru'),
     Majors: () => import('~/components/sections/Majors'),
     QA: () => import('~/components/sections/QA'),
     FollowUs: () => import('~/components/sections/FollowUs'),
