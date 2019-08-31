@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <SectionHead title="Follow Us" />
+    <SectionHead title="Follow Us" size="sm" />
     <Grid>
       <GridCol>
         <SocialBtn href="https://www.facebook.com/ywcth" target="_blank" title="Facebook">

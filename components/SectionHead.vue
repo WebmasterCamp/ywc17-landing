@@ -1,42 +1,44 @@
 <template>
-  <Container>
+  <Container :align="align" :size="size">
     {{ title }}
+    <slot />
   </Container>
 </template>
 
 <script>
 import styled from 'vue-styled-components'
-const Container = styled.div`
-  width: 335px;
-  height: 112px;
-  max-width: 100%;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  background-color: #E1426F;
-  background: url(${require('~/assets/images/sectionHead.png')}) no-repeat center;
-  background-size: 100% 100%;
-
+const sizes = {
+  sm: {
+    fontSize: 30,
+    fontSmallSize: 20,
+    height: 100
+  },
+  md: {
+    fontSize: 60,
+    fontSmallSize: 40,
+    height: 144
+  }
+}
+const strokeColor = '#6C6C6C'
+const Container = styled('div', { align: String, size: String })`
+  height: ${props => sizes[props.size].height}px;
+  color: black;
+  -webkit-text-stroke: 1.8px ${strokeColor};
+  text-stroke: 1.8px ${strokeColor};
   font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-weight: bold;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 74px;
+  font-size: ${props => sizes[props.size].fontSize}px;
+  line-height: 100px;
 
-  text-align: center;
+  text-align: ${props => props.align};
+  letter-spacing: 0.4em;
   text-transform: uppercase;
 
-  color: #FFFFFF;
+  user-select: none;
 
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  @media(max-width:768px) {
-    & {
-      width: 287px;
-      height: 96px;
-      font-size: 24px;
-    }
+  @media screen and (max-width:768px) {
+    font-size: ${props => sizes[props.size].fontSmallSize}px;
   }
 `
 export default {
@@ -44,7 +46,9 @@ export default {
     Container
   },
   props: {
-    title: { type: String, default: 'Heading' }
+    title: { type: String, default: '' },
+    size: { type: String, default: 'md' },
+    align: { type: String, default: 'center' }
   }
 }
 </script>

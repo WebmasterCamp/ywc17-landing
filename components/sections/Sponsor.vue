@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <SectionHead title="sponsor" />
+    <SectionHead title="Sponsors" />
     <div class="sponsor-vip-wrapper">
       <SponsorCircle
         size="lg"
@@ -65,7 +65,6 @@
         link="#"
         alt=""
       />
-     
     </div>
     <div class="sponsor-silver-wrapper">
       <SponsorCircle

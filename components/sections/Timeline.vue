@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <SectionHead title="Timeline" />
+    <SectionHead align="right" class="to-center">Time<br>line</SectionHead>
     <TimelineList>
       <TimelineItem v-for="(item, code) in items" :key="code">
         <TimelineIcon :active="isActive(code)">
@@ -12,7 +12,16 @@
     </TimelineList>
   </section>
 </template>
-
+<style scoped>
+@media screen and (max-width:768px) {
+  .to-center {
+    text-align: center;
+  }
+  .to-center br {
+    display: none;
+  }
+}
+</style>
 <script>
 import styled from 'vue-styled-components'
 import dayjs from 'dayjs'

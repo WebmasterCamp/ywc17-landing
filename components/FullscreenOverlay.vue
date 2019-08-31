@@ -132,10 +132,14 @@ const Container = styled('div', containerProps)`
     height: calc(90% - 130px);
     overflow: hidden;
     overflow-y: auto;
+    line-height: 2.0;
     z-index: 1;
   }
   .content p, .content li{
     font-weight: 300;
+  }
+  .content li{
+    line-height: 2.5;
   }
   .content ol {
     padding-left: 24px;
