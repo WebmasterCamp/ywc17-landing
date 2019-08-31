@@ -4,7 +4,7 @@
     <Container v-if="show" :color="color" :exiting="exiting">
       <div class="overlay-content">
         <Header>
-          <Title>{{ title }}</Title>
+          <Title>Web {{ title }}</Title>
           <Count :color="color">
             <span>ยอดผู้สมัคร</span>
             <p>{{ count }} คน</p>
@@ -79,7 +79,7 @@ const ModalOverlay = styled('div')`
 const Container = styled('div', containerProps)`
   @media screen and (min-width:768px) {
     width: 70%;
-    height: 70vh;
+    height: 72vh;
     min-width: 600px;
     max-width: 960px;
     margin: 0 auto;
