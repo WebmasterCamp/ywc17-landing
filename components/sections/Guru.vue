@@ -50,14 +50,12 @@ const GuruPic = styled.div`
     width: 100%;
     height: auto;
     border-radius: 50%;
-    transition: all .3s ease-in-out;
   }
 
   &:hover {
     background: pink;
     img {
       filter: none;
-      transform: scale(1.15);
     }
   }
 
