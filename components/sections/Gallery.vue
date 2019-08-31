@@ -21,6 +21,11 @@
     </no-ssr>
   </section>
 </template>
+<style scoped>
+section {
+  margin-top: 70px;
+}
+</style>
 <script>
 import SectionHead from '~/components/SectionHead.vue'
 import Picture from '~/components/Picture.vue'
