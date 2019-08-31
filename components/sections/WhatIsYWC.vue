@@ -7,16 +7,14 @@
     </TitleBox>
     <img src="~assets/images/test.png" />
     <BriefBox>
-      เมื่อเทคโนโลยีที่เปลี่ยนไปได้เข้ามาสร้างการเปลี่ยนแปลง จนทำให้หลายๆ สิ่งที่เคยมีอยู่ในอดีต ถูกแย่งชิงบทบาทจนแทบจะหายไป ใน
+      เพราะ<span class="secondary">ปัญหา</span><br>จะถูกแก้ไขได้<br>ด้วย<span class="secondary">การลงมือทำ</span>
     </BriefBox>
     <Row>
       <Column>
-        <h3>พันธกิจของเรา</h3>
-        เมื่อเทคโนโลยีที่เปลี่ยนไปได้เข้ามาสร้างการเปลี่ยนแปลง จนทำให้หลายๆ สิ่งที่เคยมีอยู่ในอดีต ถูกแย่งชิงบทบาทจนแทบจะหายไป ในฐานะของค่ายสร้างเว็บหนึ่งเดียวของไทย เรากำลังตามหาคนทำเว็บสายเลือดใหม่ ที่พร้อมตะลุยไปในโลกดิจิตัลและ Disrupt ทุกความเคลื่อนไหวด้วยเทคโนโลยีไปพร้อมกับพวกเรา และเพื่อนๆ จากหลากหลายสาขา ไม่ว่าจะเป็น Content, Design, Marketing และ Programming และยังได้ใกล้ชิดกูรูจากวงการเว็บไทย ที่จะมาแนะแนวทาง พร้อมให้คำวิจารณ์ที่ไม่เคยมีใครได้สัมผัสมาก่อน หากคุณคือคนรุ่นใหม่ ที่อยากจะลุกขึ้นมาสร้างนวัตกรรมใหม่ที่จะเปลี่ยนแปลงโลก นี่คือโอกาสของคุณ! กับ Young Webmaster Camp ครั้งที่ 17 “Social Change, Arrange The World” ค่ายสร้างเว็บไซต์ระดับอุดมศึกษาที่ใหญ่ที่สุด ที่ปีนี้จะมาชวนนักศึกษามหาวิทยาลัยจากทั่วประเทศมาฝึกสกิลของตัวเอง พร้อม ๆ กับสร้างเว็บไซต์ที่จะช่วยแก้ไขปัญหาต่าง ๆ ในสังคมและทำให้สังคมของเราน่าอยู่ขึ้น
+        โอกาสเดียวที่ตัวคุณเองและสังคมจะได้รับการพัฒนาไปพร้อม ๆ กัน กับ Young Webmaster Camp ครั้งที่ 17 <span class="secondary">“Social Change, Arrange The World”</span> ค่ายสร้างเว็บไซต์ระดับอุดมศึกษาที่ใหญ่ที่สุด
       </Column>
       <Column>
-        <h3>พันธกิจของเรา</h3>
-        เมื่อเทคโนโลยีที่เปลี่ยนไปได้เข้ามาสร้างการเปลี่ยนแปลง จนทำให้หลายๆ สิ่งที่เคยมีอยู่ในอดีต ถูกแย่งชิงบทบาทจนแทบจะหายไป ในฐานะของค่ายสร้างเว็บหนึ่งเดียวของไทย เรากำลังตามหาคนทำเว็บสายเลือดใหม่ ที่พร้อมตะลุยไปในโลกดิจิตัลและ Disrupt ทุกความเคลื่อนไหวด้วยเทคโนโลยีไปพร้อมกับพวกเรา และเพื่อนๆ จากหลากหลายสาขา ไม่ว่าจะเป็น Content, Design, Marketing และ Programming และยังได้ใกล้ชิดกูรูจากวงการเว็บไทย ที่จะมาแนะแนวทาง พร้อมให้คำวิจารณ์ที่ไม่เคยมีใครได้สัมผัสมาก่อน หากคุณคือคนรุ่นใหม่ ที่อยากจะลุกขึ้นมาสร้างนวัตกรรมใหม่ที่จะเปลี่ยนแปลงโลก นี่คือโอกาสของคุณ! กับ Young Webmaster Camp ครั้งที่ 17 “Social Change, Arrange The World” ค่ายสร้างเว็บไซต์ระดับอุดมศึกษาที่ใหญ่ที่สุด ที่ปีนี้จะมาชวนนักศึกษามหาวิทยาลัยจากทั่วประเทศมาฝึกสกิลของตัวเอง พร้อม ๆ กับสร้างเว็บไซต์ที่จะช่วยแก้ไขปัญหาต่าง ๆ ในสังคมและทำให้สังคมของเราน่าอยู่ขึ้น
+        ที่ปีนี้จะมาชวนนักศึกษาจากทั่วประเทศมาฝึกสกิลของตัวเอง พร้อม ๆ กับสร้างเว็บไซต์ที่จะช่วยแก้ไขปัญหาต่าง ๆ ในสังคมและทำให้สังคมของเราน่าอยู่ขึ้น
       </Column>
     </Row>
   </section>
@@ -30,6 +28,7 @@
 </style>
 <script>
 import styled from 'vue-styled-components'
+import color from '~/utils/color'
 const TitleBox = styled.div`
   position: absolute;
   z-index: 1;
@@ -84,23 +83,28 @@ const TitleBox = styled.div`
   }
 `
 const BriefBox = styled.div`
-  position: absolute;
+  position: relative;
   z-index: 1;
+  left: calc(50% + 150px);
+  top: -150px;
 
-  display: inline-flex;
-  margin-top: 330px;
-  margin-left: -3%;
 
   width: 28%;
   max-width: 330px;
-
-  font-family: 'Maledpan', 'Sarabun';
-  font-size: 20px;
+  font-family: 'Maledpan';
+  font-weight: bold;
+  font-size: 36px;
   text-align: left;
   line-height: 38px;
 
+  .secondary {
+    color: ${color.main};
+  }
+
   @media screen and (max-width:768px) {
     position: relative;
+    top: 0;
+    left: 0;
     display: block;
     width: 300px;
     margin: 0 auto;
@@ -109,25 +113,28 @@ const BriefBox = styled.div`
 `
 
 const Row = styled.div`
-  margin-top: 66px;
-
   display: grid;
-  grid-column-gap: 145px;
+  grid-column-gap: 85px;
   grid-row-gap: 20px;
-  grid-template-columns: 40% 40%;
+  grid-template-columns: 45% 45%;
   @media screen and (max-width:768px) {
     margin-top: 33px;
     grid-template-columns: 100%;
   }
 `
 const Column = styled.div`
+  font-family: 'Maledpan';
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 36px;
   display: inline-grid;
   text-align: left;
+  .secondary {
+    color: ${color.main};
+  }
   @media screen and (max-width:768px) {
-    font-size: 90%;
-    h3 {
-      text-align: center;
-    }
+    font-size: 18px;
+    text-align: center;
   }
 `
 export default {
