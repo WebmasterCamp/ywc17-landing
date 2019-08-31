@@ -23,10 +23,10 @@
 </template>
 <style lang="sass" scoped>
   section
-    margin-top: 86px;
+    margin-top: 86px
     img
-      width: 100%;
-      max-width: 380px;
+      width: 100%
+      max-width: 380px
 </style>
 <script>
 import styled from 'vue-styled-components'
