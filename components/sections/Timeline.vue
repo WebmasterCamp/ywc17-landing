@@ -1,6 +1,6 @@
 <template>
   <section>
-    <SectionHead>Time<br>line</SectionHead>
+    <SectionHead align="right">Time<br>line</SectionHead>
     <TimelineList>
       <TimelineItem v-for="(item, code) in items" :key="code">
         <TimelineIcon :active="isActive(code)">
