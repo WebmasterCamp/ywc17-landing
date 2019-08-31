@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <SectionHead title="Guru" align="left" style="height: 64px;" />
+    <SectionHead title="Guru" align="left" style="height: 45px;" />
     <Guru :standalone="true">
       <GuruPic :standalone="true">
         <Picture :fileName="`guru/${currentGuru+1}`" />
@@ -19,6 +19,11 @@
     </Gurus>
   </section>
 </template>
+<style scoped>
+section {
+  margin-top: 100px;
+}
+</style>
 <script>
 import styled from 'vue-styled-components'
 import color from '~/utils/color'
