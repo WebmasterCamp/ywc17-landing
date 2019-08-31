@@ -1,7 +1,7 @@
 <template>
   <picture>
     <source :srcset="webp" type="image/webp">
-    <img :src="defaultImage" :alt="alt" />
+    <img :src="defaultImage" :alt="alt" loading="lazy" />
   </picture>
 </template>
 
