@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container">
     <SectionHead title="Follow Us" size="sm" />
     <Grid>
       <GridCol>

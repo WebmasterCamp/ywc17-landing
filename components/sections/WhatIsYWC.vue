@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container">
     <TitleBox>
       <h3 class="outline">What is</h3>
       <h3>YWC</h3>

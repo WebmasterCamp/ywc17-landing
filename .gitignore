@@ -91,3 +91,5 @@ sw.*
 *.swp
 
 .firebase
+
+.prettierrc
