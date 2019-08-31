@@ -19,11 +19,12 @@ const sizes = {
     height: 144
   }
 }
+const strokeColor = '#6C6C6C'
 const Container = styled('div', { align: String, size: String })`
   height: ${props => sizes[props.size].height}px;
   color: black;
-  -webkit-text-stroke: 1.8px #6C6C6C;
-  text-stroke: 1.8px #6C6C6C;
+  -webkit-text-stroke: 1.8px ${strokeColor};
+  text-stroke: 1.8px ${strokeColor};
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: bold;

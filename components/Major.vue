@@ -1,40 +1,18 @@
 <template>
-  <div>
-    <Picture :fileName="image" :alt="image" />
-    <Title :color="color">{{ title }}</Title>
-    <GradientButton
-      :theme="color"
-      @click="openDetail"
-    >
-      ดูรายละเอียด
-    </GradientButton>
-    <slot
-      :show="show"
-      :title="title"
-      @dismiss="dismissOverlay"
-    />
+  <div :class="`major ${color}`">
+    <img class="major-image" src="~assets/images/register/web-developer.png" alt="">
+    <div :class="`title ${color}`">
+      <span class="outline-text">Web</span>
+      {{ title }}
+    </div>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import styled from 'vue-styled-components'
-import color from '~/utils/color'
-
-const TitleProps = { color: String }
-
-const Title = styled('div', TitleProps)`
-  color: ${props => color[props.color].normal};
-  font-family: 'Maledpan', Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  margin: 20px 0 40px;
-`
 
 export default Vue.extend({
   components: {
-    Picture: () => import('~/components/Picture.vue'),
-    GradientButton: () => import('~/components/GradButton'),
-    Title
   },
   props: {
     title: {
@@ -67,3 +45,53 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss">
+.major {
+  position: relative;
+  width: 195px;
+
+  &.blue {
+    margin-top: 50px;
+  }
+  &.yellow {
+    margin-top: 100px;
+  }
+  &.green {
+    margin-top: 80px;
+  }
+}
+.major-image {
+  width: 100%;
+}
+.title {
+  width: 100%;
+  position: absolute;
+  padding: 0 8px;
+  box-sizing: border-box;
+
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 46px;
+  width: 195px;
+  text-align: left;
+  word-wrap: break-word;
+  hyphens: auto;
+  line-height: 50px;
+
+  &.blue {
+    bottom: -10px;
+  }
+  &.yellow {
+    top: -70px;
+    text-align: right;
+  }
+  &.pink {
+    bottom: 30px;
+  }
+  &.green {
+    top: -50px;
+    text-align: right;
+  }
+}
+</style>
