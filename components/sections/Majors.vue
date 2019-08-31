@@ -1,6 +1,6 @@
 <template>
-  <section class="container" ref="major-section">
-    <SectionHead title="Register" style="position: sticky; top: 0;"  />
+  <section ref="major-section" class="container">
+    <SectionHead title="Register" style="position: sticky; top: 0;" />
     <MajorsContainer>
       <Major
         title="Developer"
