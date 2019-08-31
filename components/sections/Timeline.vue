@@ -36,15 +36,22 @@ dayjs.locale('th')
 const TimelineList = styled.div`
   display: grid;
   grid-column-gap: 25px; 
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: repeat(5, auto);
   @media(max-width:768px) {
-    grid-template-columns: auto;
+    grid-template-columns: repeat(4, 1fr);
     grid-row-gap: 45px;
   }
 `
 const TimelineItem = styled.div`
   display: inline-grid;
   font-size: 14px;
+  
+  @media(max-width:768px) {
+    grid-column: span 2;
+    &:nth-last-child(1):nth-child(odd) {
+      grid-column: 2 / span 2;
+    }
+  }
 `
 const TimelineIcon = styled('div', { code: String, active: Boolean })`
   width: 128px;
