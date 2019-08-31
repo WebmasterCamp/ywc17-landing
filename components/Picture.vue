@@ -37,6 +37,9 @@ export default Vue.extend({
   },
   methods: {
     getImage ({ type }: GetImageParams): Function {
+      if (this.fileName.split('/').slice(-1)[0].includes('.')) {
+        return require('~/assets/images/' + this.fileName)
+      }
       return require('~/assets/images/' + this.fileName + '.' + type)
     }
   }
