@@ -90,6 +90,8 @@ export default Vue.extend({
   }
   
   .sponsors-box {
+    background: black;
+    background: linear-gradient(to top, black 30%, rgba(0,0,0,0) 100%);
     padding: 21px 0;
   }
   
