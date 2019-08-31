@@ -21,7 +21,7 @@ import Picture from '~/components/Picture.vue'
 
 const Gurus = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 20%);
+  grid-template-columns: repeat(4, 22%);
   grid-column-gap: 54px;
   grid-row-gap: 27px;
 `
@@ -44,16 +44,18 @@ const GuruPic = styled.div`
   height: 210px;
   border-radius: 50%;
   background: gray;
+  user-select: none;
   img {
     filter: grayscale(100%);
     margin-top: 0px;
     width: 100%;
     height: auto;
     border-radius: 50%;
+    user-drag: none;
   }
 
   &:hover {
-    background: pink;
+    background: ${color.main};
     img {
       filter: none;
     }
