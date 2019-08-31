@@ -2,10 +2,10 @@
   <section class="container">
     <TitleBox>
       <h3 class="outline">What is</h3>
-      <h3>YWC</h3>
+      <h3>YWC?</h3>
       <p>Creating new<br>young webmasters<br>since 2002</p>
     </TitleBox>
-    <img src="~assets/images/test.png" />
+    <ImageBox />
     <BriefBox>
       เพราะ<span class="secondary">ปัญหา</span><br>จะถูกแก้ไขได้<br>ด้วย<span class="secondary">การลงมือทำ</span>
     </BriefBox>
@@ -49,10 +49,9 @@ const TitleBox = styled.div`
     margin-top: 10px;
     width: 310px;
     color: #383838;
-    color: rgba(255,255,255,0.19);
+    color: rgba(255,255,255,0.6);
     font-size: 22px;
     @media screen and (max-width:768px) {
-      color: rgba(255, 255, 255, 0.6);
       font-size: 18px;
     }
   }
@@ -82,6 +81,15 @@ const TitleBox = styled.div`
     }
   }
 `
+const ImageBox = styled.div`
+  width: 380px;
+  height: 510px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0) 85%), url(${require('~/assets/images/test.png')}) no-repeat center;
+  @media screen and (max-width: 768px) {
+    background: linear-gradient(to top left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0) 85%), url(${require('~/assets/images/test.png')}) no-repeat center;
+  }
+`
 const BriefBox = styled.div`
   position: relative;
   z-index: 1;
@@ -89,7 +97,7 @@ const BriefBox = styled.div`
   top: -150px;
 
 
-  width: 28%;
+  width: 30%;
   max-width: 330px;
   font-family: 'Maledpan';
   font-weight: bold;
@@ -108,6 +116,7 @@ const BriefBox = styled.div`
     display: block;
     width: 300px;
     margin: 0 auto;
+    margin-top: 19px;
     text-align: center;
   }
 `
@@ -116,15 +125,15 @@ const Row = styled.div`
   display: grid;
   grid-column-gap: 85px;
   grid-row-gap: 20px;
-  grid-template-columns: 45% 45%;
+  grid-template-columns: repeat(2, auto);
+  margin-top: -50px;
   @media screen and (max-width:768px) {
     margin-top: 33px;
     grid-template-columns: 100%;
   }
 `
 const Column = styled.div`
-  font-family: 'Maledpan';
-  font-weight: bold;
+  font-family: 'Sarabun';
   font-size: 20px;
   line-height: 36px;
   display: inline-grid;
@@ -140,6 +149,7 @@ const Column = styled.div`
 export default {
   components: {
     TitleBox,
+    ImageBox,
     BriefBox,
     Row,
     Column
