@@ -3,7 +3,81 @@
     <SectionHead title="Register" />
     <MajorsContainer>
       <Major
-        title="Web Content"
+        title="Developer"
+        image="web-developer"
+        color="blue"
+      >
+        <template slot-scope="scope">
+          <FullscreenOverlay
+            :show="scope.show"
+            :count="major.developer.count"
+          >
+            <template v-slot:content>        
+              <p>
+                ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ ไม่ว่าภาษาไหน ๆ จะ html,css,js หรือนอกเหนือจากนี้
+              </p>
+              <h3>ตัวอย่างคำถาม</h3>
+              <ol>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
+              </ol>
+            </template>
+          </FullscreenOverlay>
+        </template>
+      </Major>
+      <Major
+        title="Designer"
+        image="web-designer"
+        color="yellow"
+      >
+        <template slot-scope="scope">
+          <FullscreenOverlay
+            :show="scope.show"
+            :count="major.design.count"
+          >
+            <template v-slot:content>        
+              <p>
+                เขียน design
+                ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ ไม่ว่าภาษาไหน ๆ จะ html,css,js หรือนอกเหนือจากนี้
+              </p>
+              <h3>ตัวอย่างคำถาม</h3>
+              <ol>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
+              </ol>
+            </template>
+          </FullscreenOverlay>
+        </template>
+      </Major>
+      <Major
+        title="Marketing"
+        image="web-marketing"
+        color="pink"
+      >
+        <template slot-scope="scope">
+          <FullscreenOverlay
+            :show="scope.show"
+            :count="major.marketing.count"
+          >
+            <template v-slot:content>        
+              <p>
+                เขียน marketing
+                ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ ไม่ว่าภาษาไหน ๆ จะ html,css,js หรือนอกเหนือจากนี้
+              </p>
+              <h3>ตัวอย่างคำถาม</h3>
+              <ol>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
+                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
+              </ol>
+            </template>
+          </FullscreenOverlay>
+        </template>
+      </Major>
+      <Major
+        title="Content"
         image="web-content"
         color="green"
       >
@@ -33,80 +107,6 @@
           </FullscreenOverlay>
         </template>
       </Major>
-      <Major
-        title="Web Design"
-        image="web-design"
-        color="yellow"
-      >
-        <template slot-scope="scope">
-          <FullscreenOverlay
-            :show="scope.show"
-            :count="major.design.count"
-          >
-            <template v-slot:content>        
-              <p>
-                เขียน design
-                ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ ไม่ว่าภาษาไหน ๆ จะ html,css,js หรือนอกเหนือจากนี้
-              </p>
-              <h3>ตัวอย่างคำถาม</h3>
-              <ol>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
-              </ol>
-            </template>
-          </FullscreenOverlay>
-        </template>
-      </Major>
-      <Major
-        title="Web Marketing"
-        image="web-marketing"
-        color="pink"
-      >
-        <template slot-scope="scope">
-          <FullscreenOverlay
-            :show="scope.show"
-            :count="major.marketing.count"
-          >
-            <template v-slot:content>        
-              <p>
-                เขียน marketing
-                ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ ไม่ว่าภาษาไหน ๆ จะ html,css,js หรือนอกเหนือจากนี้
-              </p>
-              <h3>ตัวอย่างคำถาม</h3>
-              <ol>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
-              </ol>
-            </template>
-          </FullscreenOverlay>
-        </template>
-      </Major>
-      <Major
-        title="Web Developer"
-        image="web-developer"
-        color="blue"
-      >
-        <template slot-scope="scope">
-          <FullscreenOverlay
-            :show="scope.show"
-            :count="major.developer.count"
-          >
-            <template v-slot:content>        
-              <p>
-                ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ ไม่ว่าภาษาไหน ๆ จะ html,css,js หรือนอกเหนือจากนี้
-              </p>
-              <h3>ตัวอย่างคำถาม</h3>
-              <ol>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
-                <li>จงยกตัวอย่างคำถามข้อที่หนึ่งมา 1 ประโยค</li>
-              </ol>
-            </template>
-          </FullscreenOverlay>
-        </template>
-      </Major>
     </MajorsContainer>
   </section>
 </template>
@@ -117,9 +117,11 @@ import styled from 'vue-styled-components'
 import SectionHead from '~/components/SectionHead.vue'
 
 const MajorsContainer = styled.div`
+  margin: 100px 0;
   display: grid;
   grid-template-columns: repeat(2, 50%);
   grid-row-gap: 50px;
+  justify-items: center;
 
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(4, auto);
