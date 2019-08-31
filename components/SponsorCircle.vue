@@ -1,7 +1,7 @@
 <template>
-  <SponsorBadge :size="size">
+  <SponsorBadge :size="size" :transparent="transparent">
     <a :href="link" target="_blank">
-      <Picture v-if="fileName != ''" :fileName="fileName" :alt="alt" />
+      <Picture v-if="fileName != ''" :fileName="fileName" :alt="alt" :defaultType="type" />
     </a>
   </SponsorBadge>
 </template>
@@ -24,18 +24,20 @@ const size = {
   sm: {
     picSize: 64,
     smallMobile: 90,
-    mobile: 102 
+    mobile: 102
   }
 }
 
 const circleProps = {
-  size: String
+  size: String,
+  transparent: Boolean
 }
 
 const SponsorBadge = styled('div', circleProps)`
-  background: white;
+  background: ${props => (props.transparent ? 'transparent' : 'white')};
   border-radius: 50%;
-  border: 4px solid ${color.primary};
+  border: 4px solid
+    ${props => (props.transparent ? 'transparent' : color.primary)};
   width: ${props => size[props.size].smallMobile}px;
   height: ${props => size[props.size].smallMobile}px;
   max-width: 100%;
@@ -47,7 +49,7 @@ const SponsorBadge = styled('div', circleProps)`
     align-items: center;
     width: 100%;
     height: 100%;
-    
+
     picture {
       width: ${props => size[props.size].picSize}px;
       img {
@@ -59,7 +61,7 @@ const SponsorBadge = styled('div', circleProps)`
   @media screen and (min-width: 375px) {
     width: ${props => size[props.size].mobile}px;
     height: ${props => size[props.size].mobile}px;
-  }  
+  }
 `
 
 export default {
@@ -83,11 +85,19 @@ export default {
     alt: {
       type: String,
       default: ''
+    },
+    transparent: {
+      type: Boolean,
+      default: false
+    },
+    type: {
+      type: String,
+      default: 'png'
     }
   },
   computed: {
     image () {
-      return require('~/assets/images/' + this.fileName + '.png')
+      return require('~/assets/images/' + this.fileName)
     }
   }
 }
