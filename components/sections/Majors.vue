@@ -114,7 +114,11 @@
     </MajorsContainer>
   </section>
 </template>
-
+<style scoped>
+section {
+  margin-top: 100px;
+}
+</style>
 <script>
 import Vue from 'vue'
 import styled from 'vue-styled-components'
