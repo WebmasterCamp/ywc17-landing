@@ -121,7 +121,7 @@ import styled from 'vue-styled-components'
 import SectionHead from '~/components/SectionHead.vue'
 
 const MajorsContainer = styled.div`
-  margin-top: 200px;
+  margin: 100px 0 140px;
   display: grid;
   grid-template-columns: repeat(2, 50%);
   grid-row-gap: 50px;
