@@ -21,3 +21,8 @@ section {
   /* padding-left: 80px;
   padding-right: 80px; */
 }
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 0.94px white;
+}
