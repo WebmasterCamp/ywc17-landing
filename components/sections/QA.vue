@@ -23,7 +23,7 @@ import QuestionItem from '~/components/QuestionItem.vue'
 
 const QuestionZone = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, 3fr);
   grid-gap: 24px 24px;
 
   @media(max-width:768px) {

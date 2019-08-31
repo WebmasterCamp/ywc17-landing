@@ -9,7 +9,7 @@
       <p v-html="gurus[currentGuru].role" />
     </Guru>
     <Gurus>
-      <Guru v-for="(g, idx) in gurus" :key="`guru-${idx}`">
+      <Guru v-for="(g, idx) in gurus" :key="`guru-${idx}`" :id="`gurupic-${idx}`">
         <GuruPic :class="{'active': idx === currentGuru}" @click="selectGuru(idx)">
           <Picture :fileName="`guru/${g.img}`" :alt="g.name" />
         </GuruPic>
@@ -37,6 +37,7 @@ const Gurus = styled.div`
   grid-template-columns: repeat(4, 22%);
   grid-column-gap: 27px;
   grid-row-gap: 27px;
+  align-items: start;
 
   @media screen and (max-width:960px) {
     display: block;
@@ -147,6 +148,10 @@ export default {
         nextGuru = 0
       }
       this.currentGuru = nextGuru
+      if (process.client) {
+        const target = document.getElementById(`gurupic-${nextGuru}`)
+        target.parentNode.scrollLeft = target.offsetLeft - 5
+      }
     }, 3000)
   },
   methods: {

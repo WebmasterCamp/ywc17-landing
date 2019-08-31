@@ -31,7 +31,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 section {
   margin:5rem 0;
-  background-image: url(~assets/images/location.png);
+  background-image: url(~assets/images/location.jpg);
   background-repeat: no-repeat;
   background-size :100% 100%;
   padding-bottom: 5px;
@@ -78,27 +78,28 @@ br {
 }
 .icon {
   position: absolute;
-    top: -50px;
-    font-size: 4rem;
-    line-height: 7rem;
-    font-weight: 600;
-    -webkit-text-stroke-color: white;
-    -webkit-text-stroke-width: 2px;
-    color: transparent;
+  top: -50px;
+  font-size: 4rem;
+  line-height: 7rem;
+  font-family: Montserrat;
+  font-weight: 600;
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.6);
+  -webkit-text-stroke-width: 1.5px;
+  color: transparent;
+  user-select: none;
   @media screen and (min-width: 768px) {
-  letter-spacing: 1.5rem;
+    letter-spacing: 1.5rem;
     font-size: 6rem;
-
-    }
+  }
 }
 .location-content{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-padding: 2rem 4rem 0 5rem;
+  padding: 3rem 4rem 0 5rem;
   @media(max-width:768px) {
-  padding:5% 5% 0 5%;
+  padding: 5% 5% 0 5%;
 
   }
 }

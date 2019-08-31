@@ -1,7 +1,8 @@
 <template>
   <div class="circle">
     <a :href="link" target="_blank">
-      <Picture v-if="fileName != ''" :fileName="fileName" :alt="alt" />
+      <!-- <Picture v-if="fileName != ''" :fileName="fileName" :alt="alt" /> -->
+      <img :src="require(`~/assets/images/${fileName}`)" :alt="alt" />
     </a>
   </div>
 </template>
@@ -10,7 +11,7 @@
 import Vue from 'vue'
 export default Vue.extend({
   components: {
-    Picture: () => import('~/components/Picture')
+    // Picture: () => import('~/components/Picture')
   },
   props: {
     fileName: {
@@ -49,11 +50,12 @@ export default Vue.extend({
       align-items: center;
       width: 100%;
       height: 100%;
-      picture {
+      // picture {
         img {
           width: 100%;
+          height: 100%;
         }
-      }
+      // }
     }
 
     @media screen and (min-width: 768px) {  

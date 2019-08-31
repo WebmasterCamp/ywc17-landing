@@ -108,7 +108,7 @@
         <template slot-scope="scope">
           <FullscreenOverlay
             :show="scope.show"
-            :count="major.developer"
+            :count="major.programming"
           >
             <template v-slot:content>        
               <p>
@@ -150,10 +150,10 @@ const MajorsContainer = styled.div`
 `
 
 class CountMajorRegistant {
-  developer = { count: 0 }
-  design = { count: 0 }
-  marketing = { count: 0 }
-  content = { count: 0 }
+  programming = 0
+  design = 0
+  marketing = 0
+  content = 0
 }
 
 const isInViewport = function (elem) {
@@ -188,7 +188,12 @@ export default Vue.extend({
     this.$axios
       .get('https://api.ywc.in.th/users/stat')
       .then((response) => {
-        this.major = response.data
+        if (response.data) {
+          const ret = response.data
+          if (ret.status === 'success' && ret.payload) {
+            this.major = ret.payload
+          }
+        }
       })
     window.onscroll = () => {
       const sectionElement = this.$refs['major-section']
@@ -210,10 +215,10 @@ export default Vue.extend({
     },
     fetchCountRegistant () {
       const dumbMajor = {
-        content: { count: 11 },
-        design: { count: 22 },
-        marketing: { count: 33 },
-        developer: { count: 45 }
+        content: 11,
+        design: 22,
+        marketing: 33,
+        programming: 45
       }
       return new Promise((resolve, reject) => {
         setTimeout(() => {

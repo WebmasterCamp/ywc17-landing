@@ -12,10 +12,9 @@
     </div>
     <div class="sponsors-box">
       <div class="sponsors">
-        <SponsorBadge fileName="sponsors/vip/exxon-mobil" alt="exxon mobil" link="https://www.facebook.com/exxonmobilthailand/" />
-        <SponsorBadge fileName="sponsors/vip/webmaster-association" alt="webmaster association" link="https://www.webmaster.or.th/" />
-        <SponsorBadge fileName="sponsors/vip/it-kmitl" alt="it kmitl" link="https://www.it.kmitl.ac.th/" />
-        <SponsorBadge fileName="sponsors/vip/webmaster-association" alt="" link="https://facebook.com" />
+        <SponsorBadge fileName="sponsors/1-1-ExxonMobil.svg" alt="ExxonMobil" link="https://www.facebook.com/exxonmobilthailand/" />
+        <SponsorBadge fileName="sponsors/1-2-TWA.svg" alt="Thai Webmaster Association" link="https://www.webmaster.or.th/" />
+        <SponsorBadge fileName="sponsors/1-3-ITKMITL.svg" alt="IT KMITL" link="https://www.it.kmitl.ac.th/" />
       </div>
     </div>
   </section>
@@ -90,17 +89,16 @@ export default Vue.extend({
   }
   
   .sponsors-box {
-    background: black;
     padding: 21px 0;
   }
   
   .sponsors {
     display: grid;
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(3, auto);
     justify-items: center;
     grid-row-gap: 20px;
     @media screen and (min-width: 576px) {
-      grid-template-columns: repeat(4, 25%);
+      grid-template-columns: repeat(3, auto);
       max-width: 750px;
       margin: auto;
     }
