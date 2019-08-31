@@ -1,11 +1,12 @@
 <template>
-  <section class="container">
-    <SectionHead title="Register" />
+  <section ref="major-section" class="container">
+    <SectionHead title="Register" style="position: sticky; top: 0;" />
     <MajorsContainer>
       <Major
         title="Developer"
         image="web-developer"
         color="blue"
+        :image-style="`transform: translate3d(0, ${y1}px, 0);`"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
@@ -30,6 +31,7 @@
         title="Designer"
         image="web-designer"
         color="yellow"
+        :image-style="`transform: translate3d(0, ${y2}px, 0);`"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
@@ -55,6 +57,7 @@
         title="Marketing"
         image="web-marketing"
         color="pink"
+        :image-style="`transform: translate3d(0, ${y3}px, 0);`"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
@@ -80,6 +83,7 @@
         title="Content"
         image="web-content"
         color="green"
+        :image-style="`transform: translate3d(0, ${y4}px, 0);`"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
@@ -117,7 +121,7 @@ import styled from 'vue-styled-components'
 import SectionHead from '~/components/SectionHead.vue'
 
 const MajorsContainer = styled.div`
-  margin: 100px 0;
+  margin: 100px 0 140px;
   display: grid;
   grid-template-columns: repeat(2, 50%);
   grid-row-gap: 50px;
@@ -135,6 +139,16 @@ class CountMajorRegistant {
   content = { count: 0 }
 }
 
+const isInViewport = function (elem) {
+  const position = elem.getBoundingClientRect()
+  return position.top < window.innerHeight && position.bottom >= 0
+}
+
+const getDistance = function (elem) {
+  const position = elem.getBoundingClientRect()
+  return position.top - window.innerHeight
+}
+
 export default Vue.extend({
   components: {
     SectionHead,
@@ -144,7 +158,12 @@ export default Vue.extend({
   },
   data () {
     return {
-      major: new CountMajorRegistant()
+      major: new CountMajorRegistant(),
+      y1: -170,
+      y2: -340,
+      y3: -122,
+      y4: -293,
+      lastScrollTop: 0
     }
   },
   mounted () {
@@ -152,6 +171,18 @@ export default Vue.extend({
       .then((response) => {
         this.major = response.data
       })
+    window.onscroll = () => {
+      const sectionElement = this.$refs['major-section']
+      if (!sectionElement) { return }
+
+      if (isInViewport(sectionElement)) {
+        const distance = getDistance(sectionElement)
+        this.y1 = distance / 4 * 0.7
+        this.y2 = distance / 4 * 1.3
+        this.y3 = distance / 4 * 0.5
+        this.y4 = distance / 4 * 1.2
+      }
+    }
   },
   methods: {
     fetchCountRegistant () {

@@ -1,10 +1,22 @@
 <template>
-  <div :class="`major ${color}`">
-    <img class="major-image" src="~assets/images/register/web-developer.png" alt="">
-    <div :class="`title ${color}`">
-      <span class="outline-text">Web</span>
-      {{ title }}
+  <div>
+    <div :class="`major ${color}`" :style="imageStyle">
+      <img
+        class="major-image"
+        src="~assets/images/register/web-developer.png"
+        alt=""
+        @click="openDetail"
+      >
+      <div :class="`title ${color}`">
+        <span class="outline-text">Web</span>
+        {{ title }}
+      </div>
     </div>
+    <slot
+      :show="show"
+      :title="title"
+      @dismiss="dismissOverlay"
+    />
   </div>
 </template>
 
@@ -24,6 +36,10 @@ export default Vue.extend({
       type: String
     },
     image: {
+      default: '',
+      type: String
+    },
+    imageStyle: {
       default: '',
       type: String
     }
@@ -50,15 +66,16 @@ export default Vue.extend({
 .major {
   position: relative;
   width: 195px;
+  transition: all 0.3s;
 
   &.blue {
-    margin-top: 50px;
+    top: 50px;
   }
   &.yellow {
-    margin-top: 100px;
+    top: 300px;
   }
   &.green {
-    margin-top: 80px;
+    top: 280px;
   }
 }
 .major-image {
@@ -80,14 +97,14 @@ export default Vue.extend({
   line-height: 50px;
 
   &.blue {
-    bottom: -10px;
+    bottom: -68px;
   }
   &.yellow {
     top: -70px;
     text-align: right;
   }
   &.pink {
-    bottom: 30px;
+    bottom: -66px;
   }
   &.green {
     top: -50px;

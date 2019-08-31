@@ -2,7 +2,7 @@
   <section>
     <div class="location" :style="{height: '600px',position: 'relative'}">
       <div class="icon-container">
-        <div class="icon">LO<br/>CA<br/>TI<br/>ON</div>
+        <div class="icon">LO<br />CA<br />TI<br />ON</div>
       </div>
       <div class="location-content">
         <div class="video">
@@ -12,7 +12,7 @@
     </div>
     <div class="detail">
       <span class="highlight">สถาบันเทคโนโลยี</span>
-      <br/>
+      <br />
       พระจอมเกล้าเจ้าคุณทหารลาดกระบัง
     </div>
   </section>
