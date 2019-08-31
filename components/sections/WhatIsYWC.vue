@@ -24,6 +24,9 @@
 <style lang="sass" scoped>
   section
     margin-top: 86px;
+    img
+      width: 100%;
+      max-width: 380px;
 </style>
 <script>
 import styled from 'vue-styled-components'
