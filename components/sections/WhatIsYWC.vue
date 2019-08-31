@@ -22,6 +22,8 @@
   </section>
 </template>
 <style lang="sass" scoped>
+  section
+    margin-top: 86px;
 </style>
 <script>
 import styled from 'vue-styled-components'
@@ -104,16 +106,26 @@ const BriefBox = styled.div`
 `
 
 const Row = styled.div`
+  margin-top: 66px;
+
   display: grid;
   grid-column-gap: 145px;
+  grid-row-gap: 20px;
   grid-template-columns: 40% 40%;
   @media screen and (max-width:768px) {
+    margin-top: 33px;
     grid-template-columns: 100%;
   }
 `
 const Column = styled.div`
   display: inline-grid;
   text-align: left;
+  @media screen and (max-width:768px) {
+    font-size: 90%;
+    h3 {
+      text-align: center;
+    }
+  }
 `
 export default {
   components: {
