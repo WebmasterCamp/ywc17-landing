@@ -1,8 +1,9 @@
 <template>
-  <div class="container">
+  <div>
     <Hero />
     <WhatIsYWC />
     <Majors />
+    <Location />
     <Timeline />
     <Gallery />
     <Sponsor />
@@ -20,6 +21,7 @@ export default {
   components: {
     Hero,
     WhatIsYWC,
+    Location: () => import('~/components/sections/Location'),
     Timeline,
     Majors: () => import('~/components/sections/Majors'),
     QA: () => import('~/components/sections/QA'),

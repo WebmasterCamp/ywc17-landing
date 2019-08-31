@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container">
     <div class="branding">
       <Picture fileName="ywc-logo" alt="YWC logo" />
       <Picture fileName="ywc17-logo" alt="YWC17 branding" />

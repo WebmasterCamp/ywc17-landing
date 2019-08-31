@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container">
     <SectionHead title="Timeline" />
     <TimelineList>
       <TimelineItem v-for="(item, code) in items" :key="code">

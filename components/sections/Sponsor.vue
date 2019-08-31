@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container">
     <SectionHead title="sponsor" />
     <div class="sponsor-vip-wrapper">
       <SponsorCircle

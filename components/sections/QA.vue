@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container">
     <SectionHead title="Q & A" />
     <QuestionZone>
       <div v-for="(a, q) in questions" :key="q" style="display:inline-grid;">
