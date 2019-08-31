@@ -21,6 +21,8 @@ const Container = styled.div`
   letter-spacing: 0.4em;
   text-transform: uppercase;
 
+  user-select: none;
+
   @media screen and (max-width:768px) {
     font-size: 50px;
   }
