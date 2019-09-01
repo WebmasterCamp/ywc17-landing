@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="container" @click="dismissQ($event)">
     <SectionHead title="Q & A" />
     <QuestionZone>
       <div v-for="(a, q) in questions" :key="q" class="qa" :class="{'darken': showingQ !== '' && q !== showingQ}">
@@ -54,6 +54,11 @@ export default {
     }
   },
   methods: {
+    dismissQ (event) {
+      if (!event.target.className.includes('not-close-zone')) {
+        this.showingQ = ''
+      }
+    },
     selectQ (q) {
       if (this.showingQ === q) {
         this.showingQ = ''

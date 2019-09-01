@@ -241,6 +241,14 @@ const RegisterButton = styled('a', withColorProps)`
   background: ${props => color[props.color].darker};
   background: ${props => color[props.color].gradient};
   color: ${props => props.color === 'yellow' ? 'black' : 'white'};
+
+  &:hover {
+    background: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)), ${props => color[props.color].gradient};
+  }
+  &:active {
+    background: ${props => color[props.color].darker};
+    filter: brightness(75%);
+  }
 `
 
 export default Vue.extend({
