@@ -28,7 +28,7 @@ section {
   margin-top: 100px;
 }
 .height {
-  height: 80px;
+  height: 100px;
   text-align: center;
 }
 /* @media screen and (max-width:960px)  {

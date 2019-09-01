@@ -23,7 +23,7 @@
 </template>
 <style scoped>
 section {
-  margin-top: 70px;
+  margin-top: 100px;
 }
 </style>
 <script>
