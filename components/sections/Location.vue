@@ -43,10 +43,10 @@ section {
 .location {
   
     display: grid;
-  @media screen and (min-width: 768px) {
   grid-template-columns: 1fr 2.5fr;
-    }
+  
   @media(max-width:768px) {
+    grid-template-columns: unset;
     grid-template-rows: 1fr 6fr;
   }
 }
