@@ -154,7 +154,7 @@ export default {
         { img: 4, name: 'ณปสก สันติสุนทรกูล (ปอล)', role: `COO, Dek-D Intertactive Co., Ltd.` },
         { img: 5, name: 'คนที่หนึ่ง แสงหิรัญ (หนึ่ง)', role: `อาจารย์ประจำภาควิชาสาขาการออกแบบนิเทศศิลป์ คณะนิเทศศาสตร์ มหาวิทยาลัยอัสสัมชัญ` },
         { img: 6, name: 'อินทนนท์ ปัญญาโสภา (เบนซ์)', role: `ผู้ก่อตั้งเว็บไซต์ Grappik` },
-        { img: 7, name: 'เจริญ ลักษณ์เลิศกุล (เจ)', role: `Associate Director - Strategic planning หน่วยงาน Online Station (True Visions Group Co., Ltd.)` },
+        { img: 7, name: 'เจริญ ลักษณ์เลิศกุล (เจ)', role: `Associate Director - Strategic Planning หน่วยงาน Online Station (True Visions Group Co., Ltd.)` },
         { img: 8, name: 'เมธปริยา คำนวนวุฒิ (ว่าน)', role: `Head of Marketing Lnw Co., Ltd.` }
       ]
     }
@@ -170,7 +170,7 @@ export default {
         const target = document.getElementById(`gurupic-${nextGuru}`)
         target.parentNode.scrollLeft = target.offsetLeft - 5
       }
-    }, 3000)
+    }, 5500)
   },
   methods: {
     selectGuru (id) {
