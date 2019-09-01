@@ -30,7 +30,7 @@ export default Vue.extend({
   .hero {
     background: url(/images/bg/hero.jpg) no-repeat top center;
     background-size: cover;
-    background-attachment: fixed;
+    // background-attachment: fixed;
     padding: 0;
     padding-top: 27.5px;
 
@@ -40,9 +40,9 @@ export default Vue.extend({
       padding-right: 15px;
     }
 
-    @media screen and (max-width:768px) {
-      background-attachment: scroll;
-    }
+    // @media screen and (max-width:768px) {
+    //   background-attachment: scroll;
+    // }
   }
 
   .ywc-logo {
