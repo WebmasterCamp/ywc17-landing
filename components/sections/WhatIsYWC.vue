@@ -7,7 +7,7 @@
     </TitleBox>
     <ImageBox />
     <BriefBox>
-      เพราะ<span class="secondary">ปัญหา</span><br>จะถูกแก้ไขได้<br>ด้วย<span class="secondary">การลงมือทำ</span>
+      เพราะ<span class="secondary">ปัญหา</span><br class="hidden-mb">จะถูกแก้ไขได้<br>ด้วย<span class="secondary">การลงมือทำ</span>
     </BriefBox>
     <Row>
       <Column>
@@ -86,9 +86,9 @@ const ImageBox = styled.div`
   max-width: 100%;
   height: 510px;
   margin: 0 auto;
-  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0) 85%), url(${require('~/assets/images/test.png')}) no-repeat center;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0) 85%), url(/images/bg/whatIsYWC.jpg) no-repeat center;
   @media screen and (max-width: 768px) {
-    background: linear-gradient(to top left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0) 85%), url(${require('~/assets/images/test.png')}) no-repeat center;
+    background: linear-gradient(to top left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0) 85%), url(/images/bg/whatIsYWC.jpg) no-repeat center;
   }
 `
 const BriefBox = styled.div`
@@ -115,10 +115,14 @@ const BriefBox = styled.div`
     top: 0;
     left: 0;
     display: block;
-    width: 300px;
+    width: 100%;
     margin: 0 auto;
     margin-top: 19px;
     text-align: center;
+    font-size: 32px;
+    .hidden-mb {
+      display: none;
+    }
   }
 `
 

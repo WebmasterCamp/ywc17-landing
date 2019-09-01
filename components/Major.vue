@@ -3,9 +3,8 @@
     <div :class="`major ${color}`" :style="imageStyle" @click="openDetail">
       <div
         class="major-image" 
-        :style="{backgroundImage: `url(${require(`~/assets/images/register/${image}.jpg`)})`}"
-        :alt="`Web ${title}`"
-      />
+        :style="{backgroundImage: `url(/images/register/${image}.jpg)`}"
+        :alt="`Web ${title}`" />
       <div :class="`title ${color}`">
         <span class="outline-text">Web</span>
         {{ title }}
@@ -135,6 +134,12 @@ export default Vue.extend({
     }
     &.blue {
       bottom: 0px;
+    }
+    &.pink {
+      top: 0px;
+    }
+    &.green {
+      top: 0px;
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <SectionHead title="Guru" align="left" style="height: 45px;" />
+    <SectionHead title="Guru" align="left" class="height" />
     <Guru :standalone="true">
       <GuruPic :standalone="true">
         <Picture :fileName="`guru/${gurus[currentGuru].img}`" />
@@ -26,6 +26,15 @@
 <style scoped>
 section {
   margin-top: 100px;
+}
+.height {
+  height: 45px;
+}
+@media screen and (max-width:960px)  {
+  .height {
+    height: 80px;
+    text-align: center;
+  }
 }
 </style>
 <script>
