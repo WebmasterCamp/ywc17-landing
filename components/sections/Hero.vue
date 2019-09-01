@@ -34,7 +34,7 @@ export default Vue.extend({
 </script>
 <style lang="scss">
   .hero {
-    background: url(~assets/images/hero.jpg) no-repeat top center;
+    background: url(/images/bg/hero.jpg) no-repeat top center;
     background-size: cover;
     background-attachment: fixed;
     padding: 0;
