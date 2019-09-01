@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <SectionHead title="Gallery" />
+    <SectionHead title="Gallery" style="position: sticky; top: 0;" />
     <no-ssr placeholder="Loading...">
       <agile ref="main" class="main" :options="options1" :as-nav-for="asNavFor1">
         <div v-for="(slide, index) in slides" :key="index" class="slide" :class="`slide--${index}`">

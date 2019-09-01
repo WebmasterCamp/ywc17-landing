@@ -1,7 +1,7 @@
 <template>
   <section class="container">
-    <SectionHead title="Sponsors" />
-    <div class="sponsor-vip-wrapper">
+    <SectionHead title="Sponsors" style="position: sticky; top: 0;"/>
+    <div class="sponsor-vip-wrapper position-relative">
       <SponsorCircle
         :transparent="true"
         size="lg"
@@ -33,7 +33,7 @@
       <SponsorCircle size="md" fileName link="#" alt />
       <SponsorCircle size="md" fileName link="#" alt />
     </div> -->
-    <div class="sponsor-silver-wrapper">
+    <div class="sponsor-silver-wrapper position-relative">
       <SponsorCircle 
         size="sm" 
         fileName="sponsors/3-1-MangoZero.svg" 
