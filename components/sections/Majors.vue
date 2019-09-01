@@ -6,10 +6,10 @@
         title="Content"
         image="web-content"
         color="green"
-        :class="{blackout: selectMajor == 'content'}"
+        :class="{blackout: selectMajor !== '' && selectMajor !== 'content'}"
         :image-style="`transform: translate3d(0, ${y2}px, 0);`"
-        @mouseover="hoverMajor('content')"
-        @mouseleave="hoverMajor('')"
+        @mouseover.native="hoverMajor('content')"
+        @mouseleave.native="hoverMajor('')"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
@@ -41,10 +41,10 @@
         title="Designer"
         image="web-designer"
         color="yellow"
-        :class="{blackout: selectMajor == 'designer'}"
+        :class="{blackout: selectMajor !== '' && selectMajor !== 'designer'}"
         :image-style="`transform: translate3d(0, ${y2}px, 0);`"
-        @mouseover="hoverMajor('designer')"
-        @mouseleave="hoverMajor('')"
+        @mouseover.native="hoverMajor('designer')"
+        @mouseleave.native="hoverMajor('')"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
@@ -69,10 +69,10 @@
         title="Marketing"
         image="web-marketing"
         color="pink"
-        :class="{blackout: selectMajor == 'marketing'}"
+        :class="{blackout: selectMajor !== '' && selectMajor !== 'marketing'}"
         :image-style="`transform: translate3d(0, ${y3}px, 0);`"
-        @mouseover="hoverMajor('marketing')"
-        @mouseleave="hoverMajor('')"
+        @mouseover.native="hoverMajor('marketing')"
+        @mouseleave.native="hoverMajor('')"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
@@ -97,10 +97,10 @@
         title="Developer"
         image="web-developer"
         color="blue"
-        :class="{blackout: selectMajor == 'developer'}"
+        :class="{blackout: selectMajor !== '' && selectMajor !== 'developer'}"
         :image-style="`transform: translate3d(0, ${y1}px, 0);`"
-        @mouseover="hoverMajor('developer')"
-        @mouseleave="hoverMajor('')"
+        @mouseover.native="hoverMajor('developer')"
+        @mouseleave.native="hoverMajor('')"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
@@ -135,13 +135,14 @@ import styled from 'vue-styled-components'
 import SectionHead from '~/components/SectionHead.vue'
 
 const MajorsContainer = styled.div`
-  margin: 100px 0 140px;
+  margin: 0;
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: auto;
   grid-row-gap: 50px;
   justify-items: center;
 
   @media screen and (min-width: 768px) {
+    margin: 100px 0 140px;
     grid-template-columns: repeat(4, auto);
   }
 `

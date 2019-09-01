@@ -61,8 +61,10 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.blackout {
-  filter: grayscale(100%);
+.blackout .major-image {
+  @media screen and (min-width:768px) {
+    filter: grayscale(100%);
+  }
 }
 .major {
   cursor: pointer;
@@ -80,15 +82,22 @@ export default Vue.extend({
     top: 280px;
   }
 
-  &:hover .major-image {
-    background-size: 120% 120%;
+  @media screen and (min-width:768px) {
+    &:hover .major-image {
+      background-size: 120% 120%;
+    }
+  }
+
+  @media screen and (max-width:768px) {
+    top: 0 !important;
+    transform: none !important;
   }
 }
 .major-image {
   width: 100%;
   height: 262px;
   background-size: 100% 100%;
-  transition: background-size 0.15s ease-in;
+  transition: all 0.15s ease-in;
 }
 .title {
   width: 100%;
@@ -118,6 +127,15 @@ export default Vue.extend({
   &.green {
     top: -50px;
     text-align: right;
+  }
+
+  @media screen and (max-width:768px) {
+    &.yellow {
+      bottom: 0px;
+    }
+    &.blue {
+      bottom: 0px;
+    }
   }
 }
 </style>
