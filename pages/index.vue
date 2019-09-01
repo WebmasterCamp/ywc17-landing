@@ -1,0 +1,44 @@
+<template>
+  <div>
+    <Hero />
+    <WhatIsYWC />
+    <Majors />
+    <Location />
+    <Timeline />
+    <Guru />
+    <Gallery />
+    <Sponsor />
+    <QA />
+    <FollowUs />
+    <Footer />
+  </div>
+</template>
+
+<script>
+import WhatIsYWC from '~/components/sections/WhatIsYWC'
+import Hero from '~/components/sections/Hero'
+import Timeline from '~/components/sections/Timeline.vue'
+export default {
+  components: {
+    Hero,
+    WhatIsYWC,
+    Location: () => import('~/components/sections/Location'),
+    Timeline,
+    Guru: () => import('~/components/sections/Guru'),
+    Majors: () => import('~/components/sections/Majors'),
+    QA: () => import('~/components/sections/QA'),
+    FollowUs: () => import('~/components/sections/FollowUs'),
+    Sponsor: () => import('~/components/sections/Sponsor'),
+    Gallery: () => import('~/components/sections/Gallery'),
+    Footer: () => import('~/components/sections/Footer')
+  }
+}
+</script>
+
+<style>
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+</style>

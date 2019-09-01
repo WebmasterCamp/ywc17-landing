@@ -1,0 +1,232 @@
+<template>
+  <section ref="major-section" class="container">
+    <SectionHead style="position: sticky; top: 0;">
+      <!-- Register
+      <h3 class="subhead">เลือกสาขาที่ต้องการสมัคร</h3> -->
+      Majors
+      <h3 class="subhead">สาขาที่รับสมัคร</h3>
+    </SectionHead>
+    <MajorsContainer>
+      <Major
+        title="Content"
+        image="web-content"
+        color="green"
+        :class="{blackout: selectMajor !== '' && selectMajor !== 'content'}"
+        :image-style="`transform: translate3d(0, ${y1}px, 0);`"
+        @mouseover.native="hoverMajor('content')"
+        @mouseleave.native="hoverMajor('')"
+      >
+        <template slot-scope="scope">
+          <FullscreenOverlay
+            :show="scope.show"
+            :count="major.content"
+          >
+            <template v-slot:content>        
+              <p>
+                ทำหน้าที่คิดและเขียนเนื้อหาต่าง ๆ บนเว็บไซต์ เหมาะกับผู้ที่รักในการเขียนและเล่าเรื่องทุกรูปแบบ เช่น บ่นในทวิตและเขียนแคปชั่นในไอจี เป็นต้น
+              </p>
+              <h3>ตัวอย่างคำถาม</h3>
+              <ol>
+                <li>ให้น้องเขียน Fake News หรือ Fake Content เรื่องอะไรก็ได้ ที่ทำให้กรรมการอ่านแล้วรู้สึกเชื่อจนเผลอแชร์ก่อนเช็ค (ส่งคอนเทนต์นี้ในเว็บค่ายเท่านั้น ห้ามเผยแพร่คอนเทนต์ออกไปในโซเชียล)</li>
+                <li>ให้น้องเขียนคอนเทนต์แก้ Fake News/Content ในข้อ 1 ที่ทำให้กรรมการอ่านแล้วอยากแชร์เพื่อแก้ข่าว</li>
+              </ol>
+            </template>
+          </FullscreenOverlay>
+        </template>
+      </Major>
+      
+      <Major
+        title="Designer"
+        image="web-designer"
+        color="yellow"
+        :class="{blackout: selectMajor !== '' && selectMajor !== 'designer'}"
+        :image-style="`transform: translate3d(0, ${y2}px, 0);`"
+        @mouseover.native="hoverMajor('designer')"
+        @mouseleave.native="hoverMajor('')"
+      >
+        <template slot-scope="scope">
+          <FullscreenOverlay
+            :show="scope.show"
+            :count="major.design"
+          >
+            <template v-slot:content>        
+              <p>
+                ทำหน้าที่ออกแบบเว็บไซต์ให้สวยงาม เหมาะกับผู้ที่ชอบวาดรูป รักในสีสันและการ วางองค์ประกอบต่าง ๆ รับพิจารณาพิเศษ สำหรับผู้ที่มีงานอดิเรกแอบวาดรูปในห้องเรียน
+              </p>
+              <h3>ตัวอย่างคำถาม</h3>
+              <ol>
+                <li>ทำไมเราถึงต้องเลือกน้องให้เข้ามาเป็นหนึ่งใน Young Webmaster Camp สาขา Web Design</li>
+                <li>ยกตัวอย่างเว็บไซต์หรือแอพพลิเคชั่นที่มีส่วนช่วยสังคมมา 1 ตัวอย่าง พร้อมทั้งอธิบายถึงเหตุผลที่เลือก</li>
+                <li>จงยกตัวอย่างเว็บไซต์หน่วยงานภาครัฐที่น้องอยากทำการ Re-design UI และ UX มา 1 เว็บไซต์ พร้อมบอกเหตุผลที่เลือก และบอกจุดที่ควรจะแก้ไข และแนวทางในการแก้ปัญหา 3 จุดเป็นอย่างน้อย</li>
+                <li>Portfolio; UX Case Study หรือ UI Case Study</li>
+              </ol>
+            </template>
+          </FullscreenOverlay>
+        </template>
+      </Major>
+      <Major
+        title="Marketing"
+        image="web-marketing"
+        color="pink"
+        :class="{blackout: selectMajor !== '' && selectMajor !== 'marketing'}"
+        :image-style="`transform: translate3d(0, ${y3}px, 0);`"
+        @mouseover.native="hoverMajor('marketing')"
+        @mouseleave.native="hoverMajor('')"
+      >
+        <template slot-scope="scope">
+          <FullscreenOverlay
+            :show="scope.show"
+            :count="major.marketing"
+          >
+            <template v-slot:content>        
+              <p>
+                ทำหน้าที่วางกลยุทธ์เพื่อสร้างรายได้ให้กับเว็บไซต์ เหมาะกับผู้ที่สนใจในการหาเงินจากช่องทางต่าง ๆ
+              </p>
+              <h3>ตัวอย่างคำถาม</h3>
+              <ol>
+                <li>จงบอก จุดแข็ง (อย่างน้อย 2 ข้อ) และ จุดอ่อน (อย่างน้อย 2 ข้อ) ของสื่อประเภทเว็บไซต์ สำหรับตัวเรา แบรนด์ และธุรกิจ เมื่อเทียบกับสื่อดิจิทัล ประเภทอื่นๆ เช่น โมบายแอพพลิเคชั่นและโซเชียลมีเดีย เป็นต้น</li>
+                <li>คุณคิดว่าการทำ Marketing กับ Content เหมือนหรือต่างกันอย่างไร และอะไรคือเรื่องที่สำคัญที่สุดของการทำการตลาด</li>
+              </ol>
+            </template>
+          </FullscreenOverlay>
+        </template>
+      </Major>
+      <Major
+        title="Programming"
+        image="web-developer"
+        color="blue"
+        :class="{blackout: selectMajor !== '' && selectMajor !== 'developer'}"
+        :image-style="`transform: translate3d(0, ${y4}px, 0);`"
+        @mouseover.native="hoverMajor('developer')"
+        @mouseleave.native="hoverMajor('')"
+      >
+        <template slot-scope="scope">
+          <FullscreenOverlay
+            :show="scope.show"
+            :count="major.programming"
+          >
+            <template v-slot:content>        
+              <p>
+                ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ ไม่ว่าภาษาไหน ๆ จะ html, css, js หรือนอกเหนือจากนี้
+              </p>
+              <h3>ตัวอย่างคำถาม</h3>
+              <ol>
+                <li></li>
+                <li></li>
+              </ol>
+            </template>
+          </FullscreenOverlay>
+        </template>
+      </Major>
+    </MajorsContainer>
+  </section>
+</template>
+<style scoped>
+section {
+  margin-top: 100px;
+}
+h3.subhead {
+  letter-spacing: 0.2em;
+  font-family: 'Maledpan';
+  font-weight: normal;
+  font-size: 36px;
+  color: #6C6C6C;
+  user-select: none;
+  margin: 0;
+}
+@media screen and (max-width: 768px)  {
+  h3.subhead {
+    font-size: 24px;
+    margin-top: -15px;
+    letter-spacing: 0.1em;
+  }
+}
+</style>
+<script>
+import Vue from 'vue'
+import styled from 'vue-styled-components'
+import SectionHead from '~/components/SectionHead.vue'
+import { isInViewport, getDistance } from '~/utils/dom'
+
+const MajorsContainer = styled.div`
+  margin: 0;
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 47%);
+  grid-gap: 55px 20px;
+  justify-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 50px;
+  }
+
+  @media screen and (min-width: 960px) {
+    margin: 110px 0 140px;
+    grid-template-columns: repeat(4, auto);
+  }
+`
+
+class CountMajorRegistant {
+  programming = 0
+  design = 0
+  marketing = 0
+  content = 0
+}
+
+export default Vue.extend({
+  components: {
+    SectionHead,
+    MajorsContainer,
+    Major: () => import('~/components/Major') // ,
+    // FullscreenOverlay: () => import('~/components/FullscreenOverlay')
+  },
+  data () {
+    return {
+      selectMajor: '',
+      major: new CountMajorRegistant(),
+      y1: -170,
+      y2: -340,
+      y3: -122,
+      y4: -293,
+      lastScrollTop: 0
+    }
+  },
+  mounted () {
+    window.onscroll = () => {
+      const sectionElement = this.$refs['major-section']
+      if (!sectionElement) { return }
+
+      if (isInViewport(sectionElement)) {
+        const distance = getDistance(sectionElement)
+        this.y1 = distance / 4 * 0.7
+        this.y2 = distance / 4 * 1.3
+        this.y3 = distance / 4 * 0.5
+        this.y4 = distance / 4 * 1.2
+      }
+    }
+    this.fetchCountRegistant()
+      .then((major) => {
+        this.major = major
+      })
+  },
+  methods: {
+    hoverMajor (major) {
+      this.selectMajor = major
+    },
+    fetchCountRegistant () {
+      return this.$axios
+        .get('https://api.ywc.in.th/users/stat')
+        .then(({ status, data }) => {
+          if (status === 200) {
+            return data.payload
+          }
+          return new CountMajorRegistant()
+        })
+        .catch(() => {
+          return new CountMajorRegistant()
+        })
+    }
+  }
+})
+</script>

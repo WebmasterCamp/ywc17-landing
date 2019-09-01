@@ -1,0 +1,32 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  font-family: 'Sarabun', serif, Tahoma;
+  color: white;
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
+section {
+  margin-bottom: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  /* padding-left: 80px;
+  padding-right: 80px; */
+}
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 0.94px white;
+}
+
+.position-relative {
+  position: relative;
+}

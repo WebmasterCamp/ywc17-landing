@@ -1,0 +1,164 @@
+<template>
+  <section class="container">
+    <SectionHead title="Sponsors" style="position: sticky; top: 0;"/>
+    <div class="sponsor-vip-wrapper position-relative">
+      <SponsorCircle
+        :transparent="true"
+        size="lg"
+        fileName="sponsors/1-2-TWA.svg"
+        link="https://www.webmaster.or.th/"
+        alt="Thai Webmaster Association"
+      />
+      <SponsorCircle
+        :transparent="true"
+        size="lg"
+        fileName="sponsors/1-1-ExxonMobil.svg"
+        link="https://corporate.exxonmobil.com/"
+        alt="ExxonMobil"
+      />
+      <SponsorCircle
+        :transparent="true"
+        size="lg"
+        fileName="sponsors/1-3-ITKMITL.svg"
+        link="https://www.it.kmitl.ac.th/"
+        alt="IT KMITL"
+      />
+    </div>
+    <!-- <div class="sponsor-gold-wrapper">
+      <SponsorCircle size="md" fileName="sponsors/vip/webmaster-association" link="#" alt="temp" />
+
+      <SponsorCircle size="md" fileName link="#" alt />
+      <SponsorCircle size="md" fileName link="#" alt />
+      <SponsorCircle size="md" fileName link="#" alt />
+      <SponsorCircle size="md" fileName link="#" alt />
+      <SponsorCircle size="md" fileName link="#" alt />
+    </div> -->
+    <div class="sponsor-silver-wrapper position-relative">
+      <SponsorCircle 
+        size="sm" 
+        fileName="sponsors/3-1-MangoZero.svg" 
+        link="https://www.mangozero.com/" 
+        alt="MangoZero"
+        :transparent="true"
+      />
+      <SponsorCircle 
+        size="sm" 
+        fileName="sponsors/3-2-Pantip.svg" 
+        link="https://www.pantip.com/" 
+        alt="Pantip" 
+        :transparent="true"
+      />
+      <SponsorCircle 
+        size="sm" 
+        fileName="sponsors/3-3-Dek-D.svg" 
+        link="https://www.dek-d.com/" 
+        alt="Dek-D" 
+        :transparent="true"
+      />
+      <SponsorCircle 
+        size="sm" 
+        fileName="sponsors/3-4-CampHUB.svg" 
+        link="https://www.camphub.in.th/" 
+        alt="CampHUB" 
+        :transparent="true"
+      />
+      <SponsorCircle 
+        size="sm" 
+        fileName="sponsors/3-5-THNIC.svg" 
+        link="https://www.thnic.co.th/" 
+        alt="THNIC" 
+        :transparent="true"
+      />
+      <!-- <SponsorCircle size="sm" fileName link="#" alt="temp" />
+      <SponsorCircle size="sm" fileName link="#" alt="temp" />
+      <SponsorCircle size="sm" fileName link="#" alt="temp" />
+      <SponsorCircle size="sm" fileName link="#" alt="temp" /> -->
+    </div>
+  </section>
+</template>
+  
+<script>
+import SectionHead from '~/components/SectionHead'
+
+export default {
+  components: {
+    SectionHead,
+    SponsorCircle: () => import('~/components/SponsorCircle')
+  }
+}
+</script>
+<style scoped>
+section {
+  margin-top: 100px;
+}
+</style>
+<style lang="scss" scoped>
+section {
+  padding-bottom: 60px;
+}
+.sponsor-vip-wrapper {
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-items: center;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 20px;
+  align-items: center;
+  // HANDLE 3 LOGO, CAN BE REMOVED IF ADD MORE LOGO
+  @media screen and (max-width: 768px) {
+    & > div:last-child {
+      grid-column: 1 / span2;
+    }
+  }
+  //////////////////////////////////////////////////
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, auto);
+  }
+  
+}
+.sponsor-gold-wrapper {
+  width: 80%;
+  min-width: 260px;
+
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 15px;
+  margin: 15px auto;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 375px) {
+    min-width: 300px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 485px;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, auto);
+  }
+}
+.sponsor-silver-wrapper {
+  // width: 500px;
+  width: 70%;
+  min-width: 220px;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(1, auto);
+  grid-gap: 20px;
+  margin: 15px auto;
+  
+  // HANDLE 3 LOGO, CAN BE REMOVED IF ADD MORE LOGO
+  @media screen and (max-width: 768px) {
+    & > div:last-child {
+      grid-column: 1 / span2;
+    }
+  }
+  //////////////////////////////////////////////////
+  @media screen and (min-width: 768px) {
+    // width: 485px;
+    grid-gap: 20px;
+    grid-template-columns: repeat(5, auto);
+  }
+}
+</style>
