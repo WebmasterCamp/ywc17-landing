@@ -1,6 +1,10 @@
 <template>
   <section ref="major-section" class="container">
-    <SectionHead title="Register" style="position: sticky; top: 0;" />
+    
+    <SectionHead style="position: sticky; top: 0;">
+      Register
+      <h3 class="subhead">เลือกสาขาที่ท่านต้องการสมัคร</h3>
+    </SectionHead>
     <MajorsContainer>
       <Major
         title="Content"
@@ -127,6 +131,21 @@
 <style scoped>
 section {
   margin-top: 100px;
+}
+h3.subhead {
+  letter-spacing: 0.2em;
+  font-family: 'Maledpan';
+  font-weight: normal;
+  font-size: 36px;
+  color: #6C6C6C;
+  user-select: none;
+  margin: 0;
+}
+@media screen and (max-width: 768px)  {
+  h3.subhead {
+    font-size: 24px;
+    margin-top: -15px;
+  }
 }
 </style>
 <script>
