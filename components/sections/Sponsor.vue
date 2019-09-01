@@ -7,21 +7,21 @@
         size="lg"
         fileName="sponsors/1-1-ExxonMobil.svg"
         link="https://www.facebook.com/exxonmobilthailand/"
-        alt="exxon mobil"
+        alt="ExxonMobil"
       />
       <SponsorCircle
         :transparent="true"
         size="lg"
         fileName="sponsors/1-2-TWA.svg"
         link="https://www.webmaster.or.th/"
-        alt="webmaster association"
+        alt="Thai Webmaster Association"
       />
       <SponsorCircle
         :transparent="true"
         size="lg"
         fileName="sponsors/1-3-ITKMITL.svg"
         link="https://www.it.kmitl.ac.th/"
-        alt="it kmitl"
+        alt="IT KMITL"
       />
     </div>
     <!-- <div class="sponsor-gold-wrapper">
@@ -37,29 +37,36 @@
       <SponsorCircle 
         size="sm" 
         fileName="sponsors/3-1-MangoZero.svg" 
-        link="#" 
-        alt="mango"
+        link="https://www.mangozero.com/" 
+        alt="MangoZero"
         :transparent="true"
       />
       <SponsorCircle 
         size="sm" 
         fileName="sponsors/3-2-Pantip.svg" 
-        link="#" 
-        alt="pantip" 
+        link="https://www.pantip.com/" 
+        alt="Pantip" 
         :transparent="true"
       />
       <SponsorCircle 
         size="sm" 
         fileName="sponsors/3-3-Dek-D.svg" 
-        link="#" 
-        alt="dekd" 
+        link="https://www.dek-d.com/" 
+        alt="Dek-D" 
+        :transparent="true"
+      />
+      <SponsorCircle 
+        size="sm" 
+        fileName="sponsors/3-4-CampHUB.svg" 
+        link="https://www.camphub.in.th/" 
+        alt="CampHUB" 
         :transparent="true"
       />
       <SponsorCircle 
         size="sm" 
         fileName="sponsors/3-5-THNIC.svg" 
-        link="#" 
-        alt="thnic" 
+        link="https://www.thnic.co.th/" 
+        alt="THNIC" 
         :transparent="true"
       />
       <!-- <SponsorCircle size="sm" fileName link="#" alt="temp" />
@@ -95,6 +102,7 @@ section {
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-items: center;
+  grid-column-gap: 1.5rem;
   grid-row-gap: 20px;
   align-items: center;
   // HANDLE 3 LOGO, CAN BE REMOVED IF ADD MORE LOGO
@@ -134,14 +142,21 @@ section {
   min-width: 220px;
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(1, auto);
   grid-gap: 20px;
   margin: 15px auto;
-
+  
+  // HANDLE 3 LOGO, CAN BE REMOVED IF ADD MORE LOGO
+  @media screen and (max-width: 768px) {
+    & > div:last-child {
+      grid-column: 1 / span2;
+    }
+  }
+  //////////////////////////////////////////////////
   @media screen and (min-width: 768px) {
     // width: 485px;
     grid-gap: 20px;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
   }
 }
 </style>

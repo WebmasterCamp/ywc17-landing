@@ -76,7 +76,7 @@ export default Vue.extend({
     display: grid;
     grid-template-columns: auto;
     grid-row-gap: 30px;
-    padding: 100px 0;
+    padding: 90px 0;
     text-align: center;
 
     img {
@@ -89,7 +89,7 @@ export default Vue.extend({
   }
   
   .logos-box {
-    padding: 21px 0;
+    padding-bottom: 30px;
   }
   
   .logos {
