@@ -82,9 +82,9 @@ br {
 }
 .icon {
   position: absolute;
-  top: -55px;
-  font-size: 40px;
-  letter-spacing: .4rem;
+  letter-spacing: 1.5rem;
+  font-size: 6rem;
+  top: -50px;
   line-height: 7rem;
   font-family: Montserrat;
   font-weight: 600;
@@ -92,10 +92,10 @@ br {
   -webkit-text-stroke-width: 1.5px;
   color: transparent;
   user-select: none;
-  @media screen and (min-width: 768px) {
-    letter-spacing: 1.5rem;
-    font-size: 6rem;
-    top: -50px;
+  @media screen and (max-width: 768px) {
+    top: -55px;
+    font-size: 40px;
+    letter-spacing: .4rem;
   }
 }
 .location-content{
