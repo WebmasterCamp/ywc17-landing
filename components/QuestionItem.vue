@@ -26,6 +26,7 @@ const Container = styled.div`
   }
 `
 const QBox = styled.div`
+  cursor: pointer;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), #E1426F;
   border-radius: 2px;
   border-bottom: 1px solid #622738;
