@@ -5,16 +5,16 @@
       <SponsorCircle
         :transparent="true"
         size="lg"
-        fileName="sponsors/1-1-ExxonMobil.svg"
-        link="https://corporate.exxonmobil.com/"
-        alt="ExxonMobil"
+        fileName="sponsors/1-2-TWA.svg"
+        link="https://www.webmaster.or.th/"
+        alt="Thai Webmaster Association"
       />
       <SponsorCircle
         :transparent="true"
         size="lg"
-        fileName="sponsors/1-2-TWA.svg"
-        link="https://www.webmaster.or.th/"
-        alt="Thai Webmaster Association"
+        fileName="sponsors/1-1-ExxonMobil.svg"
+        link="https://corporate.exxonmobil.com/"
+        alt="ExxonMobil"
       />
       <SponsorCircle
         :transparent="true"
@@ -89,7 +89,7 @@ export default {
 </script>
 <style scoped>
 section {
-  margin-top: 70px;
+  margin-top: 100px;
 }
 </style>
 <style lang="scss" scoped>

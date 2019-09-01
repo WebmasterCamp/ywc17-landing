@@ -36,7 +36,7 @@ section {
   background-size :100% 100%;
   padding-bottom: 5px;
   @media screen and (max-width:768px) {
-    margin: 120px 0;
+    margin: 100px 0;
   }
 }
 .location {
