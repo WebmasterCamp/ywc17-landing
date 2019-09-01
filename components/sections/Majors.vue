@@ -1,6 +1,5 @@
 <template>
   <section ref="major-section" class="container">
-    
     <SectionHead style="position: sticky; top: 0;">
       <!-- Register
       <h3 class="subhead">เลือกสาขาที่ต้องการสมัคร</h3> -->
@@ -147,6 +146,7 @@ h3.subhead {
 import Vue from 'vue'
 import styled from 'vue-styled-components'
 import SectionHead from '~/components/SectionHead.vue'
+import { isInViewport, getDistance } from '~/utils/dom'
 
 const MajorsContainer = styled.div`
   margin: 0;
@@ -172,16 +172,6 @@ class CountMajorRegistant {
   design = 0
   marketing = 0
   content = 0
-}
-
-const isInViewport = function (elem) {
-  const position = elem.getBoundingClientRect()
-  return position.top < window.innerHeight && position.bottom >= 0
-}
-
-const getDistance = function (elem) {
-  const position = elem.getBoundingClientRect()
-  return position.top - window.innerHeight
 }
 
 export default Vue.extend({
