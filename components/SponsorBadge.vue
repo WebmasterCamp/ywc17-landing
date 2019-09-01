@@ -37,8 +37,8 @@ export default Vue.extend({
 
 <style lang="scss">
   @import '~/assets/css/global.scss';
-  $small-size: 70px;
-  $normal-size: 90px;
+  $small-size: 60px;
+  $normal-size: 80px;
 
   .circle {
     width: $small-size;

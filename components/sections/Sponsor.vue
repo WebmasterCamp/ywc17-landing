@@ -6,7 +6,7 @@
         :transparent="true"
         size="lg"
         fileName="sponsors/1-1-ExxonMobil.svg"
-        link="https://www.facebook.com/exxonmobilthailand/"
+        link="https://corporate.exxonmobil.com/"
         alt="ExxonMobil"
       />
       <SponsorCircle
