@@ -3,7 +3,7 @@
     
     <SectionHead style="position: sticky; top: 0;">
       Register
-      <h3 class="subhead">เลือกสาขาที่ท่านต้องการสมัคร</h3>
+      <h3 class="subhead">เลือกสาขาที่ต้องการสมัคร</h3>
     </SectionHead>
     <MajorsContainer>
       <Major
@@ -98,7 +98,7 @@
         </template>
       </Major>
       <Major
-        title="Developer"
+        title="Programming"
         image="web-developer"
         color="blue"
         :class="{blackout: selectMajor !== '' && selectMajor !== 'developer'}"
@@ -145,6 +145,7 @@ h3.subhead {
   h3.subhead {
     font-size: 24px;
     margin-top: -15px;
+    letter-spacing: 0.1em;
   }
 }
 </style>
@@ -155,14 +156,19 @@ import SectionHead from '~/components/SectionHead.vue'
 
 const MajorsContainer = styled.div`
   margin: 0;
+  margin-top: 25px;
   display: grid;
   grid-template-columns: repeat(2, 47%);
   grid-gap: 55px 20px;
   justify-items: center;
   justify-content: center;
 
+  @media screen and (min-width: 768px) {
+    margin-top: 50px;
+  }
+
   @media screen and (min-width: 960px) {
-    margin: 100px 0 140px;
+    margin: 110px 0 140px;
     grid-template-columns: repeat(4, auto);
   }
 `

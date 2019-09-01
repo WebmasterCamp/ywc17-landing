@@ -44,6 +44,7 @@ const Container = styled('div', { align: String, size: String })`
 
   @media screen and (max-width:768px) {
     text-align: center;
+    letter-spacing: 0.3em;
     font-size: ${props => sizes[props.size].fontSmallSize}px;
   }
 `
