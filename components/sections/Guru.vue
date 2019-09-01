@@ -28,14 +28,15 @@ section {
   margin-top: 100px;
 }
 .height {
-  height: 45px;
+  height: 80px;
+  text-align: center;
 }
-@media screen and (max-width:960px)  {
+/* @media screen and (max-width:960px)  {
   .height {
     height: 80px;
-    text-align: center;
+    text-align: center; 
   }
-}
+} */
 </style>
 <script>
 import styled from 'vue-styled-components'
@@ -46,22 +47,24 @@ import Picture from '~/components/Picture.vue'
 
 const dispProp = { standalone: Boolean }
 const Gurus = styled.div`
-  display: grid;
+  /*display: grid;
   grid-template-columns: repeat(4, 22%);
   grid-column-gap: 27px;
   grid-row-gap: 27px;
   align-items: start;
 
-  @media screen and (max-width:960px) {
+  @media screen and (max-width:960px) {*/
     display: block;
+  @media screen and (max-width:960px) {
     white-space: nowrap;
+    text-align: left;
+  }
     overflow: hidden;
     overflow-x: auto;
-    text-align: left;
     h3, p {
       display: none;
     }
-  }
+  /*}*/
 `
 const Guru = styled('div', dispProp)`
   display: inline-grid;
@@ -76,11 +79,11 @@ const Guru = styled('div', dispProp)`
     font-size: 14px;
     font-weight: bold;
   }
-  ${props => !props.standalone ? `@media screen and (max-width:960px) {
+  ${props => !props.standalone ? `/*@media screen and (max-width:960px) {*/
     display: inline-block;
     margin: 5px;
-  }` : `display: none;
-  min-height: 325px;
+  /*}*/` : `/*display: none;*/
+  min-height: 350px;
   @media screen and (max-width:960px) {
     display: block;
     transition: all .3s;
@@ -112,16 +115,16 @@ const GuruPic = styled('div', dispProp)`
 
   text-align: right;
   overflow: hidden;
-  ${props => !props.standalone ? `cursor: default;
-  @media screen and (max-width:960px) {
+  ${props => !props.standalone ? `/*cursor: default;
+  @media screen and (max-width:960px) {*/
     width: 105px;
     height: 105px;
-  }
+  /*}*/
   img {
     filter: grayscale(100%);
   }` : `background: ${color.main};`}
 
-  @media screen and (max-width:960px) {
+  /*@media screen and (max-width:960px) {*/
     &.active {
       background: ${color.main};
       transition: all .3s;
@@ -129,7 +132,7 @@ const GuruPic = styled('div', dispProp)`
         filter: none;
       }
     }
-  }
+  /*}*/
 `
 
 export default {
@@ -152,7 +155,6 @@ export default {
         { img: 6, name: 'อินทนนท์ ปัญญาโสภา (เบนซ์)', role: `ผู้ก่อตั้งเว็บไซต์ Grappik` },
         { img: 7, name: 'เจริญ ลักษณ์เลิศกุล (เจ)', role: `Associate Director - Strategic planning หน่วยงาน Online Station (True Visions Group Co., Ltd.)` },
         { img: 8, name: 'เมธปริยา คำนวนวุฒิ (ว่าน)', role: `Head of Marketing Lnw Co., Ltd.` }
-        
       ]
     }
   },
