@@ -1,7 +1,7 @@
 <template>
   <section class="container">
-    <SectionHead size="timeline">Timeline</SectionHead>
-    <TimelineList>
+    <SectionHead size="timeline" style="position: sticky; top: 0;">Timeline</SectionHead>
+    <TimelineList class="position-relative">
       <TimelineItem v-for="(item, code) in items" :key="code">
         <TimelineIcon :active="isActive(code)">
           <Icon :fileName="`timeline-${code}`" :alt="item.name" />

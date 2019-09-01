@@ -5,8 +5,8 @@
       <h3>YWC?</h3>
       <p>Creating new<br>young webmasters<br>since 2002</p>
     </TitleBox>
-    <ImageBox :style="`transform: translate3d(0, ${y}px, 0);`" />
-    <BriefBox :style="`transform: translate3d(0, ${y}px, 0);`">
+    <ImageBox :style="`transform: translate3d(0, ${y2}px, 0);`" />
+    <BriefBox :style="`transform: translate3d(0, ${y2}px, 0);`">
       เพราะ<span class="secondary">ปัญหา</span><br class="hidden-mb">จะถูกแก้ไขได้<br>ด้วย<span class="secondary">การลงมือทำ</span>
     </BriefBox>
     <Row>
@@ -174,7 +174,8 @@ export default {
   },
   data () {
     return {
-      y: 0
+      y: 39,
+      y2: -33
     }
   },
   mounted () {
@@ -183,6 +184,7 @@ export default {
       if (isInViewport(sectionElement)) {
         const distance = getDistance(sectionElement)
         this.y = distance / 4 * 0.7 + 140
+        this.y2 = distance / 4 * 1.2 + 140
       }
     })
   }

@@ -1,14 +1,14 @@
 <template>
   <section class="container">
-    <SectionHead title="Guru" align="left" class="height" />
-    <Guru :standalone="true">
+    <SectionHead title="Guru" align="left" class="height" style="position: sticky; top: 0;" />
+    <Guru :standalone="true" class="position-relative">
       <GuruPic :standalone="true">
         <Picture :fileName="`guru/${gurus[currentGuru].img}`" />
       </GuruPic>
       <h3>{{ gurus[currentGuru].name }}</h3>
       <p v-html="gurus[currentGuru].role" />
     </Guru>
-    <Gurus>
+    <Gurus class="position-relative">
       <Guru
         v-for="(g, idx) in gurus"
         :id="`gurupic-${idx}`"

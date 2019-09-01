@@ -26,3 +26,7 @@ section {
   color: transparent;
   -webkit-text-stroke: 0.94px white;
 }
+
+.position-relative {
+  position: relative;
+}
