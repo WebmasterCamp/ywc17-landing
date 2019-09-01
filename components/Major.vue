@@ -125,6 +125,10 @@ export default Vue.extend({
   }
   &.yellow {
     bottom: -25px;
+    font-size: 42px;
+    span {
+      font-size: 46px;
+    }
   }
   &.pink {
     top: -50px;
