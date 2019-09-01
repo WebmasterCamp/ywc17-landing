@@ -132,6 +132,9 @@ export default Vue.extend({
     span {
       font-size: 46px;
     }
+    @media screen and (max-width: 768px) {
+      width: 90%;
+    }
   }
   &.pink {
     top: -50px;
