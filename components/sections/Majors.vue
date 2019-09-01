@@ -98,7 +98,7 @@
         </template>
       </Major>
       <Major
-        title="Developer"
+        title="Programming"
         image="web-developer"
         color="blue"
         :class="{blackout: selectMajor !== '' && selectMajor !== 'developer'}"

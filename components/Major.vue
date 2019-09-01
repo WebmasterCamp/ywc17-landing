@@ -114,7 +114,11 @@ export default Vue.extend({
   line-height: 50px;
 
   &.blue {
-    bottom: -68px;
+    bottom: -25px;
+    font-size: 38px;
+    span {
+      font-size: 46px;
+    }
   }
   &.yellow {
     bottom: -25px;
