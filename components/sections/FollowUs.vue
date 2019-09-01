@@ -47,14 +47,13 @@ const GridCol = styled.div`
   display: inline-grid;
 `
 const SocialBtn = styled.a`
-  display: inline-block;
+  display: flex;
   color: ${color.main};
   background: black;
   border: 2px solid ${color.main};
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  line-height: 80px;
   user-select: none;
   transition: all .15s;
 
@@ -67,6 +66,9 @@ const SocialBtn = styled.a`
   }
 `
 const SocialIcon = styled(Picture)`
+  display: inline-flex;
+  align-items: center;
+  margin: 0 auto;
   & img {
     user-drag: none;
     vertical-align: middle;

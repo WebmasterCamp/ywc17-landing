@@ -39,6 +39,10 @@ export default Vue.extend({
       padding-left: 15px;
       padding-right: 15px;
     }
+
+    @media screen and (max-width:768px) {
+      background-attachment: scroll;
+    }
   }
 
   .ywc-logo {
