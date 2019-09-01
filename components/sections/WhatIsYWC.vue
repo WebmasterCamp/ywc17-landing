@@ -1,12 +1,12 @@
 <template>
-  <section class="container">
-    <TitleBox>
+  <section ref="what-section" class="container">
+    <TitleBox :style="`transform: translate3d(0, ${y}px, 0);`">
       <h3 class="outline">What is</h3>
       <h3>YWC?</h3>
       <p>Creating new<br>young webmasters<br>since 2002</p>
     </TitleBox>
-    <ImageBox />
-    <BriefBox>
+    <ImageBox :style="`transform: translate3d(0, ${y}px, 0);`" />
+    <BriefBox :style="`transform: translate3d(0, ${y}px, 0);`">
       เพราะ<span class="secondary">ปัญหา</span><br class="hidden-mb">จะถูกแก้ไขได้<br>ด้วย<span class="secondary">การลงมือทำ</span>
     </BriefBox>
     <Row>
@@ -27,8 +27,14 @@
       max-width: 380px
 </style>
 <script>
-import styled from 'vue-styled-components'
+import styled, { css } from 'vue-styled-components'
 import color from '~/utils/color'
+import { isInViewport, getDistance } from '~/utils/dom'
+
+const disabledParallax = css`
+  transform: none !important;
+`
+
 const TitleBox = styled.div`
   position: absolute;
   z-index: 1;
@@ -80,6 +86,10 @@ const TitleBox = styled.div`
       line-height: 50px;
     }
   }
+
+  @media screen and (max-width:768px) {
+    ${disabledParallax}
+  }
 `
 const ImageBox = styled.div`
   width: 380px;
@@ -89,6 +99,8 @@ const ImageBox = styled.div`
   background: linear-gradient(to bottom right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0) 85%), url(/images/bg/whatIsYWC.jpg) no-repeat center;
   @media screen and (max-width: 768px) {
     background: linear-gradient(to top left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0) 85%), url(/images/bg/whatIsYWC.jpg) no-repeat center;
+
+    ${disabledParallax}
   }
 `
 const BriefBox = styled.div`
@@ -123,6 +135,7 @@ const BriefBox = styled.div`
     .hidden-mb {
       display: none;
     }
+    ${disabledParallax}
   }
 `
 
@@ -158,6 +171,20 @@ export default {
     BriefBox,
     Row,
     Column
+  },
+  data () {
+    return {
+      y: 0
+    }
+  },
+  mounted () {
+    const sectionElement = this.$refs['what-section']
+    window.addEventListener('scroll', () => {
+      if (isInViewport(sectionElement)) {
+        const distance = getDistance(sectionElement)
+        this.y = distance / 4 * 0.7 + 140
+      }
+    })
   }
 }
 </script>
