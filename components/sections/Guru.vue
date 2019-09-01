@@ -144,13 +144,15 @@ export default {
     return {
       currentGuru: 0,
       gurus: [
-        { name: 'วโรรส โรจนะ (โน้ต)', role: `CEO Dek-D Interactive Co., LTD.<br>นายกสมาคมผู้ดูแลเว็บไทย`, img: 1 },
-        { name: 'เมธปริยา คำนวนวุฒิ (ว่าน)', role: `Head of Marketing Lnw co., Ltd.`, img: 2 },
-        { name: 'เจริญ ลักษณ์เลิศกุล (เจ)', role: `Associate Director - Strategic planning หน่วยงาน Online Station (True Visions Group Co., Ltd.)`, img: 3 },
-        { name: 'คนที่หนึ่ง แสงหิรัญ (หนึ่ง)', role: `อาจารย์ประจำภาควิชาสาขาการออกแบบนิเทศศิลป์ คณะนิเทศศาสตร์ มหาวิทยาลัยอัสสัมชัญ`, img: 5 },
-        { name: 'ณปสก สันติสุนทรกูล (ปอล)', role: `COO, Dek-D Intertactive Co.,Ltd.`, img: 6 },
-        { name: 'อินทนนท์ ปัญญาโสภา (เบนซ์)', role: `ผู้ก่อตั้งเว็บไซต์ Grappik`, img: 7 },
-        { name: 'ขจร เจียรนัยพานิชย์ (เอ็ม)', role: `Executive Editor - MangoZero.com The Zero Publishing`, img: 8 }
+        { img: 1, name: 'วโรรส โรจนะ (โน้ต)', role: `CEO Dek-D Interactive Co., Ltd.<br>นายกสมาคมผู้ดูแลเว็บไทย` },
+        { img: 2, name: 'อภิศิลป์ ตรุงกานนท์ (บอย)', role: `Co-founder & Chief Technology Officer, Pantip.com` },
+        { img: 3, name: 'ขจร เจียรนัยพานิชย์ (เอ็ม)', role: `Executive Editor - MangoZero.com The Zero Publishing` },
+        { img: 4, name: 'ณปสก สันติสุนทรกูล (ปอล)', role: `COO, Dek-D Intertactive Co., Ltd.` },
+        { img: 5, name: 'คนที่หนึ่ง แสงหิรัญ (หนึ่ง)', role: `อาจารย์ประจำภาควิชาสาขาการออกแบบนิเทศศิลป์ คณะนิเทศศาสตร์ มหาวิทยาลัยอัสสัมชัญ` },
+        { img: 6, name: 'อินทนนท์ ปัญญาโสภา (เบนซ์)', role: `ผู้ก่อตั้งเว็บไซต์ Grappik` },
+        { img: 7, name: 'เจริญ ลักษณ์เลิศกุล (เจ)', role: `Associate Director - Strategic planning หน่วยงาน Online Station (True Visions Group Co., Ltd.)` },
+        { img: 8, name: 'เมธปริยา คำนวนวุฒิ (ว่าน)', role: `Head of Marketing Lnw Co., Ltd.` }
+        
       ]
     }
   },
