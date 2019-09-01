@@ -122,7 +122,8 @@ const GuruPic = styled('div', dispProp)`
   /*}*/
   img {
     filter: grayscale(100%);
-  }` : `background: ${color.main};`}
+  }` : `cursor: default;
+  background: ${color.main};`}
 
   /*@media screen and (max-width:960px) {*/
     &.active {
