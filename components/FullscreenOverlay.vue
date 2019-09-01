@@ -139,7 +139,8 @@ const Container = styled('div', containerProps)`
     font-weight: 300;
   }
   .content li{
-    line-height: 2.5;
+    line-height: 1.8;
+    margin-bottom: 12px;
   }
   .content ol {
     padding-left: 24px;
@@ -148,7 +149,7 @@ const Container = styled('div', containerProps)`
     font-family: 'Maledpan', 'Sarabun';
   }
   .content p {
-    margin-bottom: 50px;
+    margin-bottom: 32px;
   }
 
 `
