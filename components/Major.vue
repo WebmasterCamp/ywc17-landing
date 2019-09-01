@@ -4,17 +4,18 @@
       <div
         class="major-image" 
         :style="{backgroundImage: `url(/images/register/${image}.jpg)`}"
-        :alt="`Web ${title}`" />
+        :alt="`Web ${title}`"
+      />
       <div :class="`title ${color}`">
         <span class="outline-text">Web</span>
         {{ title }}
       </div>
     </div>
-    <slot
+    <!--<slot
       :show="show"
       :title="title"
       @dismiss="dismissOverlay"
-    />
+    />-->
   </div>
 </template>
 
@@ -49,13 +50,15 @@ export default Vue.extend({
   },
   methods: {
     openDetail () {
-      document.querySelector('body').style.overflow = 'hidden'
+
+    }
+    /* document.querySelector('body').style.overflow = 'hidden'
       this.show = !this.show
     },
     dismissOverlay () {
       document.querySelector('body').style.overflow = 'auto'
       this.show = false
-    }
+    } */
   }
 })
 </script>

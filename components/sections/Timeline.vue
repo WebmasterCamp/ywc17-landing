@@ -85,7 +85,7 @@ export default {
   data () {
     return {
       items: {
-        register: { name: 'รับสมัคร', startDate: '2019-09-01', endDate: '2019-10-15' },
+        register: { name: 'รับสมัคร', startDate: '2019-09-02', endDate: '2019-10-15' },
         announce: { name: 'ประกาศผล', startDate: '2019-10-26' },
         interview: { name: 'สัมภาษณ์', startDate: '2019-11-02' },
         finalist: { name: 'ประกาศผลสัมภาษณ์', startDate: '2019-11-05' },

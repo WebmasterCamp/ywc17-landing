@@ -12,7 +12,7 @@
     </div>
     <div class="logos-box">
       <div class="logos">
-        <SponsorBadge fileName="sponsors/1-1-ExxonMobil.svg" alt="ExxonMobil" link="https://www.facebook.com/exxonmobilthailand/" />
+        <SponsorBadge fileName="sponsors/1-1-ExxonMobil.svg" alt="ExxonMobil" link="https://corporate.exxonmobil.com/" />
         <SponsorBadge fileName="sponsors/1-2-TWA.svg" alt="Thai Webmaster Association" link="https://www.webmaster.or.th/" />
         <SponsorBadge fileName="sponsors/1-3-ITKMITL.svg" alt="IT KMITL" link="https://www.it.kmitl.ac.th/" />
       </div>
@@ -76,7 +76,7 @@ export default Vue.extend({
     display: grid;
     grid-template-columns: auto;
     grid-row-gap: 30px;
-    padding: 90px 0;
+    padding: 90px 0 30px;
     text-align: center;
 
     img {
@@ -96,11 +96,13 @@ export default Vue.extend({
     display: grid;
     grid-template-columns: repeat(3, auto);
     justify-items: center;
+    max-width: 280px;
     grid-row-gap: 20px;
+    grid-column-gap: 1.5rem;
+    margin: 0 auto;
     @media screen and (min-width: 576px) {
       grid-template-columns: repeat(3, auto);
-      max-width: 750px;
-      margin: auto;
+      max-width: 330px;
     }
   }
 </style>
