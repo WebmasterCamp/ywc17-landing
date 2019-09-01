@@ -142,7 +142,7 @@ const MajorsContainer = styled.div`
   justify-items: center;
   justify-content: center;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 960px) {
     margin: 100px 0 140px;
     grid-template-columns: repeat(4, auto);
   }
