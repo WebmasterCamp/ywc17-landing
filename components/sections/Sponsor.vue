@@ -99,6 +99,7 @@ section {
 .sponsor-vip-wrapper {
   width: fit-content;
   margin: auto;
+  margin-bottom: 30px;
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-items: center;
@@ -113,7 +114,7 @@ section {
   }
   //////////////////////////////////////////////////
   @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(3, 33%);
+    grid-template-columns: repeat(3, auto);
   }
   
 }
@@ -126,6 +127,7 @@ section {
   grid-template-columns: repeat(2, auto);
   grid-gap: 15px;
   margin: 15px auto;
+  margin-bottom: 30px;
 
   @media screen and (min-width: 375px) {
     min-width: 300px;
