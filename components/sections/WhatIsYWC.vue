@@ -83,6 +83,7 @@ const TitleBox = styled.div`
 `
 const ImageBox = styled.div`
   width: 380px;
+  max-width: 100%;
   height: 510px;
   margin: 0 auto;
   background: linear-gradient(to bottom right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0) 85%), url(${require('~/assets/images/test.png')}) no-repeat center;
