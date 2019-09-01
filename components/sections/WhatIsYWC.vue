@@ -11,7 +11,7 @@
     </BriefBox>
     <Row>
       <Column>
-        โอกาสเดียวที่ตัวคุณเองและสังคมจะได้รับการพัฒนาไปพร้อม ๆ กัน กับ Young Webmaster Camp ครั้งที่ 17 <span class="secondary">“Social Change, Arrange The World”</span> ค่ายสร้างเว็บไซต์ระดับอุดมศึกษาที่ใหญ่ที่สุด
+        <p>โอกาสเดียวที่ตัวคุณเองและสังคมจะได้รับการพัฒนาไปพร้อม ๆ กัน กับ Young Webmaster Camp ครั้งที่ 17 <span class="secondary">“Social Change, Arrange The World”</span> ค่ายสร้างเว็บไซต์ระดับอุดมศึกษาที่ใหญ่ที่สุด</p>
       </Column>
       <Column>
         ที่ปีนี้จะมาชวนนักศึกษาจากทั่วประเทศมาฝึกสกิลของตัวเอง พร้อม ๆ กับสร้างเว็บไซต์ที่จะช่วยแก้ไขปัญหาต่าง ๆ ในสังคมและทำให้สังคมของเราน่าอยู่ขึ้น
@@ -158,6 +158,8 @@ const Column = styled.div`
   text-align: left;
   .secondary {
     color: ${color.main};
+    font-weight: bold;
+    display: inline-block;
   }
   @media screen and (max-width:768px) {
     font-size: 18px;
