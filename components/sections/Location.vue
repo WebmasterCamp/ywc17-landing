@@ -33,7 +33,8 @@ section {
   margin:5rem 0;
   background-image: url(/images/bg/location.jpg);
   background-repeat: no-repeat;
-  background-size :100% 100%;
+  background-size: cover;
+  background-attachment: fixed;
   padding-bottom: 5px;
   @media screen and (max-width:768px) {
     margin: 100px 0;
