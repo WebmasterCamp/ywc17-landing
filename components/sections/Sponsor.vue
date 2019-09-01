@@ -40,7 +40,7 @@
         link="#" 
         alt="mango"
         :transparent="true"
-       />
+      />
       <SponsorCircle 
         size="sm" 
         fileName="sponsors/3-2-Pantip.svg" 
