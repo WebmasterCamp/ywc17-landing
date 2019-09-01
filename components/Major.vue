@@ -117,15 +117,18 @@ export default Vue.extend({
   line-height: 50px;
 
   &.blue {
-    bottom: -25px;
+    bottom: -20px;
     font-size: 38px;
+    line-height: 40px;
     span {
       font-size: 46px;
+      line-height: 50px;
     }
   }
   &.yellow {
     bottom: -25px;
-    font-size: 42px;
+    font-size: 50px;
+    width: 70%;
     span {
       font-size: 46px;
     }
