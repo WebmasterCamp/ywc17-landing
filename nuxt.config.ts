@@ -16,11 +16,11 @@ const config = {
       { name: 'og:type', content: 'website' },
       { name: 'og:title', content: '17th Young Webmaster Camp' },
       { name: 'og:description', content: '' },
-      { name: 'og:image', content: '' },
+      { name: 'og:image', content: 'https://ywc17.ywc.in.th/images/ogImage.png' },
       { name: 'article:author', content: 'https://www.facebook.com/ywcth' },
 
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:image:src', content: '' }
+      { name: 'twitter:image:src', content: 'https://ywc17.ywc.in.th/images/ogImage.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' },

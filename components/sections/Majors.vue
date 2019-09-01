@@ -6,10 +6,10 @@
         title="Content"
         image="web-content"
         color="green"
-        :class="{blackout: selectMajor == 'content'}"
+        :class="{blackout: selectMajor !== '' && selectMajor !== 'content'}"
         :image-style="`transform: translate3d(0, ${y2}px, 0);`"
-        @mouseover="hoverMajor('content')"
-        @mouseleave="hoverMajor('')"
+        @mouseover.native="hoverMajor('content')"
+        @mouseleave.native="hoverMajor('')"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
@@ -18,8 +18,7 @@
           >
             <template v-slot:content>        
               <p>
-                เขียน conent
-                ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ ไม่ว่าภาษาไหน ๆ จะ html,css,js หรือนอกเหนือจากนี้
+                ทำหน้าที่คิดและเขียนเนื้อหาต่าง ๆ บนเว็บไซต์ เหมาะกับผู้ที่รักในการเขียนและเล่าเรื่องทุกรูปแบบ เช่น บ่นในทวิตและเขียนแคปชั่นในไอจี เป็นต้น
               </p>
               <h3>ตัวอย่างคำถาม</h3>
               <ol>
@@ -42,10 +41,10 @@
         title="Designer"
         image="web-designer"
         color="yellow"
-        :class="{blackout: selectMajor == 'designer'}"
+        :class="{blackout: selectMajor !== '' && selectMajor !== 'designer'}"
         :image-style="`transform: translate3d(0, ${y2}px, 0);`"
-        @mouseover="hoverMajor('designer')"
-        @mouseleave="hoverMajor('')"
+        @mouseover.native="hoverMajor('designer')"
+        @mouseleave.native="hoverMajor('')"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
@@ -54,8 +53,7 @@
           >
             <template v-slot:content>        
               <p>
-                เขียน design
-                ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ ไม่ว่าภาษาไหน ๆ จะ html,css,js หรือนอกเหนือจากนี้
+                ทำหน้าที่ออกแบบเว็บไซต์ให้สวยงาม เหมาะกับผู้ที่ชอบวาดรูป รักในสีสันและการ วางองค์ประกอบต่าง ๆ รับพิจารณาพิเศษ สำหรับผู้ที่มีงานอดิเรกแอบวาดรูปในห้องเรียน
               </p>
               <h3>ตัวอย่างคำถาม</h3>
               <ol>
@@ -71,10 +69,10 @@
         title="Marketing"
         image="web-marketing"
         color="pink"
-        :class="{blackout: selectMajor == 'marketing'}"
+        :class="{blackout: selectMajor !== '' && selectMajor !== 'marketing'}"
         :image-style="`transform: translate3d(0, ${y3}px, 0);`"
-        @mouseover="hoverMajor('marketing')"
-        @mouseleave="hoverMajor('')"
+        @mouseover.native="hoverMajor('marketing')"
+        @mouseleave.native="hoverMajor('')"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
@@ -83,8 +81,7 @@
           >
             <template v-slot:content>        
               <p>
-                เขียน marketing
-                ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ ไม่ว่าภาษาไหน ๆ จะ html,css,js หรือนอกเหนือจากนี้
+                ทำหน้าที่วางกลยุทธ์เพื่อสร้างรายได้ให้กับเว็บไซต์ เหมาะกับผู้ที่สนใจในการหาเงินจากช่องทางต่าง ๆ
               </p>
               <h3>ตัวอย่างคำถาม</h3>
               <ol>
@@ -100,10 +97,10 @@
         title="Developer"
         image="web-developer"
         color="blue"
-        :class="{blackout: selectMajor == 'developer'}"
+        :class="{blackout: selectMajor !== '' && selectMajor !== 'developer'}"
         :image-style="`transform: translate3d(0, ${y1}px, 0);`"
-        @mouseover="hoverMajor('developer')"
-        @mouseleave="hoverMajor('')"
+        @mouseover.native="hoverMajor('developer')"
+        @mouseleave.native="hoverMajor('')"
       >
         <template slot-scope="scope">
           <FullscreenOverlay
@@ -112,7 +109,7 @@
           >
             <template v-slot:content>        
               <p>
-                ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ ไม่ว่าภาษาไหน ๆ จะ html,css,js หรือนอกเหนือจากนี้
+                ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ ไม่ว่าภาษาไหน ๆ จะ html, css, js หรือนอกเหนือจากนี้
               </p>
               <h3>ตัวอย่างคำถาม</h3>
               <ol>
@@ -138,13 +135,14 @@ import styled from 'vue-styled-components'
 import SectionHead from '~/components/SectionHead.vue'
 
 const MajorsContainer = styled.div`
-  margin: 100px 0 140px;
+  margin: 0;
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: auto;
   grid-row-gap: 50px;
   justify-items: center;
 
   @media screen and (min-width: 768px) {
+    margin: 100px 0 140px;
     grid-template-columns: repeat(4, auto);
   }
 `
