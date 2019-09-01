@@ -12,17 +12,17 @@ import color from '~/utils/color'
 
 const size = {
   lg: {
-    picSize: 100,
+    picSize: 140, // 100
     smallMobile: 120,
-    mobile: 160
+    mobile: 140
   },
   md: {
-    picSize: 80,
+    picSize: 128, // 80
     smallMobile: 105,
     mobile: 128
   },
   sm: {
-    picSize: 64,
+    picSize: 102, // 64
     smallMobile: 90,
     mobile: 102
   }
@@ -35,7 +35,7 @@ const circleProps = {
 
 const SponsorBadge = styled('div', circleProps)`
   background: ${props => (props.transparent ? 'transparent' : 'white')};
-  border-radius: 50%;
+  /* border-radius: 50%; */
   border: 4px solid
     ${props => (props.transparent ? 'transparent' : color.primary)};
   width: ${props => size[props.size].smallMobile}px;
@@ -52,8 +52,10 @@ const SponsorBadge = styled('div', circleProps)`
 
     picture {
       width: ${props => size[props.size].picSize}px;
+      height: 100%;
       img {
         width: 100%;
+        height: 100%;
       }
     }
   }
