@@ -9,7 +9,11 @@
       <p v-html="gurus[currentGuru].role" />
     </Guru>
     <Gurus>
-      <Guru v-for="(g, idx) in gurus" :key="`guru-${idx}`" :id="`gurupic-${idx}`">
+      <Guru
+        v-for="(g, idx) in gurus"
+        :id="`gurupic-${idx}`"
+        :key="`guru-${idx}`"
+      >
         <GuruPic :class="{'active': idx === currentGuru}" @click="selectGuru(idx)">
           <Picture :fileName="`guru/${g.img}`" :alt="g.name" />
         </GuruPic>
