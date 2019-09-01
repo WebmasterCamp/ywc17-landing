@@ -7,7 +7,7 @@
         image="web-content"
         color="green"
         :class="{blackout: selectMajor !== '' && selectMajor !== 'content'}"
-        :image-style="`transform: translate3d(0, ${y2}px, 0);`"
+        :image-style="`transform: translate3d(0, ${y1}px, 0);`"
         @mouseover.native="hoverMajor('content')"
         @mouseleave.native="hoverMajor('')"
       >
@@ -98,7 +98,7 @@
         image="web-developer"
         color="blue"
         :class="{blackout: selectMajor !== '' && selectMajor !== 'developer'}"
-        :image-style="`transform: translate3d(0, ${y1}px, 0);`"
+        :image-style="`transform: translate3d(0, ${y4}px, 0);`"
         @mouseover.native="hoverMajor('developer')"
         @mouseleave.native="hoverMajor('')"
       >
@@ -137,9 +137,10 @@ import SectionHead from '~/components/SectionHead.vue'
 const MajorsContainer = styled.div`
   margin: 0;
   display: grid;
-  grid-template-columns: auto;
-  grid-row-gap: 50px;
+  grid-template-columns: repeat(2, 47%);
+  grid-gap: 55px 20px;
   justify-items: center;
+  justify-content: center;
 
   @media screen and (min-width: 768px) {
     margin: 100px 0 140px;
@@ -208,7 +209,6 @@ export default Vue.extend({
   },
   methods: {
     hoverMajor (major) {
-      console.log(major)
       this.selectMajor = major
     },
     fetchCountRegistant () {

@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div style="max-width: 100%;">
     <div :class="`major ${color}`" :style="imageStyle" @click="openDetail">
       <div
         class="major-image" 
         :style="{backgroundImage: `url(${require(`~/assets/images/register/${image}.jpg`)})`}"
-        :alt="`Web ${title}`" />
+        :alt="`Web ${title}`"
+      />
       <div :class="`title ${color}`">
         <span class="outline-text">Web</span>
         {{ title }}
@@ -70,15 +71,15 @@ export default Vue.extend({
   cursor: pointer;
   position: relative;
   width: 195px;
-  /* transition: all 0.3s; */
+  max-width: 100%;
 
-  &.blue {
+  &:nth-child(1) {
     top: 50px;
   }
-  &.yellow {
+  &:nth-child(2) {
     top: 300px;
   }
-  &.green {
+  &:nth-child(4) {
     top: 280px;
   }
 
@@ -108,7 +109,6 @@ export default Vue.extend({
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   font-size: 46px;
-  width: 195px;
   text-align: left;
   word-wrap: break-word;
   hyphens: auto;
