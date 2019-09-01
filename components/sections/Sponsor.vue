@@ -113,7 +113,7 @@ section {
   }
   //////////////////////////////////////////////////
   @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(3, 33%);
+    grid-template-columns: repeat(3, auto);
   }
   
 }
