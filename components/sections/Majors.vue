@@ -184,16 +184,6 @@ export default Vue.extend({
     }
   },
   mounted () {
-    this.$axios
-      .get('https://api.ywc.in.th/users/stat')
-      .then((response) => {
-        if (response.data) {
-          const ret = response.data
-          if (ret.status === 'success' && ret.payload) {
-            this.major = ret.payload
-          }
-        }
-      })
     window.onscroll = () => {
       const sectionElement = this.$refs['major-section']
       if (!sectionElement) { return }
@@ -206,23 +196,27 @@ export default Vue.extend({
         this.y4 = distance / 4 * 1.2
       }
     }
+    this.fetchCountRegistant()
+      .then((major) => {
+        this.major = major
+      })
   },
   methods: {
     hoverMajor (major) {
       this.selectMajor = major
     },
     fetchCountRegistant () {
-      const dumbMajor = {
-        content: 11,
-        design: 22,
-        marketing: 33,
-        programming: 45
-      }
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve({ data: dumbMajor })
-        }, 0)
-      })
+      return this.$axios
+        .get('https://api.ywc.in.th/users/stat')
+        .then(({ status, data }) => {
+          if (status === 200) {
+            return data.payload
+          }
+          return new CountMajorRegistant()
+        })
+        .catch(() => {
+          return new CountMajorRegistant()
+        })
     }
   }
 })
