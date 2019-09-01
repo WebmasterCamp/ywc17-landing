@@ -78,27 +78,20 @@ export default {
       },
       
       slides: [
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/1.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/2.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/3.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/4.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/5.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/6.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/7.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/8.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/9.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/10.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/11.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/12.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/13.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/14.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/15.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/16.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/17.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/18.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/19.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/20.jpg',
-        'https://ywc16.ywc.in.th/images/gallery/ywc15_new/21.jpg'
+        '/images/gallery/1.jpg',
+        '/images/gallery/2.jpg',
+        '/images/gallery/3.jpg',
+        '/images/gallery/4.jpg',
+        '/images/gallery/5.jpg',
+        '/images/gallery/6.jpg',
+        '/images/gallery/7.jpg',
+        '/images/gallery/8.jpg',
+        '/images/gallery/9.jpg',
+        '/images/gallery/10.jpg',
+        '/images/gallery/11.jpg',
+        '/images/gallery/12.jpg',
+        '/images/gallery/13.jpg',
+        '/images/gallery/14.jpg'
       ]
     }
   },
@@ -123,7 +116,7 @@ img
   padding-top: 20px
   padding-bottom: 20px
   background-image: url(~assets/images/frame-upleft.png), url(~assets/images/frame-downright.png)
-  background-position: left top, right bottom
+  background-position: calc(51% - 253px) 0%, calc(50% + 248px) 100%
   background-repeat: no-repeat, no-repeat
   @media (max-width:768px)
     display: none
@@ -139,7 +132,7 @@ img
 
     background-size: 70px
     background-image: url(~assets/images/frame-upleft.png), url(~assets/images/frame-downright.png)
-    background-position: calc(51% - 113px) 0%, calc(50% + 108px) 100%
+    background-position: calc(51% - 100px) 0%, calc(50% + 93px) 100%
     background-repeat: no-repeat, no-repeat
 </style>
 <style lang="sass">

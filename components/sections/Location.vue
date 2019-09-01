@@ -31,10 +31,13 @@ export default Vue.extend({
 <style lang="scss" scoped>
 section {
   margin:5rem 0;
-  background-image: url(~assets/images/location.jpg);
+  background-image: url(/images/bg/location.jpg);
   background-repeat: no-repeat;
   background-size :100% 100%;
   padding-bottom: 5px;
+  @media screen and (max-width:768px) {
+    margin: 120px 0;
+  }
 }
 .location {
   
@@ -78,8 +81,9 @@ br {
 }
 .icon {
   position: absolute;
-  top: -50px;
-  font-size: 4rem;
+  top: -55px;
+  font-size: 40px;
+  letter-spacing: .4rem;
   line-height: 7rem;
   font-family: Montserrat;
   font-weight: 600;
@@ -90,6 +94,7 @@ br {
   @media screen and (min-width: 768px) {
     letter-spacing: 1.5rem;
     font-size: 6rem;
+    top: -50px;
   }
 }
 .location-content{
@@ -99,8 +104,8 @@ br {
   align-items: flex-end;
   padding: 3rem 4rem 0 5rem;
   @media(max-width:768px) {
-  padding: 5% 5% 0 5%;
-
+    padding: 5% 5% 0 5%;
+    margin-top: -50px;
   }
 }
 .video {

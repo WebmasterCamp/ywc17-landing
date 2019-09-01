@@ -21,7 +21,7 @@ const sizes = {
   timeline: {
     fontSize: 60,
     fontSmallSize: 40,
-    height: 84
+    height: 100
   }
 }
 const strokeColor = '#6C6C6C'
@@ -43,6 +43,7 @@ const Container = styled('div', { align: String, size: String })`
   user-select: none;
 
   @media screen and (max-width:768px) {
+    text-align: center;
     font-size: ${props => sizes[props.size].fontSmallSize}px;
   }
 `
