@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <QBox>
+    <QBox @click="dismissAns">
       <h4>{{ qa.q }}</h4>
     </QBox>
     <FloatBox>
@@ -102,6 +102,9 @@ export default {
     selectQ: { type: Function, default: () => { return function () {} } }
   },
   methods: {
+    dismissAns () {
+      this.selectQ('')
+    },
     toggleAns () {
       this.selectQ(this.qa.q)
     }
