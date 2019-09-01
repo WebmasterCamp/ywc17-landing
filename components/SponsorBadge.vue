@@ -39,7 +39,6 @@ export default Vue.extend({
   @import '~/assets/css/global.scss';
   $small-size: 60px;
   $normal-size: 80px;
-
   .circle {
     width: $small-size;
     height: $small-size;
@@ -62,5 +61,13 @@ export default Vue.extend({
       width: $normal-size;
       height: $normal-size;
     }
+      
+    &.horizontal {
+      width: 100px;
+      @media screen and (min-width: 768px) { 
+        width: 120px;
+      }
+    }
   }
+  
 </style>

@@ -1,9 +1,9 @@
 <template>
   <section class="hero">
     <div class="container">
-      <Picture fileName="ywc-logo" alt="YWC logo" class="ywc-logo" />
+      <Picture fileName="ywc-logo" alt="17th Young Webmaster Camp" class="ywc-logo" />
       <div class="branding">
-        <Picture fileName="ywc17-logo" alt="YWC17 branding" />
+        <Picture fileName="ywc17-logo" alt="Social Change, Arrange The World" />
         <div class="slogan">
           มิติใหม่
           <span class="slogan-secondary-text">เว็บสร้างสังคม</span>
