@@ -1,13 +1,13 @@
 <template>
   <Container>
-    <QBox @click="dismissAns">
-      <h4>{{ qa.q }}</h4>
+    <QBox class="not-close-zone" @click="toggleAns">
+      <h4 class="not-close-zone">{{ qa.q }}</h4>
     </QBox>
     <FloatBox>
-      <ABox v-show="showAns">
+      <ABox class="not-close-zone" v-show="showAns">
         {{ qa.a }}
       </ABox>
-      <ToggleBtn @click="toggleAns">
+      <ToggleBtn class="not-close-zone" @click="toggleAns">
         <img :src="require(`~/assets/images/${showAns ? 'top':'down'}.png`)" alt="เปิด/ปิด" />
       </ToggleBtn>
     </FloatBox>
