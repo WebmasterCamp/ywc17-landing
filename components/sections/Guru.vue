@@ -17,8 +17,8 @@
         <GuruPic :class="{'active': idx === currentGuru}" @click="selectGuru(idx)">
           <Picture :fileName="`guru/${g.img}`" :alt="g.name" />
         </GuruPic>
-        <h3>{{ g.name }}</h3>
-        <p v-html="g.role" />
+        <!-- <h3>{{ g.name }}</h3>
+        <p v-html="g.role" /> -->
       </Guru>
     </Gurus>
   </section>
