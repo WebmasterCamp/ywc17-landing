@@ -157,5 +157,20 @@ export default Vue.extend({
       top: 0px;
     }
   }
+
+  @media screen and (max-width:375px) {
+    & {
+      font-size: 43px;
+      line-height: 45px;
+      span {
+        font-size: 40px !important;
+        line-height: 40px !important;
+      }
+    }
+    &.blue {
+      font-size: 34px;
+      line-height: 35px;
+    }
+  }
 }
 </style>

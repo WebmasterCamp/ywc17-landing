@@ -17,9 +17,9 @@ const size = {
     mobile: 140
   },
   md: {
-    picSize: 128, // 80
+    picSize: 125, // 80
     smallMobile: 105,
-    mobile: 128
+    mobile: 125
   },
   sm: {
     picSize: 102, // 64
