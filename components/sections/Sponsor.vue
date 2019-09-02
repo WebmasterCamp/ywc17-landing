@@ -65,6 +65,7 @@
         :transparent="true"
       />
       <SponsorCircle
+        class="sp-THNIC"
         size="sm"
         fileName="sponsors/3-5-THNIC.svg"
         link="https://www.thnic.co.th/"
@@ -104,14 +105,25 @@ section {
   width: 210px !important;
   a picture {
     width: 210px !important;
+    // @media screen and (min-width: 375px) {
+    //   width: 180px !important;
+    // }
   }
 }
 .sp-TOA {
-  width: 112px !important;
-  height: 112px !important;
   a picture {
-    width: 112px !important;
-    height: 112px !important;
+    width: 100px !important;
+    height: 100px !important;
+    // @media screen and (min-width: 375px) {
+    //   width: 80px !important;
+    //   height: 80px !important;
+    // }
+  }
+}
+.sp-THNIC {
+  a picture {
+    width: 80px !important;
+    height: 80px !important;
   }
 }
 </style>"
