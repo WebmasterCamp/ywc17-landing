@@ -27,6 +27,7 @@
     </div>
     <div class="sponsor-gold-wrapper position-relative">
       <SponsorCircle
+        class="sp-TOA"
         size="md"
         fileName="sponsors/2-1-TOA.svg"
         link="https://www.toagroup.com/"
@@ -64,6 +65,7 @@
         :transparent="true"
       />
       <SponsorCircle
+        class="sp-THNIC"
         size="sm"
         fileName="sponsors/3-5-THNIC.svg"
         link="https://www.thnic.co.th/"
@@ -100,9 +102,28 @@ section {
 </style>
 <style lang="scss">
 .sp-ExxonMobil {
-  width: 175px !important;
+  width: 210px !important;
   a picture {
-    width: 175px !important;
+    width: 210px !important;
+    // @media screen and (min-width: 375px) {
+    //   width: 180px !important;
+    // }
+  }
+}
+.sp-TOA {
+  a picture {
+    width: 100px !important;
+    height: 100px !important;
+    // @media screen and (min-width: 375px) {
+    //   width: 80px !important;
+    //   height: 80px !important;
+    // }
+  }
+}
+.sp-THNIC {
+  a picture {
+    width: 80px !important;
+    height: 80px !important;
   }
 }
 </style>"
