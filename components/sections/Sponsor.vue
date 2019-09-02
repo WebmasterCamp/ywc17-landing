@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <SectionHead title="Sponsors" class="height" style="position: sticky; top: 0;"/>
+    <SectionHead title="Sponsors" class="height" style="position: sticky; top: 0;" />
     <div class="sponsor-vip-wrapper position-relative">
       <SponsorCircle
         :transparent="true"
