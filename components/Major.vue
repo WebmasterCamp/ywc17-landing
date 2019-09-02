@@ -128,9 +128,12 @@ export default Vue.extend({
   &.yellow {
     bottom: -25px;
     font-size: 50px;
-    width: 70%;
+    width: 85%;
     span {
       font-size: 46px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 90%;
     }
   }
   &.pink {
