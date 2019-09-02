@@ -27,6 +27,7 @@
     </div>
     <div class="sponsor-gold-wrapper position-relative">
       <SponsorCircle
+        class="sp-TOA"
         size="md"
         fileName="sponsors/2-1-TOA.svg"
         link="https://www.toagroup.com/"
@@ -103,6 +104,14 @@ section {
   width: 175px !important;
   a picture {
     width: 175px !important;
+  }
+}
+.sp-TOA {
+  width: 112px !important;
+  height: 112px !important;
+  a picture {
+    width: 112px !important;
+    height: 112px !important;
   }
 }
 </style>"
