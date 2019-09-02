@@ -22,7 +22,7 @@
           <span class="arrow-icon"></span>
           ย้อนกลับ
         </BackButton>
-        <RegisterButton :color="color" href="https://register.ywc.in.th">
+        <RegisterButton :color="color" href="https://register.ywc17.ywc.in.th/">
           สมัครสาขานี้
         </RegisterButton>
       </BottomMenu>

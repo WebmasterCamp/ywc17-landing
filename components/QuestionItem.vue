@@ -4,7 +4,7 @@
       <h4 class="not-close-zone">{{ qa.q }}</h4>
     </QBox>
     <FloatBox>
-      <ABox class="not-close-zone" v-show="showAns">
+      <ABox v-show="showAns" class="not-close-zone">
         {{ qa.a }}
       </ABox>
       <ToggleBtn class="not-close-zone" @click="toggleAns">
