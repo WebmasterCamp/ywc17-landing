@@ -101,9 +101,9 @@ section {
 </style>
 <style lang="scss">
 .sp-ExxonMobil {
-  width: 175px !important;
+  width: 210px !important;
   a picture {
-    width: 175px !important;
+    width: 210px !important;
   }
 }
 .sp-TOA {
