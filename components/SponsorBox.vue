@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style lang="scss">  
+<style lang="scss">
   .logos-box {
     padding-bottom: 30px;
   }
