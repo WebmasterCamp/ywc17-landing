@@ -11,11 +11,11 @@
         {{ title }}
       </div>
     </div>
-    <!--<slot
+    <slot
       :show="show"
       :title="title"
       @dismiss="dismissOverlay"
-    />-->
+    />
   </div>
 </template>
 
@@ -50,15 +50,13 @@ export default Vue.extend({
   },
   methods: {
     openDetail () {
-
-    }
-    /* document.querySelector('body').style.overflow = 'hidden'
+      document.querySelector('body').style.overflow = 'hidden'
       this.show = !this.show
     },
     dismissOverlay () {
       document.querySelector('body').style.overflow = 'auto'
       this.show = false
-    } */
+    }
   }
 })
 </script>
