@@ -38,6 +38,7 @@ const Container = styled('div', { align: String, size: String })`
 
   text-align: ${props => props.align};
   letter-spacing: 0.4em;
+  margin-left: 0.4em;
   text-transform: uppercase;
 
   user-select: none;
@@ -45,6 +46,7 @@ const Container = styled('div', { align: String, size: String })`
   @media screen and (max-width:768px) {
     text-align: center;
     letter-spacing: 0.3em;
+    margin-left: 0.3em;
     font-size: ${props => sizes[props.size].fontSmallSize}px;
   }
 `

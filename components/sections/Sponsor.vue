@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <SectionHead title="Sponsors" style="position: sticky; top: 0;"/>
+    <SectionHead title="Sponsors" class="height" style="position: sticky; top: 0;"/>
     <div class="sponsor-vip-wrapper position-relative">
       <SponsorCircle
         :transparent="true"
@@ -90,6 +90,11 @@ export default {
 <style scoped>
 section {
   margin-top: 100px;
+}
+@media screen and (max-width:768px) {
+  .height {
+    font-size: 36px;
+  }
 }
 </style>
 <style lang="scss" scoped>
