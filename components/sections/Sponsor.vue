@@ -18,21 +18,22 @@
       />
       <SponsorCircle
         :transparent="true"
+        class="exxonMobil"
         size="lg"
         fileName="sponsors/1-1-ExxonMobil.svg"
         link="https://corporate.exxonmobil.com/"
         alt="ExxonMobil"
       />
     </div>
-    <!-- <div class="sponsor-gold-wrapper">
-      <SponsorCircle size="md" fileName="sponsors/vip/webmaster-association" link="#" alt="temp" />
-
-      <SponsorCircle size="md" fileName link="#" alt />
-      <SponsorCircle size="md" fileName link="#" alt />
-      <SponsorCircle size="md" fileName link="#" alt />
-      <SponsorCircle size="md" fileName link="#" alt />
-      <SponsorCircle size="md" fileName link="#" alt />
-    </div> -->
+    <div class="sponsor-gold-wrapper position-relative">
+      <SponsorCircle
+        size="md"
+        fileName="sponsors/2-1-TOA.svg"
+        link="https://www.toagroup.com/"
+        alt="TOA"
+        :transparent="true"
+      />
+    </div>
     <div class="sponsor-silver-wrapper position-relative">
       <SponsorCircle
         size="sm"
@@ -97,6 +98,14 @@ section {
   }
 }
 </style>
+<style lang="scss">
+.exxonMobil {
+  width: 175px;
+  a picture {
+    width: 175px;
+  }
+}
+</style>"
 <style lang="scss" scoped>
 section {
   padding-bottom: 60px;
@@ -131,7 +140,7 @@ section {
   justify-items: center;
   grid-template-columns: repeat(2, auto);
   grid-gap: 15px;
-  margin: 15px auto;
+  margin: 30px auto;
   margin-bottom: 30px;
 
   @media screen and (min-width: 375px) {
@@ -142,16 +151,23 @@ section {
     grid-gap: 20px;
     grid-template-columns: repeat(3, auto);
   }
+
+  // HANDLE 1 LOGO, CAN BE REMOVED IF ADD MORE LOGO
+  grid-template-columns: repeat(1, auto);
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(1, auto);
+  }
+  //////////////////////////////////////////////////
 }
 .sponsor-silver-wrapper {
-  // width: 500px;
-  width: 70%;
+  width: 100%;
+  max-width: 700px;
   min-width: 220px;
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(1, auto);
-  grid-gap: 20px;
   margin: 15px auto;
+  grid-gap: 20px;
+  grid-template-columns: repeat(5, auto);
 
   // HANDLE 3 LOGO, CAN BE REMOVED IF ADD MORE LOGO
   @media screen and (max-width: 768px) {
@@ -160,10 +176,11 @@ section {
     }
   }
   //////////////////////////////////////////////////
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     // width: 485px;
+    width: 70%;
+    grid-template-columns: repeat(1, auto);
     grid-gap: 20px;
-    grid-template-columns: repeat(5, auto);
   }
 }
 </style>
