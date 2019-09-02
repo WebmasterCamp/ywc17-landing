@@ -11,11 +11,11 @@
         {{ title }}
       </div>
     </div>
-    <!--<slot
+    <slot
       :show="show"
       :title="title"
       @dismiss="dismissOverlay"
-    />-->
+    />
   </div>
 </template>
 
@@ -50,15 +50,13 @@ export default Vue.extend({
   },
   methods: {
     openDetail () {
-
-    }
-    /* document.querySelector('body').style.overflow = 'hidden'
+      document.querySelector('body').style.overflow = 'hidden'
       this.show = !this.show
     },
     dismissOverlay () {
       document.querySelector('body').style.overflow = 'auto'
       this.show = false
-    } */
+    }
   }
 })
 </script>
@@ -117,14 +115,24 @@ export default Vue.extend({
   line-height: 50px;
 
   &.blue {
-    bottom: -25px;
+    bottom: -20px;
     font-size: 38px;
+    line-height: 40px;
     span {
       font-size: 46px;
+      line-height: 50px;
     }
   }
   &.yellow {
     bottom: -25px;
+    font-size: 50px;
+    width: 85%;
+    span {
+      font-size: 46px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 90%;
+    }
   }
   &.pink {
     top: -50px;

@@ -1,13 +1,13 @@
 <template>
   <Container>
-    <QBox @click="dismissAns">
-      <h4>{{ qa.q }}</h4>
+    <QBox class="not-close-zone" @click="toggleAns">
+      <h4 class="not-close-zone">{{ qa.q }}</h4>
     </QBox>
     <FloatBox>
-      <ABox v-show="showAns">
+      <ABox v-show="showAns" class="not-close-zone">
         {{ qa.a }}
       </ABox>
-      <ToggleBtn @click="toggleAns">
+      <ToggleBtn class="not-close-zone" @click="toggleAns">
         <img :src="require(`~/assets/images/${showAns ? 'top':'down'}.png`)" alt="เปิด/ปิด" />
       </ToggleBtn>
     </FloatBox>
@@ -26,6 +26,7 @@ const Container = styled.div`
   }
 `
 const QBox = styled.div`
+  cursor: pointer;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), #E1426F;
   border-radius: 2px;
   border-bottom: 1px solid #622738;
