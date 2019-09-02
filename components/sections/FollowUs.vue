@@ -33,7 +33,7 @@ import Picture from '~/components/Picture.vue'
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: repeat(4, auto);
   max-width: 416px;
   margin: 0 auto;
 
@@ -45,6 +45,7 @@ const Grid = styled.div`
 `
 const GridCol = styled.div`
   display: inline-grid;
+  margin: 0 auto;
 `
 const SocialBtn = styled.a`
   display: flex;

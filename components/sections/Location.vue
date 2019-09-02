@@ -96,6 +96,7 @@ br {
     top: -55px;
     font-size: 40px;
     letter-spacing: .4rem;
+    margin-left: .4rem;
   }
 }
 .location-content{
