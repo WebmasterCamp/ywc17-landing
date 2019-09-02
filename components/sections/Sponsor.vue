@@ -18,7 +18,7 @@
       />
       <SponsorCircle
         :transparent="true"
-        class="exxonMobil"
+        class="sp-ExxonMobil"
         size="lg"
         fileName="sponsors/1-1-ExxonMobil.svg"
         link="https://corporate.exxonmobil.com/"
@@ -99,10 +99,10 @@ section {
 }
 </style>
 <style lang="scss">
-.exxonMobil {
-  width: 175px;
+.sp-ExxonMobil {
+  width: 175px !important;
   a picture {
-    width: 175px;
+    width: 175px !important;
   }
 }
 </style>"
