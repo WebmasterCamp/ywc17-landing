@@ -1,10 +1,8 @@
 <template>
   <section ref="major-section" class="container">
     <SectionHead style="position: sticky; top: 0;">
-      <!-- Register
-      <h3 class="subhead">เลือกสาขาที่ต้องการสมัคร</h3> -->
-      Majors
-      <h3 class="subhead">สาขาที่รับสมัคร</h3>
+      Register
+      <h3 class="subhead">เลือกสาขาที่ต้องการสมัคร</h3>
     </SectionHead>
     <MajorsContainer>
       <Major
