@@ -12,7 +12,7 @@
       "rewrites": [
         {
           "source": "**",
-          "destination": "/200.html"
+          "destination": "/404.html"
         }
       ]
     },
@@ -27,7 +27,7 @@
       "rewrites": [
         {
           "source": "**",
-          "destination": "/200.html"
+          "destination": "/404.html"
         }
       ]
     }
