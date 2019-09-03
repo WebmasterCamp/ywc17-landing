@@ -81,6 +81,9 @@ const config = {
   /*
   ** Build configuration
   */
+  generate: {
+    fallback: true // For Firebase Hosting, see https://nuxtjs.org/api/configuration-generate#fallback
+  },
   build: {
     // Fix ES6 for IE11
     transpile: [
