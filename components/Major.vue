@@ -50,6 +50,9 @@ export default Vue.extend({
   },
   methods: {
     openDetail () {
+      if (!this.show) {
+        this.$parent.$parent.refreshCountRegistant()
+      }
       document.querySelector('body').style.overflow = 'hidden'
       this.show = !this.show
     },
