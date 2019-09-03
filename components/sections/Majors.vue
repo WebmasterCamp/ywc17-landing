@@ -184,8 +184,6 @@ export default Vue.extend({
   data () {
     return {
       selectMajor: '',
-      isFetching: false,
-      lastFetch: 0,
       major: new CountMajorRegistant(),
       y1: -170,
       y2: -340,
@@ -209,7 +207,6 @@ export default Vue.extend({
     }
     this.fetchCountRegistant()
       .then((major) => {
-        this.lastFetch = new Date().getTime()
         this.major = major
       })
   },
@@ -218,30 +215,16 @@ export default Vue.extend({
       this.selectMajor = major
     },
     fetchCountRegistant () {
-      this.isFetching = true
       return this.$axios
         .get('https://api.ywc.in.th/users/stat')
         .then(({ status, data }) => {
-          this.isFetching = false
           if (status === 200) {
             return data.payload
           }
           return new CountMajorRegistant()
         })
         .catch(() => {
-          this.isFetching = false
           return new CountMajorRegistant()
-        })
-    },
-    refreshCountRegistant () {
-      if (this.isFetching || new Date().getTime() - this.lastFetch < 3 * 60 * 1000) {
-        return false
-      }
-
-      this.fetchCountRegistant()
-        .then((major) => {
-          this.lastFetch = new Date().getTime()
-          this.major = major
         })
     }
   }
