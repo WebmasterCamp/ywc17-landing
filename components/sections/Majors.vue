@@ -109,7 +109,7 @@
               </p>
               <h3>ตัวอย่างคำถาม</h3>
               <ol>
-                <li>ให้น้องเล่าประสบการณ์การทำงานเกี่ยวกับการทำหรือพัฒนาเว็บไซต์ (สามารถแปะลิงก์ผลงานที่เคยทำไว้ได้)</li>
+                <li>ให้น้องเล่าประสบการณ์การทำงานเกี่ยวกับการทำหรือพัฒนาเว็บไซต์ (สามารถแปะลิงค์ผลงานที่เคยทำไว้ได้)</li>
                 <li>ให้น้องเลือก Technology, Library หรือแนวคิดใหม่ ๆ ในการทำเว็บมาหนึ่งอย่างพร้อมกับอธิบายว่าคืออะไร และทำไมถึงตัดสินใจเลือกอันนี้</li>
                 <li>ให้ออกแบบระบบจองห้องประชุมของห้องสมุดมหาวิทยาลัย โดยให้ระบุ Feature ที่อยากให้มี, เทคโนโลยีที่จะเลือกใช้, โครงสร้างของฐานข้อมูล และ Wireframe ของหน้าจอแบบคร่าว ๆ</li>
                 <li>จงเขียน function cardAt ที่รับค่า n และคืนค่าเป็นเลขของไพ่ในสำรับลำดับที่ n โดยเรียงตามดอกไพ่ (C, D, H, S) และเลขไพ่ (2, 3, 4, 5, 6, 7, 8, 9, 0, J, Q, K, A) ตามลำดับ ตัวอย่างเช่น cardAt(0) = 2C, cardAt(1) = 3C, cardAt(34) = 0H และ cardAt(35) = JH เป็นต้น โดยเขียนคำตอบมาโดยใช้ภาษาใดก็ได้ หรือเป็น Psuedocode ก็ได้เช่นกัน</li>
@@ -184,8 +184,6 @@ export default Vue.extend({
   data () {
     return {
       selectMajor: '',
-      isFetching: false,
-      lastFetch: 0,
       major: new CountMajorRegistant(),
       y1: -170,
       y2: -340,
@@ -209,7 +207,6 @@ export default Vue.extend({
     }
     this.fetchCountRegistant()
       .then((major) => {
-        this.lastFetch = new Date().getTime()
         this.major = major
       })
   },
@@ -218,30 +215,16 @@ export default Vue.extend({
       this.selectMajor = major
     },
     fetchCountRegistant () {
-      this.isFetching = true
       return this.$axios
         .get('https://api.ywc.in.th/users/stat')
         .then(({ status, data }) => {
-          this.isFetching = false
           if (status === 200) {
             return data.payload
           }
           return new CountMajorRegistant()
         })
         .catch(() => {
-          this.isFetching = false
           return new CountMajorRegistant()
-        })
-    },
-    refreshCountRegistant () {
-      if (this.isFetching || new Date().getTime() - this.lastFetch < 3 * 60 * 1000) {
-        return false
-      }
-
-      this.fetchCountRegistant()
-        .then((major) => {
-          this.lastFetch = new Date().getTime()
-          this.major = major
         })
     }
   }
