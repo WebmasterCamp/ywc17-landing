@@ -42,7 +42,7 @@ export default {
       return (this.error && this.error.statusCode) || 500
     },
     message () {
-      if (1 === 0 && process.env.NODE_ENV !== 'production') {
+      if (process.env.NODE_ENV !== 'production') {
         return this.error.message || `Client Error`
       } else {
         switch (this.statusCode) {
