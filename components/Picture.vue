@@ -1,6 +1,6 @@
 <template>
   <picture>
-    <source v-if="!this.fileName.includes('.svg')" :srcset="webp" type="image/webp">
+    <source v-if="!fileName.includes('.svg')" :srcset="webp" type="image/webp">
     <img :src="defaultImage" :alt="alt" loading="lazy" />
   </picture>
 </template>
