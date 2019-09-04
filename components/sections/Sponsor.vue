@@ -152,19 +152,20 @@ section {
   grid-row-gap: 20px;
   align-items: center;
   // HANDLE 3 LOGO, CAN BE REMOVED IF ADD MORE LOGO
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 736px) {
     & > div:last-child {
       grid-column: 1 / span2;
     }
   }
   //////////////////////////////////////////////////
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 736px) {
     grid-template-columns: repeat(3, auto);
   }
 
 }
 .sponsor-gold-wrapper {
   width: 100%;
+  max-width: 365px;
   min-width: 260px;
 
   display: grid;
@@ -181,7 +182,6 @@ section {
   }
   @media screen and (min-width: 768px) {
     // width: 485px;
-    width: 365px;
     grid-gap: 20px;
     grid-template-columns: repeat(2, auto);
   }
@@ -197,15 +197,16 @@ section {
   grid-template-columns: repeat(5, auto);
 
   // HANDLE 3 LOGO, CAN BE REMOVED IF ADD MORE LOGO
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 736px) {
     & > div:last-child {
       grid-column: 1 / span2;
     }
   }
   //////////////////////////////////////////////////
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 736px) {
     // width: 485px;
     width: 70%;
+    max-width: 300px;
     grid-template-columns: repeat(1, auto);
     grid-gap: 20px;
   }
