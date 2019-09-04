@@ -115,9 +115,9 @@ section {
   }
 }
 .sp-SCB {
-  width: 170px !important;
+  width: 165px !important;
   a picture {
-    width: 170px !important;
+    width: 165px !important;
   }
 }
 .sp-TOA {
@@ -170,12 +170,13 @@ section {
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(2, auto);
-  grid-gap: 15px;
+  grid-gap: 10px;
   margin: 30px auto;
   margin-bottom: 30px;
 
   @media screen and (min-width: 375px) {
     width: 80%;
+    grid-gap: 15px;
     min-width: 300px;
   }
   @media screen and (min-width: 768px) {
