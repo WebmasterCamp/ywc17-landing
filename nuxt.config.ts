@@ -12,7 +12,6 @@ const config = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Young Webmaster Camp ครั้งที่ 17 “Social Change, Arrange The World” ค่ายสร้างเว็บไซต์ระดับอุดมศึกษาที่ใหญ่ที่สุด' },
 
-      { name: 'og:url', content: 'https://ywc17.ywc.in.th' },
       { name: 'og:type', content: 'website' },
       { name: 'og:title', content: '17th Young Webmaster Camp' },
       { name: 'og:description', content: 'Young Webmaster Camp ครั้งที่ 17 “Social Change, Arrange The World” ค่ายสร้างเว็บไซต์ระดับอุดมศึกษาที่ใหญ่ที่สุด' },
