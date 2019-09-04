@@ -70,6 +70,10 @@ const config = {
       track: 'PageView',
       pixelId: '852229261558709',
       disabled: false
+    }],
+    ['@netsells/nuxt-hotjar', { 
+      id: '1470912', 
+      sv: '6',
     }]
   ],
   /*
@@ -81,6 +85,9 @@ const config = {
   /*
   ** Build configuration
   */
+  generate: {
+    fallback: true // For Firebase Hosting, see https://nuxtjs.org/api/configuration-generate#fallback
+  },
   build: {
     // Fix ES6 for IE11
     transpile: [
