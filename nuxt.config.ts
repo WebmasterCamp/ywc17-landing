@@ -70,6 +70,10 @@ const config = {
       track: 'PageView',
       pixelId: '852229261558709',
       disabled: false
+    }],
+    ['@netsells/nuxt-hotjar', { 
+      id: '1470912', 
+      sv: '6',
     }]
   ],
   /*
