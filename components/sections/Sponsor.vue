@@ -52,6 +52,7 @@
         :transparent="true"
       />
       <SponsorCircle
+        class="sp-Pantip"
         size="sm"
         fileName="sponsors/3-2-Pantip.svg"
         link="https://www.pantip.com/"
@@ -59,6 +60,7 @@
         :transparent="true"
       />
       <SponsorCircle
+        class="sp-DekD"
         size="sm"
         fileName="sponsors/3-3-Dek-D.svg"
         link="https://www.dek-d.com/"
@@ -122,12 +124,24 @@ section {
 }
 .sp-TOA {
   a picture {
-    width: 100px !important;
-    height: 100px !important;
+    width: 90px !important;
+    height: 90px !important;
     // @media screen and (min-width: 375px) {
     //   width: 80px !important;
     //   height: 80px !important;
     // }
+  }
+}
+.sp-Pantip {
+  a picture {
+    width: 85px !important;
+    height: 85px !important;
+  }
+}
+.sp-DekD {
+  a picture {
+    width: 90px !important;
+    height: 90px !important;
   }
 }
 .sp-THNIC {
