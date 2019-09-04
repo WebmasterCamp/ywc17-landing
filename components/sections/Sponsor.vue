@@ -27,9 +27,17 @@
     </div>
     <div class="sponsor-gold-wrapper position-relative">
       <SponsorCircle
+        class="sp-SCB"
+        size="md"
+        fileName="sponsors/2-1-SCB.svg"
+        link="https://www.scb.co.th/"
+        alt="SCB"
+        :transparent="true"
+      />
+      <SponsorCircle
         class="sp-TOA"
         size="md"
-        fileName="sponsors/2-1-TOA.svg"
+        fileName="sponsors/2-2-TOA.svg"
         link="https://www.toagroup.com/"
         alt="TOA"
         :transparent="true"
@@ -72,10 +80,6 @@
         alt="THNIC"
         :transparent="true"
       />
-      <!-- <SponsorCircle size="sm" fileName link="#" alt="temp" />
-      <SponsorCircle size="sm" fileName link="#" alt="temp" />
-      <SponsorCircle size="sm" fileName link="#" alt="temp" />
-      <SponsorCircle size="sm" fileName link="#" alt="temp" /> -->
     </div>
   </section>
 </template>
@@ -108,6 +112,12 @@ section {
     // @media screen and (min-width: 375px) {
     //   width: 180px !important;
     // }
+  }
+}
+.sp-SCB {
+  width: 165px !important;
+  a picture {
+    width: 165px !important;
   }
 }
 .sp-TOA {
@@ -154,31 +164,27 @@ section {
 
 }
 .sponsor-gold-wrapper {
-  width: 80%;
+  width: 100%;
   min-width: 260px;
 
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(2, auto);
-  grid-gap: 15px;
+  grid-gap: 10px;
   margin: 30px auto;
   margin-bottom: 30px;
 
   @media screen and (min-width: 375px) {
+    width: 80%;
+    grid-gap: 15px;
     min-width: 300px;
   }
   @media screen and (min-width: 768px) {
-    width: 485px;
+    // width: 485px;
+    width: 365px;
     grid-gap: 20px;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(2, auto);
   }
-
-  // HANDLE 1 LOGO, CAN BE REMOVED IF ADD MORE LOGO
-  grid-template-columns: repeat(1, auto);
-  @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(1, auto);
-  }
-  //////////////////////////////////////////////////
 }
 .sponsor-silver-wrapper {
   width: 100%;
