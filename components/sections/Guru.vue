@@ -13,12 +13,11 @@
         v-for="(g, idx) in gurus"
         :id="`gurupic-${idx}`"
         :key="`guru-${idx}`"
+        :title="g.name"
       >
         <GuruPic :class="{'active': idx === currentGuru}" @click="selectGuru(idx)">
           <Picture :fileName="`guru/${g.img}`" :alt="g.name" />
         </GuruPic>
-        <!-- <h3>{{ g.name }}</h3>
-        <p v-html="g.role" /> -->
       </Guru>
     </Gurus>
   </section>
