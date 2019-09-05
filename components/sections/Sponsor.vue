@@ -25,7 +25,7 @@
         alt="ExxonMobil"
       />
     </div>
-    <div class="sponsor-gold-wrapper position-relative">
+    <div class="sponsor-special-wrapper position-relative">
       <SponsorCircle
         class="sp-SCB"
         size="md"
@@ -34,6 +34,8 @@
         alt="SCB"
         :transparent="true"
       />
+    </div>
+    <div class="sponsor-gold-wrapper position-relative">
       <SponsorCircle
         class="sp-TOA"
         size="md"
@@ -117,15 +119,17 @@ section {
   }
 }
 .sp-SCB {
-  width: 165px !important;
+  width: 170px !important;
+  height: 125px !important;
   a picture {
-    width: 165px !important;
+    width: 170px !important;
   }
 }
 .sp-TOA {
+  height: 90px !important;
   a picture {
-    width: 90px !important;
-    height: 90px !important;
+    width: 80px !important;
+    height: 80px !important;
     // @media screen and (min-width: 375px) {
     //   width: 80px !important;
     //   height: 80px !important;
@@ -134,8 +138,8 @@ section {
 }
 .sp-Pantip {
   a picture {
-    width: 85px !important;
-    height: 85px !important;
+    width: 80px !important;
+    height: 80px !important;
   }
 }
 .sp-DekD {
@@ -158,7 +162,7 @@ section {
 .sponsor-vip-wrapper {
   width: fit-content;
   margin: auto;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-items: center;
@@ -173,21 +177,23 @@ section {
   }
   //////////////////////////////////////////////////
   @media screen and (min-width: 736px) {
+    margin-bottom: 20px;
     grid-template-columns: repeat(3, auto);
   }
 
 }
-.sponsor-gold-wrapper {
+.sponsor-special-wrapper {
   width: 100%;
   max-width: 365px;
   min-width: 260px;
 
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(1, auto);
   grid-gap: 10px;
-  margin: 30px auto;
-  margin-bottom: 30px;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 10px;
 
   @media screen and (min-width: 375px) {
     width: 80%;
@@ -197,7 +203,30 @@ section {
   @media screen and (min-width: 768px) {
     // width: 485px;
     grid-gap: 20px;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(1, auto);
+  }
+}
+.sponsor-gold-wrapper {
+  width: 100%;
+  max-width: 365px;
+  min-width: 260px;
+
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(1, auto);
+  grid-gap: 10px;
+  margin: 10px auto;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 375px) {
+    width: 80%;
+    grid-gap: 15px;
+    min-width: 300px;
+  }
+  @media screen and (min-width: 768px) {
+    // width: 485px;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, auto);
   }
 }
 .sponsor-silver-wrapper {
