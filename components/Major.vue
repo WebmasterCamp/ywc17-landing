@@ -1,10 +1,9 @@
 <template>
   <div style="max-width: 100%;">
-    <div :class="`major ${color}`" :style="imageStyle" @click="openDetail">
+    <div :class="`major ${color}`" :style="imageStyle" :title="`ดูรายละเอียดสาขา Web ${title}`" @click="openDetail">
       <div
         class="major-image" 
         :style="{backgroundImage: `url(/images/register/${image}.jpg)`}"
-        :alt="`Web ${title}`"
       />
       <div :class="`title ${color}`">
         <span class="outline-text">Web</span>

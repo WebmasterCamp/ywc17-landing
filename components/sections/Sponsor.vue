@@ -25,11 +25,21 @@
         alt="ExxonMobil"
       />
     </div>
+    <div class="sponsor-special-wrapper position-relative">
+      <SponsorCircle
+        class="sp-SCB"
+        size="md"
+        fileName="sponsors/2-1-SCB.svg"
+        link="https://www.scb.co.th/"
+        alt="SCB"
+        :transparent="true"
+      />
+    </div>
     <div class="sponsor-gold-wrapper position-relative">
       <SponsorCircle
         class="sp-TOA"
         size="md"
-        fileName="sponsors/2-1-TOA.svg"
+        fileName="sponsors/2-2-TOA.svg"
         link="https://www.toagroup.com/"
         alt="TOA"
         :transparent="true"
@@ -44,6 +54,7 @@
         :transparent="true"
       />
       <SponsorCircle
+        class="sp-Pantip"
         size="sm"
         fileName="sponsors/3-2-Pantip.svg"
         link="https://www.pantip.com/"
@@ -51,6 +62,7 @@
         :transparent="true"
       />
       <SponsorCircle
+        class="sp-DekD"
         size="sm"
         fileName="sponsors/3-3-Dek-D.svg"
         link="https://www.dek-d.com/"
@@ -72,10 +84,6 @@
         alt="THNIC"
         :transparent="true"
       />
-      <!-- <SponsorCircle size="sm" fileName link="#" alt="temp" />
-      <SponsorCircle size="sm" fileName link="#" alt="temp" />
-      <SponsorCircle size="sm" fileName link="#" alt="temp" />
-      <SponsorCircle size="sm" fileName link="#" alt="temp" /> -->
     </div>
   </section>
 </template>
@@ -110,14 +118,34 @@ section {
     // }
   }
 }
-.sp-TOA {
+.sp-SCB {
+  width: 170px !important;
+  height: 125px !important;
   a picture {
-    width: 100px !important;
-    height: 100px !important;
+    width: 170px !important;
+  }
+}
+.sp-TOA {
+  height: 90px !important;
+  a picture {
+    width: 80px !important;
+    height: 80px !important;
     // @media screen and (min-width: 375px) {
     //   width: 80px !important;
     //   height: 80px !important;
     // }
+  }
+}
+.sp-Pantip {
+  a picture {
+    width: 80px !important;
+    height: 80px !important;
+  }
+}
+.sp-DekD {
+  a picture {
+    width: 90px !important;
+    height: 90px !important;
   }
 }
 .sp-THNIC {
@@ -134,7 +162,7 @@ section {
 .sponsor-vip-wrapper {
   width: fit-content;
   margin: auto;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-items: center;
@@ -142,43 +170,64 @@ section {
   grid-row-gap: 20px;
   align-items: center;
   // HANDLE 3 LOGO, CAN BE REMOVED IF ADD MORE LOGO
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 736px) {
     & > div:last-child {
       grid-column: 1 / span2;
     }
   }
   //////////////////////////////////////////////////
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 736px) {
+    margin-bottom: 20px;
     grid-template-columns: repeat(3, auto);
   }
 
 }
-.sponsor-gold-wrapper {
-  width: 80%;
+.sponsor-special-wrapper {
+  width: 100%;
+  max-width: 365px;
   min-width: 260px;
 
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(2, auto);
-  grid-gap: 15px;
-  margin: 30px auto;
-  margin-bottom: 30px;
+  grid-template-columns: repeat(1, auto);
+  grid-gap: 10px;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 10px;
 
   @media screen and (min-width: 375px) {
+    width: 80%;
+    grid-gap: 15px;
     min-width: 300px;
   }
   @media screen and (min-width: 768px) {
-    width: 485px;
+    // width: 485px;
     grid-gap: 20px;
-    grid-template-columns: repeat(3, auto);
-  }
-
-  // HANDLE 1 LOGO, CAN BE REMOVED IF ADD MORE LOGO
-  grid-template-columns: repeat(1, auto);
-  @media screen and (min-width: 768px) {
     grid-template-columns: repeat(1, auto);
   }
-  //////////////////////////////////////////////////
+}
+.sponsor-gold-wrapper {
+  width: 100%;
+  max-width: 365px;
+  min-width: 260px;
+
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(1, auto);
+  grid-gap: 10px;
+  margin: 10px auto;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 375px) {
+    width: 80%;
+    grid-gap: 15px;
+    min-width: 300px;
+  }
+  @media screen and (min-width: 768px) {
+    // width: 485px;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, auto);
+  }
 }
 .sponsor-silver-wrapper {
   width: 100%;
@@ -191,15 +240,16 @@ section {
   grid-template-columns: repeat(5, auto);
 
   // HANDLE 3 LOGO, CAN BE REMOVED IF ADD MORE LOGO
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 736px) {
     & > div:last-child {
       grid-column: 1 / span2;
     }
   }
   //////////////////////////////////////////////////
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 736px) {
     // width: 485px;
     width: 70%;
+    max-width: 300px;
     grid-template-columns: repeat(1, auto);
     grid-gap: 20px;
   }

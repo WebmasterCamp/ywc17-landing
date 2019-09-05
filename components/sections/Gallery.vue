@@ -151,9 +151,11 @@ img
       transform: translateY(-50%)
 
       &--prev
+        user-select: none
         left: -30px
   
       &--next
+        user-select: none
         right: -30px
 
     &:hover

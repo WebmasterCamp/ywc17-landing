@@ -13,12 +13,11 @@
         v-for="(g, idx) in gurus"
         :id="`gurupic-${idx}`"
         :key="`guru-${idx}`"
+        :title="g.name"
       >
         <GuruPic :class="{'active': idx === currentGuru}" @click="selectGuru(idx)">
           <Picture :fileName="`guru/${g.img}`" :alt="g.name" />
         </GuruPic>
-        <!-- <h3>{{ g.name }}</h3>
-        <p v-html="g.role" /> -->
       </Guru>
     </Gurus>
   </section>
@@ -146,35 +145,46 @@ export default {
   },
   data () {
     return {
+      autoplay: null,
       currentGuru: 0,
       gurus: [
         { img: 1, name: 'วโรรส โรจนะ (โน้ต)', role: `CEO Dek-D Interactive Co., Ltd.<br>นายกสมาคมผู้ดูแลเว็บไทย` },
-        { img: 2, name: 'อภิศิลป์ ตรุงกานนท์ (บอย)', role: `Co-founder & Chief Technology Officer, Pantip.com` },
-        { img: 3, name: 'ขจร เจียรนัยพานิชย์ (เอ็ม)', role: `Executive Editor - MangoZero.com The Zero Publishing` },
-        { img: 4, name: 'ณปสก สันติสุนทรกูล (ปอล)', role: `COO, Dek-D Intertactive Co., Ltd.` },
-        { img: 5, name: 'คนที่หนึ่ง แสงหิรัญ (หนึ่ง)', role: `อาจารย์ประจำภาควิชาสาขาการออกแบบนิเทศศิลป์ คณะนิเทศศาสตร์ มหาวิทยาลัยอัสสัมชัญ` },
-        { img: 6, name: 'อินทนนท์ ปัญญาโสภา (เบนซ์)', role: `ผู้ก่อตั้งเว็บไซต์ Grappik` },
-        { img: 7, name: 'เจริญ ลักษณ์เลิศกุล (เจ)', role: `Associate Director - Strategic Planning หน่วยงาน Online Station (True Visions Group Co., Ltd.)` },
-        { img: 8, name: 'เมธปริยา คำนวนวุฒิ (ว่าน)', role: `Head of Marketing Lnw Co., Ltd.` }
+        { img: 2, name: 'อัครวุฒิ ตำราเรียง (บัง)', role: `กรรมการผู้จัดการ บ.มาร์เวลิค เอ็นจิ้น จก.<br>กรรมการควบคุมจริยธรรม สมาคมผู้ดูแลเว็บไทย` },
+        { img: 3, name: 'อภิศิลป์ ตรุงกานนท์ (บอย)', role: `Co-founder & Chief Technology Officer, Pantip.com` },
+        { img: 4, name: 'ขจร เจียรนัยพานิชย์ (เอ็ม)', role: `Executive Editor - MangoZero.com The Zero Publishing` },
+        { img: 5, name: 'ณปสก สันติสุนทรกูล (ปอล)', role: `COO, Dek-D Intertactive Co., Ltd.` },
+        { img: 6, name: 'คนที่หนึ่ง แสงหิรัญ (หนึ่ง)', role: `อาจารย์ประจำภาควิชาสาขาการออกแบบนิเทศศิลป์ คณะนิเทศศาสตร์ มหาวิทยาลัยอัสสัมชัญ` },
+        { img: 7, name: 'อินทนนท์ ปัญญาโสภา (เบนซ์)', role: `ผู้ก่อตั้งเว็บไซต์ Grappik` },
+        { img: 8, name: 'เจริญ ลักษณ์เลิศกุล (เจ)', role: `Associate Director - Strategic Planning หน่วยงาน Online Station (True Visions Group Co., Ltd.)` },
+        { img: 9, name: 'เมธปริยา คำนวนวุฒิ (ว่าน)', role: `Head of Marketing Lnw Co., Ltd.` },
+        { img: 10, name: 'จักรพงษ์ คงมาลัย (ปอง)', role: `Managing Director, Moonshot Digital Co., Ltd.` }
       ]
     }
   },
-  mounted () {
-    setInterval(() => {
-      let nextGuru = this.currentGuru + 1
-      if (nextGuru >= this.gurus.length) {
-        nextGuru = 0
-      }
-      this.currentGuru = nextGuru
-      if (process.client) {
-        const target = document.getElementById(`gurupic-${nextGuru}`)
-        target.parentNode.scrollLeft = target.offsetLeft - 5
-      }
-    }, 5500)
+  created () {
+    this.setAutoplay()
   },
   methods: {
+    setAutoplay () {
+      if (this.autoplay) {
+        clearInterval(this.autoplay)
+      }
+
+      this.autoplay = setInterval(() => {
+        let nextGuru = this.currentGuru + 1
+        if (nextGuru >= this.gurus.length) {
+          nextGuru = 0
+        }
+        this.currentGuru = nextGuru
+        if (process.client) {
+          const target = document.getElementById(`gurupic-${nextGuru}`)
+          target.parentNode.scrollLeft = target.offsetLeft - 5
+        }
+      }, 5500)
+    },
     selectGuru (id) {
       this.currentGuru = id
+      this.setAutoplay()
     }
   }
 }
