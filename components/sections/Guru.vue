@@ -146,6 +146,7 @@ export default {
   },
   data () {
     return {
+      autoplay: null,
       currentGuru: 0,
       gurus: [
         { img: 1, name: 'วโรรส โรจนะ (โน้ต)', role: `CEO Dek-D Interactive Co., Ltd.<br>นายกสมาคมผู้ดูแลเว็บไทย` },
@@ -161,22 +162,30 @@ export default {
       ]
     }
   },
-  mounted () {
-    setInterval(() => {
-      let nextGuru = this.currentGuru + 1
-      if (nextGuru >= this.gurus.length) {
-        nextGuru = 0
-      }
-      this.currentGuru = nextGuru
-      if (process.client) {
-        const target = document.getElementById(`gurupic-${nextGuru}`)
-        target.parentNode.scrollLeft = target.offsetLeft - 5
-      }
-    }, 5500)
+  created () {
+    this.setAutoplay()
   },
   methods: {
+    setAutoplay () {
+      if (this.autoplay) {
+        clearInterval(this.autoplay)
+      }
+
+      this.autoplay = setInterval(() => {
+        let nextGuru = this.currentGuru + 1
+        if (nextGuru >= this.gurus.length) {
+          nextGuru = 0
+        }
+        this.currentGuru = nextGuru
+        if (process.client) {
+          const target = document.getElementById(`gurupic-${nextGuru}`)
+          target.parentNode.scrollLeft = target.offsetLeft - 5
+        }
+      }, 5500)
+    },
     selectGuru (id) {
       this.currentGuru = id
+      this.setAutoplay()
     }
   }
 }
