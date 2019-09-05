@@ -114,10 +114,16 @@ export default {
       return dayjs(dateStr).format('D MMMM')
     },
     rangeDate (startDate, endDate) {
-      let str = this.humanDate(startDate)
-      if (endDate) {
-        str += ` - ${this.humanDate(endDate)}` 
+      let str = ''
+      const start = dayjs(startDate)
+      const end = dayjs(endDate)
+      if (start.year() === end.year() && start.month() === end.month()) {
+        str += `${start.date()}`
+      } else {
+        str += `${start.format('D MMMM')}`
       }
+      
+      str += ` - ${end.format('D MMMM')}` 
       return str
     }
   }
