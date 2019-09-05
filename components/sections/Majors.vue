@@ -127,6 +127,7 @@ section {
 }
 h3.subhead {
   letter-spacing: 0.2em;
+  text-indent: -0.3em;
   font-family: 'Maledpan';
   font-weight: normal;
   font-size: 36px;
@@ -139,6 +140,7 @@ h3.subhead {
     font-size: 24px;
     margin-top: -15px;
     letter-spacing: 0.1em;
+    text-indent: -0.2em;
   }
 }
 </style>
