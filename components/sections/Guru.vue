@@ -46,24 +46,16 @@ import Picture from '~/components/Picture.vue'
 
 const dispProp = { standalone: Boolean }
 const Gurus = styled.div`
-  /*display: grid;
-  grid-template-columns: repeat(4, 22%);
-  grid-column-gap: 27px;
-  grid-row-gap: 27px;
-  align-items: start;
-
-  @media screen and (max-width:960px) {*/
-    display: block;
+  display: block;
   @media screen and (max-width:960px) {
     white-space: nowrap;
     text-align: left;
   }
-    overflow: hidden;
-    overflow-x: auto;
-    h3, p {
-      display: none;
-    }
-  /*}*/
+  overflow: hidden;
+  overflow-x: auto;
+  h3, p {
+    display: none;
+  }
 `
 const Guru = styled('div', dispProp)`
   display: inline-grid;
@@ -78,10 +70,9 @@ const Guru = styled('div', dispProp)`
     font-size: 14px;
     font-weight: bold;
   }
-  ${props => !props.standalone ? `/*@media screen and (max-width:960px) {*/
-    display: inline-block;
+  ${props => !props.standalone ? `display: inline-block;
     margin: 5px;
-  /*}*/` : `/*display: none;*/
+  ` : `width: 100%;
   min-height: 350px;
   @media screen and (max-width:960px) {
     display: block;
@@ -114,25 +105,20 @@ const GuruPic = styled('div', dispProp)`
 
   text-align: right;
   overflow: hidden;
-  ${props => !props.standalone ? `/*cursor: default;
-  @media screen and (max-width:960px) {*/
-    width: 105px;
+  ${props => !props.standalone ? `width: 105px;
     height: 105px;
-  /*}*/
   img {
     filter: grayscale(100%);
   }` : `cursor: default;
   background: ${color.main};`}
 
-  /*@media screen and (max-width:960px) {*/
-    &.active {
-      background: ${color.main};
-      transition: all .3s;
-      img {
-        filter: none;
-      }
+  &.active {
+    background: ${color.main};
+    transition: all .3s;
+    img {
+      filter: none;
     }
-  /*}*/
+  }
 `
 
 export default {
