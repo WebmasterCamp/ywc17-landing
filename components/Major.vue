@@ -126,6 +126,7 @@ export default Vue.extend({
     bottom: -25px;
     font-size: 50px;
     width: 85%;
+    max-width: 175px;
     span {
       font-size: 46px;
     }
@@ -154,6 +155,13 @@ export default Vue.extend({
     }
     &.green {
       top: 0px;
+    }
+  }
+  
+  @media screen and (max-width:428px) {
+    &.blue {
+      width: 92%;
+      max-width: 155px;
     }
   }
 
