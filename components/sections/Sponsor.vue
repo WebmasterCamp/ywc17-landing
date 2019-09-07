@@ -84,6 +84,14 @@
         alt="THNIC"
         :transparent="true"
       />
+      <SponsorCircle
+        class="sp-ANANDA"
+        size="sm"
+        fileName="sponsors/3-6-ANANDA.svg"
+        link="https://www.ananda.co.th/"
+        alt="Ananda"
+        :transparent="true"
+      />
     </div>
   </section>
 </template>
@@ -152,6 +160,13 @@ section {
   a picture {
     width: 80px !important;
     height: 80px !important;
+  }
+}
+.sp-ANANDA {
+  width: 100% !important;
+  max-width: 120px;
+  a picture {
+    width: 100% !important;
   }
 }
 </style>"
@@ -239,8 +254,9 @@ section {
   grid-gap: 20px;
   grid-template-columns: repeat(5, auto);
 
-  // HANDLE 3 LOGO, CAN BE REMOVED IF ADD MORE LOGO
-  @media screen and (max-width: 736px) {
+  // HANDLE 6 LOGO, CAN BE REMOVED IF ADD MORE LOGO
+  @media screen and (min-width: 737px) {
+    grid-row-gap: 0px;
     & > div:last-child {
       grid-column: 1 / span2;
     }
@@ -250,7 +266,7 @@ section {
     // width: 485px;
     width: 70%;
     max-width: 300px;
-    grid-template-columns: repeat(1, auto);
+    grid-template-columns: repeat(2, auto);
     grid-gap: 20px;
   }
 }
