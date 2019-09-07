@@ -164,7 +164,7 @@ section {
 }
 .sp-ANANDA {
   width: 100% !important;
-  max-width: 120px;
+  max-width: 120px !important;
   a picture {
     width: 100% !important;
   }
