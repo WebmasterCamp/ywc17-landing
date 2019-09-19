@@ -34,12 +34,20 @@
         alt="SCB"
         :transparent="true"
       />
+      <SponsorCircle
+        class="sp-TMF"
+        size="md"
+        fileName="sponsors/2-2-Thai Media Fund.svg"
+        link="https://www.thaimediafund.or.th/"
+        alt="Thai Media Fund"
+        :transparent="true"
+      />
     </div>
     <div class="sponsor-gold-wrapper position-relative">
       <SponsorCircle
         class="sp-TOA"
         size="md"
-        fileName="sponsors/2-2-TOA.svg"
+        fileName="sponsors/2-3-TOA.svg"
         link="https://www.toagroup.com/"
         alt="TOA"
         :transparent="true"
@@ -133,6 +141,11 @@ section {
     width: 170px !important;
   }
 }
+.sp-TMF {
+  a picture {
+    height: 96px !important;
+  }
+}
 .sp-TOA {
   height: 90px !important;
   a picture {
@@ -204,7 +217,7 @@ section {
 
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(1, auto);
+  grid-template-columns: repeat(2, auto);
   grid-gap: 10px;
   margin: auto;
   margin-top: 0;
@@ -218,7 +231,7 @@ section {
   @media screen and (min-width: 768px) {
     // width: 485px;
     grid-gap: 20px;
-    grid-template-columns: repeat(1, auto);
+    grid-template-columns: repeat(2, auto);
   }
 }
 .sponsor-gold-wrapper {
