@@ -44,6 +44,7 @@ const TimelineList = styled.div`
 `
 const TimelineItem = styled.div`
   display: inline-grid;
+  justify-content: center;
   font-size: 14px;
   
   @media(max-width:768px) {
