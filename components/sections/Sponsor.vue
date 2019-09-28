@@ -38,7 +38,7 @@
         class="sp-TMF"
         size="md"
         fileName="sponsors/2-2-Thai Media Fund.svg"
-        link="https://www.thaimediafund.or.th/"
+        link="http://www.thaimediafund.or.th/"
         alt="Thai Media Fund"
         :transparent="true"
       />
