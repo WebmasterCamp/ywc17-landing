@@ -8,11 +8,13 @@
     >
       <template v-slot:content>
         <BannerItem v-for="(src, size) in bannerList" :key="size">
-          <BannerCol v-html="getBannerCode(src, true)"></BannerCol>
+          <BannerCol>
+            <img v-lazy="getSrc(size)" />
+          </BannerCol>
           <BannerCol>
             ขนาด {{ size }}px
-            <BannerButton color="pink" :href="src" target="_blank">ดาวน์โหลด</BannerButton>
-            <BannerButton color="pink" @click="viewCode(src)">{{ currentSrc === src ? 'ซ่อน' : 'แสดง' }} Code</BannerButton>
+            <BannerButton color="pink" :href="getSrc(size)" target="_blank">ดาวน์โหลด</BannerButton>
+            <BannerButton color="pink" @click="viewCode(getSrc(size, true))">{{ currentSrc === getSrc(size, true) ? 'ซ่อน' : 'แสดง' }} Code</BannerButton>
           </BannerCol>
         </BannerItem>
       </template>
@@ -95,8 +97,15 @@ export default {
       color: 'pink',
       currentSrc: '',
       bannerList: {
-        '160x600': 'https://ywc16.ywc.in.th/images/banner/160_600.jpg',
-        '300x250': 'https://ywc16.ywc.in.th/images/banner/300_250.jpg'
+        '160x600': '',
+        '300x50': '',
+        '300x250': '',
+        '300x600': '',
+        '320x50': '',
+        '320x100': '',
+        '728x90': '',
+        '970x250': '',
+        '1200x628': ''
       }
     }
   },
@@ -116,12 +125,19 @@ export default {
         this.currentSrc = src
       }
     },
+    getSrc (size, notLocal) {
+      let ext = 'gif'
+      if (size === '1200x628') {
+        ext = 'png'
+      }
+      return `${notLocal ? 'https://ywc17.ywc.in.th' : ''}/images/banner/${size}.${ext}`
+    },
     getBannerCode (src, withoutATag) {
-      const imgTag = `<img src="${src}" alt="16th Young Webmaster Camp: Ready to Disrupt">`
+      const imgTag = `<img src="${src}" alt="17th Young Webmaster Camp">`
       if (withoutATag) {
         return imgTag
       }
-      return `<a href="https://bit.ly/YWC16-banner">${imgTag}</a>`
+      return `<a href="https://bit.ly/YWC17-banner">${imgTag}</a>`
     }
   }
 }
