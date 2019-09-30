@@ -1,14 +1,17 @@
 <template>
   <div>
     <ModalOverlay v-if="show" @click="dismiss" />
-    <Container v-if="show" :color="color" :exiting="exiting">
+    <Container v-if="show" :color="color" :normal="normal" :exiting="exiting">
       <div class="overlay-content">
-        <Header>
-          <Title>Web {{ title }}</Title>
-          <Count :color="color">
-            <span>ยอดผู้สมัคร</span>
-            <p>{{ count }} คน</p>
-          </Count>
+        <Header :normal="normal">
+          <template v-if="!normal">
+            <Title>Web {{ title }}</Title>
+            <Count :color="color">
+              <span>ยอดผู้สมัคร</span>
+              <p>{{ count }} คน</p>
+            </Count>
+          </template>
+          <Title v-else>{{ title }}</Title>
         </Header>
         <div class="content">
           <slot name="content" />
@@ -22,9 +25,11 @@
           <span class="arrow-icon"></span>
           ย้อนกลับ
         </BackButton>
-        <RegisterButton :color="color" href="https://register.ywc17.ywc.in.th/">
-          สมัครสาขานี้
-        </RegisterButton>
+        <slot name="footer">
+          <RegisterButton :color="color" href="https://register.ywc17.ywc.in.th/">
+            สมัครสาขานี้
+          </RegisterButton>
+        </slot>
       </BottomMenu>
     </Container>
   </div>
@@ -48,7 +53,8 @@ const withColorProps = {
 
 const containerProps = {
   color: String,
-  exiting: Boolean
+  exiting: Boolean,
+  normal: Boolean
 }
 
 const fadein = keyframes`
@@ -98,6 +104,7 @@ const Container = styled('div', containerProps)`
   text-align: left;
   transition: all 0.3s;
   animation: ${fadein} 0.5s;
+  ${props => props.normal ? '' : `
   &:before {
     content: '';
     background: url('${props => majorImage[props.color]}') no-repeat bottom center;
@@ -105,7 +112,7 @@ const Container = styled('div', containerProps)`
     top: 0;
     left: 0;
     right: 0;
-    bottom: 20px;
+    bottom: 30px;
     opacity: 0.3;
     background-size: 100%;
 
@@ -114,6 +121,7 @@ const Container = styled('div', containerProps)`
       background-position: bottom right;
     }
   }
+  `}
 
   ${props => props.exiting && `
     animation: ${fadeout} 0.5s;
@@ -129,7 +137,7 @@ const Container = styled('div', containerProps)`
   }
 
   .content {
-    height: calc(90% - 130px);
+    height: calc(90% - ${props => props.normal ? 90 : 130}px);
     overflow: hidden;
     overflow-y: auto;
     line-height: 2.0;
@@ -154,9 +162,10 @@ const Container = styled('div', containerProps)`
 
 `
 
-const Header = styled.div`
+const Header = styled('div', { normal: Boolean })`
   display: grid;
-  grid-template-columns: auto 100px;
+  grid-template-columns: auto${props => props.normal ? '' : ' 100px'};
+  ${props => props.normal ? 'margin-bottom: 20px;' : ''}
 
   font-family: 'Maledpan', 'Sarabun', Arial, Helvetica, sans-serif;
 `
@@ -268,6 +277,10 @@ export default Vue.extend({
       type: Number
     },
     show: {
+      default: false,
+      type: Boolean
+    },
+    normal: {
       default: false,
       type: Boolean
     }

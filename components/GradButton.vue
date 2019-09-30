@@ -14,7 +14,7 @@ import color from '~/utils/color'
 const BtnProps = { color: String }
 const StyledBorder = styled('button', BtnProps)`
   display: inline-block;
-  max-width: 160px;
+  max-width: 260px;
   padding: 2px;
   position: relative;
   border-radius: 1000px;
