@@ -73,7 +73,7 @@ const ModalOverlay = styled('div')`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 998;
   background: rgba(0,0,0,0.5);
   display: none;
   transition: all 0.3s;
@@ -97,7 +97,7 @@ const Container = styled('div', containerProps)`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 2;
+  z-index: 999;
   background: black;
   background: ${props => color[props.color].gradientDarker};
   padding: 32px 24px 0;
@@ -141,7 +141,7 @@ const Container = styled('div', containerProps)`
     overflow: hidden;
     overflow-y: auto;
     line-height: 2.0;
-    z-index: 1;
+    z-index: 998;
   }
   .content p, .content li{
     font-weight: 300;
@@ -192,7 +192,7 @@ const Count = styled('div', withColorProps)`
 
 const BottomMenu = styled.div`
   background-color: #222;
-  z-index: 2;
+  z-index: 999;
   position: absolute;
   bottom: 0;
   left: 0;
