@@ -107,7 +107,7 @@ const Container = styled('div', containerProps)`
   ${props => props.normal ? '' : `
   &:before {
     content: '';
-    background: url('${props => majorImage[props.color]}') no-repeat bottom center;
+    background: url('${majorImage[props.color]}') no-repeat bottom center;
     position: absolute;
     top: 0;
     left: 0;
