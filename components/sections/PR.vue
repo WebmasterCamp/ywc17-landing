@@ -35,6 +35,7 @@ const BannerItem = styled('div')`
   margin-bottom: 15px;
   @media screen and (max-width:768px) {
     grid-template-columns: auto;
+    margin-bottom: 30px;
   }
 `
 const BannerCol = styled('div')`
@@ -51,6 +52,7 @@ const BannerCol = styled('div')`
   
   @media screen and (max-width:768px) {
     justify-content: center;
+    margin-top: 10px;
   }
 `
 const BannerButton = styled('a', { color: String })`
@@ -73,6 +75,7 @@ const BannerButton = styled('a', { color: String })`
   background: ${props => color[props.color].gradient};
   color: ${props => props.color === 'yellow' ? 'black' : 'white'};
   margin-top: 5px;
+  max-width: 200px;
 
   &:hover {
     background: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)), ${props => color[props.color].gradient};
