@@ -12,7 +12,7 @@
     <QA />
     <FollowUs />
     <Footer />
-    <PR />
+    <!-- <PR /> -->
   </div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
     FollowUs: () => import('~/components/sections/FollowUs'),
     Sponsor: () => import('~/components/sections/Sponsor'),
     Gallery: () => import('~/components/sections/Gallery'),
-    PR: () => import('~/components/sections/PR'),
+    // PR: () => import('~/components/sections/PR'),
     Footer: () => import('~/components/sections/Footer')
   }
 }
