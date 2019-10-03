@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <a href="/press" target="_blank"><GradientButton :theme="color" class="large">{{ title }}</GradientButton></a>
+    <GradientButton :theme="color" class="large" link href="/press" target="_blank">{{ title }}</GradientButton>
   </section>
 </template>
 <script>
