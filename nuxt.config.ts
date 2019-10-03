@@ -73,7 +73,8 @@ const config = {
     ['@netsells/nuxt-hotjar', { 
       id: '1470912', 
       sv: '6',
-    }]
+    }],
+    ['vue-scrollto/nuxt', { duration: 600 }]
   ],
   /*
   ** Axios module configuration
