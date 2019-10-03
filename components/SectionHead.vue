@@ -1,5 +1,5 @@
 <template>
-  <Container :align="align" :size="size">
+  <Container :align="align" :size="size" :color="color">
     {{ title }}
     <slot />
   </Container>
@@ -24,12 +24,11 @@ const sizes = {
     height: 100
   }
 }
-const strokeColor = '#6C6C6C'
-const Container = styled('div', { align: String, size: String })`
+const Container = styled('div', { align: String, size: String, color: String })`
   height: ${props => sizes[props.size].height}px;
-  color: black;
-  -webkit-text-stroke: 1.8px ${strokeColor};
-  text-stroke: 1.8px ${strokeColor};
+  color: transparent;
+  -webkit-text-stroke: 1.8px ${props => props.color};
+  text-stroke: 1.8px ${props => props.color};
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -57,7 +56,8 @@ export default {
   props: {
     title: { type: String, default: '' },
     size: { type: String, default: 'md' },
-    align: { type: String, default: 'center' }
+    align: { type: String, default: 'center' },
+    color: { type: String, default: '#6C6C6C' }
   }
 }
 </script>
