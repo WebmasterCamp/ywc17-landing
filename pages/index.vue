@@ -1,7 +1,7 @@
 <template>
   <div>
     <Hero />
-    <GradButton theme="pink" class="cta-button" v-scroll-to="'#major-section'">สมัครค่าย ▼</GradButton>
+    <GradButton v-scroll-to="'#major-section'" theme="pink" class="cta-button">สมัครค่าย ▼</GradButton>
     <WhatIsYWC />
     <Majors />
     <Location />
