@@ -1,5 +1,12 @@
 <template>
-  <StyledBorder :color="`${theme}`" @click="$emit('click')">
+  <StyledBorderLink v-if="link" :color="`${theme}`">
+    <StyledBtn :color="`${theme}`">
+      <StyledText :color="`${theme}`">
+        <slot />
+      </StyledText>
+    </StyledBtn>
+  </StyledBorderLink>
+  <StyledBorder v-else :color="`${theme}`" @click="$emit('click')">
     <StyledBtn :color="`${theme}`">
       <StyledText :color="`${theme}`">
         <slot />
@@ -12,7 +19,7 @@
 import styled from 'vue-styled-components'
 import color from '~/utils/color'
 const BtnProps = { color: String }
-const StyledBorder = styled('button', BtnProps)`
+const BtnStyle = `
   display: inline-block;
   max-width: 320px;
   padding: 2px;
@@ -22,7 +29,14 @@ const StyledBorder = styled('button', BtnProps)`
   outline: none;
 
   cursor: pointer;
-
+`
+const StyledBorder = styled('button', BtnProps)`
+  ${BtnStyle}
+  background: ${props => color[props.color].darker};
+  background: ${props => color[props.color].gradient};
+`
+const StyledBorderLink = styled('a', BtnProps)`
+  ${BtnStyle}
   background: ${props => color[props.color].darker};
   background: ${props => color[props.color].gradient};
 `
@@ -55,11 +69,13 @@ const StyledText = styled('span', BtnProps)`
 export default {
   components: {
     StyledBorder,
+    StyledBorderLink,
     StyledBtn,
     StyledText
   },
   props: {
-    theme: { type: String, default: 'main' }
+    theme: { type: String, default: 'main' },
+    link: { type: Boolean, default: false }
   }
 }
 </script>
