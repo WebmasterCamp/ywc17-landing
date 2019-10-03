@@ -207,7 +207,6 @@ export default Vue.extend({
         this.y2 = distance / 4 * 1.3
         this.y3 = distance / 4 * 0.5
         this.y4 = distance / 4 * 1.2
-        console.log(distance)
         if (this.isFirstCome && distance < -200) {
           this.isFirstCome = false
           setTimeout(() => {
