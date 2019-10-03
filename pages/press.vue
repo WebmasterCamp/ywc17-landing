@@ -35,7 +35,7 @@
             <BannerButton color="pink" @click="viewCode(size)">{{ isShow ? 'ซ่อน' : 'แสดง' }} Code</BannerButton>
           </BannerCol>
         </BannerItem>
-        <textarea v-show="isShow" v-html="getBannerCode(getSrc(size, true))" @mouseover="selectText"></textarea>
+        <textarea v-show="isShow" @mouseover="selectText" v-html="getBannerCode(getSrc(size, true))"></textarea>
       </div>
     </section>
     <Footer />
