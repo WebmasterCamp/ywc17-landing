@@ -48,7 +48,7 @@ export default {
 }
 .cta-button {
   transform: scale(1.3);
-  display: block;
+  display: block !important;
   margin: 0 auto;
   animation: cta 0.9s alternate infinite ease-in;
 }
