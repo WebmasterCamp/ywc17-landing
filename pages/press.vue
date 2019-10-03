@@ -109,10 +109,10 @@ export default {
   head () {
     return {
       title: 'ร่วมประชาสัมพันธ์โครงการ - 17th Young Webmaster Camp',
-      description: '', // TODO: Add description
       meta: [
-        { name: 'og:title', content: 'ร่วมประชาสัมพันธ์โครงการ - 17th Young Webmaster Camp' },
-        { name: 'og:description', content: '' } // TODO: Add description
+        { hid: 'og:title', name: 'og:title', content: 'ร่วมประชาสัมพันธ์โครงการ - 17th Young Webmaster Camp' },
+        { hid: 'og:description', name: 'og:description', content: '' }, // TODO: Add description
+        { hid: 'description', name: 'description', content: '' } // TODO: Add description
       ]
     }
   },
