@@ -1,6 +1,6 @@
 <template>
   <div class="secondary">
-    <nuxt-link to="/"><Picture fileName="ywc-logo" alt="17th Young Webmaster Camp" class="ywc-logo" /></nuxt-link>
+    <nuxt-link to="/" class="ywc-logo" title="ไปยังหน้าแรกของ 17th Young Webmaster Camp"><Picture fileName="ywc-logo" alt="17th Young Webmaster Camp" /></nuxt-link>
     <nuxt />
   </div>
 </template>
@@ -41,12 +41,12 @@ export default {
     margin: 0 auto;
   }
   .ywc-logo {
+    display: block;
+    width: 168px;
+    height: 58px;
+    margin: 0 auto;
+    margin-top: 40px;
     img {
-      display: block;
-      width: 168px;
-      height: 58px;
-      margin: 0 auto;
-      margin-top: 40px;
       @media screen and (max-width: 768px) {
           width: 126px;
           height: 43.5px;
