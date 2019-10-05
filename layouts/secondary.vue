@@ -28,6 +28,9 @@ export default {
 }
 </script>
 <style lang="scss">
+html {
+  min-height: 100%;
+}
 .secondary {
   margin-top: 40px;
   section {
@@ -39,6 +42,7 @@ export default {
   .container {
     max-width: 960px;
     margin: 0 auto;
+    text-align: left;
   }
   .ywc-logo {
     display: block;
@@ -46,6 +50,7 @@ export default {
     height: 58px;
     margin: 0 auto;
     margin-top: 40px;
+    text-align: center;
     img {
       @media screen and (max-width: 768px) {
           width: 126px;
