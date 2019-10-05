@@ -225,9 +225,9 @@ export default {
       }
     }
     ul {
-      padding-inline-start: 70px;
+      padding-left: 70px;
       @media screen and (max-width: 768px) {
-        padding-inline-start: 35px;
+        padding-left: 35px;
       }
     }
   }
