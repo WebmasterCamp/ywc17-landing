@@ -13,8 +13,8 @@ const config = {
       { hid: 'description', name: 'description', content: 'Young Webmaster Camp ครั้งที่ 17 “Social Change, Arrange The World” ค่ายสร้างเว็บไซต์ระดับอุดมศึกษาที่ใหญ่ที่สุด' },
 
       { name: 'og:type', content: 'website' },
-      { name: 'og:title', content: '17th Young Webmaster Camp' },
-      { name: 'og:description', content: 'Young Webmaster Camp ครั้งที่ 17 “Social Change, Arrange The World” ค่ายสร้างเว็บไซต์ระดับอุดมศึกษาที่ใหญ่ที่สุด' },
+      { hid: 'og:title', name: 'og:title', content: '17th Young Webmaster Camp' },
+      { hid: 'og:description', name: 'og:description', content: 'Young Webmaster Camp ครั้งที่ 17 “Social Change, Arrange The World” ค่ายสร้างเว็บไซต์ระดับอุดมศึกษาที่ใหญ่ที่สุด' },
       { name: 'og:image', content: 'https://ywc17.ywc.in.th/images/ogImage.png' },
       { name: 'article:author', content: 'https://www.facebook.com/ywcth' },
 
