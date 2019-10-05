@@ -50,6 +50,7 @@ html {
     height: 58px;
     margin: 0 auto;
     margin-top: 40px;
+    text-align: center;
     img {
       @media screen and (max-width: 768px) {
           width: 126px;
