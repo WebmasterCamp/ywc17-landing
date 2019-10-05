@@ -1,6 +1,6 @@
 <template>
   <div class="secondary">
-    <nuxt-link to="/" class="ywc-logo"><Picture fileName="ywc-logo" alt="17th Young Webmaster Camp" /></nuxt-link>
+    <nuxt-link to="/" class="ywc-logo" title="ไปยังหน้าแรกของ 17th Young Webmaster Camp"><Picture fileName="ywc-logo" alt="17th Young Webmaster Camp" /></nuxt-link>
     <nuxt />
   </div>
 </template>
