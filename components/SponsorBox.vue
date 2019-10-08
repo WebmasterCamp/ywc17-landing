@@ -30,7 +30,7 @@ export default {
     margin: 0 auto;
     @media screen and (min-width: 576px) {
       grid-template-columns: repeat(3, auto);
-      max-width: 330px;
+      max-width: 500px;
     }
   }
 </style>
