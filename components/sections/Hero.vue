@@ -23,7 +23,7 @@ export default Vue.extend({
   components: {
     Picture,
     SponsorBox
-  }  
+  }
 })
 </script>
 <style lang="scss">
@@ -67,7 +67,7 @@ export default Vue.extend({
     .slogan-secondary-text {
       color: #e2426f;
       font-style: italic;
-      
+
     }
   }
   .branding {
@@ -85,22 +85,22 @@ export default Vue.extend({
       }
     }
   }
-  
+
   .logos-box {
     padding-bottom: 30px;
   }
-  
+
   .logos {
     display: grid;
     grid-template-columns: repeat(3, auto);
     justify-items: center;
-    max-width: 280px;
+    max-width: 300px;
     grid-row-gap: 20px;
     grid-column-gap: 1.5rem;
     margin: 0 auto;
     @media screen and (min-width: 576px) {
       grid-template-columns: repeat(3, auto);
-      max-width: 330px;
+      max-width: 500px;
     }
   }
 </style>
