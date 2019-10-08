@@ -24,8 +24,8 @@ export default {
     display: grid;
     grid-template-columns: repeat(3, auto);
     justify-items: center;
-    max-width: 280px;
-    grid-row-gap: 20px;
+    max-width: 320px;
+    grid-row-gap: 2px;
     grid-column-gap: 1.5rem;
     margin: 0 auto;
     @media screen and (min-width: 576px) {

@@ -94,7 +94,7 @@ export default Vue.extend({
     display: grid;
     grid-template-columns: repeat(3, auto);
     justify-items: center;
-    max-width: 300px;
+    max-width: 320px;
     grid-row-gap: 20px;
     grid-column-gap: 1.5rem;
     margin: 0 auto;
