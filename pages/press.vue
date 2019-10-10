@@ -177,56 +177,58 @@ export default {
 }
 </script>
 <style lang="scss">
-h3 {
-  text-align: center;
-  color: #FFCCE8;
-  font-size: 24px;
-}
-.text-muted {
-  color: whitesmoke;
-}
-.maledpan {
-  font-family: Maledpan;
-}
-textarea {
-  display: block;
-  max-width: 890px;
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 30px;
-}
-.pr-content {
-  font-size: 14px;
-  background: white;
-  box-shadow: inset -2px -2px 12px 0px rgba(0, 0, 0, 0.75);
-  text-align: left;
-  height: 295px;
-  padding: 40px;
-  @media screen and (max-width: 768px) {
-    height: 200px;
-    padding: 25px;
-  }
-  overflow: hidden;
-  overflow-y: scroll;
-  color: gray;
-  .center {
+.secondary {
+  h3 {
     text-align: center;
+    color: #FFCCE8;
+    font-size: 24px;
   }
-  .right {
-    text-align: right;
+  .text-muted {
+    color: whitesmoke;
   }
-  p {
-    text-align: justify;
-    text-justify: inter-word;
-    text-indent: 70px;
+  .maledpan {
+    font-family: Maledpan;
+  }
+  textarea {
+    display: block;
+    max-width: 890px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .pr-content {
+    font-size: 14px;
+    background: white;
+    box-shadow: inset -2px -2px 12px 0px rgba(0, 0, 0, 0.75);
+    text-align: left;
+    height: 295px;
+    padding: 40px;
     @media screen and (max-width: 768px) {
-      text-indent: 35px;
+      height: 200px;
+      padding: 25px;
     }
-  }
-  ul {
-    padding-inline-start: 70px;
-    @media screen and (max-width: 768px) {
-      padding-inline-start: 35px;
+    overflow: hidden;
+    overflow-y: scroll;
+    color: gray;
+    .center {
+      text-align: center;
+    }
+    .right {
+      text-align: right;
+    }
+    p {
+      text-align: justify;
+      text-justify: inter-word;
+      text-indent: 70px;
+      @media screen and (max-width: 768px) {
+        text-indent: 35px;
+      }
+    }
+    ul {
+      padding-left: 70px;
+      @media screen and (max-width: 768px) {
+        padding-left: 35px;
+      }
     }
   }
 }

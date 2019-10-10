@@ -11,18 +11,18 @@
       />
       <SponsorCircle
         :transparent="true"
-        size="lg"
-        fileName="sponsors/1-3-ITKMITL.svg"
-        link="https://www.it.kmitl.ac.th/"
-        alt="IT KMITL"
-      />
-      <SponsorCircle
-        :transparent="true"
         class="sp-ExxonMobil"
         size="lg"
         fileName="sponsors/1-1-ExxonMobil.svg"
         link="https://corporate.exxonmobil.com/"
         alt="ExxonMobil"
+      />
+      <SponsorCircle
+        :transparent="true"
+        size="lg"
+        fileName="sponsors/1-3-ITKMITL.svg"
+        link="https://www.it.kmitl.ac.th/"
+        alt="IT KMITL"
       />
     </div>
     <div class="sponsor-special-wrapper position-relative">
@@ -62,6 +62,21 @@
         :transparent="true"
       />
       <SponsorCircle
+        class="sp-ANANDA"
+        size="sm"
+        fileName="sponsors/3-6-ANANDA.svg"
+        link="https://www.ananda.co.th/"
+        alt="Ananda"
+        :transparent="true"
+      />
+      <SponsorCircle
+        size="sm"
+        fileName="sponsors/3-4-CampHUB.svg"
+        link="https://www.camphub.in.th/"
+        alt="CampHUB"
+        :transparent="true"
+      />
+      <SponsorCircle
         class="sp-Pantip"
         size="sm"
         fileName="sponsors/3-2-Pantip.svg"
@@ -78,26 +93,11 @@
         :transparent="true"
       />
       <SponsorCircle
-        size="sm"
-        fileName="sponsors/3-4-CampHUB.svg"
-        link="https://www.camphub.in.th/"
-        alt="CampHUB"
-        :transparent="true"
-      />
-      <SponsorCircle
         class="sp-THNIC"
         size="sm"
         fileName="sponsors/3-5-THNIC.svg"
         link="https://www.thnic.co.th/"
         alt="THNIC"
-        :transparent="true"
-      />
-      <SponsorCircle
-        class="sp-ANANDA"
-        size="sm"
-        fileName="sponsors/3-6-ANANDA.svg"
-        link="https://www.ananda.co.th/"
-        alt="Ananda"
         :transparent="true"
       />
     </div>
@@ -135,10 +135,10 @@ section {
   }
 }
 .sp-SCB {
-  width: 170px !important;
+  width: 155px !important;
   height: 125px !important;
   a picture {
-    width: 170px !important;
+    width: 155px !important;
   }
 }
 .sp-TMF {
@@ -199,7 +199,9 @@ section {
   align-items: center;
   // HANDLE 3 LOGO, CAN BE REMOVED IF ADD MORE LOGO
   @media screen and (max-width: 736px) {
-    & > div:last-child {
+    // & > div:last-child {
+    .sp-ExxonMobil {
+      order: 3;
       grid-column: 1 / span2;
     }
   }
@@ -259,21 +261,21 @@ section {
 }
 .sponsor-silver-wrapper {
   width: 100%;
-  max-width: 700px;
+  max-width: 500px;
   min-width: 220px;
   display: grid;
   justify-items: center;
   margin: 15px auto;
   grid-gap: 20px;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(3, auto);
 
   // HANDLE 6 LOGO, CAN BE REMOVED IF ADD MORE LOGO
-  @media screen and (min-width: 737px) {
+  /* @media screen and (min-width: 737px) {
     grid-row-gap: 0px;
     & > div:last-child {
       grid-column: 1 / span2;
     }
-  }
+  } */
   //////////////////////////////////////////////////
   @media screen and (max-width: 736px) {
     // width: 485px;

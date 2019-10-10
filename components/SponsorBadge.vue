@@ -57,17 +57,17 @@ export default Vue.extend({
       // }
     }
 
-    @media screen and (min-width: 768px) {  
+    @media screen and (min-width: 768px) {
       width: $normal-size;
       height: $normal-size;
     }
-      
+
     &.horizontal {
-      width: 100px;
-      @media screen and (min-width: 768px) { 
-        width: 120px;
+      width: 140px;
+      @media screen and (min-width: 768px) {
+        width: 200px;
       }
     }
   }
-  
+
 </style>

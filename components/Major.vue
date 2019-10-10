@@ -1,10 +1,12 @@
 <template>
   <div style="max-width: 100%;">
-    <div :class="`major ${color}`" :style="imageStyle" :title="`ดูรายละเอียดสาขา Web ${title}`" @click="openDetail">
+    <div :class="`major ${color}`" :style="imageStyle" :title="`ดูรายละเอียดและสมัครสาขา Web ${title}`" @click="openDetail">
       <div
         class="major-image" 
         :style="{backgroundImage: `url(/images/register/${image}.jpg)`}"
-      />
+        >
+        <small :class="{bottom: isBottomText}">สมัครแล้ว <b>{{ count }} คน</b></small>
+      </div>
       <div :class="`title ${color}`">
         <span class="outline-text">Web</span>
         {{ title }}
@@ -33,6 +35,10 @@ export default Vue.extend({
       default: '',
       type: String
     },
+    count: {
+      default: 0,
+      type: Number
+    },
     image: {
       default: '',
       type: String
@@ -45,6 +51,11 @@ export default Vue.extend({
   data () {
     return {
       show: false
+    }
+  },
+  computed: {
+    isBottomText () {
+      return ['green', 'pink'].includes(this.color)
     }
   },
   methods: {
@@ -83,8 +94,10 @@ export default Vue.extend({
   }
 
   @media screen and (min-width:768px) {
-    &:hover .major-image {
-      background-size: 120% 120%;
+    &:hover {
+      .major-image {
+        background-size: 120% 120%;
+      }
     }
   }
 
@@ -98,6 +111,21 @@ export default Vue.extend({
   height: 262px;
   background-size: 100% 100%;
   transition: all 0.15s ease-in;
+  small {
+    display: block;
+    background: rgba(0,0,0,0.5);
+    font-family: 'Maledpan';
+    font-size: 20px;
+    transition: all 0.15s ease-in;
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+  small.bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
 }
 .title {
   width: 100%;

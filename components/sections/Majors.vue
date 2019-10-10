@@ -1,129 +1,136 @@
 <template>
-  <section id="major-section" ref="major-section" class="container">
-    <SectionHead style="position: sticky; top: 0;">
-      Register
-      <h3 class="subhead">เลือกสาขาที่ต้องการสมัคร</h3>
-    </SectionHead>
-    <MajorsContainer>
-      <Major
-        title="Content"
-        image="web-content"
-        color="green"
-        :class="{blackout: selectMajor !== '' && selectMajor !== 'content'}"
-        :image-style="`transform: translate3d(0, ${y1}px, 0);`"
-        @mouseover.native="hoverMajor('content')"
-        @mouseleave.native="hoverMajor('')"
-      >
-        <template slot-scope="scope">
-          <FullscreenOverlay
-            :show="scope.show"
-            :count="major.content"
-          >
-            <template v-slot:content>        
-              <p>
-                ทำหน้าที่คิดและเขียนเนื้อหาต่าง ๆ บนเว็บไซต์ เหมาะกับผู้ที่รักในการเขียนและเล่าเรื่องทุกรูปแบบ เช่น บ่นในทวิตและเขียนแคปชั่นในไอจี เป็นต้น
-              </p>
-              <h3>คำถามประจำสาขา</h3>
-              <ol>
-                <li>ให้น้องเขียน Fake News หรือ Fake Content เรื่องอะไรก็ได้ที่ทำให้กรรมการอ่านแล้วรู้สึกเชื่อจนเผลอแชร์ก่อนเช็ก (ส่งคอนเทนต์นี้ในเว็บค่ายเท่านั้น ห้ามเผยแพร่คอนเทนต์ออกไปในโซเชียล)</li>
-                <li>ให้น้องเขียนคอนเทนต์แก้ Fake News/Content ในข้อ 1 ที่ทำให้กรรมการอ่านแล้วอยากแชร์เพื่อแก้ข่าว</li>
-              </ol>
-            </template>
-          </FullscreenOverlay>
-        </template>
-      </Major>
-      
-      <Major
-        title="Design"
-        image="web-designer"
-        color="yellow"
-        :class="{blackout: selectMajor !== '' && selectMajor !== 'designer'}"
-        :image-style="`transform: translate3d(0, ${y2}px, 0);`"
-        @mouseover.native="hoverMajor('designer')"
-        @mouseleave.native="hoverMajor('')"
-      >
-        <template slot-scope="scope">
-          <FullscreenOverlay
-            :show="scope.show"
-            :count="major.design"
-          >
-            <template v-slot:content>        
-              <p>
-                ทำหน้าที่ออกแบบเว็บไซต์ให้สวยงาม เหมาะกับผู้ที่ชอบวาดรูป รักในสีสันและการวางองค์ประกอบต่าง ๆ รับพิจารณาพิเศษสำหรับผู้ที่มีงานอดิเรกแอบวาดรูปในห้องเรียน
-              </p>
-              <h3>คำถามประจำสาขา</h3>
-              <ol>
-                <li>ทำไมเราถึงต้องเลือกน้องให้เข้ามาเป็นหนึ่งใน Young Webmaster Camp สาขา Web Design</li>
-                <li>ยกตัวอย่างเว็บไซต์หรือแอปพลิเคชันที่มีส่วนช่วยสังคมมา 1 ตัวอย่าง พร้อมทั้งอธิบายถึงเหตุผลที่เลือก</li>
-                <li>จงยกตัวอย่างเว็บไซต์หน่วยงานภาครัฐที่น้องอยากทำการ Re-design UI และ UX มา 1 เว็บไซต์ พร้อมบอกเหตุผลที่เลือก และบอกจุดที่ควรจะแก้ไข และแนวทางในการแก้ปัญหา 3 จุดเป็นอย่างน้อย</li>
-                <li>Portfolio; UX Case Study หรือ UI Case Study</li>
-              </ol>
-            </template>
-          </FullscreenOverlay>
-        </template>
-      </Major>
-      <Major
-        title="Marketing"
-        image="web-marketing"
-        color="pink"
-        :class="{blackout: selectMajor !== '' && selectMajor !== 'marketing'}"
-        :image-style="`transform: translate3d(0, ${y3}px, 0);`"
-        @mouseover.native="hoverMajor('marketing')"
-        @mouseleave.native="hoverMajor('')"
-      >
-        <template slot-scope="scope">
-          <FullscreenOverlay
-            :show="scope.show"
-            :count="major.marketing"
-          >
-            <template v-slot:content>        
-              <p>
-                ทำหน้าที่วางกลยุทธ์เพื่อสร้างรายได้ให้กับเว็บไซต์ เหมาะกับผู้ที่สนใจในการหาเงินจากช่องทางต่าง ๆ
-              </p>
-              <h3>คำถามประจำสาขา</h3>
-              <ol>
-                <li>จงบอกจุดแข็ง (อย่างน้อย 2 ข้อ) และจุดอ่อน (อย่างน้อย 2 ข้อ) ของสื่อประเภทเว็บไซต์ สำหรับตัวเรา แบรนด์ และธุรกิจ เมื่อเทียบกับสื่อดิจิทัลประเภทอื่น ๆ เช่น โมบายแอปพลิเคชันและโซเชียลมีเดีย เป็นต้น</li>
-                <li>คุณคิดว่าการทำ Marketing กับ Content เหมือนหรือต่างกันอย่างไร และอะไรคือเรื่องที่สำคัญที่สุดของการทำการตลาด</li>
-              </ol>
-            </template>
-          </FullscreenOverlay>
-        </template>
-      </Major>
-      <Major
-        title="Programming"
-        image="web-developer"
-        color="blue"
-        :class="{blackout: selectMajor !== '' && selectMajor !== 'developer'}"
-        :image-style="`transform: translate3d(0, ${y4}px, 0);`"
-        @mouseover.native="hoverMajor('developer')"
-        @mouseleave.native="hoverMajor('')"
-      >
-        <template slot-scope="scope">
-          <FullscreenOverlay
-            :show="scope.show"
-            :count="major.programming"
-          >
-            <template v-slot:content>        
-              <p>
-                ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ไม่ว่าภาษาไหน ๆ จะ HTML, CSS, JavaScript หรือนอกเหนือจากนี้
-              </p>
-              <h3>คำถามประจำสาขา</h3>
-              <ol>
-                <li>ให้น้องเล่าประสบการณ์การทำงานเกี่ยวกับการทำหรือพัฒนาเว็บไซต์ (สามารถแปะลิงก์ผลงานที่เคยทำไว้ได้)</li>
-                <li>ให้น้องเลือก Technology, Library หรือแนวคิดใหม่ ๆ ในการทำเว็บมาหนึ่งอย่างพร้อมกับอธิบายว่าคืออะไร และทำไมถึงตัดสินใจเลือกอันนี้</li>
-                <li>ให้ออกแบบระบบจองห้องประชุมของห้องสมุดมหาวิทยาลัย โดยให้ระบุ Feature ที่อยากให้มี, เทคโนโลยีที่จะเลือกใช้, โครงสร้างของฐานข้อมูล และ Wireframe ของหน้าจอแบบคร่าว ๆ</li>
-                <li>จงเขียน function cardAt ที่รับค่า n และคืนค่าเป็นเลขของไพ่ในสำรับลำดับที่ n โดยเรียงตามดอกไพ่ (C, D, H, S) และเลขไพ่ (2, 3, 4, 5, 6, 7, 8, 9, 0, J, Q, K, A) ตามลำดับ ตัวอย่างเช่น cardAt(0) = 2C, cardAt(1) = 3C, cardAt(34) = 0H และ cardAt(35) = JH เป็นต้น โดยเขียนคำตอบมาโดยใช้ภาษาใดก็ได้ หรือเป็น Pseudocode ก็ได้เช่นกัน</li>
-              </ol>
-            </template>
-          </FullscreenOverlay>
-        </template>
-      </Major>
-    </MajorsContainer>
-  </section>
+  <div id="major-section">
+    <section ref="major-section" class="container">
+      <SectionHead style="position: sticky; top: 0;">
+        Register
+        <h3 class="subhead">เลือกสาขาที่ต้องการสมัคร</h3>
+      </SectionHead>
+      <MajorsContainer>
+        <Major
+          title="Content"
+          image="web-content"
+          color="green"
+          :count="major.content"
+          :class="{blackout: selectMajor !== '' && selectMajor !== 'content'}"
+          :image-style="`transform: translate3d(0, ${y1}px, 0);`"
+          @mouseover.native="hoverMajor('content')"
+          @mouseleave.native="hoverMajor('')"
+        >
+          <template slot-scope="scope">
+            <FullscreenOverlay
+              :show="scope.show"
+              :count="major.content"
+            >
+              <template v-slot:content>        
+                <p>
+                  ทำหน้าที่คิดและเขียนเนื้อหาต่าง ๆ บนเว็บไซต์ เหมาะกับผู้ที่รักในการเขียนและเล่าเรื่องทุกรูปแบบ เช่น บ่นในทวิตและเขียนแคปชั่นในไอจี เป็นต้น
+                </p>
+                <h3>คำถามประจำสาขา</h3>
+                <ol>
+                  <li>ให้น้องเขียน Fake News หรือ Fake Content เรื่องอะไรก็ได้ที่ทำให้กรรมการอ่านแล้วรู้สึกเชื่อจนเผลอแชร์ก่อนเช็ก (ส่งคอนเทนต์นี้ในเว็บค่ายเท่านั้น ห้ามเผยแพร่คอนเทนต์ออกไปในโซเชียล)</li>
+                  <li>ให้น้องเขียนคอนเทนต์แก้ Fake News/Content ในข้อ 1 ที่ทำให้กรรมการอ่านแล้วอยากแชร์เพื่อแก้ข่าว</li>
+                </ol>
+              </template>
+            </FullscreenOverlay>
+          </template>
+        </Major>
+        
+        <Major
+          title="Design"
+          image="web-designer"
+          color="yellow"
+          :count="major.design"
+          :class="{blackout: selectMajor !== '' && selectMajor !== 'designer'}"
+          :image-style="`transform: translate3d(0, ${y2}px, 0);`"
+          @mouseover.native="hoverMajor('designer')"
+          @mouseleave.native="hoverMajor('')"
+        >
+          <template slot-scope="scope">
+            <FullscreenOverlay
+              :show="scope.show"
+              :count="major.design"
+            >
+              <template v-slot:content>        
+                <p>
+                  ทำหน้าที่ออกแบบเว็บไซต์ให้สวยงาม เหมาะกับผู้ที่ชอบวาดรูป รักในสีสันและการวางองค์ประกอบต่าง ๆ รับพิจารณาพิเศษสำหรับผู้ที่มีงานอดิเรกแอบวาดรูปในห้องเรียน
+                </p>
+                <h3>คำถามประจำสาขา</h3>
+                <ol>
+                  <li>ทำไมเราถึงต้องเลือกน้องให้เข้ามาเป็นหนึ่งใน Young Webmaster Camp สาขา Web Design</li>
+                  <li>ยกตัวอย่างเว็บไซต์หรือแอปพลิเคชันที่มีส่วนช่วยสังคมมา 1 ตัวอย่าง พร้อมทั้งอธิบายถึงเหตุผลที่เลือก</li>
+                  <li>จงยกตัวอย่างเว็บไซต์หน่วยงานภาครัฐที่น้องอยากทำการ Re-design UI และ UX มา 1 เว็บไซต์ พร้อมบอกเหตุผลที่เลือก และบอกจุดที่ควรจะแก้ไข และแนวทางในการแก้ปัญหา 3 จุดเป็นอย่างน้อย</li>
+                  <li>Portfolio; UX Case Study หรือ UI Case Study</li>
+                </ol>
+              </template>
+            </FullscreenOverlay>
+          </template>
+        </Major>
+        <Major
+          title="Marketing"
+          image="web-marketing"
+          color="pink"
+          :count="major.marketing"
+          :class="{blackout: selectMajor !== '' && selectMajor !== 'marketing'}"
+          :image-style="`transform: translate3d(0, ${y3}px, 0);`"
+          @mouseover.native="hoverMajor('marketing')"
+          @mouseleave.native="hoverMajor('')"
+        >
+          <template slot-scope="scope">
+            <FullscreenOverlay
+              :show="scope.show"
+              :count="major.marketing"
+            >
+              <template v-slot:content>        
+                <p>
+                  ทำหน้าที่วางกลยุทธ์เพื่อสร้างรายได้ให้กับเว็บไซต์ เหมาะกับผู้ที่สนใจในการหาเงินจากช่องทางต่าง ๆ
+                </p>
+                <h3>คำถามประจำสาขา</h3>
+                <ol>
+                  <li>จงบอกจุดแข็ง (อย่างน้อย 2 ข้อ) และจุดอ่อน (อย่างน้อย 2 ข้อ) ของสื่อประเภทเว็บไซต์ สำหรับตัวเรา แบรนด์ และธุรกิจ เมื่อเทียบกับสื่อดิจิทัลประเภทอื่น ๆ เช่น โมบายแอปพลิเคชันและโซเชียลมีเดีย เป็นต้น</li>
+                  <li>คุณคิดว่าการทำ Marketing กับ Content เหมือนหรือต่างกันอย่างไร และอะไรคือเรื่องที่สำคัญที่สุดของการทำการตลาด</li>
+                </ol>
+              </template>
+            </FullscreenOverlay>
+          </template>
+        </Major>
+        <Major
+          title="Programming"
+          image="web-developer"
+          color="blue"
+          :count="major.programming"
+          :class="{blackout: selectMajor !== '' && selectMajor !== 'developer'}"
+          :image-style="`transform: translate3d(0, ${y4}px, 0);`"
+          @mouseover.native="hoverMajor('developer')"
+          @mouseleave.native="hoverMajor('')"
+        >
+          <template slot-scope="scope">
+            <FullscreenOverlay
+              :show="scope.show"
+              :count="major.programming"
+            >
+              <template v-slot:content>        
+                <p>
+                  ทำหน้าที่สร้างเว็บไซต์จากการเขียนโค้ด เหมาะกับผู้ที่เขียนโปรแกรมได้ไม่ว่าภาษาไหน ๆ จะ HTML, CSS, JavaScript หรือนอกเหนือจากนี้
+                </p>
+                <h3>คำถามประจำสาขา</h3>
+                <ol>
+                  <li>ให้น้องเล่าประสบการณ์การทำงานเกี่ยวกับการทำหรือพัฒนาเว็บไซต์ (สามารถแปะลิงก์ผลงานที่เคยทำไว้ได้)</li>
+                  <li>ให้น้องเลือก Technology, Library หรือแนวคิดใหม่ ๆ ในการทำเว็บมาหนึ่งอย่างพร้อมกับอธิบายว่าคืออะไร และทำไมถึงตัดสินใจเลือกอันนี้</li>
+                  <li>ให้ออกแบบระบบจองห้องประชุมของห้องสมุดมหาวิทยาลัย โดยให้ระบุ Feature ที่อยากให้มี, เทคโนโลยีที่จะเลือกใช้, โครงสร้างของฐานข้อมูล และ Wireframe ของหน้าจอแบบคร่าว ๆ</li>
+                  <li>จงเขียน function cardAt ที่รับค่า n และคืนค่าเป็นเลขของไพ่ในสำรับลำดับที่ n โดยเรียงตามดอกไพ่ (C, D, H, S) และเลขไพ่ (2, 3, 4, 5, 6, 7, 8, 9, 0, J, Q, K, A) ตามลำดับ ตัวอย่างเช่น cardAt(0) = 2C, cardAt(1) = 3C, cardAt(34) = 0H และ cardAt(35) = JH เป็นต้น โดยเขียนคำตอบมาโดยใช้ภาษาใดก็ได้ หรือเป็น Pseudocode ก็ได้เช่นกัน</li>
+                </ol>
+              </template>
+            </FullscreenOverlay>
+          </template>
+        </Major>
+      </MajorsContainer>
+    </section>
+  </div>
 </template>
 <style scoped>
-section {
-  margin-top: 100px;
+#major-section {
+  margin-top: 0px;
+  padding-top: 100px; 
 }
 h3.subhead {
   letter-spacing: 0.2em;
@@ -141,6 +148,10 @@ h3.subhead {
     margin-top: -15px;
     letter-spacing: 0.1em;
     text-indent: -0.2em;
+  }
+  #major-section { 
+    margin-top: 100px;
+    padding-top: 0px; 
   }
 }
 </style>
