@@ -99,13 +99,13 @@ export default {
       const today = dayjs(new Date())
       const startDate = dayjs(this.items[code].startDate)
       if (typeof this.items[code].endDate === 'undefined') {
-        return startDate.isSame(today)
+        return startDate.isSame(today, 'day')
       } else {
         const endDate = dayjs(this.items[code].endDate)
 
-        if (endDate.isBefore(today)) {
+        if (endDate.isBefore(today, 'day')) {
           return false
-        } else if (!startDate.isBefore(today) && !startDate.isSame(today)) {
+        } else if (!startDate.isBefore(today, 'day') && !startDate.isSame(today, 'day')) {
           return false
         }
         return true
