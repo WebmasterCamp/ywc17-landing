@@ -26,9 +26,10 @@
           ย้อนกลับ
         </BackButton>
         <slot name="footer">
-          <RegisterButton :color="color" href="https://register.ywc17.ywc.in.th/">
+          <RegisterButton v-if="isRegOpen" :color="color" href="https://register.ywc17.ywc.in.th/">
             สมัครสาขานี้
           </RegisterButton>
+          <span v-else style="color: gray;margin:0 auto;">ขณะนี้ไม่อยู่ในช่วงรับสมัคร</span>
         </slot>
       </BottomMenu>
     </Container>
@@ -282,6 +283,10 @@ export default Vue.extend({
     },
     normal: {
       default: false,
+      type: Boolean
+    },
+    isRegOpen: {
+      default: true,
       type: Boolean
     }
   },
