@@ -2,8 +2,14 @@
   <div id="major-section">
     <section ref="major-section" class="container">
       <SectionHead style="position: sticky; top: 0;">
-        Register
-        <h3 class="subhead">เลือกสาขาที่ต้องการสมัคร</h3>
+        <template v-if="isRegOpen">
+          Register
+          <h3 class="subhead">เลือกสาขาที่ต้องการสมัคร</h3>
+        </template>
+        <template v-else>
+          Majors
+          <h3 class="subhead">สาขาที่รับสมัคร</h3>
+        </template>
       </SectionHead>
       <MajorsContainer>
         <Major
@@ -20,6 +26,7 @@
             <FullscreenOverlay
               :show="scope.show"
               :count="major.content"
+              :isRegOpen="isRegOpen"
             >
               <template v-slot:content>        
                 <p>
@@ -49,6 +56,7 @@
             <FullscreenOverlay
               :show="scope.show"
               :count="major.design"
+              :isRegOpen="isRegOpen"
             >
               <template v-slot:content>        
                 <p>
@@ -79,6 +87,7 @@
             <FullscreenOverlay
               :show="scope.show"
               :count="major.marketing"
+              :isRegOpen="isRegOpen"
             >
               <template v-slot:content>        
                 <p>
@@ -107,6 +116,7 @@
             <FullscreenOverlay
               :show="scope.show"
               :count="major.programming"
+              :isRegOpen="isRegOpen"
             >
               <template v-slot:content>        
                 <p>
@@ -158,6 +168,7 @@ h3.subhead {
 <script>
 import Vue from 'vue'
 import styled from 'vue-styled-components'
+import dayjs from 'dayjs'
 import SectionHead from '~/components/SectionHead.vue'
 import { isInViewport, getDistance } from '~/utils/dom'
 
@@ -205,6 +216,11 @@ export default Vue.extend({
       y3: -122,
       y4: -293,
       lastScrollTop: 0
+    }
+  },
+  computed: {
+    isRegOpen () {
+      return !dayjs('2019-10-15').isBefore(dayjs(new Date()))
     }
   },
   mounted () {
