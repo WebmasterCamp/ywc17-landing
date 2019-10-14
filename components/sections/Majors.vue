@@ -220,7 +220,9 @@ export default Vue.extend({
   },
   computed: {
     isRegOpen () {
-      return !dayjs('2019-10-15').isBefore(dayjs(new Date()))
+      const today = dayjs(new Date())
+      const deadline = dayjs('2019-10-15')
+      return !deadline.isBefore(today, 'day')
     }
   },
   mounted () {
