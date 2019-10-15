@@ -2,8 +2,14 @@
   <div id="major-section">
     <section ref="major-section" class="container">
       <SectionHead style="position: sticky; top: 0;">
-        Register
-        <h3 class="subhead">เลือกสาขาที่ต้องการสมัคร</h3>
+        <template v-if="isRegOpen">
+          Register
+          <h3 class="subhead">เลือกสาขาที่ต้องการสมัคร</h3>
+        </template>
+        <template v-else>
+          Majors
+          <h3 class="subhead">สาขาที่รับสมัคร</h3>
+        </template>
       </SectionHead>
       <MajorsContainer>
         <Major
@@ -20,6 +26,7 @@
             <FullscreenOverlay
               :show="scope.show"
               :count="major.content"
+              :isRegOpen="isRegOpen"
             >
               <template v-slot:content>        
                 <p>
@@ -49,6 +56,7 @@
             <FullscreenOverlay
               :show="scope.show"
               :count="major.design"
+              :isRegOpen="isRegOpen"
             >
               <template v-slot:content>        
                 <p>
@@ -59,7 +67,7 @@
                   <li>ทำไมเราถึงต้องเลือกน้องให้เข้ามาเป็นหนึ่งใน Young Webmaster Camp สาขา Web Design</li>
                   <li>ยกตัวอย่างเว็บไซต์หรือแอปพลิเคชันที่มีส่วนช่วยสังคมมา 1 ตัวอย่าง พร้อมทั้งอธิบายถึงเหตุผลที่เลือก</li>
                   <li>จงยกตัวอย่างเว็บไซต์หน่วยงานภาครัฐที่น้องอยากทำการ Re-design UI และ UX มา 1 เว็บไซต์ พร้อมบอกเหตุผลที่เลือก และบอกจุดที่ควรจะแก้ไข และแนวทางในการแก้ปัญหา 3 จุดเป็นอย่างน้อย</li>
-                  <li>Portfolio; UX Case Study หรือ UI Case Study</li>
+                  <li>Portfolio; ผลงานของคุณที่เกี่ยวข้องด้าน UX/UI</li>
                 </ol>
               </template>
             </FullscreenOverlay>
@@ -79,6 +87,7 @@
             <FullscreenOverlay
               :show="scope.show"
               :count="major.marketing"
+              :isRegOpen="isRegOpen"
             >
               <template v-slot:content>        
                 <p>
@@ -107,6 +116,7 @@
             <FullscreenOverlay
               :show="scope.show"
               :count="major.programming"
+              :isRegOpen="isRegOpen"
             >
               <template v-slot:content>        
                 <p>
@@ -158,6 +168,7 @@ h3.subhead {
 <script>
 import Vue from 'vue'
 import styled from 'vue-styled-components'
+import dayjs from 'dayjs'
 import SectionHead from '~/components/SectionHead.vue'
 import { isInViewport, getDistance } from '~/utils/dom'
 
@@ -205,6 +216,13 @@ export default Vue.extend({
       y3: -122,
       y4: -293,
       lastScrollTop: 0
+    }
+  },
+  computed: {
+    isRegOpen () {
+      const today = dayjs(new Date())
+      const deadline = dayjs('2019-10-15')
+      return !deadline.isBefore(today, 'day')
     }
   },
   mounted () {
