@@ -191,10 +191,10 @@ const MajorsContainer = styled.div`
 `
 
 class CountMajorRegistant {
-  programming = 0
-  design = 0
-  marketing = 0
-  content = 0
+  programming = 210
+  design = 132
+  marketing = 344
+  content = 217
 }
 
 export default Vue.extend({
@@ -243,17 +243,7 @@ export default Vue.extend({
       this.selectMajor = major
     },
     fetchCountRegistant () {
-      return this.$axios
-        .get('https://api.ywc.in.th/users/stat')
-        .then(({ status, data }) => {
-          if (status === 200) {
-            return data.payload
-          }
-          return new CountMajorRegistant()
-        })
-        .catch(() => {
-          return new CountMajorRegistant()
-        })
+      return Promise.resolve(new CountMajorRegistant())
     }
   }
 })
