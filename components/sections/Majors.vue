@@ -168,7 +168,6 @@ h3.subhead {
 <script>
 import Vue from 'vue'
 import styled from 'vue-styled-components'
-import dayjs from 'dayjs'
 import SectionHead from '~/components/SectionHead.vue'
 import { isInViewport, getDistance } from '~/utils/dom'
 
@@ -192,10 +191,10 @@ const MajorsContainer = styled.div`
 `
 
 class CountMajorRegistant {
-  programming = 0
-  design = 0
-  marketing = 0
-  content = 0
+  programming = 210
+  design = 132
+  marketing = 344
+  content = 217
 }
 
 export default Vue.extend({
@@ -207,8 +206,6 @@ export default Vue.extend({
   },
   data () {
     return {
-      isFirstCome: true,
-      isStopAnimate: false,
       selectMajor: '',
       major: new CountMajorRegistant(),
       y1: -170,
@@ -220,9 +217,7 @@ export default Vue.extend({
   },
   computed: {
     isRegOpen () {
-      const today = dayjs(new Date())
-      const deadline = dayjs('2019-10-15')
-      return !deadline.isBefore(today, 'day')
+      return false
     }
   },
   mounted () {
@@ -236,34 +231,6 @@ export default Vue.extend({
         this.y2 = distance / 4 * 1.3
         this.y3 = distance / 4 * 0.5
         this.y4 = distance / 4 * 1.2
-        if (this.isFirstCome && distance < -200) {
-          this.isFirstCome = false
-          setTimeout(() => {
-            if (!this.isStopAnimate) {
-              this.selectMajor = 'content'
-            }
-          }, 700)
-          setTimeout(() => {
-            if (!this.isStopAnimate) {
-              this.selectMajor = 'designer'
-            }
-          }, 1400)
-          setTimeout(() => {
-            if (!this.isStopAnimate) {
-              this.selectMajor = 'marketing'
-            }
-          }, 2100)
-          setTimeout(() => {
-            if (!this.isStopAnimate) {
-              this.selectMajor = 'developer'
-            }
-          }, 2800)
-          setTimeout(() => {
-            if (!this.isStopAnimate) {
-              this.selectMajor = ''
-            }
-          }, 3500)
-        }
       }
     }
     this.fetchCountRegistant()
@@ -273,23 +240,10 @@ export default Vue.extend({
   },
   methods: {
     hoverMajor (major) {
-      if (!this.isFirstCome) {
-        this.isStopAnimate = true
-      }
       this.selectMajor = major
     },
     fetchCountRegistant () {
-      return this.$axios
-        .get('https://api.ywc.in.th/users/stat')
-        .then(({ status, data }) => {
-          if (status === 200) {
-            return data.payload
-          }
-          return new CountMajorRegistant()
-        })
-        .catch(() => {
-          return new CountMajorRegistant()
-        })
+      return Promise.resolve(new CountMajorRegistant())
     }
   }
 })
