@@ -193,7 +193,7 @@ const MajorsContainer = styled.div`
 class CountMajorRegistant {
   programming = 210
   design = 132
-  marketing = 344
+  marketing = 343
   content = 217
 }
 
