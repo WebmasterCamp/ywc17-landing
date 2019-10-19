@@ -22,7 +22,9 @@ export default {
       document
         .getElementsByTagName('body')[0]
         .setAttribute('style', `background: #401b19;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), linear-gradient(52.33deg, #C73884 11.23%, #FA5C87 51.45%, #FF7745 89.45%);`)
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(69.01deg, #C73884 7.27%, #E13C6F 51.46%, #9B308E 95.22%);
+    background-size: cover;
+    background-attachment: fixed;`)
     }
   }
 }
