@@ -275,6 +275,7 @@ export default {
     max-width: 1056px;
   }
   .ywc-logo {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     text-align: left;
     margin: 0;
     margin-top: 40px;
