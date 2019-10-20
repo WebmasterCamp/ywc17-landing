@@ -22,7 +22,7 @@
       ให้แจ้งใน Inbox ของเพจ <a class="themeLink" href="https://m.me/ywcth" target="_blank"><b>Facebook : Young Webmaster Camp</b></a> ภายในวันที่ 30 ตุลาคม 2562
       <h3>มีข้อสงสัยเพิ่มเติม โปรดติดต่อ</h3>
       <table>
-        <tr><td width="80"><span class="themeText">พี่บอส</span></td><td>โทร. <a class="themeLink" href="tel:0823651885">082 - 365 - 1885</a></td></tr>
+        <tr><td width="70"><span class="themeText">พี่บอส</span></td><td>โทร. <a class="themeLink" href="tel:0823651885">082 - 365 - 1885</a></td></tr>
         <tr><td><span class="themeText">พี่ปู</span></td><td>โทร. <a class="themeLink" href="tel:0988256861">098 - 825 - 6861</a></td></tr>
         <tr><td><span class="themeText">พี่จุ้ย</span></td><td>โทร. <a class="themeLink" href="tel:0929595167">092 - 959 - 5167</a></td></tr>
       </table>
@@ -121,6 +121,10 @@ const ThemeProvider = styled('div', { theme: String })`
   .ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled) {
     border-color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
   }
+  // Spinner
+  .ant-spin-dot i {
+    background-color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+  }
 `
 const MajorRow = styled('div')`
   display: grid;
@@ -132,12 +136,13 @@ const MajorRow = styled('div')`
   @media screen and (max-width:768px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @media screen and (max-width:576px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  // @media screen and (max-width:576px) {
+  //   grid-template-columns: repeat(1, 1fr);
+  // }
 `
 const Major = styled('a', { color: String })`
   display: inline-grid;
+  grid-template-rows: auto 20%;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -148,21 +153,31 @@ const Major = styled('a', { color: String })`
   font-weight: bold;
   font-size: 24px;
 
-  height: 289px;
+  height: 225px;
   padding: 30px;
   background: #ffffff;
   box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 
   @media screen and (max-width:768px) {
-    font-size: 20px;
-    height: auto;
+    font-size: 22px;
+    height: 96px;
     padding: 15px;
-    grid-template-columns: auto 80%;
+    grid-template-rows: none;
+    grid-template-columns: auto 76%;
   }
   @media screen and (max-width:576px) {
-    font-size: 18px;
-    grid-template-columns: 15% 75%;
+    // height: 32px;
+    font-size: 16px;
+    // grid-template-columns: 15% 75%;
+    grid-template-columns: none;
+    grid-template-rows: auto 22%;
+  }
+  @media screen and (max-width:360px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width:320px) {
+    font-size: 12px;
   }
 
   &.unactive {
@@ -174,6 +189,7 @@ const Major = styled('a', { color: String })`
 
   img {
     max-width: 100%;
+    max-height: 100%;
     margin: 0 auto;
     margin-bottom: 16px;
     
