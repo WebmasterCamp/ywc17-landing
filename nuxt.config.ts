@@ -43,6 +43,7 @@ const config = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/ant-design-vue' },
     { src: '~/plugins/vue-agile', ssr: false },
     { src: '~/plugins/vue-lazyload', ssr: false }
   ],
