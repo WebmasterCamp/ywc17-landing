@@ -9,22 +9,118 @@
       <h4>2. หลังจากไม่ได้เลือกตั้งมา 7 ปี และมีคนรุ่นใหม่จำนวนมากที่ยังไม่เคยเลือกตั้งมาก่อน จงทำ Content ที่อธิบายระบบการเลือกตั้งแบบใหม่ ที่แตกต่างจากเดิม ทั้งการเลือกส.ส.,Party List, และที่มาของการได้นายกรัฐมนตรี</h4>
     </section>
     <h3>รายชื่อผู้ผ่านการคัดเลือกเข้ารอบสัมภาษณ์ สาขา <span class="themeText">Web {{ majorName }}</span></h3>
+    <a-input-search size="large" placeholder="ค้นหารายชื่อได้ที่นี่" style="margin-bottom: 22px;" @search="onSearch" />
+    <a-locale-provider :locale="ANTD_THAI">
+      <a-table
+        :columns="columns"
+        :dataSource="filteredData"
+        rowKey="code"
+        :pagination="false"
+      >
+        <template slot="customRender" slot-scope="text">
+          <span v-if="searchText">
+            <template v-for="(fragment, i) in text.toString().split(new RegExp(`(?<=${searchText})|(?=${searchText})`, 'i'))">
+              <mark
+                v-if="fragment.toLowerCase() === searchText.toLowerCase()"
+                :key="i"
+                class="highlight"
+              >
+                {{ fragment }}
+              </mark>
+              <template v-else>{{ fragment }}</template>
+            </template>
+          </span>
+          <template v-else>{{ text }}</template>
+        </template>
+      </a-table>
+    </a-locale-provider>
   </div>
 </template>
 <script>
+import ANTD_THAI from 'ant-design-vue/lib/locale-provider/th_TH'
+const columns = [
+  {
+    title: 'รหัส',
+    dataIndex: 'code',
+    sorter: (a, b) => a.code.localeCompare(b.code),
+    width: '15%',
+    scopedSlots: { customRender: 'customRender' }
+  },
+  {
+    title: 'ชื่อ - นามสกุล',
+    dataIndex: 'name',
+    sorter: (a, b) => a.name.localeCompare(b.name),
+    width: '70%',
+    scopedSlots: { customRender: 'customRender' }
+  },
+  {
+    title: 'รอบ',
+    dataIndex: 'round',
+    sorter: (a, b) => a.round.localeCompare(b.round),
+    width: '15%'
+  }
+]
+const data = [
+  {
+    code: 'CT01',
+    name: 'ธัญชนก คชพัชรินทร์',
+    round: 'เช้า'
+  },
+  {
+    code: 'CT02',
+    name: 'ทดสอบ',
+    round: 'เช้า'
+  },
+  {
+    code: 'CT03',
+    name: 'เทส',
+    round: 'บ่าย'
+  }
+]
 export default {
   props: {
     majors: { type: Object, default: () => { return {} } }
+  },
+  data () {
+    return {
+      ANTD_THAI,
+      columns,
+      data,
+      searchText: ''
+    }
   },
   computed: {
     major () {
       return this.$route.params.major
     },
     majorName () {
+      if (!this.major) {
+        return ''
+      }
       return this.majors[this.major][0]
     },
     majorTheme () {
+      if (!this.major) {
+        return ''
+      }
       return this.majors[this.major][1]
+    },
+    filteredData () {
+      if (!this.searchText) {
+        return this.data
+      }
+
+      return this.data.filter((value) => {
+        if (value.name.includes(this.searchText) || value.code.toLowerCase().includes(this.searchText.toLowerCase())) {
+          return true
+        }
+        return false
+      })
+    }
+  },
+  methods: {
+    onSearch (value) {
+      this.searchText = value
     }
   }
 }

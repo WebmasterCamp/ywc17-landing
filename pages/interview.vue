@@ -33,25 +33,25 @@
         <Major
           v-for="(info, codename) in majors"
           :key="info[0]"
-          :theme="info[1]"
+          :color="info[1]"
           :href="`/interview/${codename}`"
           :class="{'unactive': major && major !== codename}"
+          v-scroll-to="'#interview-box'"
           @click.prevent="changeMajor(codename)"
         >
-          <Picture :fileName="`web-${codename}`" />
+          <img v-lazy="require(`~/assets/images/web-${codename}.png`)" />
           Web {{ info[0] }}
         </Major>
       </MajorRow>
     </section>
-    <CenterContainer class="interview-box" v-if="major">
-      <nuxt-child :majors="majors" />
+    <CenterContainer v-show="major" id="interview-box" class="interview-box">
+      <nuxt-child v-if="major" :majors="majors" />
     </CenterContainer>
     <Footer />
   </ThemeProvider>
 </template>
 <script>
 import styled from 'vue-styled-components'
-import Picture from '~/components/Picture.vue'
 import CenterContainer from '~/components/CenterContainer.vue'
 import Footer from '~/components/sections/Footer.vue'
 import color from '~/utils/color'
@@ -94,6 +94,33 @@ const ThemeProvider = styled('div', { theme: String })`
        color: ${props => props.theme ? colorScheme[props.theme].normal : color.main};
     }
   }
+
+  // ======== START Ant Design Override ========
+  // Table Row Hover Color
+  .ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td, .ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td, .ant-table-thead > tr:hover:not(.ant-table-expanded-row) > td, .ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
+    background: ${props => props.theme ? colorScheme[props.theme].light : colorScheme.pink.light};
+  }
+  // Table Sorter Active Color
+  .ant-table-thead > tr > th .ant-table-column-sorter-up.on, .ant-table-thead > tr > th .ant-table-column-sorter-down.on {
+    color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+  }
+  // Table Filter Active Color 
+  .ant-table-thead > tr > th .ant-table-filter-selected.anticon-filter {
+    color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+  }
+  .ant-table-filter-dropdown-link {
+    color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+  }
+  // Input
+  .ant-input:hover, .ant-input:focus {
+    border-color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+  }
+  .ant-input:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+  }
+  .ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled) {
+    border-color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+  }
 `
 const MajorRow = styled('div')`
   display: grid;
@@ -109,7 +136,7 @@ const MajorRow = styled('div')`
     grid-template-columns: repeat(1, 1fr);
   }
 `
-const Major = styled('a', { theme: String })`
+const Major = styled('a', { color: String })`
   display: inline-grid;
   align-items: center;
   justify-content: center;
@@ -117,7 +144,7 @@ const Major = styled('a', { theme: String })`
   text-decoration: none;
 
   font-family: 'Maledpan';
-  color: ${props => color[props.theme].darker};
+  color: ${props => color[props.color].darker};
   font-weight: bold;
   font-size: 24px;
 
@@ -145,14 +172,13 @@ const Major = styled('a', { theme: String })`
     }
   }
 
-  picture {
-    display: block;
-    img {
-      margin-bottom: 16px;
-      
-      @media screen and (max-width:768px) {
-        margin-bottom: 0;
-      }
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    
+    @media screen and (max-width:768px) {
+      margin-bottom: 0;
     }
   }
 
@@ -165,7 +191,6 @@ export default {
   layout: 'secondary',
   components: {
     ThemeProvider,
-    Picture,
     MajorRow,
     Major,
     CenterContainer,
@@ -230,6 +255,9 @@ export default {
   }
   .section-heading {
     text-align: center;
+  }
+  input {
+    font-family: 'Sarabun', serif, Tahoma;
   }
   .interview-intro, .interview-box {
     font-size: 18px;
