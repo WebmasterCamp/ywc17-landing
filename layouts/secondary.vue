@@ -1,6 +1,8 @@
 <template>
-  <div class="secondary">
-    <nuxt-link to="/" class="ywc-logo" title="ไปยังหน้าแรกของ 17th Young Webmaster Camp"><Picture fileName="ywc-logo" alt="17th Young Webmaster Camp" /></nuxt-link>
+  <div class="secondary" :class="$route.name">
+    <section class="container">
+      <nuxt-link to="/" class="ywc-logo" title="ไปยังหน้าแรกของ 17th Young Webmaster Camp"><Picture fileName="ywc-logo" alt="17th Young Webmaster Camp" /></nuxt-link>
+    </section>
     <nuxt />
   </div>
 </template>
@@ -38,7 +40,7 @@ html {
   section {
     margin-top: 40px;
   }
-  h3 {
+  h1, h2, h3 {
     font-family: 'Maledpan';
   }
   .container {
