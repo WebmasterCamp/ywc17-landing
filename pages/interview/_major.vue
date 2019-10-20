@@ -142,11 +142,11 @@ export default {
     }
   },
   beforeRouteUpdate (to, from, next) {
-    this.loadData(to.params.major)
+    if (to.params.major) {
+      this.loadData(to.params.major)
+    }
     this.searchText = ''
-    next((vm) => {
-      vm.searchText = ''
-    })
+    next()
   }
 }
 </script>
