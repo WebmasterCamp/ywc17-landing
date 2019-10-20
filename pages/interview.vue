@@ -44,7 +44,8 @@
         </Major>
       </MajorRow>
     </section>
-    <CenterContainer v-show="major" id="interview-box" class="interview-box">
+    <a id="interview-box"></a>
+    <CenterContainer v-show="major" class="interview-box">
       <nuxt-child v-if="major" :majors="majors" />
     </CenterContainer>
     <Footer />
@@ -129,7 +130,6 @@ const ThemeProvider = styled('div', { theme: String })`
 const MajorRow = styled('div')`
   display: grid;
   margin-top: 36px;
-  margin-bottom: 43px;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
   align-items: center;
@@ -308,6 +308,9 @@ export default {
       list-style-type: none;
       padding-left: 0;
     }
+  }
+  #interview-box {
+    padding-bottom: 43px;
   }
   .interview-box {
     padding-top: 25px;
