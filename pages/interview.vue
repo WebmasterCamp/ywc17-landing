@@ -84,7 +84,7 @@ const ThemeProvider = styled('div', { theme: String })`
     color: ${props => props.theme ? colorScheme[props.theme].normal : color.main};
     font-weight: bold;
   }
-  .themeLink {
+  .themeLink, .questions a {
     color: ${props => props.theme ? colorScheme[props.theme].normal : color.main};
     &:visited, &:active, &:hover {
        color: ${props => props.theme ? colorScheme[props.theme].normal : color.main};
@@ -352,6 +352,12 @@ export default {
     padding-bottom: 25px;
     h3:first-of-type {
       margin-top: 0px;
+    }
+    ol {
+      padding-left: 20px;
+    }
+    ul {
+      padding-left: 20px;
     }
   }
 }

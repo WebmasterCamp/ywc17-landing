@@ -12,7 +12,12 @@ export const INTERVIEW_QUESTIONS = {
   ให้คุณเลือกรายการ "เดินหน้าประเทศไทย" หรือ "เดินหน้าประเทศไทย วัยทีน" ตอนใดก็ได้มาหนึ่งตอน ทำสรุปเนื้อหาของรายการเป็นสื่อรูปแบบใดก็ได้ เช่น ข้อความ รูปภาพ อินโฟกราฟิก คลิปสั้น ฯลฯ แล้วเลือกช่องทางโซเชียลมีเดียที่จะใช้นำเสนอ เช่น Facebook, Twitter, YouTube, Instagram, Pantip ที่เหมาะกับเนื้อหาที่คุณทำมา</p>
       <h4>2. หลังจากไม่ได้เลือกตั้งมา 7 ปี และมีคนรุ่นใหม่จำนวนมากที่ยังไม่เคยเลือกตั้งมาก่อน จงทำ Content ที่อธิบายระบบการเลือกตั้งแบบใหม่ ที่แตกต่างจากเดิม ทั้งการเลือกส.ส.,Party List, และที่มาของการได้นายกรัฐมนตรี</h4>
       `,
-  design: ``,
-  marketing: ``,
-  programming: ``
+  design: `<ol><li>นี่คือคำถาม</li><li>สาขาดีไซน์</li></ol>`,
+  marketing: `นี่คือคำถามสาขามาร์เก็ตติ้ง`,
+  programming: `นี่คือคำถามสาขาโปรแกรมมิ่ง<br/>
+  <ul>
+    <li>รายการ: <a href="https://ywc17.ywc.in.th/" target="_blank">https://ywc17.ywc.in.th/</a></li>
+    <li>รายการ: <a href="https://ywc17.ywc.in.th/" target="_blank">https://ywc17.ywc.in.th/</a></li>
+    <li>รายการ: <a href="https://ywc17.ywc.in.th/" target="_blank">https://ywc17.ywc.in.th/</a></li>
+  </ul>`
 }
