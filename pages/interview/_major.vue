@@ -11,7 +11,8 @@
       <a-table
         :columns="columns"
         :dataSource="filteredData"
-        rowKey="code"
+        rowKey="ref"
+        size="medium"
         :pagination="false"
         :loading="isLoading"
       >

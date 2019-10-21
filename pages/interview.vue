@@ -92,11 +92,26 @@ const ThemeProvider = styled('div', { theme: String })`
   }
 
   // ======== START Ant Design Override ========
+  // Table Head
+  .ant-table-thead > tr > th {
+    color: ${props => props.theme ? colorScheme[props.theme].normal : color.main};
+    border-bottom: 1px solid ${props => props.theme ? colorScheme[props.theme].light : colorScheme.pink.light};
+    background: none;
+    font-weight: bold;
+  }
+  // .ant-table-thead > tr > th.ant-table-column-has-actions.ant-table-column-has-sorters:hover {
+  //   background: ${props => props.theme ? colorScheme[props.theme].light : colorScheme.pink.light};
+  // }
   // Table Row Hover Color
   .ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td, .ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td, .ant-table-thead > tr:hover:not(.ant-table-expanded-row) > td, .ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
     background: ${props => props.theme ? colorScheme[props.theme].light : colorScheme.pink.light};
   }
-  // Table Sorter Active Color
+  // Table Sorter - Inactive Color 
+  .ant-table-thead > tr > th.ant-table-column-has-actions.ant-table-column-has-sorters:active .ant-table-column-sorter-up:not(.on), .ant-table-thead > tr > th.ant-table-column-has-actions.ant-table-column-has-sorters:active .ant-table-column-sorter-down:not(.on),
+  .ant-table-thead > tr > th .ant-table-column-sorter {
+    color: ${props => props.theme ? colorScheme[props.theme].light : colorScheme.pink.light};
+  }
+  // Table Sorter - Active Color
   .ant-table-thead > tr > th .ant-table-column-sorter-up.on, .ant-table-thead > tr > th .ant-table-column-sorter-down.on {
     color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
   }
