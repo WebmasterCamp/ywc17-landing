@@ -12,7 +12,7 @@
         :columns="columns"
         :dataSource="filteredData"
         rowKey="ref"
-        size="medium"
+        size="middle"
         :pagination="false"
         :loading="isLoading"
       >
