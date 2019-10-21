@@ -1,6 +1,6 @@
 <template>
   <ThemeProvider :theme="currTheme">
-    <CenterContainer class="interview-intro">
+    <InfoContainer class="interview-intro">
       <h2>ประกาศผู้มีสิทธิ์เข้าสัมภาษณ์</h2>
       การสัมภาษณ์จะจัดขึ้นในวันที่ <span class="themeText">2 พฤศจิกายน 2562</span> ณ <a class="themeLink" href="https://goo.gl/maps/rwbLzbCNvYH2" title="คลิกเพื่อดูแผนที่บน Google Maps" target="_blank"><b>อาคาร ซี.พี.ทาวเวอร์ 1 (สีลม)</b></a><br>
       ซึ่งจะแบ่งออกเป็น 2 รอบ คือ <span class="themeText">รอบเช้า (ตั้งแต่เวลา 09:00 ถึง 12:00 น.)</span> และ <span class="themeText">รอบบ่าย (ตั้งแต่เวลา 13:00 ถึง 18:00 น.)</span>
@@ -26,7 +26,7 @@
         <tr><td><span class="themeText">พี่ปู</span></td><td>โทร. <a class="themeLink" href="tel:0988256861">098 - 825 - 6861</a></td></tr>
         <tr><td><span class="themeText">พี่จุ้ย</span></td><td>โทร. <a class="themeLink" href="tel:0929595167">092 - 959 - 5167</a></td></tr>
       </table>
-    </CenterContainer>
+    </InfoContainer>
     <section class="container" id="select-major">
       <h2 class="section-heading">โปรดเลือกสาขา</h2>
       <MajorRow>
@@ -45,15 +45,15 @@
       </MajorRow>
     </section>
     <a id="interview-box"></a>
-    <CenterContainer v-show="major" class="interview-box">
+    <InfoContainer v-show="major" class="interview-box">
       <nuxt-child v-if="major" :majors="majors" />
-    </CenterContainer>
+    </InfoContainer>
     <Footer />
   </ThemeProvider>
 </template>
 <script>
 import styled from 'vue-styled-components'
-import CenterContainer from '~/components/CenterContainer.vue'
+import InfoContainer from '~/components/InfoContainer.vue'
 import Footer from '~/components/sections/Footer.vue'
 import color from '~/utils/color'
 import { majors } from '~/utils/const'
@@ -254,7 +254,7 @@ export default {
     ThemeProvider,
     MajorRow,
     Major,
-    CenterContainer,
+    InfoContainer,
     Footer
   },
   data () {
