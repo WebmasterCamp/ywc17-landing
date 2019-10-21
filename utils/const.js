@@ -1,3 +1,10 @@
+export const majors = {
+  content: ['Content', 'green'],
+  design: ['Design', 'yellow'],
+  marketing: ['Marketing', 'pink'], 
+  programming: ['Programming', 'blue']
+}
+
 export const INTERVIEW_QUESTIONS = {
   content: ` ให้เลือกทำ 1 ข้อ ระหว่าง<br />
       <h4>1. ช่วยสรุปรายการ "เดินหน้าประเทศไทย" ให้ดูน่าสนใจ</h4>

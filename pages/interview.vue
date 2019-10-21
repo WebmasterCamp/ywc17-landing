@@ -27,7 +27,7 @@
         <tr><td><span class="themeText">พี่จุ้ย</span></td><td>โทร. <a class="themeLink" href="tel:0929595167">092 - 959 - 5167</a></td></tr>
       </table>
     </CenterContainer>
-    <section class="container">
+    <section class="container" id="select-major">
       <h2 class="section-heading">โปรดเลือกสาขา</h2>
       <MajorRow>
         <Major
@@ -36,7 +36,7 @@
           :color="info[1]"
           :href="`/interview/${codename}`"
           :class="{'unactive': major && major !== codename}"
-          v-scroll-to="'#interview-box'"
+          v-scroll-to="!major ? '#select-major' : '#interview-box'"
           @click.prevent="changeMajor(codename)"
         >
           <img v-lazy="require(`~/assets/images/web-${codename}.png`)" />
@@ -56,12 +56,7 @@ import styled from 'vue-styled-components'
 import CenterContainer from '~/components/CenterContainer.vue'
 import Footer from '~/components/sections/Footer.vue'
 import color from '~/utils/color'
-const majors = {
-  content: ['Content', 'green'],
-  design: ['Design', 'yellow'],
-  marketing: ['Marketing', 'pink'], 
-  programming: ['Programming', 'blue']
-}
+import { majors } from '~/utils/const'
 const colorScheme = {
   green: {
     light: '#99F2C3',
@@ -129,7 +124,7 @@ const ThemeProvider = styled('div', { theme: String })`
 `
 const MajorRow = styled('div')`
   display: grid;
-  margin-top: 36px;
+  margin-top: 36px; 
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
   align-items: center;
@@ -142,7 +137,8 @@ const MajorRow = styled('div')`
 `
 const Major = styled('a', { color: String })`
   display: inline-grid;
-  grid-template-rows: auto 20%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 15%;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -158,6 +154,10 @@ const Major = styled('a', { color: String })`
   background: #ffffff;
   box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+
+  @media screen and (max-width:1080px) {
+    padding: 20px;
+  }
 
   @media screen and (max-width:768px) {
     font-size: 22px;
