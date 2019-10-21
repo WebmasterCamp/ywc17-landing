@@ -85,6 +85,7 @@ const ThemeProvider = styled('div', { theme: String })`
     font-weight: bold;
   }
   .themeLink, .questions a {
+    text-decoration: underline;
     color: ${props => props.theme ? colorScheme[props.theme].normal : color.main};
     &:visited, &:active, &:hover {
        color: ${props => props.theme ? colorScheme[props.theme].normal : color.main};
@@ -138,6 +139,16 @@ const ThemeProvider = styled('div', { theme: String })`
   // Spinner
   .ant-spin-dot i {
     background-color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+  }
+  // Button 
+  .ant-btn-primary:hover, .ant-btn-primary:focus {
+    color: black;
+    background-color: ${props => props.theme ? colorScheme[props.theme].light : colorScheme.pink.light};
+    border-color: ${props => props.theme ? colorScheme[props.theme].light : colorScheme.pink.light};
+  }
+  .ant-btn-primary, .ant-btn-primary:active, .ant-btn-primary.active {
+    background-color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+    border-color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
   }
 `
 const MajorRow = styled('div')`
@@ -358,6 +369,9 @@ export default {
     }
     ul {
       padding-left: 20px;
+    }
+    button {
+      font-family: 'Maledpan';
     }
   }
 }
