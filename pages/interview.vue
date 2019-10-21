@@ -2,7 +2,7 @@
   <ThemeProvider :theme="currTheme">
     <CenterContainer class="interview-intro">
       <h2>ประกาศผู้มีสิทธิ์เข้าสัมภาษณ์</h2>
-      การสัมภาษณ์จะจัดขึ้นในวันที่ <span class="themeText">2 พฤศจิกายน 2562</span> ณ <a class="themeLink" href="https://goo.gl/maps/rwbLzbCNvYH2" target="_blank"><b>อาคาร ซี.พี.ทาวเวอร์ 1 (สีลม)</b></a><br>
+      การสัมภาษณ์จะจัดขึ้นในวันที่ <span class="themeText">2 พฤศจิกายน 2562</span> ณ <a class="themeLink" href="https://goo.gl/maps/rwbLzbCNvYH2" title="คลิกเพื่อดูแผนที่บน Google Maps" target="_blank"><b>อาคาร ซี.พี.ทาวเวอร์ 1 (สีลม)</b></a><br>
       ซึ่งจะแบ่งออกเป็น 2 รอบ คือ <span class="themeText">รอบเช้า (ตั้งแต่เวลา 09:00 ถึง 12:00 น.)</span> และ <span class="themeText">รอบบ่าย (ตั้งแต่เวลา 13:00 ถึง 18:00 น.)</span>
       <h3>สิ่งที่ต้องเตรียมมาในวันสัมภาษณ์</h3>
       <ol>
