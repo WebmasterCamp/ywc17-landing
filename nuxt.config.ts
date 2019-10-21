@@ -30,7 +30,8 @@ const config = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  //loading: { color: '#fff' },
+  loading: '~/components/FullscreenLoading.vue',
   /*
   ** Global CSS
   */
