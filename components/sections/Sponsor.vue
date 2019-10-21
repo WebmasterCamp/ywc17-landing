@@ -100,6 +100,14 @@
         alt="THNIC"
         :transparent="true"
       />
+      <SponsorCircle
+        class="sp-PandT"
+        size="sm"
+        fileName="sponsors/3-7-P-and-T.svg"
+        link="https://www.pathosting.co.th/"
+        alt="P&T Hosting"
+        :transparent="true"
+      />
     </div>
   </section>
 </template>
@@ -176,6 +184,13 @@ section {
   }
 }
 .sp-ANANDA {
+  width: 100% !important;
+  max-width: 120px !important;
+  a picture {
+    width: 100% !important;
+  }
+}
+.sp-PandT {
   width: 100% !important;
   max-width: 120px !important;
   a picture {
@@ -269,13 +284,13 @@ section {
   grid-gap: 20px;
   grid-template-columns: repeat(3, auto);
 
-  // HANDLE 6 LOGO, CAN BE REMOVED IF ADD MORE LOGO
-  /* @media screen and (min-width: 737px) {
+  // HANDLE 7 LOGO, CAN BE REMOVED IF ADD MORE LOGO
+  @media screen and (min-width: 737px) {
     grid-row-gap: 0px;
     & > div:last-child {
-      grid-column: 1 / span2;
+      grid-column: 2 / 3;
     }
-  } */
+  }
   //////////////////////////////////////////////////
   @media screen and (max-width: 736px) {
     // width: 485px;
@@ -283,6 +298,9 @@ section {
     max-width: 300px;
     grid-template-columns: repeat(2, auto);
     grid-gap: 20px;
+    & > div:last-child {
+      grid-column: 1 / span 2;
+    }
   }
 }
 </style>
