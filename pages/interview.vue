@@ -9,7 +9,7 @@
         <li><span class="themeText">บัตรประจำตัวประชาชน</span> (เพื่อใช้แลกบัตรเข้าอาคาร ซี.พี.ทาวเวอร์ 1 (สีลม)) และ<span class="themeText">บัตรประจำตัวนักศึกษา</span>หรือบัตรประจำตัวที่หน่วยงานราชการหรือสถานศึกษาปัจจุบันออกให้และมีรูปถ่ายของผู้สัมภาษณ์ (เพื่อประกอบการลงทะเบียนเข้าสัมภาษณ์)</li>
         <li><span class="themeText">แต่งกายด้วยชุดนักเรียน นักศึกษา หรือชุดสุภาพ</span></li>
         <li><span class="themeText">การบ้านและสิ่งที่กรรมการกำหนดไว้</span> โปรดอ่านรายละเอียดการบ้านและสิ่งที่กรรมการกำหนดไว้ให้ครบถ้วน หากต้องการใช้คอมพิวเตอร์พกพาประกอบการนำเสนอต่อคณะกรรมการ โปรดเตรียมแบตเตอรี่มาให้เพียงพอและเตรียมอินเทอร์เน็ตมาให้พร้อม เนื่องจากสถานที่สัมภาษณ์ไม่มีจัดเตรียมให้</li>
-        <li><span class="themeText">Portfolio</span> สามารถเตรียมมาเพื่อประกอบการพิจารณาได้ (โดยสาขา Web Design จะต้องนำมาทุกคน)</li>
+        <li><span class="themeText">Portfolio</span> สามารถเตรียมมาเพื่อประกอบการพิจารณาได้ (โดยสาขา <span class="themeText webDesign">Web Design</span> จะต้องนำมาทุกคน)</li>
       </ol>
       <h3>การเดินทางมาสัมภาษณ์</h3>
       <ol>
@@ -35,7 +35,7 @@
           :key="info[0]"
           :color="info[1]"
           :href="`/interview/${codename}`"
-          :class="{'unactive': major && major !== codename}"
+          :class="{'unactive': major && major !== codename, 'selected': major === codename}"
           v-scroll-to="!major ? '#select-major' : '#interview-box'"
           @click.prevent="changeMajor(codename)"
         >
@@ -89,6 +89,9 @@ const ThemeProvider = styled('div', { theme: String })`
     &:visited, &:active, &:hover {
        color: ${props => props.theme ? colorScheme[props.theme].normal : color.main};
     }
+  }
+  .webDesign {
+    color: ${colorScheme.yellow.normal};
   }
 
   // ======== START Ant Design Override ========
@@ -151,6 +154,7 @@ const MajorRow = styled('div')`
   // }
 `
 const Major = styled('a', { color: String })`
+  position: relative;
   display: inline-grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 15%;
@@ -199,6 +203,22 @@ const Major = styled('a', { color: String })`
     opacity: 0.5;
     &:hover {
       opacity: 0.8;
+    }
+  }
+
+  @media screen and (min-width:768.1px) {
+    &.selected::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -22px;
+      margin-top: 10px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 22px 44px 22px;
+      border-color: transparent transparent #ffffff transparent;
     }
   }
 
