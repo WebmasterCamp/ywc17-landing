@@ -1,5 +1,5 @@
 <template>
-  <ThemeProvider :theme="currTheme">
+  <ThemeProvider :name="currTheme">
     <InfoContainer class="interview-intro">
       <h2>ประกาศผู้มีสิทธิ์เข้าสัมภาษณ์</h2>
       การสัมภาษณ์จะจัดขึ้นในวันที่ <span class="themeText">2 พฤศจิกายน 2562</span> ณ <a class="themeLink" href="https://goo.gl/maps/rwbLzbCNvYH2" title="คลิกเพื่อดูแผนที่บน Google Maps" target="_blank"><b>อาคาร ซี.พี.ทาวเวอร์ 1 (สีลม)</b></a><br>
@@ -22,9 +22,11 @@
       ให้แจ้งใน Inbox ของเพจ <a class="themeLink" href="https://m.me/ywcth" target="_blank"><b>Facebook : Young Webmaster Camp</b></a> ภายในวันที่ 30 ตุลาคม 2562
       <h3>มีข้อสงสัยเพิ่มเติม โปรดติดต่อ</h3>
       <table>
-        <tr><td width="70"><span class="themeText">พี่บอส</span></td><td>โทร. <a class="themeLink" href="tel:0823651885">082 - 365 - 1885</a></td></tr>
-        <tr><td><span class="themeText">พี่ปู</span></td><td>โทร. <a class="themeLink" href="tel:0988256861">098 - 825 - 6861</a></td></tr>
-        <tr><td><span class="themeText">พี่จุ้ย</span></td><td>โทร. <a class="themeLink" href="tel:0929595167">092 - 959 - 5167</a></td></tr>
+        <tbody>
+          <tr><td width="70"><span class="themeText">พี่บอส</span></td><td>โทร. <a class="themeLink" href="tel:0823651885">082 - 365 - 1885</a></td></tr>
+          <tr><td><span class="themeText">พี่ปู</span></td><td>โทร. <a class="themeLink" href="tel:0988256861">098 - 825 - 6861</a></td></tr>
+          <tr><td><span class="themeText">พี่จุ้ย</span></td><td>โทร. <a class="themeLink" href="tel:0929595167">092 - 959 - 5167</a></td></tr>
+        </tbody>
       </table>
     </InfoContainer>
     <a id="select-major" />
@@ -79,16 +81,16 @@ const colorScheme = {
     background: 'linear-gradient(45deg, #07CACE -0.25%, #4D9ED5 50.1%, #9470DC 99.85%)'
   }
 }
-const ThemeProvider = styled('div', { theme: String })`
+const ThemeProvider = styled('div', { name: String })`
   .themeText {
-    color: ${props => props.theme ? colorScheme[props.theme].normal : color.main};
+    color: ${props => props.name ? colorScheme[props.name].normal : color.main};
     font-weight: bold;
   }
   .themeLink, .questions a {
     text-decoration: underline;
-    color: ${props => props.theme ? colorScheme[props.theme].normal : color.main};
+    color: ${props => props.name ? colorScheme[props.name].normal : color.main};
     &:visited, &:active, &:hover {
-       color: ${props => props.theme ? colorScheme[props.theme].normal : color.main};
+       color: ${props => props.name ? colorScheme[props.name].normal : color.main};
     }
   }
   .webDesign {
@@ -98,57 +100,57 @@ const ThemeProvider = styled('div', { theme: String })`
   // ======== START Ant Design Override ========
   // Table Head
   .ant-table-thead > tr > th {
-    color: ${props => props.theme ? colorScheme[props.theme].normal : color.main};
-    border-bottom: 1px solid ${props => props.theme ? colorScheme[props.theme].light : colorScheme.pink.light};
+    color: ${props => props.name ? colorScheme[props.name].normal : color.main};
+    border-bottom: 1px solid ${props => props.name ? colorScheme[props.name].light : colorScheme.pink.light};
     background: none;
     font-weight: bold;
   }
   // .ant-table-thead > tr > th.ant-table-column-has-actions.ant-table-column-has-sorters:hover {
-  //   background: ${props => props.theme ? colorScheme[props.theme].light : colorScheme.pink.light};
+  //   background: ${props => props.name ? colorScheme[props.name].light : colorScheme.pink.light};
   // }
   // Table Row Hover Color
   .ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td, .ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td, .ant-table-thead > tr:hover:not(.ant-table-expanded-row) > td, .ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
-    background: ${props => props.theme ? colorScheme[props.theme].light : colorScheme.pink.light};
+    background: ${props => props.name ? colorScheme[props.name].light : colorScheme.pink.light};
   }
   // Table Sorter - Inactive Color 
   .ant-table-thead > tr > th.ant-table-column-has-actions.ant-table-column-has-sorters:active .ant-table-column-sorter-up:not(.on), .ant-table-thead > tr > th.ant-table-column-has-actions.ant-table-column-has-sorters:active .ant-table-column-sorter-down:not(.on),
   .ant-table-thead > tr > th .ant-table-column-sorter {
-    color: ${props => props.theme ? colorScheme[props.theme].light : colorScheme.pink.light};
+    color: ${props => props.name ? colorScheme[props.name].light : colorScheme.pink.light};
   }
   // Table Sorter - Active Color
   .ant-table-thead > tr > th .ant-table-column-sorter-up.on, .ant-table-thead > tr > th .ant-table-column-sorter-down.on {
-    color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+    color: ${props => props.name ? colorScheme[props.name].normal : colorScheme.pink.normal};
   }
   // Table Filter Active Color 
   .ant-table-thead > tr > th .ant-table-filter-selected.anticon-filter {
-    color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+    color: ${props => props.name ? colorScheme[props.name].normal : colorScheme.pink.normal};
   }
   .ant-table-filter-dropdown-link {
-    color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+    color: ${props => props.name ? colorScheme[props.name].normal : colorScheme.pink.normal};
   }
   // Input
   .ant-input:hover, .ant-input:focus {
-    border-color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+    border-color: ${props => props.name ? colorScheme[props.name].normal : colorScheme.pink.normal};
   }
   .ant-input:focus {
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
   }
   .ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled) {
-    border-color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+    border-color: ${props => props.name ? colorScheme[props.name].normal : colorScheme.pink.normal};
   }
   // Spinner
   .ant-spin-dot i {
-    background-color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+    background-color: ${props => props.name ? colorScheme[props.name].normal : colorScheme.pink.normal};
   }
   // Button 
   .ant-btn-primary:hover, .ant-btn-primary:focus {
     color: black;
-    background-color: ${props => props.theme ? colorScheme[props.theme].light : colorScheme.pink.light};
-    border-color: ${props => props.theme ? colorScheme[props.theme].light : colorScheme.pink.light};
+    background-color: ${props => props.name ? colorScheme[props.name].light : colorScheme.pink.light};
+    border-color: ${props => props.name ? colorScheme[props.name].light : colorScheme.pink.light};
   }
   .ant-btn-primary, .ant-btn-primary:active, .ant-btn-primary.active {
-    background-color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
-    border-color: ${props => props.theme ? colorScheme[props.theme].normal : colorScheme.pink.normal};
+    background-color: ${props => props.name ? colorScheme[props.name].normal : colorScheme.pink.normal};
+    border-color: ${props => props.name ? colorScheme[props.name].normal : colorScheme.pink.normal};
   }
 `
 const MajorRow = styled('div')`
