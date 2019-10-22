@@ -177,7 +177,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.secondary {
+.secondary.press {
   h3 {
     text-align: center;
     color: #FFCCE8;
