@@ -201,8 +201,10 @@ export default {
       return majors[this.major][1]
     }
   },
-  mounted () {
-    this.changeBackground(this.major)
+  created () {
+    if (process.client) {
+      this.changeBackground(this.major)
+    }
   },
   methods: {
     changeMajor (major) {
