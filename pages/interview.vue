@@ -27,23 +27,23 @@
         <tr><td><span class="themeText">พี่จุ้ย</span></td><td>โทร. <a class="themeLink" href="tel:0929595167">092 - 959 - 5167</a></td></tr>
       </table>
     </InfoContainer>
-    <section class="container" id="select-major">
-      <h2 class="section-heading">โปรดเลือกสาขา</h2>
-      <MajorRow>
-        <Major
-          v-for="(info, codename) in majors"
-          :key="info[0]"
-          :color="info[1]"
-          :href="`/interview/${codename}`"
-          :class="{'unactive': major && major !== codename, 'selected': major === codename}"
-          v-scroll-to="!major ? '#select-major' : '#interview-box'"
-          @click.prevent="changeMajor(codename)"
-        >
-          <img v-lazy="require(`~/assets/images/web-${codename}.png`)" />
-          Web {{ info[0] }}
-        </Major>
-      </MajorRow>
-    </section>
+    <a id="select-major" />
+    <h2 class="section-heading">โปรดเลือกสาขา</h2>
+    <MajorRow>
+      <Major
+        v-for="(info, codename) in majors"
+        :key="info[0]"
+        :color="info[1]"
+        :href="`/interview/${codename}`"
+        :class="{'unactive': major && major !== codename, 'selected': major === codename}"
+        v-scroll-to="!major ? '#select-major' : '#interview-box'"
+        @click.prevent="changeMajor(codename)"
+      >
+        <img v-lazy="require(`~/assets/images/web-${codename}.png`)" />
+        Web {{ info[0] }}
+      </Major>
+    </MajorRow>
+      
     <a id="interview-box"></a>
     <InfoContainer v-show="major" class="interview-box">
       <nuxt-child v-if="major" :majors="majors" />
@@ -153,10 +153,16 @@ const ThemeProvider = styled('div', { theme: String })`
 `
 const MajorRow = styled('div')`
   display: grid;
+  max-width: 1056px;
+  margin: 0 auto;
   margin-top: 36px; 
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
   align-items: center;
+  @media only screen and (max-width: 1000px) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
   @media screen and (max-width:768px) {
     grid-template-columns: repeat(2, 1fr);
   }
