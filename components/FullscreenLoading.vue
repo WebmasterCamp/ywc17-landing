@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <FullscreenContainer v-show="loading">
+    <FullscreenContainer v-show="loading" :color="currColor">
       <CenterContainer>
         <div>
           <p><img src="~/assets/images/ywc-logo.png" /></p>
@@ -16,14 +16,16 @@
 </template>
 <script>
 import styled from 'vue-styled-components'
-const FullscreenContainer = styled.div`
+import { majors } from '~/utils/const'
+import { colorScheme } from '~/utils/color'
+const FullscreenContainer = styled('div', { color: String })`
   width: 100%;
   height: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(49.41deg, #C73884 7.27%, #E13C6F 51.46%, #9B308E 95.22%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), ${props => props.color ? colorScheme[props.color].background : `linear-gradient(49.41deg, #C73884 7.27%, #E13C6F 51.46%, #9B308E 95.22%)`};
 `
 const CenterContainer = styled.div`
   max-width: 960px;
@@ -70,6 +72,14 @@ export default {
   data: () => ({
     loading: false
   }),
+  computed: {
+    currColor () {
+      if (!this.$route.params.major) {
+        return ''
+      }
+      return majors[this.$route.params.major][1]
+    }
+  },
   watch: {
     loading: (value) => {
       document.querySelector('body').style.overflow = (value === true) ? 'hidden' : 'auto'
