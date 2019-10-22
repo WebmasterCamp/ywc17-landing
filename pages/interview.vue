@@ -266,7 +266,8 @@ export default {
       meta: [
         { hid: 'og:title', name: 'og:title', content: `ประกาศผู้มีสิทธิ์เข้าสัมภาษณ์${this.$route.params.major ? `สาขา Web ${majors[this.$route.params.major][0]}` : ''} - 17th Young Webmaster Camp` },
         { hid: 'og:description', name: 'og:description', content: '' }, // TODO: Add description
-        { hid: 'description', name: 'description', content: '' } // TODO: Add description
+        { hid: 'description', name: 'description', content: '' }, // TODO: Add description
+        { name: 'robots', content: (this.$route.params.major) ? 'noindex' : '' }
       ]
     }
   },
