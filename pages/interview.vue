@@ -41,7 +41,7 @@
         v-scroll-to="!major ? '#select-major' : '#interview-box'"
         @click.prevent="changeMajor(codename)"
       >
-        <img v-lazy="require(`~/assets/images/web-${codename}.png`)" />
+        <img :src="require(`~/assets/images/web-${codename}.png`)" />
         Web {{ info[0] }}
       </Major>
     </MajorRow>
@@ -258,6 +258,7 @@ export default {
   validate ({ params }) {
     return !params.major || Object.keys(majors).includes(params.major)
   },
+  scrollToTop: true,
   layout: 'secondary',
   head () {
     return {
