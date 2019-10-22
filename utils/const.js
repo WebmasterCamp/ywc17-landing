@@ -21,3 +21,26 @@ export const INTERVIEW_QUESTIONS = {
     <li>รายการ: <a href="https://ywc17.ywc.in.th/" target="_blank">https://ywc17.ywc.in.th/</a></li>
   </ul>`
 }
+
+export const INTERVIEW_COLUMNS = [
+  {
+    title: 'รหัส',
+    dataIndex: 'ref',
+    sorter: (a, b) => a.ref.localeCompare(b.ref),
+    width: '15%',
+    scopedSlots: { customRender: 'searchRender' }
+  },
+  {
+    title: 'ชื่อ - นามสกุล',
+    dataIndex: 'name',
+    sorter: (a, b) => a.name.localeCompare(b.name),
+    width: '70%',
+    scopedSlots: { customRender: 'searchRender' }
+  },
+  {
+    title: 'รอบ',
+    dataIndex: 'round',
+    sorter: (a, b) => a.round.localeCompare(b.round),
+    width: '15%'
+  }
+]
