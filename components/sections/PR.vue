@@ -4,10 +4,10 @@
   </section>
 </template>
 <script>
-import GradButton from '~/components/GradButton'
+import GradientButton from '~/components/GradientButton'
 export default {
   components: {
-    GradientButton: GradButton
+    GradientButton
   },
   data () {
     return {
