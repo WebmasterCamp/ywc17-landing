@@ -17,8 +17,8 @@
 <script>
 import styled from 'vue-styled-components'
 const FullscreenContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -51,6 +51,15 @@ const CenterContainer = styled.div`
   img {
     width: 280px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  @media screen and (max-width: 576px) {
+    font-size: 20px;
+    p {
+      margin-bottom: 60px;
+    }
+    img {
+      width: 210px;
+    }
   }
 `
 export default {
