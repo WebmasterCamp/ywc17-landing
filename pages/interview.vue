@@ -121,7 +121,7 @@ const Major = styled('a', { color: String })`
   @media screen and (max-width:360px) {
     font-size: 14px;
   }
-  @media screen and (max-width:320px) {
+  @media screen and (max-width:332px) {
     font-size: 12px;
   }
 
