@@ -18,6 +18,11 @@ export default styled('div', { name: String })`
   }
 
   // ======== START Ant Design Override ========
+  // Highlighter
+  mark {
+    padding: 0.2em;
+    background-color: #feffe6;
+  }
   // Table Head
   .ant-table-thead > tr > th {
     color: ${props => props.name ? colorScheme[props.name].normal : color.main};

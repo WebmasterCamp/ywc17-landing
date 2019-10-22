@@ -35,10 +35,10 @@
       <Major
         v-for="(info, codename) in majors"
         :key="info[0]"
+        v-scroll-to="!major ? '#select-major' : '#interview-box'"
         :color="info[1]"
         :href="`/interview/${codename}`"
         :class="{'unactive': major && major !== codename, 'selected': major === codename}"
-        v-scroll-to="!major ? '#select-major' : '#interview-box'"
         @click.prevent="changeMajor(codename)"
       >
         <img :src="require(`~/assets/images/web-${codename}.png`)" />
