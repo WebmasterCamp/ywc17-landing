@@ -95,14 +95,14 @@ const Major = styled('a', { color: String })`
   font-size: 24px;
 
   height: 225px;
-  padding: 30px;
+  padding: 21.5px;
   background: #ffffff;
   box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 
-  @media screen and (max-width:1080px) {
-    padding: 20px;
-  }
+  // @media screen and (max-width:1080px) {
+  //   padding: 20px;
+  // }
 
   @media screen and (max-width:768px) {
     font-size: 22px;
