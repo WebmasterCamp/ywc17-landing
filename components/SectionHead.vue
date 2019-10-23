@@ -20,7 +20,7 @@ const sizes = {
   },
   timeline: {
     fontSize: 60,
-    fontSmallSize: 40,
+    fontSmallSize: 36,
     height: 100
   }
 }
