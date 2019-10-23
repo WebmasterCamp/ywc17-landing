@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   .logos-box {
     padding-bottom: 30px;
   }
@@ -28,7 +28,7 @@ export default {
     grid-row-gap: 2px;
     grid-column-gap: 1.5rem;
     margin: 0 auto;
-    @media screen and (min-width: 576px) {
+    @media screen and (min-width:768px) {
       grid-template-columns: repeat(3, auto);
       max-width: 500px;
     }
