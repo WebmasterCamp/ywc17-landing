@@ -32,6 +32,7 @@
 <script>
 import ANTD_THAI from 'ant-design-vue/lib/locale-provider/th_TH'
 import antDesignVueTable from '~/plugins/ant-design-vue-table'
+ANTD_THAI.Table.sortTitle = 'เรียง'
 export default {
   props: {
     columns: { type: Array, default: () => { return [] } },
