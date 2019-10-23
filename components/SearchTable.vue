@@ -31,6 +31,7 @@
 </template>
 <script>
 import ANTD_THAI from 'ant-design-vue/lib/locale-provider/th_TH'
+import antDesignVueTable from '~/plugins/ant-design-vue-table'
 export default {
   props: {
     columns: { type: Array, default: () => { return [] } },
@@ -60,6 +61,9 @@ export default {
         return false
       })
     }
+  },
+  created () {
+    antDesignVueTable()
   },
   methods: {
     onSearch (value) {

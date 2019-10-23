@@ -7,11 +7,6 @@
   </div>
 </template>
 <script>
-import 'ant-design-vue/lib/table/style/index.css'
-import 'ant-design-vue/lib/empty/style/index.css'
-import 'ant-design-vue/lib/button/style/index.css'
-import 'ant-design-vue/lib/input/style/index.css'
-
 import Picture from '~/components/Picture.vue'
 export default {
   components: {
