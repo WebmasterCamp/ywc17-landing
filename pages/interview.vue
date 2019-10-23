@@ -153,6 +153,9 @@ const Major = styled('a', { color: String })`
     max-height: 100%;
     margin: 0 auto;
     margin-bottom: 16px;
+
+    user-select: none;
+    -webkit-user-drag: none;
     
     @media screen and (max-width:768px) {
       margin-bottom: 0;
@@ -247,6 +250,7 @@ export default {
   }
   .section-heading {
     text-align: center;
+    user-select: none;
   }
   input {
     font-family: 'Sarabun', serif, Tahoma;
