@@ -131,6 +131,11 @@ section {
     font-size: 36px;
   }
 }
+@media screen and (max-width:330px) {
+  .height {
+    font-size: 32px;
+  }
+}
 </style>
 <style lang="scss">
 .sp-ExxonMobil {
