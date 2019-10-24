@@ -1,6 +1,8 @@
 <template>
-  <div class="secondary">
-    <nuxt-link to="/" class="ywc-logo" title="ไปยังหน้าแรกของ 17th Young Webmaster Camp"><Picture fileName="ywc-logo" alt="17th Young Webmaster Camp" /></nuxt-link>
+  <div class="secondary" :class="$route.name">
+    <section class="container">
+      <nuxt-link to="/" class="ywc-logo" title="ไปยังหน้าแรกของ 17th Young Webmaster Camp"><Picture fileName="ywc-logo" alt="17th Young Webmaster Camp" /></nuxt-link>
+    </section>
     <nuxt />
   </div>
 </template>
@@ -22,7 +24,9 @@ export default {
       document
         .getElementsByTagName('body')[0]
         .setAttribute('style', `background: #401b19;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), linear-gradient(52.33deg, #C73884 11.23%, #FA5C87 51.45%, #FF7745 89.45%);`)
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(69.01deg, #C73884 7.27%, #E13C6F 51.46%, #9B308E 95.22%);
+    background-size: cover;
+    background-attachment: fixed;`)
     }
   }
 }
@@ -36,7 +40,7 @@ html {
   section {
     margin-top: 40px;
   }
-  h3 {
+  h1, h2, h3 {
     font-family: 'Maledpan';
   }
   .container {

@@ -150,6 +150,11 @@ export default {
   created () {
     this.setAutoplay()
   },
+  beforeDestroy () {
+    if (this.autoplay) {
+      clearInterval(this.autoplay)
+    }
+  },
   methods: {
     setAutoplay () {
       if (this.autoplay) {

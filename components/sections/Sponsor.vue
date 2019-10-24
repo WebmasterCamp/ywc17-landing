@@ -70,13 +70,6 @@
         :transparent="true"
       />
       <SponsorCircle
-        size="sm"
-        fileName="sponsors/3-4-CampHUB.svg"
-        link="https://www.camphub.in.th/"
-        alt="CampHUB"
-        :transparent="true"
-      />
-      <SponsorCircle
         class="sp-Pantip"
         size="sm"
         fileName="sponsors/3-2-Pantip.svg"
@@ -98,6 +91,29 @@
         fileName="sponsors/3-5-THNIC.svg"
         link="https://www.thnic.co.th/"
         alt="THNIC"
+        :transparent="true"
+      />
+      <SponsorCircle
+        class="sp-Lnwx"
+        size="sm"
+        fileName="sponsors/3-7-Lnwx.svg"
+        link="https://www.lnwx.com/"
+        alt="LnwX"
+        :transparent="true"
+      />
+      <SponsorCircle
+        class="sp-PandT"
+        size="sm"
+        fileName="sponsors/3-8-P-and-T.svg"
+        link="https://www.pathosting.co.th/"
+        alt="P&T Hosting"
+        :transparent="true"
+      />
+      <SponsorCircle
+        size="sm"
+        fileName="sponsors/3-4-CampHUB.svg"
+        link="https://www.camphub.in.th/"
+        alt="CampHUB"
         :transparent="true"
       />
     </div>
@@ -123,6 +139,11 @@ section {
     font-size: 36px;
   }
 }
+@media screen and (max-width:330px) {
+  .height {
+    font-size: 32px;
+  }
+}
 </style>
 <style lang="scss">
 .sp-ExxonMobil {
@@ -135,10 +156,9 @@ section {
   }
 }
 .sp-SCB {
-  width: 155px !important;
-  height: 125px !important;
+  height: 90px !important;
   a picture {
-    width: 155px !important;
+    width: 90px !important;
   }
 }
 .sp-TMF {
@@ -182,6 +202,19 @@ section {
     width: 100% !important;
   }
 }
+
+.sp-Lnwx {
+  a picture {
+    width: 45px !important;
+  }
+}
+.sp-PandT {
+  width: 100% !important;
+  max-width: 120px !important;
+  a picture {
+    width: 100% !important;
+  }
+}
 </style>"
 <style lang="scss" scoped>
 section {
@@ -214,13 +247,14 @@ section {
 }
 .sponsor-special-wrapper {
   width: 100%;
-  max-width: 365px;
+  max-width: 285px;
   min-width: 260px;
 
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(2, auto);
   grid-gap: 10px;
+  align-items: center;
   margin: auto;
   margin-top: 0;
   margin-bottom: 10px;
@@ -228,7 +262,6 @@ section {
   @media screen and (min-width: 375px) {
     width: 80%;
     grid-gap: 15px;
-    min-width: 300px;
   }
   @media screen and (min-width: 768px) {
     // width: 485px;
@@ -245,6 +278,7 @@ section {
   justify-items: center;
   grid-template-columns: repeat(1, auto);
   grid-gap: 10px;
+  align-items: center;
   margin: 10px auto;
   margin-bottom: 20px;
 
@@ -265,17 +299,18 @@ section {
   min-width: 220px;
   display: grid;
   justify-items: center;
+  align-items: center;
   margin: 15px auto;
   grid-gap: 20px;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(4, auto);
 
-  // HANDLE 6 LOGO, CAN BE REMOVED IF ADD MORE LOGO
-  /* @media screen and (min-width: 737px) {
-    grid-row-gap: 0px;
-    & > div:last-child {
-      grid-column: 1 / span2;
-    }
-  } */
+  // HANDLE 7 LOGO, CAN BE REMOVED IF ADD MORE LOGO
+  // @media screen and (min-width: 737px) {
+  //   grid-row-gap: 0px;
+  //   & > div:last-child {
+  //     grid-column: 2 / 3;
+  //   }
+  // }
   //////////////////////////////////////////////////
   @media screen and (max-width: 736px) {
     // width: 485px;
@@ -283,6 +318,9 @@ section {
     max-width: 300px;
     grid-template-columns: repeat(2, auto);
     grid-gap: 20px;
+    // & > div:last-child {
+    //   grid-column: 1 / span 2;
+    // }
   }
 }
 </style>

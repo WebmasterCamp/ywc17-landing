@@ -85,22 +85,4 @@ export default Vue.extend({
       }
     }
   }
-
-  .logos-box {
-    padding-bottom: 30px;
-  }
-
-  .logos {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    justify-items: center;
-    max-width: 320px;
-    grid-row-gap: 20px;
-    grid-column-gap: 1.5rem;
-    margin: 0 auto;
-    @media screen and (min-width: 576px) {
-      grid-template-columns: repeat(3, auto);
-      max-width: 500px;
-    }
-  }
 </style>

@@ -21,6 +21,7 @@ import color from '~/utils/color'
 const BtnProps = { color: String }
 const BtnStyle = `
   display: inline-block;
+  width: fit-content;
   max-width: 320px;
   padding: 2px;
   position: relative;
@@ -29,14 +30,27 @@ const BtnStyle = `
   outline: none;
 
   cursor: pointer;
+
+  &:hover > div > span {
+    color: black;
+    background: transparent;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+  }
 `
 const StyledBorder = styled('button', BtnProps)`
   ${BtnStyle}
+  &:hover > div {
+    background: ${props => color[props.color].gradient};
+  }
   background: ${props => color[props.color].darker};
   background: ${props => color[props.color].gradient};
 `
 const StyledBorderLink = styled('a', BtnProps)`
   ${BtnStyle}
+  &:hover > div {
+    background: ${props => color[props.color].gradient};
+  }
   background: ${props => color[props.color].darker};
   background: ${props => color[props.color].gradient};
 `
@@ -44,18 +58,9 @@ const StyledBtn = styled('div', BtnProps)`
   background: black;
   padding: 7px 28px;
   border-radius: 1000px;
+  text-align: center;
 
   user-select: none;
-
-  &:hover {
-    background: ${props => color[props.color].gradient};
-  }
-  &:hover > span {
-    color: black;
-    background: transparent;
-    -webkit-background-clip: initial;
-    -webkit-text-fill-color: initial;
-  }
 `
 const StyledText = styled('span', BtnProps)`
   font-family: 'Maledpan', 'Sarabun';
