@@ -116,7 +116,7 @@ img
   padding-top: 20px
   padding-bottom: 20px
   background-image: url(~assets/images/frame-upleft.png), url(~assets/images/frame-downright.png)
-  background-position: calc(51% - 253px) 0%, calc(50% + 248px) 100%
+  background-position: top left, bottom right
   background-repeat: no-repeat, no-repeat
   @media (max-width:768px)
     display: none
@@ -132,7 +132,7 @@ img
 
     background-size: 70px
     background-image: url(~assets/images/frame-upleft.png), url(~assets/images/frame-downright.png)
-    background-position: calc(51% - 100px) 0%, calc(50% + 93px) 100%
+    background-position: calc(51% - 115px) 0%, calc(50% + 108px) 100%
     background-repeat: no-repeat, no-repeat
 </style>
 <style lang="sass">
