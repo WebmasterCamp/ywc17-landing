@@ -168,7 +168,6 @@ export default {
   validate ({ params }) {
     return !params.major || Object.keys(majors).includes(params.major)
   },
-  scrollToTop: true,
   layout: 'secondary',
   head () {
     return {
@@ -206,6 +205,7 @@ export default {
   },
   created () {
     if (process.client) {
+      window.scrollTo(0, 0)
       this.changeBackground(this.major)
     }
   },
