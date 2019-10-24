@@ -70,13 +70,6 @@
         :transparent="true"
       />
       <SponsorCircle
-        size="sm"
-        fileName="sponsors/3-4-CampHUB.svg"
-        link="https://www.camphub.in.th/"
-        alt="CampHUB"
-        :transparent="true"
-      />
-      <SponsorCircle
         class="sp-Pantip"
         size="sm"
         fileName="sponsors/3-2-Pantip.svg"
@@ -114,6 +107,13 @@
         fileName="sponsors/3-8-P-and-T.svg"
         link="https://www.pathosting.co.th/"
         alt="P&T Hosting"
+        :transparent="true"
+      />
+      <SponsorCircle
+        size="sm"
+        fileName="sponsors/3-4-CampHUB.svg"
+        link="https://www.camphub.in.th/"
+        alt="CampHUB"
         :transparent="true"
       />
     </div>
