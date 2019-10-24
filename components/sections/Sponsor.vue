@@ -52,6 +52,14 @@
         alt="TOA"
         :transparent="true"
       />
+      <SponsorCircle
+        class="sp-trueidintrend"
+        size="md"
+        fileName="sponsors/2-4-trueidintrend.svg"
+        link="https://creators.trueid.net/"
+        alt="TrueID In-Trend"
+        :transparent="true"
+      />
     </div>
     <div class="sponsor-silver-wrapper position-relative">
       <SponsorCircle
@@ -110,6 +118,7 @@
         :transparent="true"
       />
       <SponsorCircle
+        class="sp-CampHUB"
         size="sm"
         fileName="sponsors/3-4-CampHUB.svg"
         link="https://www.camphub.in.th/"
@@ -156,43 +165,52 @@ section {
   }
 }
 .sp-SCB {
-  height: 90px !important;
+  width: 90px !important;
+  height: 96px !important;
   a picture {
     width: 90px !important;
   }
 }
 .sp-TMF {
+  width: 100px !important;
   a picture {
     height: 96px !important;
   }
 }
 .sp-TOA {
   height: 90px !important;
+  width: 90px !important;
   a picture {
-    width: 80px !important;
-    height: 80px !important;
+    width: 75px !important;
+    height: 75px !important;
     // @media screen and (min-width: 375px) {
     //   width: 80px !important;
     //   height: 80px !important;
     // }
   }
 }
+.sp-trueidintrend {
+  height: 90px !important;
+  a picture {
+    width: 125px !important;
+  }
+}
 .sp-Pantip {
   a picture {
-    width: 80px !important;
-    height: 80px !important;
+    width: 77px !important;
+    height: 77px !important;
   }
 }
 .sp-DekD {
   a picture {
-    width: 90px !important;
-    height: 90px !important;
+    width: 85px !important;
+    height: 85px !important;
   }
 }
 .sp-THNIC {
   a picture {
-    width: 80px !important;
-    height: 80px !important;
+    width: 77px !important;
+    height: 77px !important;
   }
 }
 .sp-ANANDA {
@@ -205,12 +223,19 @@ section {
 
 .sp-Lnwx {
   a picture {
-    width: 45px !important;
+    width: 43px !important;
   }
 }
 .sp-PandT {
   width: 100% !important;
   max-width: 120px !important;
+  a picture {
+    width: 100% !important;
+  }
+}
+.sp-CampHUB {
+  width: 100% !important;
+  max-width: 100px !important;
   a picture {
     width: 100% !important;
   }
@@ -247,8 +272,7 @@ section {
 }
 .sponsor-special-wrapper {
   width: 100%;
-  max-width: 285px;
-  min-width: 260px;
+  max-width: 225px;
 
   display: grid;
   justify-items: center;
@@ -257,26 +281,24 @@ section {
   align-items: center;
   margin: auto;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 
   @media screen and (min-width: 375px) {
     width: 80%;
     grid-gap: 15px;
   }
   @media screen and (min-width: 768px) {
-    // width: 485px;
     grid-gap: 20px;
     grid-template-columns: repeat(2, auto);
   }
 }
 .sponsor-gold-wrapper {
   width: 100%;
-  max-width: 365px;
-  min-width: 260px;
+  max-width: 260px;
 
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(1, auto);
+  grid-template-columns: repeat(2, auto);
   grid-gap: 10px;
   align-items: center;
   margin: 10px auto;
@@ -284,13 +306,9 @@ section {
 
   @media screen and (min-width: 375px) {
     width: 80%;
-    grid-gap: 15px;
-    min-width: 300px;
   }
   @media screen and (min-width: 768px) {
-    // width: 485px;
-    grid-gap: 20px;
-    grid-template-columns: repeat(1, auto);
+    grid-template-columns: repeat(2, auto);
   }
 }
 .sponsor-silver-wrapper {
@@ -301,7 +319,7 @@ section {
   justify-items: center;
   align-items: center;
   margin: 15px auto;
-  grid-gap: 20px;
+  grid-column-gap: 20px;
   grid-template-columns: repeat(4, auto);
 
   // HANDLE 7 LOGO, CAN BE REMOVED IF ADD MORE LOGO
@@ -317,7 +335,10 @@ section {
     width: 70%;
     max-width: 300px;
     grid-template-columns: repeat(2, auto);
-    grid-gap: 20px;
+    grid-column-gap: 20px;
+    & > div {
+      height: 75px;
+    }
     // & > div:last-child {
     //   grid-column: 1 / span 2;
     // }
