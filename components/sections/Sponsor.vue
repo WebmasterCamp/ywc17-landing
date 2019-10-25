@@ -253,14 +253,14 @@ section {
   grid-template-columns: repeat(2, auto);
   justify-items: center;
   grid-column-gap: 1.5rem;
-  grid-row-gap: 20px;
+  // grid-row-gap: 20px;
   align-items: center;
   // HANDLE 3 LOGO, CAN BE REMOVED IF ADD MORE LOGO
   @media screen and (max-width: 736px) {
     // & > div:last-child {
     .sp-ExxonMobil {
       order: 3;
-      grid-column: 1 / span2;
+      grid-column: 1 / 3;
     }
   }
   //////////////////////////////////////////////////
