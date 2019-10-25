@@ -18,7 +18,7 @@
         <li><span class="themeText">รถไฟฟ้า MRT</span> ลงที่สถานีสีลม ทางออกที่ 2 เดินเลียบทางเท้าถนนสีลมฝั่งโรงแรมดุสิตธานี</li>
         <li><span class="themeText">รถประจำทาง</span> สาย 15, 76, 77, 115, 172, 177, 504, 514 หรือ 547 ลงป้ายโรงพยาบาลกรุงเทพคริสเตียน หรือป้ายใต้สถานีรถไฟฟ้า BTS ศาลาแดง</li>
       </ol>
-      <h3>สำหรับน้อง ๆ ที่ไม่สะดวกเดินทางมาสัมภาษณ์</h3>
+      <h3>สำหรับท่านที่ไม่สะดวกเดินทางมาสัมภาษณ์</h3>
       ให้แจ้งใน Inbox ของเพจ <a class="themeLink" href="https://m.me/ywcth" target="_blank"><b>Facebook : Young Webmaster Camp</b></a> ภายในวันที่ 30 ตุลาคม 2562
       <h3>มีข้อสงสัยเพิ่มเติม โปรดติดต่อ</h3>
       <table>
@@ -36,7 +36,7 @@
         v-for="(info, codename) in majors"
         :key="info[0]"
         :color="info[1]"
-        :href="`/interview/${codename}`"
+        :href="`/interview/${codename}/`"
         :class="{'unactive': major && major !== codename, 'selected': major === codename}"
         @click.prevent="changeMajor(codename)"
       >
@@ -82,7 +82,7 @@ const Major = styled('a', { color: String })`
   position: relative;
   display: inline-grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 15%;
+  grid-template-rows: 1fr 17.5%;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -94,7 +94,7 @@ const Major = styled('a', { color: String })`
   font-size: 24px;
 
   height: 225px;
-  padding: 21.5px;
+  padding: 12px 21.5px;
   background: #ffffff;
   box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -108,7 +108,7 @@ const Major = styled('a', { color: String })`
   @media screen and (max-width:768px) {
     font-size: 22px;
     height: 96px;
-    padding: 15px;
+    padding: 7px 15px;
     grid-template-rows: none;
     grid-template-columns: auto 76%;
   }
@@ -216,7 +216,7 @@ export default {
         major = ''
       }
       this.changeBackground(major)
-      this.$router.replace(`/interview/${major}`, () => {
+      this.$router.replace(`/interview/${major ? `${major}/` : ''}`, () => {
         setTimeout(() => { this.$scrollTo(major ? `#interview-box` : `#select-major`) }, 150)
       })
     },
