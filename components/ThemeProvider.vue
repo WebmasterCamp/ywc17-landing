@@ -23,6 +23,12 @@ export default styled('div', { name: String })`
     padding: 0.2em;
     background-color: #feffe6;
   }
+  .ant-table { 
+    font-size: 18px;
+    @media screen and (max-width:768px) {
+      font-size: 14px;
+    }
+  }
   // Table Head
   .ant-table-thead > tr > th {
     color: ${props => props.name ? colorScheme[props.name].normal : color.main};
@@ -45,6 +51,15 @@ export default styled('div', { name: String })`
   // Table Sorter - Active Color
   .ant-table-thead > tr > th .ant-table-column-sorter-up.on, .ant-table-thead > tr > th .ant-table-column-sorter-down.on {
     color: ${props => props.name ? colorScheme[props.name].normal : colorScheme.pink.normal};
+  }
+  .ant-table-tbody > tr > td.ant-table-column-sort {
+    background: transparent;
+  }
+  .ant-table-thead > tr > th.ant-table-column-sort {
+    background: transparent;
+  }
+  .ant-table-thead > tr > th.ant-table-column-has-actions.ant-table-column-has-sorters:hover {
+    background: ${props => props.name ? colorScheme[props.name].light : colorScheme.pink.light};
   }
   // Table Filter Active Color 
   .ant-table-thead > tr > th .ant-table-filter-selected.anticon-filter {
