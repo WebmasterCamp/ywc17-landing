@@ -80,11 +80,11 @@ export default {
       return majors[this.$route.params.major][1]
     }
   },
-  watch: {
-    loading: (value) => {
-      document.querySelector('body').style.overflow = (value === true) ? 'hidden' : 'auto'
-    }
-  },
+  // watch: {
+  //   loading: (value) => {
+  //     document.querySelector('body').style.overflow = (value === true) ? 'hidden' : 'auto'
+  //   }
+  // },
   // mounted () {
   //   this.start()
   //   // setTimeout(this.finish, 3000)

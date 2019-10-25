@@ -35,7 +35,6 @@
       <Major
         v-for="(info, codename) in majors"
         :key="info[0]"
-        v-scroll-to="!major ? '#select-major' : '#interview-box'"
         :color="info[1]"
         :href="`/interview/${codename}`"
         :class="{'unactive': major && major !== codename, 'selected': major === codename}"
@@ -217,7 +216,9 @@ export default {
         major = ''
       }
       this.changeBackground(major)
-      this.$router.replace(`/interview/${major}`)
+      this.$router.replace(`/interview/${major}`, () => {
+        setTimeout(() => { this.$scrollTo(major ? `#interview-box` : `#select-major`) }, 150)
+      })
     },
     changeBackground (major) {
       if (major) {
