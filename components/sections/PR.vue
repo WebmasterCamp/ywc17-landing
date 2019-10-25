@@ -24,12 +24,11 @@ section {
 }
 </style>
 <style>
-.large {
+a.large {
   display: block;
   margin: 0 auto;
   transform: scale(1.3);
   min-width: 220px;
-  width: 50%;
 }
 a {
   text-decoration: none;
