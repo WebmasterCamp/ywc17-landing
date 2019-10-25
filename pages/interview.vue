@@ -287,11 +287,14 @@ export default {
     h3:first-of-type {
       margin-top: 0px;
     }
-    ol {
+    ol, ul {
       padding-left: 20px;
+      padding-left: 20px;
+      margin: 0;
     }
-    ul {
-      padding-left: 20px;
+    h4 {
+      font-family: 'Maledpan';
+      margin-bottom: 0;
     }
     button {
       font-family: 'Maledpan';
