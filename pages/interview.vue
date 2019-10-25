@@ -100,6 +100,8 @@ const Major = styled('a', { color: String })`
   box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 
+  user-select: none;
+
   // @media screen and (max-width:1080px) {
   //   padding: 20px;
   // }
@@ -289,8 +291,11 @@ export default {
     }
     ol, ul {
       padding-left: 20px;
-      padding-left: 20px;
       margin: 0;
+    }
+    ul.nolist {
+      list-style-type: none;
+      padding-left: 0;
     }
     h4 {
       font-family: 'Maledpan';

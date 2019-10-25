@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="questions">
-      <h3>คำถามประจำสาขา <span class="themeText">Web {{ majorName }}</span></h3>
+      <h3>การบ้านประจำสาขา <span class="themeText">Web {{ majorName }}</span></h3>
       <div v-html="majorQuestion">
       </div>
     </section>
