@@ -298,10 +298,12 @@ export default {
       padding-left: 0;
     }
     h4 {
-      font-family: 'Maledpan';
       margin-bottom: 0;
     }
     button {
+      font-family: 'Maledpan';
+    }
+    .subheading {
       font-family: 'Maledpan';
     }
   }
