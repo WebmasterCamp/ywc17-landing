@@ -47,7 +47,7 @@
       
     <a id="interview-box"></a>
     <InfoContainer v-show="major" class="interview-box">
-      <nuxt-child v-if="major" :majors="majors" />
+      <nuxt-child v-if="major" :majors="majors" :results="results" />
     </InfoContainer>
     <Footer />
   </ThemeProvider>
@@ -190,7 +190,8 @@ export default {
   },
   data () {
     return {
-      majors
+      majors,
+      results: { content: [], design: [], marketing: [], programming: [] }
     }
   },
   computed: {
@@ -208,6 +209,11 @@ export default {
     if (process.client) {
       window.scrollTo(0, 0)
       this.changeBackground(this.major)
+    }
+  },
+  mounted () {
+    if (this.major) {
+      this.loadData()
     }
   },
   methods: {
@@ -236,6 +242,20 @@ export default {
       background-size: cover;
       background-attachment: fixed;`)
       }
+    },
+    loadData () {
+      const vm = this
+      vm.$axios.get(`https://api.ywc.in.th/users/interview/pass`)
+        .then(({ status, data }) => {
+          if (status === 200) {
+            vm.results = data.payload
+          } else {
+            vm.results = null
+          }
+        })
+        .catch(() => {
+          vm.results = null
+        })
     }
   }
 }
