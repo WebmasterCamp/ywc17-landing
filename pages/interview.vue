@@ -307,6 +307,9 @@ export default {
     .subheading {
       font-family: 'Maledpan';
     }
+    img {
+      max-width: 100%;
+    }
   }
 }
 </style>
