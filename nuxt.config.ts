@@ -30,7 +30,8 @@ const config = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  //loading: { color: '#fff' },
+  loading: '~/components/FullscreenLoading.vue',
   /*
   ** Global CSS
   */
@@ -43,6 +44,7 @@ const config = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/ant-design-vue' },
     { src: '~/plugins/vue-agile', ssr: false },
     { src: '~/plugins/vue-lazyload', ssr: false }
   ],
@@ -81,12 +83,20 @@ const config = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: ''
   },
   /*
   ** Build configuration
   */
   generate: {
-    fallback: true // For Firebase Hosting, see https://nuxtjs.org/api/configuration-generate#fallback
+    fallback: true, // For Firebase Hosting, see https://nuxtjs.org/api/configuration-generate#fallback
+    routes: [
+      '/interview',
+      '/interview/content',
+      '/interview/design',
+      '/interview/marketing',
+      '/interview/programming'
+    ]
   },
   build: {
     // Fix ES6 for IE11

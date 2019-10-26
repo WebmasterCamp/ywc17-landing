@@ -33,3 +33,26 @@ export default {
     gradientDarker: 'linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), linear-gradient(51.45deg, #07CACE 12.9%, #4D9ED5 48.66%, #9470DC 85.22%)'
   }
 }
+
+export const colorScheme = {
+  green: {
+    light: '#99F2C3',
+    normal: '#00BE7A',
+    background: 'linear-gradient(45deg, #00A030 0.08%, #00AC4F 11.17%, #00B96E 24.54%, #00BE7A 32%, #01BD93 54.11%, #01BC9D 67.51%, #01AF97 74.35%, #018D87 86.96%, #016473 100.01%)'
+  },
+  yellow: {
+    light: '#FFF6CF',
+    normal: '#FCBE4F',
+    background: 'linear-gradient(45deg, #FEE041 1.85%, #FCB46F 59.99%, #FA7398 99.64%)'
+  },
+  pink: {
+    light: '#FFCCE8',
+    normal: '#FA5C87',
+    background: 'linear-gradient(45deg, #C73884 -0.26%, #FA5C87 50.77%, #FF7745 99.73%)'
+  },
+  blue: {
+    light: '#85E5FF',
+    normal: '#4D9ED5',
+    background: 'linear-gradient(45deg, #07CACE -0.25%, #4D9ED5 50.1%, #9470DC 99.85%)'
+  }
+}
