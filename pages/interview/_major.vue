@@ -12,6 +12,7 @@
       :data="data"
       searchable
       :searchColumns="searchColumns"
+      :loading="isLoading"
     />
   </div>
 </template>
@@ -33,14 +34,13 @@ export default {
     results: { 
       type: Object,
       default: () => { return { content: [], design: [], marketing: [], programming: [] } } 
-    }
+    },
+    isLoading: { type: Boolean, default: false }
   },
   data () {
     return {
       columns: INTERVIEW_COLUMNS,
-      searchColumns: ['name', 'ref'],
-
-      isLoading: true
+      searchColumns: ['name', 'ref']
     }
   },
   computed: {
