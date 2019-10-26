@@ -35,7 +35,7 @@ export default {
 html {
   min-height: 100%;
 }
-.secondary {
+div.secondary {
   margin-top: 40px;
   section {
     margin-top: 40px;
