@@ -56,14 +56,14 @@ export const INTERVIEW_COLUMNS = [
     dataIndex: 'ref',
     sorter: (a, b) => a.ref.localeCompare(b.ref),
     defaultSortOrder: 'ascend',
-    width: '15%',
+    width: '12.5%',
     scopedSlots: { customRender: 'searchRender' }
   },
   {
     title: 'ชื่อ - นามสกุล',
     dataIndex: 'name',
     sorter: (a, b) => a.name.localeCompare(b.name),
-    width: '70%',
+    width: '72.5%',
     scopedSlots: { customRender: 'searchRender' }
   },
   {
