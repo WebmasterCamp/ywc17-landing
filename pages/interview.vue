@@ -23,9 +23,9 @@
       <h3>มีข้อสงสัยเพิ่มเติม โปรดติดต่อ</h3>
       <table>
         <tbody>
-          <tr><td width="70"><span class="themeText">พี่บอส</span></td><td>โทร. <a class="themeLink" href="tel:0823651885">082 - 365 - 1885</a></td></tr>
-          <tr><td><span class="themeText">พี่ปู</span></td><td>โทร. <a class="themeLink" href="tel:0988256861">098 - 825 - 6861</a></td></tr>
-          <tr><td><span class="themeText">พี่จุ้ย</span></td><td>โทร. <a class="themeLink" href="tel:0929595167">092 - 959 - 5167</a></td></tr>
+          <tr><td width="70"><span class="themeText">พี่บอส</span></td><td>โทร. <a class="themeLink" href="tel:0823651885">082-365-1885</a></td></tr>
+          <tr><td><span class="themeText">พี่ปู</span></td><td>โทร. <a class="themeLink" href="tel:0988256861">098-825-6861</a></td></tr>
+          <tr><td><span class="themeText">พี่จุ้ย</span></td><td>โทร. <a class="themeLink" href="tel:0929595167">092-959-5167</a></td></tr>
         </tbody>
       </table>
     </InfoContainer>
@@ -117,7 +117,7 @@ const Major = styled('a', { color: String })`
     font-size: 16px;
     // grid-template-columns: 15% 75%;
     grid-template-columns: none;
-    grid-template-rows: auto 22%;
+    grid-template-rows: auto 36px;
   }
   @media screen and (max-width:360px) {
     font-size: 14px;

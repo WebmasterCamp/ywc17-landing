@@ -96,7 +96,7 @@ export default {
 </script>
 <style scoped lang="scss">
 section {
-  margin-top: 0;
+  margin-top: 0 !important;
   margin-bottom: 44px;
   padding: 0;
 }
