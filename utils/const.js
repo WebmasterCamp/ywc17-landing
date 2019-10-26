@@ -40,7 +40,12 @@ export const INTERVIEW_QUESTIONS = {
     <li>การเตรียมตัวและการซ้อมจะช่วยให้สามารถนำเสนอได้คล่อง ครบถ้วน และอยู่ภายในเวลาที่กำหนด</li>
     <li>สามารถใช้ความคิดสร้างสรรค์ในการนำเสนอได้ ที่เหมาะสม ไม่สิ้นเปลืองเกินสมควร มีความสุภาพ</li>
   </ol>`,
-  programming: `<center><img src="${require('~/assets/images/interview/programming.png')}" alt="ภาพตัวอย่างเว็บไซต์" /></center>
+  programming: `
+  <div style="text-align:center">
+    <a href="/images/interview/programming_desktop_full.png" target="_blank" title="คลิกเพื่อแสดงภาพ Desktop ฉบับเต็ม"><img src="${require('~/assets/images/interview/programming_desktop.png')}" alt="ภาพตัวอย่างเว็บไซต์ Desktop" /></a>
+    <a href="/images/interview/programming_mobile_full.png" target="_blank" title="คลิกเพื่อแสดงภาพ Mobile ฉบับเต็ม"><img src="${require('~/assets/images/interview/programming_mobile.png')}" alt="ภาพตัวอย่างเว็บไซต์ Mobile" /></a>
+  </div>
+  <center><i>คลิกที่ภาพเพื่อแสดงฉบับเต็ม</i></center><br />
   ให้พัฒนาเว็บไซต์ให้เหมือนกับภาพข้างบน โดยมีคุณสมบัติดังต่อไปนี้
   <ol>
     <li>รองรับหน้าจอทั้งแบบ Desktop และ Mobile</li>
