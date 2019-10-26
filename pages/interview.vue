@@ -117,7 +117,7 @@ const Major = styled('a', { color: String })`
     font-size: 16px;
     // grid-template-columns: 15% 75%;
     grid-template-columns: none;
-    grid-template-rows: auto 36px;
+    grid-template-rows: 60px auto;
   }
   @media screen and (max-width:360px) {
     font-size: 14px;
