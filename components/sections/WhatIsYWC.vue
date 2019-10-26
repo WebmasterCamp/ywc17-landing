@@ -7,11 +7,11 @@
     </TitleBox>
     <ImageBox :style="`transform: translate3d(0, ${y2}px, 0);`" />
     <BriefBox :style="`transform: translate3d(0, ${y2}px, 0);`">
-      เพราะ<span class="secondary">ปัญหา</span><br class="hidden-mb">จะถูกแก้ไขได้<br>ด้วย<span class="secondary">การลงมือทำ</span>
+      เพราะ<span class="secondaryText">ปัญหา</span><br class="hidden-mb">จะถูกแก้ไขได้<br>ด้วย<span class="secondaryText">การลงมือทำ</span>
     </BriefBox>
     <Row>
       <Column>
-        <p>โอกาสเดียวที่ตัวคุณเองและสังคมจะได้รับการพัฒนาไปพร้อม ๆ กัน กับ Young Webmaster Camp ครั้งที่ 17 <span class="secondary">“Social Change, Arrange The World”</span> ค่ายสร้างเว็บไซต์ระดับอุดมศึกษาที่ใหญ่ที่สุด</p>
+        <p>โอกาสเดียวที่ตัวคุณเองและสังคมจะได้รับการพัฒนาไปพร้อม ๆ กัน กับ Young Webmaster Camp ครั้งที่ 17 <span class="secondaryText">“Social Change, Arrange The World”</span> ค่ายสร้างเว็บไซต์ระดับอุดมศึกษาที่ใหญ่ที่สุด</p>
       </Column>
       <Column>
         ที่ปีนี้จะมาชวนนักศึกษาจากทั่วประเทศมาฝึกสกิลของตัวเอง พร้อม ๆ กับสร้างเว็บไซต์ที่จะช่วยแก้ไขปัญหาต่าง ๆ ในสังคมและทำให้สังคมของเราน่าอยู่ขึ้น
@@ -119,7 +119,7 @@ const BriefBox = styled.div`
   text-align: left;
   line-height: 48px;
 
-  .secondary {
+  .secondaryText {
     color: ${color.main};
   }
 
@@ -157,7 +157,7 @@ const Column = styled.div`
   line-height: 36px;
   display: inline-grid;
   text-align: left;
-  .secondary {
+  .secondaryText {
     color: ${color.main};
     font-weight: bold;
     display: inline-block;

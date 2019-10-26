@@ -1,7 +1,7 @@
 <template>
   <div>
     <Hero />
-    <!-- <GradButton v-scroll-to="'#major-section'" theme="pink" class="cta-button">สมัครค่าย ▼</GradButton> -->
+    <GradientButton link href="/interview/" theme="pink" class="cta-button" @click.native.prevent="$router.push('/interview/')">ประกาศผู้มีสิทธิ์เข้าสัมภาษณ์</GradientButton>
     <WhatIsYWC />
     <Majors />
     <Location />
@@ -17,14 +17,14 @@
 </template>
 
 <script>
-// import GradButton from '~/components/GradButton'
+import GradientButton from '~/components/GradientButton'
 import WhatIsYWC from '~/components/sections/WhatIsYWC'
 import Hero from '~/components/sections/Hero'
 import Timeline from '~/components/sections/Timeline.vue'
 export default {
   components: {
     Hero,
-    // GradButton,
+    GradientButton,
     WhatIsYWC,
     Location: () => import('~/components/sections/Location'),
     Timeline,
