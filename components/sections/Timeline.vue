@@ -3,7 +3,7 @@
     <SectionHead size="timeline" style="position: sticky; top: 0;">Timeline</SectionHead>
     <TimelineList class="position-relative">
       <TimelineItem v-for="(item, code) in items" :key="code">
-        <TimelineIcon :active="isActive(code)">
+        <TimelineIcon :active="isActive[code]">
           <Icon :fileName="`timeline-${code}`" :alt="item.name" />
         </TimelineIcon>
         <TimelineName>{{ item.name }}</TimelineName>
@@ -88,24 +88,43 @@ export default {
       items: {
         register: { name: 'รับสมัคร', startDate: '2019-09-02', endDate: '2019-10-15' },
         announce: { name: 'ประกาศผล', startDate: '2019-10-26' },
-        interview: { name: 'สัมภาษณ์', startDate: '2019-11-02' },
+        interview: { name: 'สัมภาษณ์', startDate: '2019-11-02', oneDay: true },
         finalist: { name: 'ประกาศผลสัมภาษณ์', startDate: '2019-11-05' },
         camp: { name: 'วันค่าย', startDate: '2019-12-26', endDate: '2019-12-29' }
+      },
+      isActive: {
+        register: false,
+        announce: false,
+        interview: false,
+        finalist: false,
+        camp: false
       }
     }
   },
+  mounted () {
+    this.timelineProcess()
+  },
   methods: {
-    isActive (code) {
+    timelineProcess () {
+      const order = Object.keys(this.items)
+      for (let i = order.length - 1; i >= 0; i--) {
+        const thisCode = order[i]
+        const thisActive = this.checkActive(thisCode)
+        this.isActive[thisCode] = thisActive
+        if (thisActive) {
+          break
+        }
+      }
+    },
+    checkActive (code) {
       const today = dayjs(new Date())
-      const startDate = dayjs(this.items[code].startDate)
-      if (typeof this.items[code].endDate === 'undefined') {
-        return startDate.isSame(today, 'day')
+      const thisItem = this.items[code]
+      const startDate = dayjs(thisItem.startDate)
+      if (typeof thisItem.endDate === 'undefined') {
+        const isSame = startDate.isSame(today, 'day')
+        return (thisItem.oneDay) ? isSame : (isSame || startDate.isBefore(today, 'day'))
       } else {
-        const endDate = dayjs(this.items[code].endDate)
-
-        if (endDate.isBefore(today, 'day')) {
-          return false
-        } else if (!startDate.isBefore(today, 'day') && !startDate.isSame(today, 'day')) {
+        if (!startDate.isBefore(today, 'day') && !startDate.isSame(today, 'day')) {
           return false
         }
         return true
