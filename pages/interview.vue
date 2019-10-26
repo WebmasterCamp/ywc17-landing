@@ -213,9 +213,7 @@ export default {
     }
   },
   mounted () {
-    if (this.major) {
-      this.loadData()
-    }
+    this.loadData()
   },
   methods: {
     changeMajor (major) {
@@ -246,6 +244,7 @@ export default {
     },
     loadData () {
       const vm = this
+      vm.isLoading = true
       vm.$axios.get(`https://api.ywc.in.th/users/interview/pass`)
         .then(({ status, data }) => {
           vm.isLoading = false
