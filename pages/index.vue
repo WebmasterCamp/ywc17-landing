@@ -1,7 +1,7 @@
 <template>
   <div>
     <Hero />
-    <GradientButton link href="/interview/" theme="pink" class="cta-button" @click.native.prevent="$router.push('/interview/')">ประกาศผู้มีสิทธิ์เข้าสัมภาษณ์ ‎▶</GradientButton>
+    <GradientButton link href="/interview/" theme="pink" class="cta-button" @click.native.prevent="$router.push('/interview/')">ประกาศผู้มีสิทธิ์เข้าสัมภาษณ์</GradientButton>
     <WhatIsYWC />
     <Majors />
     <Location />
