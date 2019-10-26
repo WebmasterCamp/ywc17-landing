@@ -1,8 +1,8 @@
 export const majors = {
-  content: ['Content', 'green'],
-  design: ['Design', 'yellow'],
-  marketing: ['Marketing', 'pink'], 
-  programming: ['Programming', 'blue']
+  content: ['Content', 'green', 'CT'],
+  design: ['Design', 'yellow', 'DS'],
+  marketing: ['Marketing', 'pink', 'MK'], 
+  programming: ['Programming', 'blue', 'PG']
 }
 
 export const INTERVIEW_QUESTIONS = {

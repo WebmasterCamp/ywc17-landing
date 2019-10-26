@@ -18,18 +18,26 @@
 <script>
 import { INTERVIEW_QUESTIONS, INTERVIEW_COLUMNS } from '~/utils/const.js'
 import SearchTable from '~/components/SearchTable'
-
+const capitalize = (str) => {
+  if (!str) {
+    return str
+  }
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+}
 export default {
   components: {
     SearchTable
   },
   props: {
-    majors: { type: Object, default: () => { return {} } }
+    majors: { type: Object, default: () => { return {} } },
+    results: { 
+      type: Object,
+      default: () => { return { content: [], design: [], marketing: [], programming: [] } } 
+    }
   },
   data () {
     return {
       columns: INTERVIEW_COLUMNS,
-      data: [],
       searchColumns: ['name', 'ref'],
 
       isLoading: true
@@ -53,42 +61,21 @@ export default {
     },
     majorQuestion () {
       return INTERVIEW_QUESTIONS[this.major]
-    }
-  },
-  mounted () {
-    this.loadData(this.$route.params.major)
-  },
-  methods: {
-    loadData (major) {
-      const vm = this
-      vm.isLoading = true
-      vm.$axios.get(`/interview-list/interview-${major}.json`)
-        .then(({ status, data }) => {
-          if (status === 200) {
-            const ret = data.map((row) => {
-              row.name = `${row.firstName} ${row.lastName}`
-              delete row.firstName
-              delete row.lastName
-              delete row.nickname
-              return row
-            })
-            vm.isLoading = false
-            vm.data = ret
-          } else {
-            vm.isLoading = false
-            vm.data = []
-          }
-        })
-        .catch(() => {
-          vm.isLoading = false
-          vm.data = []
-        })
+    },
+    data () {
+      if (!this.major) {
+        return []
+      }
+      let i = 1
+      return this.results[this.major].map((row) => {
+        row.name = `${capitalize(row.firstName)} ${capitalize(row.lastName)}`
+        row.ref = `${this.majors[this.major][2]}${i < 10 ? '0' : ''}${i++}`
+        row.round = row.interviewTime === 'morning' ? `เช้า` : `บ่าย`
+        return row
+      })
     }
   },
   beforeRouteUpdate (to, from, next) {
-    if (to.params.major) {
-      this.loadData(to.params.major)
-    }
     this.$refs.table.clearSearch()
     next()
   }
@@ -96,7 +83,7 @@ export default {
 </script>
 <style scoped lang="scss">
 section {
-  margin-top: 0;
+  margin-top: 0 !important;
   margin-bottom: 44px;
   padding: 0;
 }
