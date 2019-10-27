@@ -74,9 +74,6 @@ const MajorRow = styled('div')`
   @media screen and (max-width:768px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  // @media screen and (max-width:576px) {
-  //   grid-template-columns: repeat(1, 1fr);
-  // }
 `
 const Major = styled('a', { color: String })`
   position: relative;
@@ -100,10 +97,6 @@ const Major = styled('a', { color: String })`
   border-radius: 10px;
 
   user-select: none;
-
-  // @media screen and (max-width:1080px) {
-  //   padding: 20px;
-  // }
 
   @media screen and (max-width:768px) {
     font-size: 22px;
@@ -250,15 +243,18 @@ export default {
           vm.isLoading = false
           if (status === 200) {
             vm.results = data.payload
-          } else {
-            // vm.results = null
           }
         })
         .catch(() => {
           vm.isLoading = false
-          // vm.results = null
         })
     }
+  },
+  beforeRouteUpdate (to, from, next) {
+    if (from.path.includes('/interview') && Object.keys(from.query).length > 0) {
+      this.loadData()
+    }
+    next()
   }
 }
 </script>
