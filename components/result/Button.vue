@@ -31,6 +31,7 @@ ${ButtonStyle}
 `
 const ButtonLink = styled(`a`)`
 ${ButtonStyle}
+text-decoration: none;
 `
 export default {
   components: {
