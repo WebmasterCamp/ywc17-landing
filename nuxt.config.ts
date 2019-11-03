@@ -46,7 +46,8 @@ const config = {
   plugins: [
     { src: '~/plugins/ant-design-vue' },
     { src: '~/plugins/vue-agile', ssr: false },
-    { src: '~/plugins/vue-lazyload', ssr: false }
+    { src: '~/plugins/vue-lazyload', ssr: false },
+    { src: '~/plugins/vue-confetti', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
