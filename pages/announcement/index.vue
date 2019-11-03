@@ -109,7 +109,7 @@ export default {
   },
   computed: {
     refCode () {
-      return (this.ref[0] + this.ref[1] + this.ref[2] + this.ref[3]).toUpperCase()
+      return (this.ref[0] + this.ref[1] + this.ref[2] + this.ref[3]).toString().toUpperCase()
     },
     isPass () {
       return true
@@ -174,6 +174,7 @@ export default {
       }
       if (idx < 3 && $event.target.value.length === 1) {
         this.$refs[`ref${idx + 1}`][0].focus()
+        return false
       }
 
       if (idx === 0 || idx === 1) {
@@ -203,6 +204,9 @@ export default {
     },
     checkRefCode () {
       if (this.isCandidateLoading || this.refCode.length !== 4) {
+        if (this.refCode.length !== 4) {
+          this.$message.info('กรุณากรอกรหัสสัมภาษณ์ให้ครบถ้วนทั้ง 4 ตัว')
+        }
         return false
       }
       const refMajor = (this.ref[0] + this.ref[1]).toUpperCase()
@@ -217,11 +221,11 @@ export default {
       })
 
       if (!major) {
-        alert('สาขาในรหัสสัมภาษณ์ไม่ถูกต้อง')
+        this.$message.error('รหัสสัมภาษณ์ไม่ถูกต้อง')
         return false
       }
       if (refIdx <= 0 || typeof this.candidates[major][refIdx - 1] === 'undefined') {
-        alert('รหัสสัมภาษณ์ไม่ถูกต้อง')
+        this.$message.error('รหัสสัมภาษณ์ไม่ถูกต้อง')
         return false
       }
       this.candidateInfo = this.candidates[major][refIdx - 1]
