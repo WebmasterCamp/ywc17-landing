@@ -18,11 +18,12 @@ const CenterContainer = styled.div`
   & > div {
     text-align: center;
   }
-  @media screen and (max-width: 576px) {
+  @media screen and (max-height: 750px) {
     position: static;
     left: unset;
     top: unset;
     transform: unset;
+    margin: auto;
     margin-top: 40px;
     margin-bottom: 44px;
   }

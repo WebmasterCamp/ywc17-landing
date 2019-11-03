@@ -78,3 +78,34 @@ export const INTERVIEW_COLUMNS = [
     width: '15%'
   }
 ]
+
+export const FINALIST_COLUMNS = [
+  {
+    title: 'รหัส',
+    dataIndex: 'ref',
+    sorter: (a, b) => a.ref.localeCompare(b.ref),
+    defaultSortOrder: 'ascend',
+    width: '12.5%',
+    scopedSlots: { customRender: 'searchRender' }
+  },
+  {
+    title: 'ชื่อ - นามสกุล',
+    dataIndex: 'name',
+    sorter: (a, b) => a.name.localeCompare(b.name),
+    width: '57.5%',
+    scopedSlots: { customRender: 'searchRender' }
+  },
+  {
+    title: 'ประเภท',
+    dataIndex: 'type',
+    sorter: (a, b) => a.round.localeCompare(b.round),
+    width: '15%'
+  },
+  {
+    title: 'จำนวนเงิน',
+    dataIndex: 'amount',
+    sorter: (a, b) => a.round.localeCompare(b.round),
+    width: '15%'
+  }
+]
+export const FINALIST_FORM_LINK = 'https://forms.google.com/'
