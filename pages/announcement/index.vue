@@ -22,7 +22,7 @@
               />
             </div>
           </div>
-          <Button @click="checkRefCode">ตรวจสอบผล</Button>
+          <Button @click="checkRefCode" :disabled="isCandidateLoading">ตรวจสอบผล</Button>
         </template>
         <template v-else>
           <h3>ผลสัมภาษณ์ Young Webmaster Camp ครั้งที่ 17</h3>
@@ -166,7 +166,7 @@ export default {
     },
     refHandler ($event, idx) {
       const value = $event.key
-      if (['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete', 'Enter'].includes(value)) {
+      if (['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete', 'Enter', 'Tab'].includes(value)) {
         if (value === 'Enter') {
           this.checkRefCode()
         }
@@ -339,7 +339,7 @@ export default {
   }
 }
 @keyframes animateText {
-  0%   { opacity: 0; }
+  5%   { opacity: 0; }
   50% { opacity: 1; }
   100% { opacity: 0; }
 }
