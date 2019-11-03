@@ -25,6 +25,13 @@ font-size: 20px;
 text-align: center;
 padding: 7px 20px;
 color: white;
+
+&:hover {
+  background: #f74f7e;
+}
+&:active {
+  background: #bf345b;
+}
 `
 const Button = styled(`button`)`
 ${ButtonStyle}
