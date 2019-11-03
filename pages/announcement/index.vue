@@ -220,11 +220,11 @@ export default {
         alert('สาขาในรหัสสัมภาษณ์ไม่ถูกต้อง')
         return false
       }
-      if (typeof this.candidates[major][refIdx] === 'undefined') {
+      if (refIdx <= 0 || typeof this.candidates[major][refIdx - 1] === 'undefined') {
         alert('รหัสสัมภาษณ์ไม่ถูกต้อง')
         return false
       }
-      this.candidateInfo = this.candidates[major][refIdx]
+      this.candidateInfo = this.candidates[major][refIdx - 1]
       this.major = major
       this.loadFinalist()
     },
