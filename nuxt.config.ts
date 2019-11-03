@@ -60,11 +60,6 @@ const config = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    /*
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-42284958-1'
-    }]
-    */
     ['@nuxtjs/google-gtag', {
       id: 'UA-42284958-1'
     }],
@@ -96,7 +91,13 @@ const config = {
       '/interview/content',
       '/interview/design',
       '/interview/marketing',
-      '/interview/programming'
+      '/interview/programming',
+      '/announcement',
+      '/announcement/majors',
+      '/announcement/majors/content',
+      '/announcement/majors/design',
+      '/announcement/majors/marketing',
+      '/announcement/majors/programming',
     ]
   },
   build: {
