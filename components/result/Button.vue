@@ -16,6 +16,7 @@ box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
 border-radius: 100px;
 border: none;
 outline: none;
+transition: all 0.3s;
 
 cursor: pointer;
 
@@ -31,6 +32,10 @@ color: white;
 }
 &:active {
   background: #bf345b;
+}
+&:disabled {
+  background: whitesmoke;
+  color: gray;
 }
 `
 const Button = styled(`button`)`
