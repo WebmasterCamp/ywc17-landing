@@ -10,12 +10,12 @@
             <div v-for="idx in [0, 1, 2, 3]" :key="`ref${idx}`">
               <a-input
                 :ref="`ref${idx}`"
+                v-model="ref[idx]"
                 size="large"
                 :placeholder="'CT01'.charAt(idx)"
                 
                 type="text"
                 maxlength="1"
-                v-model="ref[idx]"
                 :disabled="isCandidateLoading"
                 @keydown="refHandler($event, idx)"
                 @keyup="refNavigator($event, idx)"
