@@ -30,7 +30,7 @@
           ของ {{ candidateInfo.firstName }} {{ candidateInfo.lastName }} รหัส {{ refCode }}
           <template v-if="isFinalistLoading">
             <h1 class="themeText">คุณ<span id="notPassText">ไม่</span>ผ่านการคัดเลือก</h1>
-            <p v-if="isFinalistLoading">ใจเย็น ๆ นะ ระบบยังโหลดไม่เสร็จ</p>
+            <p>ใจเย็น ๆ นะ ระบบยังโหลดไม่เสร็จ</p>
           </template>
           <template v-else-if="isPass">
             <h2>ขอแสดงความยินดี</h2>
