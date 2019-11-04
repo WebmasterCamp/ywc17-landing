@@ -373,7 +373,7 @@ export default {
   }
   .animateText {
     opacity: 0;
-    animation: animateText 1s 5, animateText 0.6s 3, animateText 0.2s infinite;
+    animation: animateText 0.5s 10, animateText 0.3s 6, animateText 0.1s infinite;
     animation-delay: 0ms, 5000ms, 6800ms;
   }
 }
