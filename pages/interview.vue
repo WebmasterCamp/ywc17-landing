@@ -135,6 +135,7 @@ export default {
         })
         .catch(() => {
           vm.isLoading = false
+          vm.$message.error('เกิดข้อผิดพลาดในการโหลดรายชื่อผู้มีสิทธิ์เข้าสัมภาษณ์')
         })
     }
   },
