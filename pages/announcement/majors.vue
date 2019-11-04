@@ -20,10 +20,7 @@
 </template>
 <script>
 import ThemeProvider from '~/components/ThemeProvider.vue'
-import InfoContainer from '~/components/InfoContainer.vue'
 import Majors from '~/components/result/Majors.vue'
-import Button from '~/components/result/Button.vue'
-import Footer from '~/components/sections/Footer.vue'
 import { colorScheme } from '~/utils/color'
 import { majors, FINALIST_FORM_LINK } from '~/utils/const'
 
@@ -46,9 +43,9 @@ export default {
   components: {
     ThemeProvider,
     Majors,
-    Button,
-    InfoContainer,
-    Footer
+    InfoContainer: () => import('~/components/InfoContainer.vue'),
+    Button: () => import('~/components/result/Button.vue'),
+    Footer: () => import('~/components/sections/Footer.vue'),
   },
   data () {
     return {

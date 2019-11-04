@@ -70,8 +70,6 @@ import antDesignVueInput from '~/plugins/ant-design-vue-input'
 import ThemeProvider from '~/components/ThemeProvider.vue'
 import Loading from '~/components/result/Loading.vue'
 import CenterContainer from '~/components/CenterContainer.vue'
-import Button from '~/components/result/Button.vue'
-import Footer from '~/components/sections/Footer.vue'
 import { colorScheme } from '~/utils/color'
 import { majors, FINALIST_FORM_LINK, FINALIST_LOAD_TIME } from '~/utils/const'
 const isalpha = /^[a-zA-Z]$/
@@ -92,8 +90,8 @@ export default {
     ThemeProvider,
     Loading,
     CenterContainer,
-    Button,
-    Footer
+    Button: () => import('~/components/result/Button.vue'),
+    Footer: () => import('~/components/sections/Footer.vue')
   },
   data () {
     return {
