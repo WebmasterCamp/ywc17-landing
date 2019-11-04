@@ -60,7 +60,7 @@
       </div>
     </CenterContainer>
     <div class="more-details">
-      <NuxtLink v-if="!candidateInfo" to="/announcement/majors/">แสดงรายชื่อทั้งหมด</NuxtLink>
+      <NuxtLink v-if="!candidateInfo" to="/announcement/majors/"><b>แสดงรายชื่อทั้งหมด</b></NuxtLink>
       <Footer />
     </div>
   </ThemeProvider>
