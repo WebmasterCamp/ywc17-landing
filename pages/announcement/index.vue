@@ -2,9 +2,9 @@
   <ThemeProvider :name="currTheme">
     <CenterContainer class="announcement-box">
       <div style="width:90%">
-        <img src="~/assets/images/ywc-logo-pink.png" class="ywc-logo" />
+        <img src="~/assets/images/ywc-logo-pink.png" class="ywc-logo" alt="17th Young Webmaster Camp" />
         <template v-if="!candidateInfo">
-          <h3>ประกาศผลสัมภาษณ์ Young Webmaster Camp ครั้งที่ 17</h3>
+          <h3>ประกาศผลสัมภาษณ์ <br class="mobile" />Young Webmaster Camp ครั้งที่ 17</h3>
           กรอกรหัสสัมภาษณ์ของคุณ
           <div class="ref-input">
             <div v-for="idx in [0, 1, 2, 3]" :key="`ref${idx}`">
@@ -25,7 +25,7 @@
           <Button @click="checkRefCode" :disabled="isCandidateLoading">ตรวจสอบผล</Button>
         </template>
         <template v-else>
-          <h3>ผลสัมภาษณ์ Young Webmaster Camp ครั้งที่ 17</h3>
+          <h3>ผลสัมภาษณ์ <br class="mobile" />Young Webmaster Camp ครั้งที่ 17</h3>
           ของ {{ candidateInfo.firstName }} {{ candidateInfo.lastName }} รหัส {{ refCode }}
           <template v-if="isFinalistLoading">
             <h1 class="themeText">คุณ<span class="animateText">ไม่</span>ผ่านการคัดเลือก</h1>
@@ -33,7 +33,7 @@
           </template>
           <template v-else-if="isPass">
             <h2>ขอแสดงความยินดี</h2>
-            <h1 class="themeText">คุณผ่านการคัดเลือก</h1>
+            <h1 class="themeText" style="margin-top:50px">คุณผ่านการคัดเลือก</h1>
             
             <div class="alignLeft">
               <h3>รายละเอียดการยืนยันสิทธิ์</h3>
@@ -49,7 +49,7 @@
           </template>
           <template v-else>
             <h2>ขอแสดงความเสียใจ</h2>
-            <h1 class="themeText">คุณไม่ผ่านการคัดเลือก</h1>
+            <h1 class="themeText" style="margin-top:50px">คุณไม่ผ่านการคัดเลือก</h1>
             <p>พลาดโอกาสครั้งนี้อย่าเพิ่งเสียใจ<br />เราเชื่อว่าคุณมีศักยภาพและความสามารถในการพัฒนาตนเอง<br />ปีหน้าฟ้าใหม่ (ถ้ายังเข้าหลักเกณฑ์) กลับมาสมัครใหม่อีกครั้งนะ</p>
           </template>
         </template>
@@ -205,7 +205,7 @@ export default {
     checkRefCode () {
       if (this.isCandidateLoading || this.refCode.length !== 4) {
         if (this.refCode.length !== 4) {
-          this.$message.info('กรุณากรอกรหัสสัมภาษณ์ให้ครบถ้วนทั้ง 4 ตัว')
+          this.$message.error('กรุณากรอกรหัสสัมภาษณ์ให้ครบถ้วนทั้ง 4 ตัว')
         }
         return false
       }
@@ -245,6 +245,12 @@ export default {
 </script>
 <style lang="scss">
 .secondary.announcement {
+  .mobile {
+    display: none;
+    @media screen and (max-width: 576px) {
+      display: inline-block;
+    }
+  }
   .container {
     max-width: 1056px;
   }
@@ -255,7 +261,7 @@ export default {
     font-family: 'Sarabun', serif, Tahoma;
   }
   .announcement-box {
-    padding: 20px 0;
+    padding: 40px 0;
 
     color: black;
     font-family: 'Maledpan';
@@ -268,6 +274,7 @@ export default {
       display: block;
       width: 280px;
       height: 97px;
+      margin: 0 auto;
       @media screen and (max-width: 576px) {
         width:187px;
         height:65px;
