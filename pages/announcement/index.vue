@@ -23,7 +23,7 @@
               />
             </div>
           </div>
-          <Button @click="checkRefCode" :disabled="isCandidateLoading">ตรวจสอบผล</Button>
+          <Button :disabled="isCandidateLoading" @click="checkRefCode">ตรวจสอบผล</Button>
         </template>
         <template v-else>
           <h3>ผลสัมภาษณ์ <br class="mobile" />Young Webmaster Camp ครั้งที่ 17</h3>
@@ -162,9 +162,15 @@ export default {
       this.$nextTick(() => {
         const elm = document.getElementById('notPassText')
         elm.classList.add('animateText')
-        setTimeout(() => elm.classList.add('two'), parseInt(5 / 8 * FINALIST_LOAD_TIME))
+        elm.classList.add('one')
+        setTimeout(() => {
+          elm.classList.remove('one')
+          void elm.offsetWidth
+          elm.classList.add('two')
+        }, parseInt(5 / 8 * FINALIST_LOAD_TIME))
         setTimeout(() => {
           elm.classList.remove('two')
+          void elm.offsetWidth 
           elm.classList.add('three')
         }, parseInt(68 / 80 * FINALIST_LOAD_TIME))
       })
@@ -408,6 +414,8 @@ export default {
   }
   .animateText {
     opacity: 0;
+  }
+  .animateText.one {
     animation: animateText 0.5s infinite;
   }
   .animateText.two {
