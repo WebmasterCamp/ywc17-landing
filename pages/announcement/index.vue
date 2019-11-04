@@ -1,6 +1,7 @@
 <template>
   <ThemeProvider :name="currTheme">
-    <CenterContainer class="announcement-box">
+    <Loading v-if="isCandidateLoading" />
+    <CenterContainer v-else class="announcement-box">
       <div style="width:90%">
         <img src="~/assets/images/ywc-logo-pink.png" class="ywc-logo" alt="17th Young Webmaster Camp" />
         <template v-if="!candidateInfo">
@@ -16,14 +17,13 @@
                 
                 type="text"
                 maxlength="1"
-                :disabled="isCandidateLoading"
                 @paste="refHandler($event, idx)"
                 @input="refHandler($event, idx)"
                 @keyup="refNavigator($event, idx)"
               />
             </div>
           </div>
-          <Button :disabled="isCandidateLoading" @click="checkRefCode">ตรวจสอบผล</Button>
+          <Button @click="checkRefCode">ตรวจสอบผล</Button>
         </template>
         <template v-else>
           <h3>ผลสัมภาษณ์ <br class="mobile" />Young Webmaster Camp ครั้งที่ 17</h3>
@@ -68,6 +68,7 @@
 <script>
 import antDesignVueInput from '~/plugins/ant-design-vue-input'
 import ThemeProvider from '~/components/ThemeProvider.vue'
+import Loading from '~/components/result/Loading.vue'
 import CenterContainer from '~/components/CenterContainer.vue'
 import Button from '~/components/result/Button.vue'
 import Footer from '~/components/sections/Footer.vue'
@@ -89,6 +90,7 @@ export default {
   },
   components: {
     ThemeProvider,
+    Loading,
     CenterContainer,
     Button,
     Footer
@@ -334,7 +336,6 @@ export default {
   .announcement-box {
     padding: 40px 0;
 
-    color: black;
     font-family: 'Maledpan';
     font-size: 18px;
     @media screen and (max-width:576px) {
