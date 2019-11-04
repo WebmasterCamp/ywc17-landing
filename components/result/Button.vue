@@ -19,6 +19,7 @@ outline: none;
 transition: all 0.3s;
 
 cursor: pointer;
+user-select: none;
 
 font-family: Maledpan;
 font-weight: bold;
@@ -36,6 +37,7 @@ color: white;
 &:disabled {
   background: whitesmoke;
   color: gray;
+  cursor: not-allowed;
 }
 `
 const Button = styled(`button`)`
