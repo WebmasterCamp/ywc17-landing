@@ -58,7 +58,7 @@ export default {
       }
       return this.results[this.major].map((row) => {
         row.name = `${capitalize(row.firstName)} ${capitalize(row.lastName)}`
-        row.type = (!row.isReserve) ? 'ตัวจริง' : 'สำรอง'
+        row.type = (!row.isReserve) ? 'ตัวจริง' : 'ตัวสำรอง'
         return row
       })
     }
