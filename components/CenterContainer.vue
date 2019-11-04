@@ -2,9 +2,13 @@
 import styled from 'vue-styled-components'
 
 const CenterContainer = styled.div`
+  color: rgba(0, 0, 0, 0.65);
+  transition: max-height 0.5s ease-out;
   max-width: 960px;
   width: 100%;
+  height: auto;
   min-height: 60%;
+  max-height: 900px;
   position: absolute;
   left: 50%;
   top: 50%;
