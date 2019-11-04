@@ -38,7 +38,7 @@
             
             <div class="alignLeft">
               <h3>รายละเอียดการยืนยันสิทธิ์</h3>
-              <p>เพื่อยืนยันสิทธิ์การเข้าค่าย กรุณา<b>โอนเงินมัดจำ</b> จำนวน <b class="themeText">xxx.xx บาท</b> เข้าบัญชี</p>
+              <p>เพื่อยืนยันสิทธิ์การเข้าค่าย กรุณา<b>โอนเงินมัดจำ</b> จำนวน <b class="themeText">{{ finalistInfo.verificationAmount }} บาท</b> เข้าบัญชี</p>
               <p style="text-align:center">
                 เลขที่บัญชี <b>xxx</b><br />
                 ชื่อบัญชี <b>xxx</b><br />
@@ -105,6 +105,7 @@ export default {
       candidateInfo: null,
 
       isFinalistLoading: true,
+      finalistFetchTime: 0,
       finalistInfo: null
     }
   },
@@ -113,7 +114,10 @@ export default {
       return (this.ref[0] + this.ref[1] + this.ref[2] + this.ref[3]).toString().toUpperCase()
     },
     isPass () {
-      return this.ref[3] !== '2'
+      return this.finalistInfo && this.finalistInfo.isFinalist === true
+    },
+    isReserve () {
+      return this.isPass && this.finalistInfo.isReserve === true
     }
   },
   created () {
@@ -241,7 +245,7 @@ export default {
           }
         })
         .catch(() => {
-          vm.isCandidateLoading = false
+          vm.$message.error('เกิดข้อผิดพลาดในการโหลดรายชื่อผู้สมัคร')
         })
     },
     checkRefCode () {
@@ -278,10 +282,22 @@ export default {
     loadFinalist () {
       const vm = this
       vm.isFinalistLoading = true
-      setTimeout(() => {
-        vm.isFinalistLoading = false
-        vm.changeTheme(vm.major)
-      }, 8000)
+      vm.finalistFetchTime = Date.now()
+      vm.$axios.get(`https://api.ywc.in.th/users/announcement/${vm.refCode}`)
+        .then(({ status, data }) => {
+          if (status === 200) {
+            vm.finalistInfo = data.payload
+          }
+          const remainTime = Date.now() - vm.finalistFetchTime
+          if (remainTime >= 8000) {
+            vm.isFinalistLoading = false
+          } else {
+            setTimeout(() => { vm.isFinalistLoading }, 8000 - remainTime)
+          }
+        })
+        .catch(() => {
+          vm.$message.error('เกิดข้อผิดพลาดในการโหลดข้อมูลประกาศผล')
+        })
     }
   }
 }

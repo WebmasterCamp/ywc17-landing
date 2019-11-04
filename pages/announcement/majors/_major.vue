@@ -56,12 +56,9 @@ export default {
       if (!this.major) {
         return []
       }
-      let i = 1
       return this.results[this.major].map((row) => {
         row.name = `${capitalize(row.firstName)} ${capitalize(row.lastName)}`
-        row.ref = `${this.majors[this.major][2]}${i < 10 ? '0' : ''}${i++}`
-        row.type = 'ตัวจริง'
-        row.amount = 'xxx.xx'
+        row.type = (!row.isReserve) ? 'ตัวจริง' : 'สำรอง'
         return row
       })
     }

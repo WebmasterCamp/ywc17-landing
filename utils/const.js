@@ -82,8 +82,8 @@ export const INTERVIEW_COLUMNS = [
 export const FINALIST_COLUMNS = [
   {
     title: 'รหัส',
-    dataIndex: 'ref',
-    sorter: (a, b) => a.ref.localeCompare(b.ref),
+    dataIndex: 'interviewRef',
+    sorter: (a, b) => a.interviewRef.localeCompare(b.interviewRef),
     defaultSortOrder: 'ascend',
     width: '12.5%',
     scopedSlots: { customRender: 'searchRender' }
@@ -98,13 +98,13 @@ export const FINALIST_COLUMNS = [
   {
     title: 'ประเภท',
     dataIndex: 'type',
-    sorter: (a, b) => a.round.localeCompare(b.round),
+    sorter: (a, b) => a.type.localeCompare(b.type),
     width: '15%'
   },
   {
     title: 'จำนวนเงิน',
-    dataIndex: 'amount',
-    sorter: (a, b) => a.round.localeCompare(b.round),
+    dataIndex: 'verificationAmount',
+    sorter: (a, b) => a.verificationAmount.localeCompare(b.verificationAmount),
     width: '15%'
   }
 ]

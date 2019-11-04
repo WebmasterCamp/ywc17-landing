@@ -109,7 +109,7 @@ export default {
     loadData () {
       const vm = this
       vm.isLoading = true
-      vm.$axios.get(`https://api.ywc.in.th/users/interview/pass`)
+      vm.$axios.get(`https://api.ywc.in.th/users/announcement`)
         .then(({ status, data }) => {
           vm.isLoading = false
           if (status === 200) {
@@ -118,6 +118,7 @@ export default {
         })
         .catch(() => {
           vm.isLoading = false
+          vm.$message.error('เกิดข้อผิดพลาดในการโหลดรายชื่อผู้ผ่านการคัดเลือก')
         })
     }
   },
