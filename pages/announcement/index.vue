@@ -48,7 +48,7 @@
                 </p>
                 <p>ภายในวันศุกร์ที่ 8 พฤศจิกายน เวลา 23:59 น.</p>
               </div>
-              <Button link :href="FINALIST_FORM_LINK" target="_blank">ยืนยันสิทธิ์</Button>
+              <Button link :href="FINALIST_FORM_LINK(finalistInfo)" target="_blank">ยืนยันสิทธิ์</Button>
             </template>
           </template>
           <template v-else>
@@ -96,7 +96,6 @@ export default {
   data () {
     return {
       majors,
-      FINALIST_FORM_LINK,
 
       currTheme: '',
       major: '',
@@ -131,6 +130,7 @@ export default {
     this.loadCandidate()
   },
   methods: {
+    FINALIST_FORM_LINK,
     changeTheme (major) {
       if (major) {
         const majorColor = (!this.isPass) ? 'gray' : majors[major][1]

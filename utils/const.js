@@ -107,4 +107,10 @@ export const FINALIST_COLUMNS = [
     width: '15%'
   }
 ]
-export const FINALIST_FORM_LINK = 'https://forms.google.com/'
+export const FINALIST_FORM_LINK = (info) => {
+  if (!info) {
+    return `https://forms.google.com/`
+  }
+  
+  return `https://forms.google.com/?name=${info.firstName}%20${info.lastName}`
+}

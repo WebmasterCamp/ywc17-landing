@@ -11,7 +11,7 @@
           ผู้ที่ผ่านการคัดเลือก ให้ยืนยันสิทธิ์โดย<b>การโอนเงิน</b> และแจ้งการยืนยันสิทธิ์ได้ถึง<b>วันศุกร์ที่ 8 พฤศจิกายน เวลา 23:59 น.</b><br />
           หากเลยกำหนดจะทำการเรียกสำรองลำดับถัดไป และทางค่ายจะทำการคืนเงินเมื่อน้องเข้าค่ายครบตามระยะเวลาการจัดค่าย
         </p>
-        <Button link :href="FINALIST_FORM_LINK" target="_blank">ยืนยันสิทธิ์</Button>
+        <Button link :href="FINALIST_FORM_LINK()" target="_blank">ยืนยันสิทธิ์</Button>
       </section>
       <nuxt-child v-if="major" :majors="majors" :results="results" :isLoading="isLoading" />
     </InfoContainer>
@@ -53,7 +53,6 @@ export default {
   data () {
     return {
       majors,
-      FINALIST_FORM_LINK,
     
       results: { content: [], design: [], marketing: [], programming: [] },
       isLoading: true
@@ -80,6 +79,7 @@ export default {
     this.loadData()
   },
   methods: {
+    FINALIST_FORM_LINK,
     changeMajor (major) {
       if (major === this.major) {
         major = ''
@@ -113,7 +113,11 @@ export default {
         .then(({ status, data }) => {
           vm.isLoading = false
           if (status === 200) {
-            vm.results = data.payload
+            vm.results = data.payload.map((obj, major) => {
+              return obj.finalist.concat(obj.finalist.sort((a, b) => { return a.reserveNo < b.reserveNo }))
+            })
+          } else {
+            vm.$message.error('เกิดข้อผิดพลาดในระบบ')
           }
         })
         .catch(() => {

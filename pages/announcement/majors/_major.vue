@@ -56,13 +56,11 @@ export default {
       if (!this.major) {
         return []
       }
-      return this.results[this.major].finalist
-          .concat(this.results[this.major].reserve.sort((a, b) => { a.reserveNo < b.reserveNo }))
-          .map((row) => {
-            row.name = `${capitalize(row.firstName)} ${capitalize(row.lastName)}`
-            row.type = (!row.isReserve) ? 'ตัวจริง' : 'สำรอง'
-            return row
-          })
+      return this.results[this.major].map((row) => {
+        row.name = `${capitalize(row.firstName)} ${capitalize(row.lastName)}`
+        row.type = (!row.isReserve) ? 'ตัวจริง' : 'สำรอง'
+        return row
+      })
     }
   }
 }
