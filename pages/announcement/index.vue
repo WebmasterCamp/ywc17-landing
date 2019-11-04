@@ -34,19 +34,22 @@
           </template>
           <template v-else-if="isPass">
             <h2>ขอแสดงความยินดี</h2>
-            <h1 class="themeText" style="margin-top:50px">คุณผ่านการคัดเลือก</h1>
+            <h1 class="themeText" style="margin-top:50px">คุณผ่านการคัดเลือก<span v-if="isReserve"> (ตัวสำรอง)</span></h1>
             
-            <div class="alignLeft">
-              <h3>รายละเอียดการยืนยันสิทธิ์</h3>
-              <p>เพื่อยืนยันสิทธิ์การเข้าค่าย กรุณา<b>โอนเงินมัดจำ</b> จำนวน <b class="themeText">{{ finalistInfo.verificationAmount }} บาท</b> เข้าบัญชี</p>
-              <p style="text-align:center">
-                เลขที่บัญชี <b>xxx</b><br />
-                ชื่อบัญชี <b>xxx</b><br />
-                ธนาคาร <b>xxx</b> สาขา xxx
-              </p>
-              <p>ภายในวันศุกร์ที่ 8 พฤศจิกายน เวลา 23:59 น.</p>
-            </div>
-            <Button link :href="FINALIST_FORM_LINK" target="_blank">ยืนยันสิทธิ์</Button>
+            <p v-if="isReserve">กรุณารอการติดต่อกลับจากทีมงานภายหลัง</p>
+            <template v-else>
+              <div class="alignLeft">
+                <h3>รายละเอียดการยืนยันสิทธิ์</h3>
+                <p>เพื่อยืนยันสิทธิ์การเข้าค่าย กรุณา<b>โอนเงินมัดจำ</b> จำนวน <b class="themeText">{{ finalistInfo.verificationAmount }} บาท</b> เข้าบัญชี</p>
+                <p style="text-align:center">
+                  เลขที่บัญชี <b>xxx</b><br />
+                  ชื่อบัญชี <b>xxx</b><br />
+                  ธนาคาร <b>xxx</b> สาขา xxx
+                </p>
+                <p>ภายในวันศุกร์ที่ 8 พฤศจิกายน เวลา 23:59 น.</p>
+              </div>
+              <Button link :href="FINALIST_FORM_LINK" target="_blank">ยืนยันสิทธิ์</Button>
+            </template>
           </template>
           <template v-else>
             <h2>ขอแสดงความเสียใจ</h2>
@@ -208,7 +211,6 @@ export default {
             value = String.fromCharCode(currentCode)
           }
       }
-      // console.log($event.type, value, idx, isalpha.test(value), isnumber.test(value))
       if (['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete', 'Enter', 'Tab'].includes(value)) {
         if (value === 'Enter') {
           this.checkRefCode()
@@ -224,13 +226,11 @@ export default {
         if (!isalpha.test(value)) {
           $event.preventDefault()
           this.ref[idx] = ''
-          // console.log(idx, 'not alpha')
           return false
         }
       } else if (!isnumber.test(value)) {
         $event.preventDefault()
         this.ref[idx] = ''
-        // console.log(idx, 'not number')
         return false
       }
       return true
