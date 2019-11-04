@@ -292,7 +292,7 @@ export default {
           if (remainTime >= 8000) {
             vm.isFinalistLoading = false
           } else {
-            setTimeout(() => { vm.isFinalistLoading }, 8000 - remainTime)
+            setTimeout(() => { vm.isFinalistLoading = false }, 8000 - remainTime)
           }
         })
         .catch(() => {
