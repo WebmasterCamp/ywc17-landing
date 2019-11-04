@@ -17,7 +17,8 @@
                 type="text"
                 maxlength="1"
                 :disabled="isCandidateLoading"
-                @keydown="refHandler($event, idx)"
+                @paste="refHandler($event, idx)"
+                @input="refHandler($event, idx)"
                 @keyup="refNavigator($event, idx)"
               />
             </div>
@@ -148,7 +149,10 @@ export default {
     },
     refNavigator ($event, idx) {
       const value = $event.key
-      if (value === 'Backspace' || value === 'ArrowLeft') {
+      if (value === 'Enter') {
+        this.checkRefCode()
+        return false
+      } else if (value === 'Backspace' || value === 'ArrowLeft') {
         if (idx > 0) {
           this.$refs[`ref${idx - 1}`][0].focus()
         }
@@ -165,14 +169,37 @@ export default {
       }
     },
     refHandler ($event, idx) {
-      const value = $event.key
+      let value
+      switch ($event.type) {
+        case 'paste':
+          value = (event.clipboardData || window.clipboardData).getData('text')
+          if (value.length === 4) {
+            const ref = value.split('')
+            if (isalpha.test(ref[0]) && isalpha.test(ref[1]) && isnumber.test(ref[2]) && isnumber.test(ref[3])) {
+              $event.preventDefault()
+              this.ref = ref
+              return false
+            }
+          }
+          break
+        case 'input':
+          value = $event.target.value
+          break
+        default:
+          value = $event.key
+          if (!value) {
+            const currentCode = event.which || event.code
+            value = String.fromCharCode(currentCode)
+          }
+      }
+      // console.log($event.type, value, idx, isalpha.test(value), isnumber.test(value))
       if (['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete', 'Enter', 'Tab'].includes(value)) {
         if (value === 'Enter') {
           this.checkRefCode()
         }
         return false
       }
-      if (idx < 3 && $event.target.value.length === 1) {
+      if (idx < 3 && $event.type !== 'input' && $event.target.value.length === 1) {
         this.$refs[`ref${idx + 1}`][0].focus()
         return false
       }
@@ -180,10 +207,14 @@ export default {
       if (idx === 0 || idx === 1) {
         if (!isalpha.test(value)) {
           $event.preventDefault()
+          this.ref[idx] = ''
+          // console.log(idx, 'not alpha')
           return false
         }
       } else if (!isnumber.test(value)) {
         $event.preventDefault()
+        this.ref[idx] = ''
+        // console.log(idx, 'not number')
         return false
       }
       return true
