@@ -27,7 +27,7 @@ export default {
     majors: { type: Object, default: () => { return {} } },
     results: { 
       type: Object,
-      default: () => { return { content: { finalist: [], reserve: [] }, design: { finalist: [], reserve: [] }, marketing: { finalist: [], reserve: [] }, programming: { finalist: [], reserve: [] } } } 
+      default: () => { return { content: [], design: [], marketing: [], programming: [] } }
     },
     isLoading: { type: Boolean, default: false }
   },

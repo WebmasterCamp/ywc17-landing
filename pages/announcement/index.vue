@@ -34,7 +34,7 @@
           </template>
           <template v-else-if="isPass">
             <h2>ขอแสดงความยินดี</h2>
-            <h1 class="themeText" style="margin-top:50px">คุณผ่านการคัดเลือก<span v-if="isReserve"> (ตัวสำรอง)</span></h1>
+            <h1 class="themeText" style="margin-top:50px">คุณผ่านการคัดเลือก<span v-if="isReserve"><br class="mobile" /> (ตัวสำรอง)</span></h1>
             
             <p v-if="isReserve">กรุณารอการติดต่อกลับจากทีมงานภายหลัง</p>
             <template v-else>
@@ -72,7 +72,7 @@ import CenterContainer from '~/components/CenterContainer.vue'
 import Button from '~/components/result/Button.vue'
 import Footer from '~/components/sections/Footer.vue'
 import { colorScheme } from '~/utils/color'
-import { majors, FINALIST_FORM_LINK } from '~/utils/const'
+import { majors, FINALIST_FORM_LINK, FINALIST_LOAD_TIME } from '~/utils/const'
 const isalpha = /^[a-zA-Z]$/
 const isnumber = /^[0-9]$/
 export default {
@@ -125,6 +125,9 @@ export default {
   },
   created () {
     antDesignVueInput()
+    if (process.client) {
+      this.changeTheme()
+    }
   },
   mounted () {
     this.loadCandidate()
@@ -159,11 +162,11 @@ export default {
       this.$nextTick(() => {
         const elm = document.getElementById('notPassText')
         elm.classList.add('animateText')
-        setTimeout(() => elm.classList.add('two'), 5000)
+        setTimeout(() => elm.classList.add('two'), parseInt(5 / 8 * FINALIST_LOAD_TIME))
         setTimeout(() => {
           elm.classList.remove('two')
           elm.classList.add('three')
-        }, 6800)
+        }, parseInt(68 / 80 * FINALIST_LOAD_TIME))
       })
     },
     refNavigator ($event, idx) {
@@ -290,10 +293,11 @@ export default {
             vm.finalistInfo = data.payload
           }
           const remainTime = Date.now() - vm.finalistFetchTime
-          if (remainTime >= 8000) {
+          if (remainTime >= FINALIST_LOAD_TIME) {
             vm.isFinalistLoading = false
+            vm.changeTheme(vm.major)
           } else {
-            setTimeout(() => { vm.isFinalistLoading = false }, 8000 - remainTime)
+            setTimeout(() => { vm.isFinalistLoading = false; vm.changeTheme(vm.major) }, FINALIST_LOAD_TIME - remainTime)
           }
         })
         .catch(() => {
@@ -350,6 +354,7 @@ export default {
       margin-bottom: 60px;
       @media screen and (max-width: 576px) {
         font-size: 36px;
+        line-height: 1.0;
       }
     }
     h2 {

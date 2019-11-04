@@ -79,6 +79,14 @@ export const INTERVIEW_COLUMNS = [
   }
 ]
 
+export const FINALIST_LOAD_TIME = 4000
+export const FINALIST_FORM_LINK = (info) => {
+  if (!info) {
+    return `https://forms.google.com/`
+  }
+  
+  return `https://forms.google.com/?name=${info.firstName}%20${info.lastName}`
+}
 export const FINALIST_COLUMNS = [
   {
     title: 'รหัส',
@@ -107,10 +115,3 @@ export const FINALIST_COLUMNS = [
     width: '15%'
   }
 ]
-export const FINALIST_FORM_LINK = (info) => {
-  if (!info) {
-    return `https://forms.google.com/`
-  }
-  
-  return `https://forms.google.com/?name=${info.firstName}%20${info.lastName}`
-}

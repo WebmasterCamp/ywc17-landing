@@ -113,9 +113,11 @@ export default {
         .then(({ status, data }) => {
           vm.isLoading = false
           if (status === 200) {
-            vm.results = data.payload.map((obj, major) => {
-              return obj.finalist.concat(obj.finalist.sort((a, b) => { return a.reserveNo < b.reserveNo }))
+            const results = data.payload
+            Object.keys(results).map((major) => {
+              results[major] = results[major].finalist.concat(results[major].reserve.sort((a, b) => { return a.reserveNo < b.reserveNo }))
             })
+            vm.results = results
           } else {
             vm.$message.error('เกิดข้อผิดพลาดในระบบ')
           }
