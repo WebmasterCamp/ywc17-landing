@@ -113,7 +113,7 @@ export default {
       return (this.ref[0] + this.ref[1] + this.ref[2] + this.ref[3]).toString().toUpperCase()
     },
     isPass () {
-      return true
+      return this.ref[3] !== '2'
     }
   },
   created () {
@@ -269,7 +269,7 @@ export default {
       setTimeout(() => {
         vm.isFinalistLoading = false
         vm.changeTheme(vm.major)
-      }, 3000)
+      }, 8000)
     }
   }
 }
@@ -373,11 +373,12 @@ export default {
   }
   .animateText {
     opacity: 0;
-    animation: animateText 1s infinite;
+    animation: animateText 1s 5, animateText 0.6s 3, animateText 0.2s infinite;
+    animation-delay: 0ms, 5000ms, 6800ms;
   }
 }
 @keyframes animateText {
-  5%   { opacity: 0; }
+  0%   { opacity: 0; }
   50% { opacity: 1; }
   100% { opacity: 0; }
 }
