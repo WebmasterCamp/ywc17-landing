@@ -80,6 +80,12 @@ export const INTERVIEW_COLUMNS = [
 ]
 
 export const FINALIST_LOAD_TIME = 4000
+export const FINALIST_BANKACCOUNT = {
+  no: 'xxx-x-xxxxx-x',
+  name: 'xxx xxx',
+  bank: 'xxx',
+  branch: 'xxx'
+}
 export const FINALIST_FORM_LINK = (info) => {
   if (!info) {
     return `https://forms.google.com/`

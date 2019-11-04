@@ -42,9 +42,9 @@
                 <h3>รายละเอียดการยืนยันสิทธิ์</h3>
                 <p>เพื่อยืนยันสิทธิ์การเข้าค่าย กรุณา<b>โอนเงินมัดจำ</b> จำนวน <b class="themeText">{{ finalistInfo.verificationAmount }} บาท</b> เข้าบัญชี</p>
                 <p style="text-align:center">
-                  เลขที่บัญชี <b>xxx</b><br />
-                  ชื่อบัญชี <b>xxx</b><br />
-                  ธนาคาร <b>xxx</b> สาขา xxx
+                  เลขที่บัญชี <b>{{ FINALIST_BANKACCOUNT.no }}</b><br />
+                  ชื่อบัญชี <b>{{ FINALIST_BANKACCOUNT.name }}</b><br />
+                  ธนาคาร <b>{{ FINALIST_BANKACCOUNT.bank }}</b> สาขา {{ FINALIST_BANKACCOUNT.branch }}
                 </p>
                 <p>ภายในวันศุกร์ที่ 8 พฤศจิกายน เวลา 23:59 น.</p>
               </div>
@@ -71,7 +71,7 @@ import ThemeProvider from '~/components/ThemeProvider.vue'
 import Loading from '~/components/result/Loading.vue'
 import CenterContainer from '~/components/CenterContainer.vue'
 import { colorScheme } from '~/utils/color'
-import { majors, FINALIST_FORM_LINK, FINALIST_LOAD_TIME } from '~/utils/const'
+import { majors, FINALIST_FORM_LINK, FINALIST_LOAD_TIME, FINALIST_BANKACCOUNT } from '~/utils/const'
 const isalpha = /^[a-zA-Z]$/
 const isnumber = /^[0-9]$/
 export default {
@@ -96,6 +96,7 @@ export default {
   data () {
     return {
       majors,
+      FINALIST_BANKACCOUNT,
 
       currTheme: '',
       major: '',
