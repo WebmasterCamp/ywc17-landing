@@ -29,7 +29,7 @@
           <h3>ผลสัมภาษณ์ <br class="mobile" />Young Webmaster Camp ครั้งที่ 17</h3>
           ของ {{ candidateInfo.firstName }} {{ candidateInfo.lastName }} รหัส {{ refCode }}
           <template v-if="isFinalistLoading">
-            <h1 class="themeText">คุณ<span class="animateText">ไม่</span>ผ่านการคัดเลือก</h1>
+            <h1 class="themeText">คุณ<span id="notPassText">ไม่</span>ผ่านการคัดเลือก</h1>
             <p v-if="isFinalistLoading">ใจเย็น ๆ นะ ระบบยังโหลดไม่เสร็จ</p>
           </template>
           <template v-else-if="isPass">
@@ -147,6 +147,17 @@ export default {
       background-attachment: fixed;`)
       }
     },
+    animateText () {
+      this.$nextTick(() => {
+        const elm = document.getElementById('notPassText')
+        elm.classList.add('animateText')
+        setTimeout(() => elm.classList.add('two'), 5000)
+        setTimeout(() => {
+          elm.classList.remove('two')
+          elm.classList.add('three')
+        }, 6800)
+      })
+    },
     refNavigator ($event, idx) {
       const value = $event.key
       if (value === 'Enter') {
@@ -260,6 +271,7 @@ export default {
         return false
       }
       this.candidateInfo = this.candidates[major][refIdx - 1]
+      this.animateText()
       this.major = major
       this.loadFinalist()
     },
@@ -373,8 +385,13 @@ export default {
   }
   .animateText {
     opacity: 0;
-    animation: animateText 0.5s 10, animateText 0.3s 6, animateText 0.1s infinite;
-    animation-delay: 0ms, 5000ms, 6800ms;
+    animation: animateText 0.5s infinite;
+  }
+  .animateText.two {
+    animation: animateText 0.3s infinite
+  }
+  .animateText.three {
+    animation: animateText 0.1s infinite;
   }
 }
 @keyframes animateText {
