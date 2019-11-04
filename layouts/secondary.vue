@@ -1,6 +1,6 @@
 <template>
   <div class="secondary" :class="$route.name">
-    <section class="container" v-if="!hideLogo">
+    <section class="container" v-show="!hideLogo">
       <nuxt-link to="/" class="ywc-logo" title="ไปยังหน้าแรกของ 17th Young Webmaster Camp"><Picture fileName="ywc-logo" alt="17th Young Webmaster Camp" /></nuxt-link>
     </section>
     <nuxt />
@@ -31,7 +31,7 @@ export default {
   },
   computed: {
     hideLogo () {
-      return this.$route.path.includes('/announcement')
+      return ['/announcement'].includes(this.$route.path)
     }
   }
 }
