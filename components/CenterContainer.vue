@@ -30,6 +30,7 @@ const CenterContainer = styled.div`
     margin: auto;
     margin-top: 40px;
     margin-bottom: 44px;
+    min-height: 350px;
   }
 `
 export default CenterContainer
