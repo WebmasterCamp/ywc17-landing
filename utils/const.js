@@ -84,7 +84,6 @@ export const FINALIST_COLUMNS = [
     title: 'รหัส',
     dataIndex: 'interviewRef',
     sorter: (a, b) => a.interviewRef.localeCompare(b.interviewRef),
-    defaultSortOrder: 'ascend',
     width: '12.5%',
     scopedSlots: { customRender: 'searchRender' }
   },

@@ -27,7 +27,7 @@ export default {
     majors: { type: Object, default: () => { return {} } },
     results: { 
       type: Object,
-      default: () => { return { content: [], design: [], marketing: [], programming: [] } } 
+      default: () => { return { content: { finalist: [], reserve: [] }, design: { finalist: [], reserve: [] }, marketing: { finalist: [], reserve: [] }, programming: { finalist: [], reserve: [] } } } 
     },
     isLoading: { type: Boolean, default: false }
   },
@@ -56,11 +56,13 @@ export default {
       if (!this.major) {
         return []
       }
-      return this.results[this.major].map((row) => {
-        row.name = `${capitalize(row.firstName)} ${capitalize(row.lastName)}`
-        row.type = (!row.isReserve) ? 'ตัวจริง' : 'สำรอง'
-        return row
-      })
+      return this.results[this.major].finalist
+          .concat(this.results[this.major].reserve.sort((a, b) => { a.reserveNo < b.reserveNo }))
+          .map((row) => {
+            row.name = `${capitalize(row.firstName)} ${capitalize(row.lastName)}`
+            row.type = (!row.isReserve) ? 'ตัวจริง' : 'สำรอง'
+            return row
+          })
     }
   }
 }

@@ -30,7 +30,7 @@
           ของ {{ candidateInfo.firstName }} {{ candidateInfo.lastName }} รหัส {{ refCode }}
           <template v-if="isFinalistLoading">
             <h1 class="themeText">คุณ<span id="notPassText">ไม่</span>ผ่านการคัดเลือก</h1>
-            <p>ใจเย็น ๆ นะ ระบบยังโหลดไม่เสร็จ</p>
+            <p>{{ statusText }}</p>
           </template>
           <template v-else-if="isPass">
             <h2>ขอแสดงความยินดี</h2>
@@ -105,6 +105,7 @@ export default {
       candidateInfo: null,
 
       isFinalistLoading: true,
+      statusText: 'ใจเย็น ๆ นะ ระบบยังโหลดไม่เสร็จ',
       finalistFetchTime: 0,
       finalistInfo: null
     }
@@ -297,6 +298,7 @@ export default {
         })
         .catch(() => {
           vm.$message.error('เกิดข้อผิดพลาดในการโหลดข้อมูลประกาศผล')
+          vm.statusText = 'เกิดข้อผิดพลาดในการโหลดข้อมูลประกาศผล โปรดลองใหม่อีกครั้ง'
         })
     }
   }
