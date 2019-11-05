@@ -40,7 +40,7 @@
             <template v-else>
               <div class="alignLeft">
                 <h3>รายละเอียดการยืนยันสิทธิ์</h3>
-                <p>เพื่อยืนยันสิทธิ์การเข้าค่าย กรุณา<b>โอนเงินมัดจำ</b> จำนวน <b class="themeText">{{ finalistInfo.verificationAmount }} บาท</b> เข้าบัญชี</p>
+                <p>เพื่อยืนยันสิทธิ์การเข้าค่าย กรุณา<b>โอนเงินมัดจำ</b> จำนวน <b class="themeText">{{ finalistInfo.verificationAmount.toFixed(2) }} บาท</b> เข้าบัญชี</p>
                 <p style="text-align:center">
                   เลขที่บัญชี <b>{{ FINALIST_BANKACCOUNT.no }}</b><br />
                   ชื่อบัญชี <b>{{ FINALIST_BANKACCOUNT.name }}</b><br />
