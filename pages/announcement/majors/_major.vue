@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>รายชื่อผู้ผ่านการคัดเลือก</h3>
+    <h3>รายชื่อผู้ผ่านการคัดเลือก (ตัวจริง)</h3>
     <SearchTable
       ref="table"
       :columns="FINALIST_COLUMNS"
