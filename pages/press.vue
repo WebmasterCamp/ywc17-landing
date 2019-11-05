@@ -45,6 +45,7 @@
 import styled from 'vue-styled-components'
 import SectionHead from '~/components/SectionHead.vue'
 import color from '~/utils/color'
+import { selectText } from '~/utils/dom'
 const BannerItem = styled('div')`
   display: grid;
   grid-template-columns: 75% 25%;
@@ -139,19 +140,7 @@ export default {
     }
   },
   methods: {
-    selectText (event, ref) {
-      const elm = ref ? this.$refs[ref] : event.target
-      if (document.selection) { // IE
-        const range = document.body.createTextRange()
-        range.moveToElementText(elm)
-        range.select()
-      } else if (window.getSelection) {
-        const range = document.createRange()
-        range.selectNode(elm)
-        window.getSelection().removeAllRanges()
-        window.getSelection().addRange(range)
-      }
-    },
+    selectText,
     viewCode (size) {
       if (this.bannerList[size] === true) {
         this.bannerList[size] = false
