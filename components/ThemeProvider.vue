@@ -13,6 +13,9 @@ export default styled('div', { name: String })`
        color: ${props => props.name ? colorScheme[props.name].normal : color.main};
     }
   }
+  .themeButton {
+    background-color: ${props => props.name ? colorScheme[props.name].normal : color.main};
+  }
   .webDesign {
     color: ${colorScheme.yellow.normal};
   }

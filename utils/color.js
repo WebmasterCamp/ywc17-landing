@@ -54,5 +54,9 @@ export const colorScheme = {
     light: '#85E5FF',
     normal: '#4D9ED5',
     background: 'linear-gradient(45deg, #07CACE -0.25%, #4D9ED5 50.1%, #9470DC 99.85%)'
+  },
+  gray: {
+    normal: 'gray',
+    background: 'linear-gradient(55.71deg, rgba(35, 31, 32, 0.6) 7.27%, rgba(35, 31, 32, 0) 51.46%, rgba(35, 31, 32, 0.6) 95.22%)'
   }
 }

@@ -74,7 +74,7 @@ export default {
   }),
   computed: {
     currColor () {
-      if (!this.$route.params.major) {
+      if (!this.$route.params.major || typeof majors[this.$route.params.major] === 'undefined') {
         return ''
       }
       return majors[this.$route.params.major][1]

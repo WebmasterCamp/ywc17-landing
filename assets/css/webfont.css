@@ -1,16 +1,19 @@
 @font-face {
   font-family: 'Maledpan';
   src: url('~assets/fonts/Maledpan-Regular.otf') format('opentype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Maledpan';
   src: url('~assets/fonts/Maledpan-Light.otf') format('opentype');
   font-weight: lighter;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Maledpan';
   src: url('~assets/fonts/Maledpan-Bold.otf') format('opentype');
   font-weight: bold;
+  font-display: swap;
 }

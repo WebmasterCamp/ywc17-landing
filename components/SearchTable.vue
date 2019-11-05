@@ -5,7 +5,7 @@
       <a-table
         :columns="columns"
         :dataSource="filteredData"
-        rowKey="ref"
+        :rowKey="columns[0].dataIndex"
         size="middle"
         :pagination="false"
         :loading="isLoading"
