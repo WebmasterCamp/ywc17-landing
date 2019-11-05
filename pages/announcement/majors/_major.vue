@@ -80,7 +80,9 @@ export default {
     prepareResult (result) {
       return result.map((row) => {
         row.name = `${capitalize(row.firstName)} ${capitalize(row.lastName)}`
-        row.verificationAmount = (typeof row.verificationAmount === 'number') ? row.verificationAmount.toFixed(2) : ''
+        if (row.verificationAmount) {
+          row.verificationAmount = (typeof row.verificationAmount === 'number') ? row.verificationAmount.toFixed(2) : row.verificationAmount
+        }
         return row
       })
     }
