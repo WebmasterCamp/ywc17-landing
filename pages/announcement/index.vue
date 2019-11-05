@@ -110,7 +110,6 @@ export default {
 
       isFinalistLoading: true,
       statusText: 'ใจเย็น ๆ นะ ระบบยังโหลดไม่เสร็จ',
-      finalistFetchTime: 0,
       finalistInfo: null
     }
   },
@@ -290,17 +289,9 @@ export default {
               vm.$message.error('ไม่พบข้อมูลของรหัสสัมภาษณ์นี้ในระบบ')
             } else {
               vm.isFinalistLoading = true
-              vm.finalistFetchTime = Date.now()
               vm.finalistInfo = data.payload
               vm.animateText()
-
-              const remainTime = Date.now() - vm.finalistFetchTime
-              if (remainTime >= FINALIST_LOAD_TIME) {
-                vm.isFinalistLoading = false
-                vm.changeTheme(vm.major)
-              } else {
-                setTimeout(() => { vm.isFinalistLoading = false; vm.changeTheme(vm.major) }, FINALIST_LOAD_TIME - remainTime)
-              }
+              setTimeout(() => { vm.isFinalistLoading = false; vm.changeTheme(vm.major) }, FINALIST_LOAD_TIME)
             }
           } else {
             vm.$message.error('เกิดข้อผิดพลาดในการโหลดข้อมูลประกาศผล')
