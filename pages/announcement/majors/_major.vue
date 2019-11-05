@@ -3,15 +3,25 @@
     <h3>รายชื่อผู้ผ่านการคัดเลือก</h3>
     <SearchTable
       ref="table"
-      :columns="columns"
-      :data="data"
+      :columns="FINALIST_COLUMNS"
+      :data="finalist"
+      :searchable="false"
+      :loading="isLoading"
+    />
+    <h3>ข้อมูลสำหรับผู้ผ่านการคัดเลือก (ตัวสำรอง)</h3>
+    <p>กรุณารอการติดต่อกลับจากทีมงานภายหลัง</p>
+    <h3>รายชื่อผู้ผ่านการคัดเลือก (ตัวสำรอง)</h3>
+    <SearchTable
+      ref="table"
+      :columns="RESERVE_COLUMNS"
+      :data="reserve"
       :searchable="false"
       :loading="isLoading"
     />
   </div>
 </template>
 <script>
-import { FINALIST_COLUMNS } from '~/utils/const.js'
+import { FINALIST_COLUMNS, RESERVE_COLUMNS } from '~/utils/const.js'
 import SearchTable from '~/components/SearchTable'
 const capitalize = (str) => {
   if (!str) {
@@ -33,7 +43,8 @@ export default {
   },
   data () {
     return {
-      columns: FINALIST_COLUMNS
+      FINALIST_COLUMNS,
+      RESERVE_COLUMNS
     }
   },
   computed: {
@@ -52,13 +63,23 @@ export default {
       }
       return this.majors[this.major][1]
     },
-    data () {
+    finalist () {
       if (!this.major) {
         return []
       }
-      return this.results[this.major].map((row) => {
+      return this.prepareResult(this.results[this.major].finalist)
+    },
+    reserve () {
+      if (!this.major) {
+        return []
+      }
+      return this.prepareResult(this.results[this.major].reserve)
+    }
+  },
+  methods: {
+    prepareResult (result) {
+      return result.map((row) => {
         row.name = `${capitalize(row.firstName)} ${capitalize(row.lastName)}`
-        row.type = (!row.isReserve) ? 'ตัวจริง' : 'ตัวสำรอง'
         row.verificationAmount = (row.verificationAmount) ? row.verificationAmount.toFixed(2) : ''
         return row
       })

@@ -97,26 +97,32 @@ export const FINALIST_COLUMNS = [
     title: 'รหัส',
     dataIndex: 'interviewRef',
     sorter: (a, b) => a.interviewRef.localeCompare(b.interviewRef),
-    width: '12.5%',
-    scopedSlots: { customRender: 'searchRender' }
+    width: '12.5%'
   },
   {
     title: 'ชื่อ - นามสกุล',
     dataIndex: 'name',
     sorter: (a, b) => a.name.localeCompare(b.name),
-    width: '57.5%',
-    scopedSlots: { customRender: 'searchRender' }
-  },
-  {
-    title: 'ประเภท',
-    dataIndex: 'type',
-    sorter: (a, b) => a.type.localeCompare(b.type),
-    width: '15%'
+    width: '62.5%'
   },
   {
     title: 'จำนวนเงิน',
     dataIndex: 'verificationAmount',
     sorter: (a, b) => a.verificationAmount.localeCompare(b.verificationAmount),
-    width: '15%'
+    width: '20%'
+  }
+]
+export const RESERVE_COLUMNS = [
+  {
+    title: 'รหัส',
+    dataIndex: 'interviewRef',
+    sorter: (a, b) => a.interviewRef.localeCompare(b.interviewRef),
+    width: '12.5%'
+  },
+  {
+    title: 'ชื่อ - นามสกุล',
+    dataIndex: 'name',
+    sorter: (a, b) => a.name.localeCompare(b.name),
+    width: '82.5%'
   }
 ]

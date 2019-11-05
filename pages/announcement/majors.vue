@@ -45,13 +45,13 @@ export default {
     Majors,
     InfoContainer: () => import('~/components/InfoContainer.vue'),
     Button: () => import('~/components/result/Button.vue'),
-    Footer: () => import('~/components/sections/Footer.vue'),
+    Footer: () => import('~/components/sections/Footer.vue')
   },
   data () {
     return {
       majors,
     
-      results: { content: [], design: [], marketing: [], programming: [] },
+      results: { content: { finalist: [], reserve: [] }, design: { finalist: [], reserve: [] }, marketing: { finalist: [], reserve: [] }, programming: { finalist: [], reserve: [] } },
       isLoading: true
     }
   },
@@ -112,7 +112,7 @@ export default {
           if (status === 200) {
             const results = data.payload
             Object.keys(results).map((major) => {
-              results[major] = results[major].finalist.concat(results[major].reserve.sort((a, b) => { return a.reserveNo < b.reserveNo }))
+              results[major].reserve = results[major].reserve.sort((a, b) => { return a.reserveNo - b.reserveNo })
             })
             vm.results = results
           } else {
