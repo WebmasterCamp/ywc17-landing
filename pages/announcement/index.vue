@@ -42,7 +42,7 @@
                 <h3>รายละเอียดการยืนยันสิทธิ์</h3>
                 <p>เพื่อยืนยันสิทธิ์การเข้าค่าย กรุณา<b>โอนเงินมัดจำ</b> จำนวน <b class="themeText">{{ finalistInfo.verificationAmount.toFixed(2) }} บาท</b> เข้าบัญชี</p>
                 <p style="text-align:center">
-                  เลขที่บัญชี <b>{{ FINALIST_BANKACCOUNT.no }}</b><br />
+                  เลขที่บัญชี <b v-html="FINALIST_BANKACCOUNT_no_html" @mouseover="selectText" @mouseclick="selectText"></b><br />
                   ชื่อบัญชี <b>{{ FINALIST_BANKACCOUNT.name }}</b><br />
                   ธนาคาร <b>{{ FINALIST_BANKACCOUNT.bank }}</b>
                 </p>
@@ -72,6 +72,7 @@ import Loading from '~/components/result/Loading.vue'
 import CenterContainer from '~/components/CenterContainer.vue'
 import { colorScheme } from '~/utils/color'
 import { majors, FINALIST_FORM_LINK, FINALIST_LOAD_TIME, FINALIST_BANKACCOUNT } from '~/utils/const'
+import { selectText } from '~/utils/dom'
 const isalpha = /^[a-zA-Z]$/
 const isnumber = /^[0-9]$/
 export default {
@@ -122,6 +123,9 @@ export default {
     },
     isReserve () {
       return this.isPass && this.finalistInfo.isReserve === true
+    },
+    FINALIST_BANKACCOUNT_no_html () {
+      return this.FINALIST_BANKACCOUNT.no.replace(/-/g, `<span class="hyphen">-</span>`)
     }
   },
   created () {
@@ -135,6 +139,7 @@ export default {
   },
   methods: {
     FINALIST_FORM_LINK,
+    selectText,
     changeTheme (major) {
       if (major) {
         const majorColor = (!this.isPass) ? 'gray' : majors[major][1]
@@ -395,6 +400,9 @@ export default {
           height: 104px;
         }
       }
+    }
+    .hyphen {
+      user-select: none;
     }
   }
   .more-details {
