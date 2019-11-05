@@ -145,7 +145,7 @@ export default {
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), ${colorScheme[majorColor].background};
       background-size: cover;
       background-attachment: fixed;`)
-        if (this.isPass) {
+        if (this.isPass && !this.isReserve) {
           this.$confetti.start()
           setTimeout(() => this.$confetti.stop(), 3000)
         }
