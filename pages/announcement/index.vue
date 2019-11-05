@@ -44,7 +44,7 @@
                 <p style="text-align:center">
                   เลขที่บัญชี <b>{{ FINALIST_BANKACCOUNT.no }}</b><br />
                   ชื่อบัญชี <b>{{ FINALIST_BANKACCOUNT.name }}</b><br />
-                  ธนาคาร <b>{{ FINALIST_BANKACCOUNT.bank }}</b> สาขา {{ FINALIST_BANKACCOUNT.branch }}
+                  ธนาคาร <b>{{ FINALIST_BANKACCOUNT.bank }}</b>
                 </p>
                 <p>ภายในวันศุกร์ที่ 8 พฤศจิกายน เวลา 23:59 น.</p>
               </div>
@@ -298,7 +298,7 @@ export default {
         .then(({ status, data }) => {
           if (status === 200) {
             vm.finalistInfo = data.payload
-            
+
             const remainTime = Date.now() - vm.finalistFetchTime
             if (remainTime >= FINALIST_LOAD_TIME) {
               vm.isFinalistLoading = false

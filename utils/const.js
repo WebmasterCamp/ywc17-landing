@@ -81,10 +81,9 @@ export const INTERVIEW_COLUMNS = [
 
 export const FINALIST_LOAD_TIME = 4000
 export const FINALIST_BANKACCOUNT = {
-  no: 'xxx-x-xxxxx-x',
-  name: 'xxx xxx',
-  bank: 'xxx',
-  branch: 'xxx'
+  no: '0-202-9269-7198',
+  name: 'น.ส. วรัญญา วิมลเกียรติ',
+  bank: 'ออมสิน'
 }
 export const FINALIST_FORM_LINK = (info) => {
   if (!info) {
