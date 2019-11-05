@@ -86,11 +86,7 @@ export const FINALIST_BANKACCOUNT = {
   bank: 'ออมสิน'
 }
 export const FINALIST_FORM_LINK = (info) => {
-  if (!info) {
-    return `https://forms.google.com/`
-  }
-  
-  return `https://forms.google.com/?name=${info.firstName}%20${info.lastName}`
+  return `https://bit.ly/ywc17-cf`
 }
 export const FINALIST_COLUMNS = [
   {
