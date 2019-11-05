@@ -1,10 +1,10 @@
 <template>
   <ThemeProvider :name="currTheme">
-    <Loading v-if="isCandidateLoading" />
+    <Loading v-if="!isInit" />
     <CenterContainer v-else class="announcement-box">
       <div style="width:90%">
         <img src="~/assets/images/ywc-logo-pink.png" class="ywc-logo" alt="17th Young Webmaster Camp" />
-        <template v-if="!candidateInfo">
+        <template v-if="!finalistInfo">
           <h3>ประกาศผลสัมภาษณ์ <br class="mobile" />Young Webmaster Camp ครั้งที่ 17</h3>
           กรอกรหัสสัมภาษณ์ของคุณ
           <div class="ref-input">
@@ -14,7 +14,7 @@
                 v-model="ref[idx]"
                 size="large"
                 :placeholder="'CT01'.charAt(idx)"
-                
+                :disabled="isCandidateLoading"
                 type="text"
                 maxlength="1"
                 @paste="refHandler($event, idx)"
@@ -23,11 +23,11 @@
               />
             </div>
           </div>
-          <Button @click="checkRefCode">ตรวจสอบผล</Button>
+          <Button :disabled="isCandidateLoading" @click="checkRefCode">ตรวจสอบผล</Button>
         </template>
         <template v-else>
           <h3>ผลสัมภาษณ์ <br class="mobile" />Young Webmaster Camp ครั้งที่ 17</h3>
-          ของ {{ candidateInfo.firstName }} {{ candidateInfo.lastName }} รหัส {{ refCode }}
+          ของ {{ finalistInfo.firstName }} {{ finalistInfo.lastName }} รหัส {{ refCode }}
           <template v-if="isFinalistLoading">
             <h1 class="themeText">คุณ<span id="notPassText">ไม่</span>ผ่านการคัดเลือก</h1>
             <p>{{ statusText }}</p>
@@ -42,7 +42,7 @@
                 <h3>รายละเอียดการยืนยันสิทธิ์</h3>
                 <p>เพื่อยืนยันสิทธิ์การเข้าค่าย กรุณา<b>โอนเงินมัดจำ</b> จำนวน <b class="themeText">{{ finalistInfo.verificationAmount.toFixed(2) }} บาท</b> เข้าบัญชี</p>
                 <p style="text-align:center">
-                  เลขที่บัญชี <b v-html="FINALIST_BANKACCOUNT_no_html" @mouseover="selectText" @mouseclick="selectText"></b><br />
+                  เลขที่บัญชี <b @mouseover="selectText" @mouseclick="selectText" v-html="FINALIST_BANKACCOUNT_no_html"></b><br />
                   ชื่อบัญชี <b>{{ FINALIST_BANKACCOUNT.name }}</b><br />
                   ธนาคาร <b>{{ FINALIST_BANKACCOUNT.bank }}</b>
                 </p>
@@ -60,7 +60,7 @@
       </div>
     </CenterContainer>
     <div class="more-details">
-      <NuxtLink v-if="!candidateInfo" to="/announcement/majors/"><b>แสดงรายชื่อทั้งหมด</b></NuxtLink>
+      <NuxtLink v-if="!finalistInfo" to="/announcement/majors/"><b>แสดงรายชื่อทั้งหมด</b></NuxtLink>
       <Footer />
     </div>
   </ThemeProvider>
@@ -103,10 +103,10 @@ export default {
       major: '',
 
       ref: [],
+      isInit: false,
 
-      isCandidateLoading: true,
-      candidates: { content: [], design: [], marketing: [], programming: [] },
-      candidateInfo: null,
+      isCandidateLoading: false,
+      candidateLoadingText: null,
 
       isFinalistLoading: true,
       statusText: 'ใจเย็น ๆ นะ ระบบยังโหลดไม่เสร็จ',
@@ -135,7 +135,7 @@ export default {
     }
   },
   mounted () {
-    this.loadCandidate()
+    this.isInit = true
   },
   methods: {
     FINALIST_FORM_LINK,
@@ -250,20 +250,6 @@ export default {
       }
       return true
     },
-    loadCandidate () {
-      const vm = this
-      vm.isCandidateLoading = true
-      vm.$axios.get(`https://api.ywc.in.th/users/interview/pass`)
-        .then(({ status, data }) => {
-          vm.isCandidateLoading = false
-          if (status === 200) {
-            vm.candidates = data.payload
-          }
-        })
-        .catch(() => {
-          vm.$message.error('เกิดข้อผิดพลาดในการโหลดรายชื่อผู้สมัคร')
-        })
-    },
     checkRefCode () {
       if (this.isCandidateLoading || this.refCode.length !== 4) {
         if (this.refCode.length !== 4) {
@@ -282,34 +268,39 @@ export default {
         return codename
       })
 
-      if (!major) {
+      if (!major || refIdx < 1 || refIdx > 62) {
         this.$message.error('รหัสสัมภาษณ์ไม่ถูกต้อง')
         return false
       }
-      if (refIdx <= 0 || typeof this.candidates[major][refIdx - 1] === 'undefined') {
-        this.$message.error('รหัสสัมภาษณ์ไม่ถูกต้อง')
-        return false
-      }
-      this.candidateInfo = this.candidates[major][refIdx - 1]
-      this.animateText()
+      this.isCandidateLoading = true
+      this.candidateLoadingText = this.$message.loading('กำลังตรวจสอบข้อมูล...', 0)
       this.major = major
       this.loadFinalist()
     },
     loadFinalist () {
       const vm = this
-      vm.isFinalistLoading = true
-      vm.finalistFetchTime = Date.now()
       vm.$axios.get(`https://api.ywc.in.th/users/announcement/${vm.refCode}`)
         .then(({ status, data }) => {
+          vm.candidateLoadingText()
+          vm.candidateLoading = null
           if (status === 200) {
-            vm.finalistInfo = data.payload
-
-            const remainTime = Date.now() - vm.finalistFetchTime
-            if (remainTime >= FINALIST_LOAD_TIME) {
-              vm.isFinalistLoading = false
-              vm.changeTheme(vm.major)
+            if (!data.payload) {
+              vm.isCandidateLoading = false
+              vm.major = ''
+              vm.$message.error('ไม่พบข้อมูลของรหัสสัมภาษณ์นี้ในระบบ')
             } else {
-              setTimeout(() => { vm.isFinalistLoading = false; vm.changeTheme(vm.major) }, FINALIST_LOAD_TIME - remainTime)
+              vm.isFinalistLoading = true
+              vm.finalistFetchTime = Date.now()
+              vm.finalistInfo = data.payload
+              vm.animateText()
+
+              const remainTime = Date.now() - vm.finalistFetchTime
+              if (remainTime >= FINALIST_LOAD_TIME) {
+                vm.isFinalistLoading = false
+                vm.changeTheme(vm.major)
+              } else {
+                setTimeout(() => { vm.isFinalistLoading = false; vm.changeTheme(vm.major) }, FINALIST_LOAD_TIME - remainTime)
+              }
             }
           } else {
             vm.$message.error('เกิดข้อผิดพลาดในการโหลดข้อมูลประกาศผล')
@@ -317,6 +308,10 @@ export default {
           }
         })
         .catch(() => {
+          if (vm.candidateLoadingText) {
+            vm.candidateLoadingText()
+          }
+          vm.candidateLoading = null
           vm.$message.error('เกิดข้อผิดพลาดในการประมวลข้อมูลประกาศผล')
           vm.statusText = 'เกิดข้อผิดพลาดในการประมวลข้อมูลประกาศผล โปรดลองใหม่อีกครั้ง'
         })
