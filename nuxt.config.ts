@@ -46,7 +46,8 @@ const config = {
   plugins: [
     { src: '~/plugins/ant-design-vue' },
     { src: '~/plugins/vue-agile', ssr: false },
-    { src: '~/plugins/vue-lazyload', ssr: false }
+    { src: '~/plugins/vue-lazyload', ssr: false },
+    { src: '~/plugins/vue-confetti', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -59,11 +60,6 @@ const config = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    /*
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-42284958-1'
-    }]
-    */
     ['@nuxtjs/google-gtag', {
       id: 'UA-42284958-1'
     }],
@@ -95,7 +91,13 @@ const config = {
       '/interview/content',
       '/interview/design',
       '/interview/marketing',
-      '/interview/programming'
+      '/interview/programming',
+      '/announcement',
+      '/announcement/majors',
+      '/announcement/majors/content',
+      '/announcement/majors/design',
+      '/announcement/majors/marketing',
+      '/announcement/majors/programming',
     ]
   },
   build: {

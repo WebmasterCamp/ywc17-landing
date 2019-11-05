@@ -1,6 +1,6 @@
 <template>
   <div class="secondary" :class="$route.name">
-    <section class="container">
+    <section class="container" v-show="!hideLogo">
       <nuxt-link to="/" class="ywc-logo" title="ไปยังหน้าแรกของ 17th Young Webmaster Camp"><Picture fileName="ywc-logo" alt="17th Young Webmaster Camp" /></nuxt-link>
     </section>
     <nuxt />
@@ -27,6 +27,11 @@ export default {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(69.01deg, #C73884 7.27%, #E13C6F 51.46%, #9B308E 95.22%);
     background-size: cover;
     background-attachment: fixed;`)
+    }
+  },
+  computed: {
+    hideLogo () {
+      return ['/announcement'].includes(this.$route.path)
     }
   }
 }

@@ -78,3 +78,47 @@ export const INTERVIEW_COLUMNS = [
     width: '15%'
   }
 ]
+
+export const FINALIST_LOAD_TIME = 4000
+export const FINALIST_BANKACCOUNT = {
+  no: '0-202-9269-7198',
+  name: 'น.ส. วรัญญา วิมลเกียรติ',
+  bank: 'ออมสิน'
+}
+export const FINALIST_FORM_LINK = (info) => {
+  return `https://bit.ly/ywc17-cf`
+}
+export const FINALIST_COLUMNS = [
+  {
+    title: 'รหัส',
+    dataIndex: 'interviewRef',
+    sorter: (a, b) => a.interviewRef.localeCompare(b.interviewRef),
+    width: '12.5%'
+  },
+  {
+    title: 'ชื่อ - นามสกุล',
+    dataIndex: 'name',
+    sorter: (a, b) => a.name.localeCompare(b.name),
+    width: '62.5%'
+  },
+  {
+    title: 'จำนวนเงิน',
+    dataIndex: 'verificationAmount',
+    sorter: (a, b) => a.verificationAmount.localeCompare(b.verificationAmount),
+    width: '20%'
+  }
+]
+export const RESERVE_COLUMNS = [
+  {
+    title: 'รหัส',
+    dataIndex: 'interviewRef',
+    sorter: (a, b) => a.interviewRef.localeCompare(b.interviewRef),
+    width: '12.5%'
+  },
+  {
+    title: 'ชื่อ - นามสกุล',
+    dataIndex: 'name',
+    sorter: (a, b) => a.name.localeCompare(b.name),
+    width: '82.5%'
+  }
+]
