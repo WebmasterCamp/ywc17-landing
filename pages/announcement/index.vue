@@ -298,18 +298,23 @@ export default {
         .then(({ status, data }) => {
           if (status === 200) {
             vm.finalistInfo = data.payload
-          }
-          const remainTime = Date.now() - vm.finalistFetchTime
-          if (remainTime >= FINALIST_LOAD_TIME) {
-            vm.isFinalistLoading = false
-            vm.changeTheme(vm.major)
+            
+            const remainTime = Date.now() - vm.finalistFetchTime
+            if (remainTime >= FINALIST_LOAD_TIME) {
+              vm.isFinalistLoading = false
+              vm.changeTheme(vm.major)
+            } else {
+              setTimeout(() => { vm.isFinalistLoading = false; vm.changeTheme(vm.major) }, FINALIST_LOAD_TIME - remainTime)
+            }
           } else {
-            setTimeout(() => { vm.isFinalistLoading = false; vm.changeTheme(vm.major) }, FINALIST_LOAD_TIME - remainTime)
+            vm.$message.error('เกิดข้อผิดพลาดในการโหลดข้อมูลประกาศผล')
+            vm.statusText = 'เกิดข้อผิดพลาดในการโหลดข้อมูลประกาศผล โปรดลองใหม่อีกครั้ง'
           }
+          
         })
         .catch(() => {
-          vm.$message.error('เกิดข้อผิดพลาดในการโหลดข้อมูลประกาศผล')
-          vm.statusText = 'เกิดข้อผิดพลาดในการโหลดข้อมูลประกาศผล โปรดลองใหม่อีกครั้ง'
+          vm.$message.error('เกิดข้อผิดพลาดในการประมวลข้อมูลประกาศผล')
+          vm.statusText = 'เกิดข้อผิดพลาดในการประมวลข้อมูลประกาศผล โปรดลองใหม่อีกครั้ง'
         })
     }
   }
