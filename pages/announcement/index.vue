@@ -405,6 +405,7 @@ export default {
     }
     a, a:hover, a:visited, a:active {
       color: white;
+      text-decoration: underline !important;
     }
     & > div {
       margin-top: 100px;
