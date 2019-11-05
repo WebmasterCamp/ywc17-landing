@@ -379,6 +379,7 @@ export default {
         width: 88px;
         height: 137px;
         text-transform: uppercase;
+        text-align: center !important;
 
         @media screen and (max-width: 576px) {
           font-size: 48px;
