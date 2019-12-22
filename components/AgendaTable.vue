@@ -36,7 +36,7 @@ export default {
               title: 'กิจกรรม',
               dataIndex: 'events',
               customRender: (value, row, index) => {
-                return <tbody class={ row.events.length > 1 ? 'ant-table-tbody' : ''}>
+                return <tbody class={ row.events.length > 1 ? 'ant-table-tbody' : ''} style="display: table; width: 100%;">
                   {row.events.map((event, idx) => 
                     <tr>
                       <td
