@@ -10,9 +10,15 @@
         {{ item.endDate ? rangeDate(item.startDate, item.endDate) : humanDate(item.startDate) }}
       </TimelineItem>
     </TimelineList>
+    <GradientButton link href="/agenda/" theme="pink" class="agenda-button" @click.native.prevent="$router.push('/agenda/')">กำหนดการโครงการ</GradientButton>
   </section>
 </template>
 <style scoped>
+.agenda-button {
+  width: 100%;
+  margin-top: 25px;
+  max-width: 320px;
+}
 @media screen and (max-width:768px) {
   .to-center {
     text-align: center;
@@ -30,6 +36,7 @@ import color from '~/utils/color'
 
 import SectionHead from '~/components/SectionHead.vue'
 import Picture from '~/components/Picture.vue'
+import GradientButton from '~/components/GradientButton.vue'
 
 dayjs.locale('th')
 
@@ -81,7 +88,8 @@ export default {
     TimelineItem,
     TimelineIcon,
     TimelineName,
-    Icon
+    Icon,
+    GradientButton
   },
   data () {
     return {
