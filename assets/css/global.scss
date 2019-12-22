@@ -8,3 +8,9 @@ $primary-color: #E1426F;
   color: #fff;
   background: $primary-color
 }
+
+@media print {
+  body {
+    background: white !important;
+  }
+}
