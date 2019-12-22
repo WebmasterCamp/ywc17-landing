@@ -98,6 +98,7 @@ const config = {
       '/announcement/majors/design',
       '/announcement/majors/marketing',
       '/announcement/majors/programming',
+      '/agenda'
     ]
   },
   build: {
