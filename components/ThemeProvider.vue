@@ -39,9 +39,12 @@ export default styled('div', { name: String })`
     background: none;
     font-weight: bold;
   }
-  // .ant-table-thead > tr > th.ant-table-column-has-actions.ant-table-column-has-sorters:hover {
-  //   background: ${props => props.name ? colorScheme[props.name].light : colorScheme.pink.light};
-  // }
+  .agendaTable {
+    .ant-table-thead tr:first-of-type th {
+      background: ${props => props.name ? colorScheme[props.name].normal : color.main};
+      color: white;
+    }
+  }
   // Table Row Hover Color
   .ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td, .ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td, .ant-table-thead > tr:hover:not(.ant-table-expanded-row) > td, .ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
     background: ${props => props.name ? colorScheme[props.name].light : colorScheme.pink.light};
