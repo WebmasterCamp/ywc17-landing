@@ -4,7 +4,7 @@
       <h2>กำหนดการโครงการอบรมเชิงปฏิบัติการ<br class="mdBreak"> Young Webmaster Camp ครั้งที่ 17</h2>
       <h3>
         วันที่ 26 - 29 ธันวาคม 2562<br>
-        ณ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+        ณ คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
       </h3>
       <AgendaTable v-for="{ name, items } in AGENDA" :key="name" :name="name" :items="items" />
     </InfoContainer>
