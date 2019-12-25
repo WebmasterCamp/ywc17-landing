@@ -129,7 +129,7 @@ export const AGENDA = [
     items: [
       { time: '8:30 - 9:00', events: [`ลงทะเบียน ณ ห้องประชุมใหญ่คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง`] },
       { time: '9:00 - 9:30', events: [`พิธีเปิด โครงการอบรมเชิงปฏิบัติการ Young Webmaster Camp ครั้งที่ 17`] },
-      { time: '9:30 - 10:30', events: [`เสวนาหัวข้อ “การทำงานในวงการดิจิทัล” <br>ดำเนินรายการโดย คุณเมธปริยา คำนวนวุฒิ<br><ul><li>คุณณัฏฐชัย เลาหชัย, Solution Advisor @ ExxonMobil</li><li>คุณวโรรส โรจนะ, นายกสมาคมผู้ดูแลเว็บไทยและ Co-founder @ Dek-D</li></ul>`] },
+      { time: '9:30 - 10:30', events: [`เสวนาหัวข้อ “การทำงานในวงการดิจิทัล” <br>ดำเนินรายการโดย คุณเมธปริยา คำนวนวุฒิ<br><ul><li>คุณณัฏฐชัย เลาหชัย, <i>Solution Advisor at ExxonMobil</i></li><li>คุณวโรรส โรจนะ, <i>นายกสมาคมผู้ดูแลเว็บไทยและ Co-Founder at Dek-D</i></li></ul>`] },
       { time: '10:30 - 10:45', events: [`พักรับประทานอาหารว่าง`] },
       { time: '10:45 - 11:45', events: [`การบรรยายในหัวข้อ “จริยธรรมและกฎหมายควรรู้ในยุคดิจิทัล”<br>โดย กรรมการควบคุมจริยธรรม สมาคมผู้ดูแลเว็บไทย<br><ul><li>คุณชวรงค์ ลิมป์ปัทมปาณี</li><li>คุณอัครวุฒิ ตำราเรียง</li></ul>`] },
       { time: '11:45 - 12:45', events: [`รับประทานอาหารกลางวัน`] },
@@ -151,7 +151,7 @@ export const AGENDA = [
       { time: '8:00 - 8:30', events: ['เดินทางสู่สถานที่จัดกิจกรรม'] },
       { time: '8:30 - 10:00', events: ['กิจกรรมสันทนาการ'] },
       { time: '10:00 - 10:15', events: ['พักรับประทานอาหารว่าง'] },
-      { time: '10:15 - 11:15', events: ['การบรรยายแยกสาขา', 'สาขา Web Marketing หัวข้อ <br>“เครื่องมือโฆษณาสำหรับนักการตลาดดิจิทัล”<br>โดย คุณเมธปรียา คํานวนวุฒิ, <i>ผู้จัดการฝ่ายการตลาด LnwShop Co., Ltd.</i>', 'สาขา Web Design หัวข้อ <br>“User Experience for Web Design”<br>โดย คุณสุธัม ธรรมวงศ์, <i>Senior UX Designer at SCB10X</i>', 'สาขา Web Content หัวข้อ<br>“การสร้างและจัดการ Community”<br>โดย คุณอภิศิลป์ ตรุงกานนท์, Chief Product Officer @ Pantip', 'สาขา Web Programming หัวข้อ<br>“How to be Great Software Developer”<br>โดย คุณปัญจมพงศ์ เสริมสวัสดิ์ศรี, <i>C-3PO at Cleverse</i>'] },
+      { time: '10:15 - 11:15', events: ['การบรรยายแยกสาขา 2', 'สาขา Web Marketing หัวข้อ <br>“เครื่องมือโฆษณาสำหรับนักการตลาดดิจิทัล”<br>โดย คุณเมธปรียา คํานวนวุฒิ, <i>ผู้จัดการฝ่ายการตลาด LnwShop Co., Ltd.</i>', 'สาขา Web Design หัวข้อ <br>“User Experience for Web Design”<br>โดย คุณสุธัม ธรรมวงศ์, <i>Senior UX Designer at SCB10X</i>', 'สาขา Web Content หัวข้อ<br>“การสร้างและจัดการ Community”<br>โดย คุณอภิศิลป์ ตรุงกานนท์, <i>Chief Product Officer at Pantip</i>', 'สาขา Web Programming หัวข้อ<br>“How to be Great Software Developer”<br>โดย คุณปัญจมพงศ์ เสริมสวัสดิ์ศรี, <i>C-3PO at Cleverse</i>'] },
       { time: '11:15 - 12:30', events: ['ระดมความคิด (Brainstorm) 3', 'รับประทานอาหารกลางวัน'] },
       { time: '12:30 - 16:30', events: ['ลงพื้นที่เก็บข้อมูลจริงจากผู้ใช้'] },
       { time: '16:30 - 18:00', events: ['การบรรยาย “วิธีการนำเสนอผลงานอย่างมืออาชีพ”<br>โดย คุณผรินทร์ สงฆ์ประชา, <i>Chief Executive and Founder of Nasket</i>'] },
