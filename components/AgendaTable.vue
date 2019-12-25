@@ -41,7 +41,9 @@ export default {
                     <tr>
                       <td
                         domPropsInnerHTML={event}
-                        style={ row.events.length - 1 === idx ? { borderBottom: 'none' } : { }}
+                        style={ row.events.length - 1 === idx 
+                          ? { borderBottom: 'none', padding: '10px', paddingLeft: 0 }
+                          : { padding: '10px', paddingLeft: 0 }}
                       />
                     </tr>
                   )}
