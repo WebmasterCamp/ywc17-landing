@@ -1,7 +1,7 @@
 <template>
   <div>
     <Hero />
-    <GradientButton link href="/announcement/" theme="pink" class="cta-button" @click.native.prevent="$router.push('/announcement/')">ประกาศผลสัมภาษณ์</GradientButton>
+    <GradientButton link href="https://www.facebook.com/ywcth/live" target="_blank" theme="yellow" class="cta-button">ถ่ายทอดสด</GradientButton>
     <WhatIsYWC />
     <Majors />
     <Location />
