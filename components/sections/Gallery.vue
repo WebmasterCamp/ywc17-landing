@@ -2,34 +2,13 @@
   <section class="container">
     <SectionHead title="Gallery" style="position: sticky; top: 0;" />
     <no-ssr placeholder="Loading...">
-      <agile
-        ref="main"
-        class="main"
-        :options="options1"
-        :as-nav-for="asNavFor1"
-      >
-        <div
-          v-for="(slide, index) in slides"
-          :key="index"
-          class="slide"
-          :class="`slide--${index}`"
-        >
+      <agile ref="main" class="main" :options="options1" :as-nav-for="asNavFor1">
+        <div v-for="(slide, index) in slides" :key="index" class="slide" :class="`slide--${index}`">
           <img v-lazy="slide" />
         </div>
       </agile>
-      <agile
-        ref="thumbnails"
-        class="thumbnails"
-        :options="options2"
-        :as-nav-for="asNavFor2"
-      >
-        <div
-          v-for="(slide, index) in slides"
-          :key="index"
-          class="slide slide--thumbnail"
-          :class="`slide--${index}`"
-          @click="$refs.thumbnails.goTo(index)"
-        >
+      <agile ref="thumbnails" class="thumbnails" :options="options2" :as-nav-for="asNavFor2">
+        <div v-for="(slide, index) in slides" :key="index" class="slide slide--thumbnail" :class="`slide--${index}`" @click="$refs.thumbnails.goTo(index)">
           <img v-lazy="slide" />
         </div>
         <template slot="prevButton">
