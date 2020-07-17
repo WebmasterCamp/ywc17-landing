@@ -2,13 +2,34 @@
   <section class="container">
     <SectionHead title="Gallery" style="position: sticky; top: 0;" />
     <no-ssr placeholder="Loading...">
-      <agile ref="main" class="main" :options="options1" :as-nav-for="asNavFor1">
-        <div v-for="(slide, index) in slides" :key="index" class="slide" :class="`slide--${index}`">
+      <agile
+        ref="main"
+        class="main"
+        :options="options1"
+        :as-nav-for="asNavFor1"
+      >
+        <div
+          v-for="(slide, index) in slides"
+          :key="index"
+          class="slide"
+          :class="`slide--${index}`"
+        >
           <img v-lazy="slide" />
         </div>
       </agile>
-      <agile ref="thumbnails" class="thumbnails" :options="options2" :as-nav-for="asNavFor2">
-        <div v-for="(slide, index) in slides" :key="index" class="slide slide--thumbnail" :class="`slide--${index}`" @click="$refs.thumbnails.goTo(index)">
+      <agile
+        ref="thumbnails"
+        class="thumbnails"
+        :options="options2"
+        :as-nav-for="asNavFor2"
+      >
+        <div
+          v-for="(slide, index) in slides"
+          :key="index"
+          class="slide slide--thumbnail"
+          :class="`slide--${index}`"
+          @click="$refs.thumbnails.goTo(index)"
+        >
           <img v-lazy="slide" />
         </div>
         <template slot="prevButton">
@@ -47,9 +68,7 @@ export default {
         responsive: [
           {
             breakpoint: 768,
-            settings: {
-              unagile: false
-            }
+            settings: { unagile: false }
           }
         ]
       },
@@ -67,7 +86,6 @@ export default {
               slidesToShow: 4
             }
           },
-          
           {
             breakpoint: 1008,
             settings: {
@@ -76,22 +94,23 @@ export default {
           }
         ]
       },
-      
       slides: [
-        '/images/gallery/1.jpg',
-        '/images/gallery/2.jpg',
-        '/images/gallery/3.jpg',
-        '/images/gallery/4.jpg',
-        '/images/gallery/5.jpg',
-        '/images/gallery/6.jpg',
-        '/images/gallery/7.jpg',
-        '/images/gallery/8.jpg',
-        '/images/gallery/9.jpg',
-        '/images/gallery/10.jpg',
-        '/images/gallery/11.jpg',
-        '/images/gallery/12.jpg',
-        '/images/gallery/13.jpg',
-        '/images/gallery/14.jpg'
+        '/images/gallery/ywc17/1.jpg',
+        '/images/gallery/ywc17/2.jpg',
+        '/images/gallery/ywc17/3.jpg',
+        '/images/gallery/ywc17/4.jpg',
+        '/images/gallery/ywc17/5.jpg',
+        '/images/gallery/ywc17/6.jpg',
+        '/images/gallery/ywc17/7.jpg',
+        '/images/gallery/ywc17/8.jpg',
+        '/images/gallery/ywc17/9.jpg',
+        '/images/gallery/ywc17/10.jpg',
+        '/images/gallery/ywc17/11.jpg',
+        '/images/gallery/ywc17/12.jpg',
+        '/images/gallery/ywc17/13.jpg',
+        '/images/gallery/ywc17/14.jpg',
+        '/images/gallery/ywc17/15.jpg',
+        '/images/gallery/ywc17/16.jpg'
       ]
     }
   },
@@ -109,7 +128,7 @@ img
   background: url(~assets/images/loading.svg) no-repeat
   background-size: 64px
   background-position: center
-.main 
+.main
   max-width: 720px
   margin: 0 auto
   margin-bottom: 30px
@@ -144,7 +163,7 @@ img
     cursor: pointer
     font-size: 24px
     transition-duration: .3s
-  
+
     .thumbnails &
       position: absolute
       top: 50%
@@ -153,7 +172,7 @@ img
       &--prev
         user-select: none
         left: -30px
-  
+
       &--next
         user-select: none
         right: -30px
@@ -164,7 +183,7 @@ img
   &__dot
     margin: 0 10px
 
-    button 
+    button
       background-color: #eee
       border: none
       border-radius: 50%
