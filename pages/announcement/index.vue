@@ -35,7 +35,7 @@
           <template v-else-if="isPass">
             <h2>ขอแสดงความยินดี</h2>
             <h1 class="themeText" style="margin-top:50px">คุณผ่านการคัดเลือก<span v-if="isReserve"><br class="mobile" /> (ตัวสำรอง)</span></h1>
-            
+
             <p v-if="isReserve">กรุณารอการติดต่อกลับจากทีมงานภายหลัง</p>
             <template v-else>
               <div class="alignLeft">
@@ -175,7 +175,7 @@ export default {
         }, parseInt(5 / 8 * FINALIST_LOAD_TIME))
         setTimeout(() => {
           elm.classList.remove('two')
-          void elm.offsetWidth 
+          void elm.offsetWidth
           elm.classList.add('three')
         }, parseInt(68 / 80 * FINALIST_LOAD_TIME))
       })
@@ -258,7 +258,7 @@ export default {
       }
       const refMajor = (this.ref[0] + this.ref[1]).toUpperCase()
       const refIdx = parseInt(this.ref[2]) * 10 + parseInt(this.ref[3])
-      
+
       let major = ''
       Object.keys(majors).map((codename) => {
         if (refMajor === majors[codename][2]) {
@@ -278,7 +278,7 @@ export default {
     },
     loadFinalist () {
       const vm = this
-      vm.$axios.get(`https://api.ywc.in.th/users/announcement/${vm.refCode}`)
+      vm.$axios.get(`https://api.ywc17.ywc.in.th/users/announcement/${vm.refCode}`)
         .then(({ status, data }) => {
           vm.candidateLoadingText()
           vm.candidateLoading = null

@@ -31,7 +31,7 @@
     </InfoContainer>
     <a id="select-major" />
     <Majors :selected="major" route="/interview" :clickHandler="changeMajor" />
-      
+
     <a id="interview-box"></a>
     <InfoContainer v-show="major" class="interview-box">
       <nuxt-child v-if="major" :majors="majors" :results="results" :isLoading="isLoading" />
@@ -126,7 +126,7 @@ export default {
     loadData () {
       const vm = this
       vm.isLoading = true
-      vm.$axios.get(`https://api.ywc.in.th/users/interview/pass`)
+      vm.$axios.get(`https://api.ywc17.ywc.in.th/users/interview/pass`)
         .then(({ status, data }) => {
           vm.isLoading = false
           if (status === 200) {

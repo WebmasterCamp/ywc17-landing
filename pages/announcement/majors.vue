@@ -2,7 +2,7 @@
   <ThemeProvider :name="currTheme">
     <a id="select-major" />
     <Majors :selected="major" route="/announcement/majors" :clickHandler="changeMajor" />
-      
+
     <a id="announce-box"></a>
     <InfoContainer v-show="major" class="announce-box">
       <section>
@@ -50,7 +50,7 @@ export default {
   data () {
     return {
       majors,
-    
+
       results: { content: { finalist: [], reserve: [] }, design: { finalist: [], reserve: [] }, marketing: { finalist: [], reserve: [] }, programming: { finalist: [], reserve: [] } },
       isLoading: true
     }
@@ -106,7 +106,7 @@ export default {
     loadData () {
       const vm = this
       vm.isLoading = true
-      vm.$axios.get(`https://api.ywc.in.th/users/announcement`)
+      vm.$axios.get(`https://api.ywc17.ywc.in.th/users/announcement`)
         .then(({ status, data }) => {
           vm.isLoading = false
           if (status === 200) {
